@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="percolator"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:10:43 CST"/>
+<meta name="generated" content="2013-07-18 15:23:08 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -379,7 +379,7 @@ write skew的意思是指，如果两个事务同时写两个不同变量（但�
 wikipedia最后面还提到了使用snapshot isolation转换成为serializability的实现方式，并且PostgreSQL里面就已经这么实现了。
 </p>
 <p class="verse">
-With additional communication between transactions, the anomalies that snapshot isolation normally allows can be blocked by aborting one of the transactions involved, turning a snapshot isolation implementation into a full serializability guarantee[8]. This implementation of serializability is well-suited to multiversion concurrency control databases, and has been adopted in PostgreSQL 9.1[6], where it is referred to as "Serializable Snapshot Isolation", abbreviated to SSI. When used consistently, this eliminates the need for the above workarounds. The downside over snapshot isolation is an increase in aborted transactions. This can perform better or worse than snapshot isolation with the above workarounds, depending on workload.<br/>
+With additional communication between transactions, the anomalies that snapshot isolation normally allows can be blocked by aborting one of the transactions involved, turning a snapshot isolation implementation into a full serializability guarantee<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>. This implementation of serializability is well-suited to multiversion concurrency control databases, and has been adopted in PostgreSQL 9.1<sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>, where it is referred to as "Serializable Snapshot Isolation", abbreviated to SSI. When used consistently, this eliminates the need for the above workarounds. The downside over snapshot isolation is an increase in aborted transactions. This can perform better or worse than snapshot isolation with the above workarounds, depending on workload.<br/>
 </p>
 
 
@@ -624,14 +624,25 @@ return true;
 <h3 id="sec-1-6"><span class="section-number-3">1.6</span> Conclusion and Future Work</h3>
 <div class="outline-text-3" id="text-1-6">
 
+
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> DEFINITION NOT FOUND: 8
+</p>
+
+<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> DEFINITION NOT FOUND: 6
+</p></div>
 </div>
+</div>
+
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:10:43 CST</p>
-<p class="creator">Org version 7.8.02 with Emacs version 23</p>
+<p class="date">Date: 2013-07-18 15:23:08 CST</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>
