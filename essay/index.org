@@ -10,8 +10,6 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
    - 2012.5-now 在[[http://www.umeng.com][ 友盟{Umeng}]] 的数据平台{DataPlatform}工作，主要是负责统计数据处理以及数据平台的建设。
    - 2008-2012.5 在 [[http://www.baidu.com][百度{Baidu}]] 的基础架构部{Infrastructure}工作，主要负责基础组件，开发工具以及分布式系统。
 
-file:./images/dirtysalt.png via http://cooltext.com/
-
 可以从我的linkedin里面看到我做过的projects。感觉自己对各方面都感兴趣，不过现在关注的主要是:
    - 计算机系统(Compute System)
    - 网络编程框架(Network Programming)
@@ -254,4 +252,6 @@ file:./images/dirtysalt.png via http://cooltext.com/
      - [[file:note/unecessary-hurry-up.org][急得蛋碎了也没有用]]
 
 --------------------
-file:./images/cjy2020.png thank you for your accompany.
+file:./images/dirtysalt.png (via http://cooltext.com/), and file:./images/cjy2020.png thank you for your accompany.
+
+--------------------
