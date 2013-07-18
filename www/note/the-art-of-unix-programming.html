@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Unix程序设计艺术(The Art of Unix Programming)</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="../site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -192,7 +192,7 @@
 
 <hr/>
 <p>
-Unix programmers tend to be good at writing references,and most Unix documentation has the flavor of a reference or aide memoire for someone who thinks like the document-writer but is not yet an expert at his or her software.The results often look much more cryptic and sparse than they actuallt are.Read every word carefully,because whatever you want to know will probably be there,or deducible from what’s there.Read every word carefully,because you will seldom be told anything twice. 
+Unix programmers tend to be good at writing references,and most Unix documentation has the flavor of a reference or aide memoire for someone who thinks like the document-writer but is not yet an expert at his or her software.The results often look much more cryptic and sparse than they actuallt are.Read every word carefully,because whatever you want to know will probably be there,or deducible from what’s there.Read every word carefully,because you will seldom be told anything twice.
 </p>
 <p>
 Unix程序员大都是这些手册的编写者，因此对于入门或者是刚刚使用这个软件的人，你需要仔细读每一句，因为如果不仔细阅读的话后面就不会再提到了:-)
@@ -218,7 +218,7 @@ Unix程序员大都是这些手册的编写者，因此对于入门或者是刚�
 
 <hr/>
 <p>
-release early,release often.a rapid release tempo means quick and effective feedback,when each increamental release is small,changing course in repsonse to read-world feedback is eaiser 
+release early,release often.a rapid release tempo means quick and effective feedback,when each increamental release is small,changing course in repsonse to read-world feedback is eaiser
 </p>
 <p>
 尽可能的缩短发布的时间并且尽可能的迅速反馈:-)
@@ -285,7 +285,7 @@ spend your time on design quality,not the low-level details,and automate away ev
 
 <hr/>
 <p>
-Reinventing the wheel is bad not only because is wastes time,but because reinvernted wheels are often square.There is an almost iresstible temptation to economize on reinvention time by taking a shortcut to a crude and poorly-thought-out version,which in the long run often turns out to be false economy. 
+Reinventing the wheel is bad not only because is wastes time,but because reinvernted wheels are often square.There is an almost iresstible temptation to economize on reinvention time by taking a shortcut to a crude and poorly-thought-out version,which in the long run often turns out to be false economy.
 </p>
 <p>
 在这章里面eric举了一个j.random.newbie的新手的例子，说明一个程序员为什么喜欢reinvent the wheel。而且在公司开发的背后程序员造轮子的原因也是可以理解的，但是这并不表明早轮子就可以接受。reuse并不是意味着差代码只能被修改而不能重写因为我们需要重用。重用的关键在于transparency。这就是open source关键所在。open source you can get the source code你能够去修改source code来满足你的要求，如果你没有这种打算都能够让source code run起来，能够做一些适合自己的修改，这也就是重用的关键

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Distributed Algorithms in NoSQL Databases</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -167,14 +167,14 @@
 </ul>
 
 
-<p> 
+<p>
 一致性。一致性比前面几个特性都要复杂得多，我们需要详细讨论一下几种不同的观点。 但是我们不会涉及过多的一致性理论和并发模型，因为这已经超出了本文的范畴，我只会使用一些简单特点构成的精简体系。
 </p><ul>
 <li>读写一致性。从读写的观点来看，数据库的基本目标是使副本趋同的时间尽可能短（即更新传递到所有副本的时间），保证最终一致性。除了这个较弱的保证，还有一些更强的一致性特点：
 <ul>
 <li>写后读一致性。在数据项X上写操作的效果总是能够被后续的X上的读操作看见。
 </li>
-<li>读后读一致性。在一次对数据项X的读操作之后，后续对X的读操作应该返回与第一次的返回值相同或是更加新的值。 <b>NOTE（dirlt）：这是一个什么情况？，而且这个不应该算是读写一致性的范畴吧？这里没有任何写</b> <b>NOTE(dirlt):这个在后面读若干和写若干的算法中出现了</b> 
+<li>读后读一致性。在一次对数据项X的读操作之后，后续对X的读操作应该返回与第一次的返回值相同或是更加新的值。 <b>NOTE（dirlt）：这是一个什么情况？，而且这个不应该算是读写一致性的范畴吧？这里没有任何写</b> <b>NOTE(dirlt):这个在后面读若干和写若干的算法中出现了</b>
 </li>
 </ul>
 
@@ -227,7 +227,7 @@
 </ul>
 
 </li>
-<li>（B） 对上面模式的一个改进是在任意一个节点收到更新数据请求的同时异步的发送更新给所有可用节点。这也被认为是定向的反熵。 
+<li>（B） 对上面模式的一个改进是在任意一个节点收到更新数据请求的同时异步的发送更新给所有可用节点。这也被认为是定向的反熵。
 <ul>
 <li>与纯粹的反熵相比，这种做法只用一点小小的性能牺牲就极大地提高了一致性。然而，正式一致性和持久性保持不变。
 </li>

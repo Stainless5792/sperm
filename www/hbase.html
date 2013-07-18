@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>hbase</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -259,7 +259,7 @@ scan过程大致是这样的：
 </li>
 <li>如果期间memstore发生写，或者是flush，或者是进行compaction的话，那么会通知scanner
 </li>
-<li>scanner会重新组织这些内容，根据上次读取到的value,忽路duplicated的数据。   
+<li>scanner会重新组织这些内容，根据上次读取到的value,忽路duplicated的数据。
 </li>
 </ul>
 
@@ -289,9 +289,9 @@ scan过程大致是这样的：
 <p><a href="https://github.com/stumbleupon/asynchbase">https://github.com/stumbleupon/asynchbase</a>
 </p>
 <ul>
-<li>asynchbase和HTable的性能对比 <a href="http://www.tsunanet.net/~tsuna/asynchbase/benchmark/viz.html">http://www.tsunanet.net/~tsuna/asynchbase/benchmark/viz.html</a> 
+<li>asynchbase和HTable的性能对比 <a href="http://www.tsunanet.net/~tsuna/asynchbase/benchmark/viz.html">http://www.tsunanet.net/~tsuna/asynchbase/benchmark/viz.html</a>
 </li>
-<li><a href="opentsdb.html">OpenTSDB</a> is a distributed, scalable Time Series Database (TSDB)  <a href="http://opentsdb.net/index.html">http://opentsdb.net/index.html</a> 
+<li><a href="opentsdb.html">OpenTSDB</a> is a distributed, scalable Time Series Database (TSDB)  <a href="http://opentsdb.net/index.html">http://opentsdb.net/index.html</a>
 </li>
 </ul>
 
@@ -519,7 +519,7 @@ TODO(dirlt):
 </ul>
 
 </li>
-<li>Large, non-splitable regions tell you things. 
+<li>Large, non-splitable regions tell you things.
 <ul>
 <li>Our key space maps to accounts. Excessively large keys equal excessively “active” accounts
 </li>
@@ -565,7 +565,7 @@ Log splitting is done by HMaster as the cluster starts or by ServerShutdownHandl
 <ul>
 <li>每个线程写入的文件为/hbase/&lt;table_name&gt;/&lt;region_id&gt;/recovered.edits/.temp
 </li>
-<li>一旦写成功之后就会重命名为/hbase/&lt;table_name&gt;/&lt;region_id&gt;/recovered.edits/&lt;sequenceid&gt;，其中sequenceid是最后一条写入这个file的log对应的unique operation id.      
+<li>一旦写成功之后就会重命名为/hbase/&lt;table_name&gt;/&lt;region_id&gt;/recovered.edits/&lt;sequenceid&gt;，其中sequenceid是最后一条写入这个file的log对应的unique operation id.
 </li>
 <li>As a result, when replaying the recovered edits, it is possible to determine if all edits have been written. If the last edit that was written to the HFile is greater than or equal to the edit sequence id included in the file name, it is clear that all writes from the edit file have been completed.（这样一旦在做文件恢复的时候就可以很容易地确定这个恢复文件是否需要读取。如果在HFile里面最大的sequence id比这个文件名显示的seq id大的话，那么可以认为不需要replay这个文件）
 </li>
@@ -625,29 +625,29 @@ Times to complete single threaded log splitting vary, but the process may take s
 
 
 <pre class="example">at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
-        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
-        at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
-        at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:95)
-        at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:79)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.reportForDuty(HRegionServer.java:1506)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.tryReportForDuty(HRegionServer.java:1470)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.run(HRegionServer.java:563)
-        at java.lang.Thread.run(Thread.java:662)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:95)
+at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:79)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.reportForDuty(HRegionServer.java:1506)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.tryReportForDuty(HRegionServer.java:1470)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.run(HRegionServer.java:563)
+at java.lang.Thread.run(Thread.java:662)
 Caused by: org.apache.hadoop.ipc.RemoteException: org.apache.hadoop.hbase.ClockOutOfSyncException: Server s3,60020,1304927875246 has been rejected; Reported time is too far out of sync with master.  Time difference of 41450ms &gt; max allowed of 30000ms
-        at org.apache.hadoop.hbase.master.ServerManager.checkClockSkew(ServerManager.java:181)
-        at org.apache.hadoop.hbase.master.ServerManager.regionServerStartup(ServerManager.java:129)
-        at org.apache.hadoop.hbase.master.HMaster.regionServerStartup(HMaster.java:613)
-        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:597)
-        at org.apache.hadoop.hbase.ipc.HBaseRPC$Server.call(HBaseRPC.java:570)
-        at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1039)
-        at org.apache.hadoop.hbase.ipc.HBaseClient.call(HBaseClient.java:771)
-        at org.apache.hadoop.hbase.ipc.HBaseRPC$Invoker.invoke(HBaseRPC.java:257)
-        at $Proxy5.regionServerStartup(Unknown Source)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.reportForDuty(HRegionServer.java:1502)
+at org.apache.hadoop.hbase.master.ServerManager.checkClockSkew(ServerManager.java:181)
+at org.apache.hadoop.hbase.master.ServerManager.regionServerStartup(ServerManager.java:129)
+at org.apache.hadoop.hbase.master.HMaster.regionServerStartup(HMaster.java:613)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.hadoop.hbase.ipc.HBaseRPC$Server.call(HBaseRPC.java:570)
+at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1039)
+at org.apache.hadoop.hbase.ipc.HBaseClient.call(HBaseClient.java:771)
+at org.apache.hadoop.hbase.ipc.HBaseRPC$Invoker.invoke(HBaseRPC.java:257)
+at $Proxy5.regionServerStartup(Unknown Source)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.reportForDuty(HRegionServer.java:1502)
 </pre>
 
 <p>
@@ -717,7 +717,7 @@ HBase Challenges in Practice
 </li>
 <li>reads from memory can return as quickly as 0-3 milliseconds, whereas reads from disk can take as long as 30 milliseconds. 内存读取0-3ms, 磁盘读取在30ms
 </li>
-<li>even when DRAM in the cluster is ~40% the size of the entire database, each node was only capable of serving about 900 reads per second, which is much worse than the 30,000 reads per second attained when all the records fit in DRAM. 
+<li>even when DRAM in the cluster is ~40% the size of the entire database, each node was only capable of serving about 900 reads per second, which is much worse than the 30,000 reads per second attained when all the records fit in DRAM.
 </li>
 <li>This behavior can be a significant problem for the predictability of cluster performance, particularly when it is difficult or impossible to accurately predict the size of the database’s working set at the time the cluster is provisioned. Some workloads are simply too random to be able to characterize a subset of the database as the working set. 难以预测性能，无法预测到哪些数据存在working set
 </li>
@@ -747,7 +747,7 @@ HBase Challenges in Practice
 </ul>
 
 
-<p>       
+<p>
 fusion iomemory 是类似 ssd的东西， <b>操作速度接近DRAM，成本更低但是却能够提供大量的存储空间。</b>
 </p><ul>
 <li>Fusion’s ioMemory platform achieves a more satisfactory balance of capacity and performance, operating at near DRAM speeds but with the persistence required for database storage.
@@ -788,9 +788,9 @@ fusion iomemory 是类似 ssd的东西， <b>操作速度接近DRAM，成本更�
 <div class="outline-text-4" id="text-1-2-1">
 
 <ul>
-<li>scan 'test' 
+<li>scan 'test'
 <ul>
-<li>STARTROW=&gt;'xyz' 
+<li>STARTROW=&gt;'xyz'
 </li>
 <li>ENDROW=&gt;'uvw'
 </li>
@@ -807,7 +807,7 @@ fusion iomemory 是类似 ssd的东西， <b>操作速度接近DRAM，成本更�
 </li>
 <li>create 'test', { NAME=&gt;'cf' }
 </li>
-<li>get 'test', 'rowkey', 
+<li>get 'test', 'rowkey',
 <ul>
 <li>COLUMN = &gt; ['cf:url']
 </li>
@@ -825,7 +825,7 @@ fusion iomemory 是类似 ssd的东西， <b>操作速度接近DRAM，成本更�
 </ul>
 
 </li>
-<li>assign &lt;region_name&gt; 
+<li>assign &lt;region_name&gt;
 <ul>
 <li>如果存在某些region in transition一直没有成功的话，说明这个region一直处于unassigned状态，可以手动assign.
 </li>
@@ -897,14 +897,14 @@ fusion iomemory 是类似 ssd的东西， <b>操作速度接近DRAM，成本更�
 
 
 <pre class="example">Traceback (most recent call last):
-  File "./hbase.py", line 20, in &lt;module&gt;
-    for k,v in iters:
-  File "/usr/local/lib/python2.7/dist-packages/happybase/api.py", line 567, in scan
-    scan_id = client.scannerOpenWithScan(self.name, scan)
-  File "/usr/local/lib/python2.7/dist-packages/happybase/hbase/Hbase.py", line 1716, in scannerOpenWithScan
-    return self.recv_scannerOpenWithScan()
-  File "/usr/local/lib/python2.7/dist-packages/happybase/hbase/Hbase.py", line 1733, in recv_scannerOpenWithScan
-    raise x
+File "./hbase.py", line 20, in &lt;module&gt;
+for k,v in iters:
+File "/usr/local/lib/python2.7/dist-packages/happybase/api.py", line 567, in scan
+scan_id = client.scannerOpenWithScan(self.name, scan)
+File "/usr/local/lib/python2.7/dist-packages/happybase/hbase/Hbase.py", line 1716, in scannerOpenWithScan
+return self.recv_scannerOpenWithScan()
+File "/usr/local/lib/python2.7/dist-packages/happybase/hbase/Hbase.py", line 1733, in recv_scannerOpenWithScan
+raise x
 thrift.Thrift.TApplicationException: Invalid method name: 'scannerOpenWithScan'
 </pre>
 
@@ -949,18 +949,18 @@ thrift.Thrift.TApplicationException: Invalid method name: 'scannerOpenWithScan'
 
 <pre class="example">2013-04-12 06:02:25,978 WARN org.apache.hadoop.ipc.HBaseServer: IPC Server Responder, call multi(org.apache.hadoop.hbase.client.MultiAction@9c31dfd) from 10.11.0.13:25641: output error
 2013-04-12 06:02:25,987 WARN org.apache.hadoop.ipc.HBaseServer: IPC Server handler 18 on 60020 caught: java.nio.channels.ClosedChannelException
-        at sun.nio.ch.SocketChannelImpl.ensureWriteOpen(SocketChannelImpl.java:133)
-        at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:324)
-        at org.apache.hadoop.hbase.ipc.HBaseServer.channelIO(HBaseServer.java:1389)
-        at org.apache.hadoop.hbase.ipc.HBaseServer.channelWrite(HBaseServer.java:1341)
-        at org.apache.hadoop.hbase.ipc.HBaseServer$Responder.processResponse(HBaseServer.java:727)
-        at org.apache.hadoop.hbase.ipc.HBaseServer$Responder.doRespond(HBaseServer.java:792)
-        at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1083)
+at sun.nio.ch.SocketChannelImpl.ensureWriteOpen(SocketChannelImpl.java:133)
+at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:324)
+at org.apache.hadoop.hbase.ipc.HBaseServer.channelIO(HBaseServer.java:1389)
+at org.apache.hadoop.hbase.ipc.HBaseServer.channelWrite(HBaseServer.java:1341)
+at org.apache.hadoop.hbase.ipc.HBaseServer$Responder.processResponse(HBaseServer.java:727)
+at org.apache.hadoop.hbase.ipc.HBaseServer$Responder.doRespond(HBaseServer.java:792)
+at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1083)
 </pre>
 
 
 <p>
-主要原因是client操作超时链接关闭所以有closed channel exception这样的异常。当时这个regionserver在做compaction，造成压力巨大。之后叶总做了balance之后恢复正常。因为这个情况离现在比较久了，所以没有办法很细粒度地从ganglia里面抽取当时集群数据。 
+主要原因是client操作超时链接关闭所以有closed channel exception这样的异常。当时这个regionserver在做compaction，造成压力巨大。之后叶总做了balance之后恢复正常。因为这个情况离现在比较久了，所以没有办法很细粒度地从ganglia里面抽取当时集群数据。
 </p>
 <p>
 <b>这个情况下面需要分析压力巨大的原因。</b> 就我们现在情况来说比较可能是分配region多或者是数据分布不均匀。
@@ -984,10 +984,10 @@ thrift.Thrift.TApplicationException: Invalid method name: 'scannerOpenWithScan'
 <pre class="example">2013-04-12 08:20:36,063 FATAL org.apache.hadoop.hbase.regionserver.HRegionServer: ABORTING region server serverName=dp18.umeng.com,60020,1364871259512, load=(requests=14830, regions=211, used
 Heap=12618, maxHeap=13973): regionserver:60020-0x53c04ec6699f092 regionserver:60020-0x53c04ec6699f092 received expired from ZooKeeper, aborting
 org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired
-        at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.connectionEvent(ZooKeeperWatcher.java:353)
-        at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.process(ZooKeeperWatcher.java:271)
-        at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:531)
-        at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:507)     
+at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.connectionEvent(ZooKeeperWatcher.java:353)
+at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.process(ZooKeeperWatcher.java:271)
+at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:531)
+at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:507)
 </pre>
 
 
@@ -1023,10 +1023,10 @@ tion
 
 <pre class="example">2013-05-16 01:53:46,449 FATAL org.apache.hadoop.hbase.regionserver.HRegionServer: ABORTING region server serverName=dp48.umops.us,60020,1368628743704, load=(requests=0, regions=5, usedHeap=108, maxHeap=13952): regionserver:60020-0x43e6d9fa1317bba-0x43e6d9fa1317bba regionserver:60020-0x43e6d9fa1317bba-0x43e6d9fa1317bba received expired from ZooKeeper, aborting
 org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired
-        at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.connectionEvent(ZooKeeperWatcher.java:353)
-        at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.process(ZooKeeperWatcher.java:271)
-        at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:531)
-        at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:507)
+at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.connectionEvent(ZooKeeperWatcher.java:353)
+at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.process(ZooKeeperWatcher.java:271)
+at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:531)
+at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:507)
 </pre>
 
 <p>
@@ -1044,33 +1044,33 @@ org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = 
 
 
 <pre class="example">2013-04-11 08:07:34,121 ERROR org.apache.hadoop.hbase.regionserver.HRegionServer: Close and delete failed
-org.apache.hadoop.hdfs.server.namenode.LeaseExpiredException: org.apache.hadoop.hdfs.server.namenode.LeaseExpiredException: No lease on /hbase/.logs/dp22.umeng.com,60020,1365284229083/dp22.umeng.com%3A60020.1365638781277 File does 
+org.apache.hadoop.hdfs.server.namenode.LeaseExpiredException: org.apache.hadoop.hdfs.server.namenode.LeaseExpiredException: No lease on /hbase/.logs/dp22.umeng.com,60020,1365284229083/dp22.umeng.com%3A60020.1365638781277 File does
 not exist. [Lease.  Holder: DFSClient_hb_rs_dp22.umeng.com,60020,1365284229083_1365284230001, pendingcreates: 2]
-        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkLease(FSNamesystem.java:1593)
-        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkLease(FSNamesystem.java:1584)
-        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.completeFileInternal(FSNamesystem.java:1639)
-        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.completeFile(FSNamesystem.java:1627)
-        at org.apache.hadoop.hdfs.server.namenode.NameNode.complete(NameNode.java:687)
-        at sun.reflect.GeneratedMethodAccessor25.invoke(Unknown Source)
-        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:597)
-        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:557)
-        at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1434)
-        at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1430)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at javax.security.auth.Subject.doAs(Subject.java:396)
-        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
-        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1428)
+at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkLease(FSNamesystem.java:1593)
+at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkLease(FSNamesystem.java:1584)
+at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.completeFileInternal(FSNamesystem.java:1639)
+at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.completeFile(FSNamesystem.java:1627)
+at org.apache.hadoop.hdfs.server.namenode.NameNode.complete(NameNode.java:687)
+at sun.reflect.GeneratedMethodAccessor25.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:557)
+at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1434)
+at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1430)
+at java.security.AccessController.doPrivileged(Native Method)
+at javax.security.auth.Subject.doAs(Subject.java:396)
+at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
+at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1428)
 
-        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
-        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
-        at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
-        at org.apache.hadoop.hbase.RemoteExceptionHandler.decodeRemoteException(RemoteExceptionHandler.java:96)
-        at org.apache.hadoop.hbase.RemoteExceptionHandler.checkThrowable(RemoteExceptionHandler.java:48)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.closeWAL(HRegionServer.java:795)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.run(HRegionServer.java:664)
-        at java.lang.Thread.run(Thread.java:619)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+at org.apache.hadoop.hbase.RemoteExceptionHandler.decodeRemoteException(RemoteExceptionHandler.java:96)
+at org.apache.hadoop.hbase.RemoteExceptionHandler.checkThrowable(RemoteExceptionHandler.java:48)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.closeWAL(HRegionServer.java:795)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.run(HRegionServer.java:664)
+at java.lang.Thread.run(Thread.java:619)
 </pre>
 
 <p>
@@ -1094,37 +1094,37 @@ not exist. [Lease.  Holder: DFSClient_hb_rs_dp22.umeng.com,60020,1365284229083_1
 
 <pre class="example">2013-05-13 04:10:11,256 FATAL org.apache.hadoop.hbase.regionserver.HRegionServer: ABORTING region server serverName=dp31.umeng.com,60020,1367978709152, load=(requests=55849, regions=158, usedHeap=6520, maxHeap=13962): File System not available
 java.io.IOException: File system is not available
-        at org.apache.hadoop.hbase.util.FSUtils.checkFileSystemAvailable(FSUtils.java:135)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.checkFileSystem(HRegionServer.java:1034)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.cleanup(HRegionServer.java:980)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.cleanup(HRegionServer.java:955)
-        at org.apache.hadoop.hbase.regionserver.HRegionServer.get(HRegionServer.java:1695)
-        at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source)
-        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:597)
-        at org.apache.hadoop.hbase.ipc.HBaseRPC$Server.call(HBaseRPC.java:570)
-        at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1039)
+at org.apache.hadoop.hbase.util.FSUtils.checkFileSystemAvailable(FSUtils.java:135)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.checkFileSystem(HRegionServer.java:1034)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.cleanup(HRegionServer.java:980)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.cleanup(HRegionServer.java:955)
+at org.apache.hadoop.hbase.regionserver.HRegionServer.get(HRegionServer.java:1695)
+at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.hadoop.hbase.ipc.HBaseRPC$Server.call(HBaseRPC.java:570)
+at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:1039)
 Caused by: java.io.IOException: java.lang.InterruptedException
-        at org.apache.hadoop.ipc.Client.call(Client.java:1086)
-        at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:226)
-        at $Proxy5.getFileInfo(Unknown Source)
-        at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
-        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:597)
-        at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
-        at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
-        at $Proxy5.getFileInfo(Unknown Source)
-        at org.apache.hadoop.hdfs.DFSClient.getFileInfo(DFSClient.java:832)
-        at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:558)
-        at org.apache.hadoop.fs.FileSystem.exists(FileSystem.java:797)
-        at org.apache.hadoop.hbase.util.FSUtils.checkFileSystemAvailable(FSUtils.java:124)
-        ... 9 more
+at org.apache.hadoop.ipc.Client.call(Client.java:1086)
+at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:226)
+at $Proxy5.getFileInfo(Unknown Source)
+at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
+at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
+at $Proxy5.getFileInfo(Unknown Source)
+at org.apache.hadoop.hdfs.DFSClient.getFileInfo(DFSClient.java:832)
+at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:558)
+at org.apache.hadoop.fs.FileSystem.exists(FileSystem.java:797)
+at org.apache.hadoop.hbase.util.FSUtils.checkFileSystemAvailable(FSUtils.java:124)
+... 9 more
 Caused by: java.lang.InterruptedException
-        at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1279)
-        at java.util.concurrent.FutureTask$Sync.innerGet(FutureTask.java:218)
-        at java.util.concurrent.FutureTask.get(FutureTask.java:83)
-        at org.apache.hadoop.ipc.Client$Connection.sendParam(Client.java:790)
-        at org.apache.hadoop.ipc.Client.call(Client.java:1080)
+at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1279)
+at java.util.concurrent.FutureTask$Sync.innerGet(FutureTask.java:218)
+at java.util.concurrent.FutureTask.get(FutureTask.java:83)
+at org.apache.hadoop.ipc.Client$Connection.sendParam(Client.java:790)
+at org.apache.hadoop.ipc.Client.call(Client.java:1080)
 2013-05-13 04:11:11,428 INFO org.apache.hadoop.hbase.regionserver.HRegionServer: STOPPED: File System not available
 </pre>
 
@@ -1136,26 +1136,26 @@ Caused by: java.lang.InterruptedException
 
 <pre class="src src-Java">public static void checkFileSystemAvailable(final FileSystem fs)
 throws IOException {
-  if (!(fs instanceof DistributedFileSystem)) {
-    return;
-  }
-  IOException exception = null;
-  DistributedFileSystem dfs = (DistributedFileSystem) fs;
-  try {
-    if (dfs.exists(new Path(<span style="color: #ffff00;">"/"</span>))) {
-      return;
-    }
-  } catch (IOException e) {
-    exception = RemoteExceptionHandler.checkIOException(e);
-  }
-  try {
-    fs.close();
-  } catch (Exception e) {
-      LOG.error(<span style="color: #ffff00;">"file system close failed: "</span>, e);
-  }
-  IOException io = new IOException(<span style="color: #ffff00;">"File system is not available"</span>);
-  io.initCause(exception);
-  throw io;
+if (!(fs instanceof DistributedFileSystem)) {
+return;
+}
+IOException exception = null;
+DistributedFileSystem dfs = (DistributedFileSystem) fs;
+try {
+if (dfs.exists(new Path(<span style="color: #ffff00;">"/"</span>))) {
+return;
+}
+} catch (IOException e) {
+exception = RemoteExceptionHandler.checkIOException(e);
+}
+try {
+fs.close();
+} catch (Exception e) {
+LOG.error(<span style="color: #ffff00;">"file system close failed: "</span>, e);
+}
+IOException io = new IOException(<span style="color: #ffff00;">"File system is not available"</span>);
+io.initCause(exception);
+throw io;
 }
 </pre>
 
@@ -1179,43 +1179,43 @@ GS这里表示generation stamp, 对应的是creation time of file. 从日志里�
 <pre class="example">2013-05-13 01:16:31,881 WARN org.apache.hadoop.hdfs.DFSClient: Error Recovery for block blk_-8113206033894163645_85507011 failed  because recovery from primary datanode 10.11.0.47:50010 failed 4 times.  Pipeline was 10.11.0.47:50010. Will retry...
 2013-05-13 01:16:32,900 WARN org.apache.hadoop.hdfs.DFSClient: Failed recovery attempt #4 from primary datanode 10.11.0.47:50010
 org.apache.hadoop.ipc.RemoteException: org.apache.hadoop.ipc.RemoteException: java.io.IOException: blk_-8113206033894163645_85507011 has out of date GS 85507011 found 85507383, may already be committed
-        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.nextGenerationStampForBlock(FSNamesystem.java:5383)
-        at org.apache.hadoop.hdfs.server.namenode.NameNode.nextGenerationStamp(NameNode.java:717)
-        at sun.reflect.GeneratedMethodAccessor29.invoke(Unknown Source)
-        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:597)
-        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:557)
-        at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1434)
-        at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1430)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at javax.security.auth.Subject.doAs(Subject.java:396)
-        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
-        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1428)
+at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.nextGenerationStampForBlock(FSNamesystem.java:5383)
+at org.apache.hadoop.hdfs.server.namenode.NameNode.nextGenerationStamp(NameNode.java:717)
+at sun.reflect.GeneratedMethodAccessor29.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:557)
+at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1434)
+at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1430)
+at java.security.AccessController.doPrivileged(Native Method)
+at javax.security.auth.Subject.doAs(Subject.java:396)
+at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
+at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1428)
 
-        at org.apache.hadoop.ipc.Client.call(Client.java:1107)
-        at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:226)
-        at $Proxy4.nextGenerationStamp(Unknown Source)
-        at org.apache.hadoop.hdfs.server.datanode.DataNode.syncBlock(DataNode.java:2049)
-        at org.apache.hadoop.hdfs.server.datanode.DataNode.recoverBlock(DataNode.java:2017)
-        at org.apache.hadoop.hdfs.server.datanode.DataNode.recoverBlock(DataNode.java:2097)
-        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-        at java.lang.reflect.Method.invoke(Method.java:597)
-        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:557)
-        at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1434)
-        at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1430)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at javax.security.auth.Subject.doAs(Subject.java:396)
-        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
-        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1428)
+at org.apache.hadoop.ipc.Client.call(Client.java:1107)
+at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:226)
+at $Proxy4.nextGenerationStamp(Unknown Source)
+at org.apache.hadoop.hdfs.server.datanode.DataNode.syncBlock(DataNode.java:2049)
+at org.apache.hadoop.hdfs.server.datanode.DataNode.recoverBlock(DataNode.java:2017)
+at org.apache.hadoop.hdfs.server.datanode.DataNode.recoverBlock(DataNode.java:2097)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+at java.lang.reflect.Method.invoke(Method.java:597)
+at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:557)
+at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1434)
+at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1430)
+at java.security.AccessController.doPrivileged(Native Method)
+at javax.security.auth.Subject.doAs(Subject.java:396)
+at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
+at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1428)
 
-        at org.apache.hadoop.ipc.Client.call(Client.java:1107)
-        at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:226)
-        at $Proxy10.recoverBlock(Unknown Source)
-        at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.processDatanodeError(DFSClient.java:3118)
-        at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$1900(DFSClient.java:2627)
-        at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2799)
+at org.apache.hadoop.ipc.Client.call(Client.java:1107)
+at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:226)
+at $Proxy10.recoverBlock(Unknown Source)
+at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.processDatanodeError(DFSClient.java:3118)
+at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$1900(DFSClient.java:2627)
+at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2799)
 </pre>
 
 
@@ -1241,18 +1241,18 @@ org.apache.hadoop.ipc.RemoteException: org.apache.hadoop.ipc.RemoteException: ja
 
 <pre class="src src-Java">// validate for well-formedness
 private void validatePut(final Put put) throws IllegalArgumentException{
-  if (put.isEmpty()) {
-    throw new IllegalArgumentException(<span style="color: #ffff00;">"No columns to insert"</span>);
-  }
-  if (maxKeyValueSize &gt; 0) {
-    for (List&lt;KeyValue&gt; list : put.getFamilyMap().values()) {
-      for (KeyValue kv : list) {
-        if (kv.getLength() &gt; maxKeyValueSize) {
-          throw new IllegalArgumentException(<span style="color: #ffff00;">"KeyValue size too large"</span>);
-        }
-      }
-    }
-  }
+if (put.isEmpty()) {
+throw new IllegalArgumentException(<span style="color: #ffff00;">"No columns to insert"</span>);
+}
+if (maxKeyValueSize &gt; 0) {
+for (List&lt;KeyValue&gt; list : put.getFamilyMap().values()) {
+for (KeyValue kv : list) {
+if (kv.getLength() &gt; maxKeyValueSize) {
+throw new IllegalArgumentException(<span style="color: #ffff00;">"KeyValue size too large"</span>);
+}
+}
+}
+}
 }
 </pre>
 
@@ -1272,17 +1272,17 @@ private void validatePut(final Put put) throws IllegalArgumentException{
 
 
 <pre class="src src-Java">public static Configuration addHbaseResources(Configuration conf) {
-  conf.addResource(<span style="color: #ffff00;">"hbase-default.xml"</span>);
-  conf.addResource(<span style="color: #ffff00;">"hbase-site.xml"</span>);
+conf.addResource(<span style="color: #ffff00;">"hbase-default.xml"</span>);
+conf.addResource(<span style="color: #ffff00;">"hbase-site.xml"</span>);
 
-  checkDefaultsVersion(conf);
-  checkForClusterFreeMemoryLimit(conf);
-  return conf;
+checkDefaultsVersion(conf);
+checkForClusterFreeMemoryLimit(conf);
+return conf;
 }
 </pre>
 
 <p>
- 可以看到加载了hbase-default.xml这个文件。这个文件是在hbase package自带的，默认值为10485760 = 10M
+可以看到加载了hbase-default.xml这个文件。这个文件是在hbase package自带的，默认值为10485760 = 10M
 </p>
 </div>
 
@@ -1298,14 +1298,14 @@ private void validatePut(final Put put) throws IllegalArgumentException{
 
 
 <pre class="src src-Java">private void doPut(final List&lt;Put&gt; puts) throws IOException {
-  for (Put put : puts) {
-    validatePut(put);
-    writeBuffer.add(put);
-    currentWriteBufferSize += put.heapSize();
-  }
-  if (autoFlush || currentWriteBufferSize &gt; writeBufferSize) {
-    flushCommits();
-  }
+for (Put put : puts) {
+validatePut(put);
+writeBuffer.add(put);
+currentWriteBufferSize += put.heapSize();
+}
+if (autoFlush || currentWriteBufferSize &gt; writeBufferSize) {
+flushCommits();
+}
 }
 </pre>
 
@@ -1317,20 +1317,20 @@ private void validatePut(final Put put) throws IllegalArgumentException{
 
 
 <pre class="src src-Java">public void flushCommits() throws IOException {
-  try {
-    connection.processBatchOfPuts(writeBuffer, tableName, pool);
-  } finally {
-    if (clearBufferOnFail) {
-      writeBuffer.clear();
-      currentWriteBufferSize = 0;
-    } else {
-      // the write buffer was adjusted by processBatchOfPuts
-      currentWriteBufferSize = 0;
-      for (Put aPut : writeBuffer) {
-        currentWriteBufferSize += aPut.heapSize();
-      }
-    }
-  }
+try {
+connection.processBatchOfPuts(writeBuffer, tableName, pool);
+} finally {
+if (clearBufferOnFail) {
+writeBuffer.clear();
+currentWriteBufferSize = 0;
+} else {
+// the write buffer was adjusted by processBatchOfPuts
+currentWriteBufferSize = 0;
+for (Put aPut : writeBuffer) {
+currentWriteBufferSize += aPut.heapSize();
+}
+}
+}
 }
 </pre>
 
@@ -1342,25 +1342,25 @@ connection是一个virtual class,HConnection,默认实现是HConnectionImplement
 
 
 <pre class="src src-Java">public void processBatchOfPuts(List&lt;Put&gt; list,
-    final byte[] tableName,
-    ExecutorService pool) throws IOException {
-  Object[] results = new Object[list.size()];
-  try {
-    processBatch((List) list, tableName, pool, results);
-  } catch (InterruptedException e) {
-    throw new IOException(e);
-  } finally {
+final byte[] tableName,
+ExecutorService pool) throws IOException {
+Object[] results = new Object[list.size()];
+try {
+processBatch((List) list, tableName, pool, results);
+} catch (InterruptedException e) {
+throw new IOException(e);
+} finally {
 
-    // mutate list so that it is empty for complete success, or contains only failed records
-    // results are returned in the same order as the requests in list
-    // walk the list backwards, so we can remove from list without impacting the indexes of earlier members
-    for (int i = results.length - 1; i&gt;=0; i--) {
-      if (results[i] instanceof Result) {
-        // successful Puts are removed from the list here.
-        list.remove(i);
-      }
-    }
-  }
+// mutate list so that it is empty for complete success, or contains only failed records
+// results are returned in the same order as the requests in list
+// walk the list backwards, so we can remove from list without impacting the indexes of earlier members
+for (int i = results.length - 1; i&gt;=0; i--) {
+if (results[i] instanceof Result) {
+// successful Puts are removed from the list here.
+list.remove(i);
+}
+}
+}
 }
 </pre>
 
@@ -1405,12 +1405,12 @@ processBatch代码比较冗长，大致意思如下：
 
 
 <pre class="src src-Java">public static Configuration addHbaseResources(Configuration conf) {
-  conf.addResource(<span style="color: #ffff00;">"hbase-default.xml"</span>);
-  conf.addResource(<span style="color: #ffff00;">"hbase-site.xml"</span>);
+conf.addResource(<span style="color: #ffff00;">"hbase-default.xml"</span>);
+conf.addResource(<span style="color: #ffff00;">"hbase-site.xml"</span>);
 
-  checkDefaultsVersion(conf);
-  checkForClusterFreeMemoryLimit(conf);
-  return conf;
+checkDefaultsVersion(conf);
+checkForClusterFreeMemoryLimit(conf);
+return conf;
 }
 </pre>
 
@@ -1465,36 +1465,36 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>hbase.rootdir
 <ul>
-<li>The directory shared by region servers and into which HBase persists. The URL should be 'fully-qualified' to include the filesystem scheme. 
+<li>The directory shared by region servers and into which HBase persists. The URL should be 'fully-qualified' to include the filesystem scheme.
 </li>
 <li>Default: <a href="file:////tmp/hbase-${user.name}/hbase">///tmp/hbase-${user.name}/hbase</a>
 </li>
 </ul>
 
 </li>
-<li>hbase.cluster.distributed 
+<li>hbase.cluster.distributed
 <ul>
-<li>standalone(hbase and zk in one JVM) or distributed mode. 
+<li>standalone(hbase and zk in one JVM) or distributed mode.
 </li>
 <li>Default: false
 </li>
 </ul>
 
 </li>
-<li>hbase.tmp.dir 
+<li>hbase.tmp.dir
 <ul>
-<li>Temporary directory on the local filesystem. 
+<li>Temporary directory on the local filesystem.
 </li>
 <li>TODO(dirlt):hbase为什么需要local filesystem?
 </li>
-<li>Default: ${java.io.tmpdir}/hbase-${user.name} 
+<li>Default: ${java.io.tmpdir}/hbase-${user.name}
 </li>
 </ul>
 
 </li>
-<li>hbase.local.dir 
+<li>hbase.local.dir
 <ul>
-<li>Directory on the local filesystem to be used as a local storage. 
+<li>Directory on the local filesystem to be used as a local storage.
 </li>
 <li>Default: ${hbase.tmp.dir}/local/
 </li>
@@ -1512,9 +1512,9 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>hbase.offheapcache.percentage
 <ul>
-<li>使用heap cache的百分比（好像这个cache是会放在disk上的） 
+<li>使用heap cache的百分比（好像这个cache是会放在disk上的）
 </li>
-<li>The amount of off heap space to be allocated towards the experimental off heap cache. 
+<li>The amount of off heap space to be allocated towards the experimental off heap cache.
 </li>
 <li>If you desire the cache to be disabled, simply set this value to 0.
 </li>
@@ -1535,7 +1535,7 @@ processBatch代码比较冗长，大致意思如下：
 <div class="outline-text-4" id="text-1-5-2">
 
 <ul>
-<li>hbase.master.port 
+<li>hbase.master.port
 <ul>
 <li>Default: 60000
 </li>
@@ -1574,22 +1574,22 @@ processBatch代码比较冗长，大致意思如下：
 </ul>
 
 </li>
-<li><b>hbase.balancer.period</b> 
+<li><b>hbase.balancer.period</b>
 <ul>
 <li>多长时间进行balance
 </li>
-<li>Period at which the region balancer runs in the Master. 
+<li>Period at which the region balancer runs in the Master.
 </li>
 <li>Default: 300000(ms)=5min
 </li>
 </ul>
 
 </li>
-<li><b>hbase.regions.slop</b> 
+<li><b>hbase.regions.slop</b>
 <ul>
 <li>触发balance的倾斜度
 </li>
-<li>Rebalance if any regionserver has average + (average * slop) regions. Default is 20% slop. 
+<li>Rebalance if any regionserver has average + (average * slop) regions. Default is 20% slop.
 </li>
 <li>Default: 0.2
 </li>
@@ -1624,7 +1624,7 @@ processBatch代码比较冗长，大致意思如下：
 <div class="outline-text-4" id="text-1-5-3">
 
 <ul>
-<li>hbase.regionserver.port 
+<li>hbase.regionserver.port
 <ul>
 <li>Default: 60020
 </li>
@@ -1638,9 +1638,9 @@ processBatch代码比较冗长，大致意思如下：
 </ul>
 
 </li>
-<li>hbase.regionserver.info.port.auto 
+<li>hbase.regionserver.info.port.auto
 <ul>
-<li>Enables automatic port search if hbase.regionserver.info.port is already in use. 
+<li>Enables automatic port search if hbase.regionserver.info.port is already in use.
 </li>
 <li>Default: false
 </li>
@@ -1658,24 +1658,24 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>rs和master的RPC线程数目
 <ul>
-<li>The default of 10 is rather low in order to prevent users from killing their region servers when using large write buffers with a high number of concurrent clients. 
+<li>The default of 10 is rather low in order to prevent users from killing their region servers when using large write buffers with a high number of concurrent clients.
 </li>
 <li>The rule of thumb is to keep this number low when the payload per request approaches the MB (big puts, scans using a large cache) and high when the payload is small (gets, small puts, ICVs, deletes).
 </li>
 <li>It is safe to set that number to the maximum number of incoming clients if their payload is small, the typical example being a cluster that serves a website since puts aren't typically buffered and most of the operations are gets. （对于gets等website操作的话比较适合调高，因为每次payload都比较小）
 </li>
-<li>The reason why it is dangerous to keep this setting high is that the aggregate size of all the puts that are currently happening in a region server may impose too much pressure on its memory, or even trigger an OutOfMemoryError. （而对于大量put以及scan这样操作的话比较适合调低，以防止对内存造成巨大压力） 
+<li>The reason why it is dangerous to keep this setting high is that the aggregate size of all the puts that are currently happening in a region server may impose too much pressure on its memory, or even trigger an OutOfMemoryError. （而对于大量put以及scan这样操作的话比较适合调低，以防止对内存造成巨大压力）
 </li>
-<li>A region server running on low memory will trigger its JVM's garbage collector to run more frequently up to a point where GC pauses become noticeable (the reason being that all the memory used to keep all the requests' payloads cannot be trashed, no matter how hard the garbage collector tries). 
+<li>A region server running on low memory will trigger its JVM's garbage collector to run more frequently up to a point where GC pauses become noticeable (the reason being that all the memory used to keep all the requests' payloads cannot be trashed, no matter how hard the garbage collector tries).
 </li>
 <li>After some time, the overall cluster throughput is affected since every request that hits that region server will take longer, which exacerbates the problem even more.
 </li>
-<li>可以通过做RPC-level logging来判断线程数目是多是少。 
+<li>可以通过做RPC-level logging来判断线程数目是多是少。
 </li>
 </ul>
 
 </li>
-<li>Count of RPC Listener instances spun up on RegionServers. Same property is used by the Master for count of master handlers. 
+<li>Count of RPC Listener instances spun up on RegionServers. Same property is used by the Master for count of master handlers.
 </li>
 <li>Default: 10
 </li>
@@ -1686,9 +1686,9 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>TODO（dirlt）：bulk load ？？？
 </li>
-<li>This is maximum number of iterations to atomic bulk loads are attempted in the face of splitting operations 0 means never give up. 
+<li>This is maximum number of iterations to atomic bulk loads are attempted in the face of splitting operations 0 means never give up.
 </li>
-<li>Default: 0. 
+<li>Default: 0.
 </li>
 </ul>
 
@@ -1708,7 +1708,7 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>sync hlog到hdfs时间间隔，如果在这段时间内没有足够的entry来做sync的话 TODO(dirlt):这里的entry是不是edit?
 </li>
-<li>Sync the HLog to the HDFS after this interval if it has not accumulated enough entries to trigger a sync. 
+<li>Sync the HLog to the HDFS after this interval if it has not accumulated enough entries to trigger a sync.
 </li>
 <li>Default: 1000(ms)
 </li>
@@ -1723,7 +1723,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>Default is set to MAX_INT; i.e. do not block splitting.
 </li>
-<li>Default: 2147483647 
+<li>Default: 2147483647
 </li>
 </ul>
 
@@ -1743,7 +1743,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>The number of consecutive WAL close errors we will allow before triggering a server abort.
 </li>
-<li>A setting of 0 will cause the region server to abort if closing the current WAL writer fails during log rolling. 
+<li>A setting of 0 will cause the region server to abort if closing the current WAL writer fails during log rolling.
 </li>
 <li>Even a small value (2 or 3) will allow a region server to ride over transient HDFS errors.
 </li>
@@ -1823,7 +1823,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.server.thread.wakefrequency</b>
 <ul>
-<li>每隔一段时间去检查有什么例行任务需要完成，或者是做major compaction等。 
+<li>每隔一段时间去检查有什么例行任务需要完成，或者是做major compaction等。
 </li>
 <li>Time to sleep in between searches for work (in milliseconds). Used as sleep interval by service threads such as log roller.
 </li>
@@ -1836,9 +1836,9 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>写version file的尝试次数，并且每隔一段时间会尝试写 TODO（dirlt）：what‘s version file？
 </li>
-<li>How many time to retry attempting to write a version file before just aborting. 
+<li>How many time to retry attempting to write a version file before just aborting.
 </li>
-<li>Each attempt is seperated by the hbase.server.thread.wakefrequency milliseconds. 
+<li>Each attempt is seperated by the hbase.server.thread.wakefrequency milliseconds.
 </li>
 <li>Default: 3
 </li>
@@ -1864,7 +1864,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>Memstore will be flushed to disk if size of the memstore exceeds this number of bytes.
 </li>
-<li>Value is checked by a thread that runs every hbase.server.thread.wakefrequency. 
+<li>Value is checked by a thread that runs every hbase.server.thread.wakefrequency.
 </li>
 <li>Default: 134217728
 </li>
@@ -1875,7 +1875,7 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>preclose可能是预先将一部分的数据刷到磁盘上面，这样在close memstore过程中就非常快
 </li>
-<li>If the memstores in a region are this size or larger when we go to close, run a "pre-flush" to clear out memstores before we put up the region closed flag and take the region offline. 
+<li>If the memstores in a region are this size or larger when we go to close, run a "pre-flush" to clear out memstores before we put up the region closed flag and take the region offline.
 </li>
 <li>The preflush is meant to clean out the bulk of the memstore before putting up the close flag and taking the region offline so the flush that runs under the close flag has little to do.
 </li>
@@ -1886,7 +1886,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.hregion.memstore.block.multiplier</b>
 <ul>
-<li>超过大小的话那么会阻塞update TODO(dirlt):为什么会出现这种情况？ 
+<li>超过大小的话那么会阻塞update TODO(dirlt):为什么会出现这种情况？
 </li>
 <li>Block updates if memstore has hbase.hregion.block.memstore.multiplier time hbase.hregion.flush.size bytes.
 </li>
@@ -1899,7 +1899,7 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>TODO(dirlt):what's mslab?
 </li>
-<li>Enables the MemStore-Local Allocation Buffer, a feature which works to prevent heap fragmentation under heavy write loads. 
+<li>Enables the MemStore-Local Allocation Buffer, a feature which works to prevent heap fragmentation under heavy write loads.
 </li>
 <li>This can reduce the frequency of stop-the-world GC pauses on large heaps.
 </li>
@@ -1910,11 +1910,11 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.hregion.max.filesize</b>
 <ul>
-<li>如果一个regionserver上面column family的hstorefiles大小总和过大的话，那么就会进行splitting 
+<li>如果一个regionserver上面column family的hstorefiles大小总和过大的话，那么就会进行splitting
 </li>
 <li>For the 0.90.x codebase, the upper-bound of regionsize is about 4Gb, with a default of 256Mb. For 0.92.x codebase, due to the HFile v2 change much larger regionsizes can be supported (e.g., 20Gb). 对于0.90.x来说regionsize上界就是4GB，高版本更大的regionsize被支持。
 </li>
-<li>Maximum HStoreFile size. If any one of a column families' HStoreFiles has grown to exceed this value, the hosting HRegion is split in two. 
+<li>Maximum HStoreFile size. If any one of a column families' HStoreFiles has grown to exceed this value, the hosting HRegion is split in two.
 </li>
 <li>Default: 10737418240(10G)
 </li>
@@ -1945,9 +1945,9 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.hstore.blockingWaitTime</b>
 <ul>
-<li>如果超过这些时间之后，那么HRegion将不会阻塞update. 
+<li>如果超过这些时间之后，那么HRegion将不会阻塞update.
 </li>
-<li>The time an HRegion will block updates for after hitting the StoreFile limit defined by hbase.hstore.blockingStoreFiles. 
+<li>The time an HRegion will block updates for after hitting the StoreFile limit defined by hbase.hstore.blockingStoreFiles.
 </li>
 <li>After this time has elapsed, the HRegion will stop blocking updates even if a compaction has not been completed. Default: 90 seconds.
 </li>
@@ -1969,7 +1969,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.hregion.majorcompaction</b>
 <ul>
-<li>两次做major compaction的间隔 
+<li>两次做major compaction的间隔
 </li>
 <li>The time (in miliseconds) between 'major' compactions of all HStoreFiles in a region.
 </li>
@@ -2002,7 +2002,7 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>HFile/StoreFile分配多少内存作为block cache.
 </li>
-<li>Percentage of maximum heap (-Xmx setting) to allocate to block cache used by HFile/StoreFile. 
+<li>Percentage of maximum heap (-Xmx setting) to allocate to block cache used by HFile/StoreFile.
 </li>
 <li>Set to 0 to disable but it's not recommended.
 </li>
@@ -2015,7 +2015,7 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>用于bloom filter的hash算法
 </li>
-<li>The hashing algorithm for use in HashFunction. 
+<li>The hashing algorithm for use in HashFunction.
 </li>
 <li>Two values are supported now: murmur (MurmurHash) and jenkins (JenkinsHash). Used by bloom filters.
 </li>
@@ -2026,7 +2026,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>hfile.format.version
 <ul>
-<li>HFile的格式版本号，用于处理兼容性问题。 
+<li>HFile的格式版本号，用于处理兼容性问题。
 </li>
 <li>The HFile format version to use for new files. Set this to 1 to test backwards-compatibility. The default value of this option should be consistent with FixedFileTrailer.MAX_VERSION.
 </li>
@@ -2037,7 +2037,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>io.storefile.bloom.block.size</b>
 <ul>
-<li>HFile block大小，这个大小包括data + bloom filter. 
+<li>HFile block大小，这个大小包括data + bloom filter.
 </li>
 <li>The size in bytes of a single block ("chunk") of a compound Bloom filter.
 </li>
@@ -2066,7 +2066,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>hbase.data.umask.enable
 <ul>
-<li>regionserver是否使用umask来决定文件权限 
+<li>regionserver是否使用umask来决定文件权限
 </li>
 <li>Enable, if true, that file permissions should be assigned to the files written by the regionserver
 </li>
@@ -2086,9 +2086,9 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.rpc.timeout</b>
 <ul>
-<li>用来估计client rpc timeout时间 
+<li>用来估计client rpc timeout时间
 </li>
-<li>This is for the RPC layer to define how long HBase client applications take for a remote call to time out. 
+<li>This is for the RPC layer to define how long HBase client applications take for a remote call to time out.
 </li>
 <li>It uses pings to check connections but will eventually throw a TimeoutException. The default value is 60000ms(60s).
 </li>
@@ -2101,9 +2101,9 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>多长时间检查一次是否需要做compaction.(major compaction)
 </li>
-<li>The number that determines how often we scan to see if compaction is necessary. 
+<li>The number that determines how often we scan to see if compaction is necessary.
 </li>
-<li>Normally, compactions are done after some events (such as memstore flush), but if region didn't receive a lot of writes for some time, or due to different compaction policies, it may be necessary to check it periodically. 
+<li>Normally, compactions are done after some events (such as memstore flush), but if region didn't receive a lot of writes for some time, or due to different compaction policies, it may be necessary to check it periodically.
 </li>
 <li>The interval between checks is hbase.server.compactchecker.interval.multiplier multiplied by hbase.server.thread.wakefrequency.
 </li>
@@ -2124,29 +2124,29 @@ processBatch代码比较冗长，大致意思如下：
 <div class="outline-text-4" id="text-1-5-4">
 
 <ul>
-<li>hbase.client.write.buffer 
+<li>hbase.client.write.buffer
 <ul>
-<li>HTable client writer buffer in bytes. 
+<li>HTable client writer buffer in bytes.
 </li>
 <li>Default: 2097152 = 2M
 </li>
-<li>A bigger buffer takes more memory &ndash; on both the client and server side since server instantiates the passed write buffer to process it &ndash; but a larger buffer size reduces the number of RPCs made. 
+<li>A bigger buffer takes more memory &ndash; on both the client and server side since server instantiates the passed write buffer to process it &ndash; but a larger buffer size reduces the number of RPCs made.
 </li>
 <li>For an estimate of server-side memory-used, evaluate hbase.client.write.buffer * hbase.regionserver.handler.count <b>用来估计handler.count以及server memory used</b>
 </li>
 </ul>
 
 </li>
-<li>hbase.client.pause 
+<li>hbase.client.pause
 <ul>
 <li>General client pause value. Used mostly as value to wait before running a retry of a failed get, region lookup, etc.  <b>client retry之间的pause时间</b>
 </li>
-<li>Default: 1000 
+<li>Default: 1000
 </li>
 </ul>
 
 </li>
-<li>hbase.client.retries.number 
+<li>hbase.client.retries.number
 <ul>
 <li>Default: 10
 </li>
@@ -2157,7 +2157,7 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>Number of rows that will be fetched when calling next on a scanner <b>每次scanner取出的row number</b>
 </li>
-<li>Default: 100 
+<li>Default: 100
 </li>
 <li>Do not set this value such that the time between invocations is greater than the scanner timeout; i.e. hbase.client.scanner.timeout.period  <b>但是需要注意两次操作之间不要超时</b>
 </li>
@@ -2166,14 +2166,14 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>hbase.client.keyvalue.maxsize
 <ul>
-<li>Specifies the combined maximum allowed size of a KeyValue instance. Setting it to zero or less disables the check. 
+<li>Specifies the combined maximum allowed size of a KeyValue instance. Setting it to zero or less disables the check.
 </li>
 <li>Default: 10485760 = 10MB
 </li>
 </ul>
 
 </li>
-<li>hbase.client.scanner.timeout.period 
+<li>hbase.client.scanner.timeout.period
 <ul>
 <li>Client scanner lease period in milliseconds. <b>scanner两次操作之间的lease时长</b>
 </li>
@@ -2223,7 +2223,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>zookeeper.session.timeout</b>
 <ul>
-<li>zookeeper的session超时时间. 这个参数一方面涉及到hmaster多久发现regionserver挂掉，另外一方面也设计到regionserver本身做GC会和zookeeper比较长时间没有通信。 
+<li>zookeeper的session超时时间. 这个参数一方面涉及到hmaster多久发现regionserver挂掉，另外一方面也设计到regionserver本身做GC会和zookeeper比较长时间没有通信。
 </li>
 <li>ZooKeeper session timeout. HBase passes this to the zk quorum as suggested maximum time for a session
 </li>
@@ -2256,7 +2256,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.zookeeper.quorum</b>
 <ul>
-<li>Comma separated list of servers in the ZooKeeper Quorum. 
+<li>Comma separated list of servers in the ZooKeeper Quorum.
 </li>
 <li>"host1.mydomain.com,host2.mydomain.com,host3.mydomain.com".
 </li>
@@ -2267,7 +2267,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.zookeeper.peerport</b>
 <ul>
-<li>Port used by ZooKeeper peers to talk to each other. 
+<li>Port used by ZooKeeper peers to talk to each other.
 </li>
 <li>Default: 2888
 </li>
@@ -2278,7 +2278,7 @@ processBatch代码比较冗长，大致意思如下：
 <ul>
 <li>Port used by ZooKeeper for leader election.
 </li>
-<li>Default: 
+<li>Default:
 </li>
 </ul>
 
@@ -2312,7 +2312,7 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li><b>hbase.zookeeper.property.clientPort</b>
 <ul>
-<li>client链接zookeeper的port 
+<li>client链接zookeeper的port
 </li>
 <li>Property from ZooKeeper's config zoo.cfg. The port at which the clients will connect.
 </li>
@@ -2369,13 +2369,13 @@ processBatch代码比较冗长，大致意思如下：
 </li>
 <li>Read/write performance（读写性能）. You have to understand what your application's access patterns look like. Are you designing something that is written to a few times, but read much more often? Or are you expecting an equal load between reads and writes? Or are you taking in a lot of writes and just a few reads? Does it support range scans or is better suited doing random reads? Some of the available systems are advantageous for only one of these operations, while others may do well in all of them.
 </li>
-<li>Secondary indexes（二级索引）. Secondary indexes allow you to sort and access tables based on different fields and sorting orders. The options here range from systems that have absolutely no secondary indexes and no guaranteed sorting order (like a HashMap, i.e., you need to know the keys) to some that weakly support them, all the way to those that offer them out-of-the-box. Can your application cope, or emulate, if this feature is missing? 
+<li>Secondary indexes（二级索引）. Secondary indexes allow you to sort and access tables based on different fields and sorting orders. The options here range from systems that have absolutely no secondary indexes and no guaranteed sorting order (like a HashMap, i.e., you need to know the keys) to some that weakly support them, all the way to those that offer them out-of-the-box. Can your application cope, or emulate, if this feature is missing?
 </li>
 <li>Failure handling（失败处理）. It is a fact that machines crash, and you need to have a mitigation plan in place that addresses machine failures (also refer to the discussion of the CAP theorem in Consistency Models). How does each data store handle server failures? Is it able to continue operating? This is related to the "Consistency model" dimension above, as losing a machine may cause holes in your data store, or even worse, make it completely unavailable. And if you are replacing the server, how easy will it be to get back to 100% operational? Another scenario is decommissioning a server in a clustered setup, which would most likely be handled the same way.
 </li>
-<li>Compression（压缩）. When you have to store terabytes of data, especially of the kind that consists of prose or human readable text, it is advantageous to be able to compress the data to gain substantial savings in required raw storage. Some compression algorithms can achieve a 10:1 reduction in storage space needed. Is the compression method pluggable? What types are available? 
+<li>Compression（压缩）. When you have to store terabytes of data, especially of the kind that consists of prose or human readable text, it is advantageous to be able to compress the data to gain substantial savings in required raw storage. Some compression algorithms can achieve a 10:1 reduction in storage space needed. Is the compression method pluggable? What types are available?
 </li>
-<li>Load balancing（负载均衡）. Given that you have a high read or write rate, you may want to invest into a storage system that transparently balances itself while the load shifts over time. It may not be the full answer to your problems, but may help you to ease into a high throughput application design. 
+<li>Load balancing（负载均衡）. Given that you have a high read or write rate, you may want to invest into a storage system that transparently balances itself while the load shifts over time. It may not be the full answer to your problems, but may help you to ease into a high throughput application design.
 </li>
 <li>Atomic Read-Modify-Write（原子读修改写操作）. While RDBMSs offer you a lot of these operations directly (because you are talking to a central, single server), it can be more difficult to achieve in distributed systems. They allow you to prevent race conditions in multi-threaded or shared-nothing application server design. Having these compare and swap (CAS) or check and set operations available can reduce client-side complexity. Locking, waits and deadlocks It is a known fact that complex transactional processing, like 2-phase commits, can increase the possibility of multiple clients waiting for a resource to become available. In a worst-case scenario, this can lead to deadlocks, which are hard to resolve. What kind of locking model does the system you are looking at support? Can it be free of waits and therefore deadlocks?
 </li>
@@ -2386,7 +2386,7 @@ processBatch代码比较冗长，大致意思如下：
 There is also the option to run client-supplied code in the address space of the server. The server-side framework to support this is called Coprocessors. The code has access to the server local data and can be used to implement light-weight batch jobs, or use expressions to analyze or summarize data based on a variety of operators. Coprocessors were added to HBase in version 0.91.0（coprocess是允许在server部分执行的代码，主要的功能是用来帮助hbase开发者能够做一些灵活的扩展而不需要重新编译代码）
 </p>
 <p>
-Since flushing memstores to disk causes more and more HFile's to be created, HBase has a housekeeping mechanism that merges the files into larger ones using compactions. There are two types of compaction: minor compactions and major compactions. 
+Since flushing memstores to disk causes more and more HFile's to be created, HBase has a housekeeping mechanism that merges the files into larger ones using compactions. There are two types of compaction: minor compactions and major compactions.
 </p><ul>
 <li>The former reduce the number of storage files by rewriting smaller files into fewer but larger ones, performing an n-way merge. Since all the data is already sorted in each HFile, that merge is fast and bound only by disk IO performance.
 </li>
@@ -2494,7 +2494,7 @@ It is recommended to optimize your RAM for the memory channel width of your serv
 <p>The data is stored on the slave machines and therefore it is those servers that need plenty of capacity. Depending if you are more read/write or processing oriented you need to balance the number of disks with the number of CPU cores available. Typically you should have at least one core per disk, so in an 8 core server adding 6 disks is good, but adding more might not be giving you the optimal performance.（磁盘数量最好不要超过CPU core数目）
 </p>
 <p>
-For the slaves you should not use RAID but rather what is called JBOD. For the master nodes on the other hand it does make sense to use a RAID disk setup to protect the crucial file system data. A common configuration is RAID 1+0, or RAID 0+1. For both servers though, make sure to use disks with RAID firmware. The difference between these and consumer grade disks is the RAID firmware will fail fast if there is a hardware error, thus not freezing the DataNode in disk wait for a long time.（slave节点使用JBOD,master节点使用RAID,并且使用RAID firmware来尽快检测硬件损坏） 
+For the slaves you should not use RAID but rather what is called JBOD. For the master nodes on the other hand it does make sense to use a RAID disk setup to protect the crucial file system data. A common configuration is RAID 1+0, or RAID 0+1. For both servers though, make sure to use disks with RAID firmware. The difference between these and consumer grade disks is the RAID firmware will fail fast if there is a hardware error, thus not freezing the DataNode in disk wait for a long time.（slave节点使用JBOD,master节点使用RAID,并且使用RAID firmware来尽快检测硬件损坏）
 </p>
 <p>
 Some consideration should go into the type of drives, for example 2.5" or 3.5" drives or SATA vs. SAS. In general SATA drives are recommended over SAS since they are more cost effective, and since the nodes are all redundantly storing replicas of the data across multiple servers you can safely use the more affordable disks. 3.5" disks on the other hand are more reliable compared to 2.5" disks but depending on the server chassis you may need to go with the later.
@@ -2510,7 +2510,7 @@ The disk capacity is usually 1TB per disk but you can also use 2TB drives if nec
 <h6 id="sec-1-6-3-1-4"><span class="section-number-6">1.6.3.1.4</span> Chassis</h6>
 <div class="outline-text-6" id="text-1-6-3-1-4">
 
-<p>The actual server chassis is not that crucial, most servers in a specific price bracket provide very similar features. <b>It is often better to shy away from special hardware that offers proprietary functionality but opt for the generic servers so that they can be easily combined over time as you extend the capacity of the cluster</b> 
+<p>The actual server chassis is not that crucial, most servers in a specific price bracket provide very similar features. <b>It is often better to shy away from special hardware that offers proprietary functionality but opt for the generic servers so that they can be easily combined over time as you extend the capacity of the cluster</b>
 </p>
 <p>
 As far as networking is concerned, it is recommended to use a two port Gigabit Ethernet card - or two channel-bonded cards. If you have already support for 10 Gigabit Ethernet or Infiniband then you should use it.（双口千兆网卡？？？）
@@ -2539,10 +2539,10 @@ In a data center servers are typically mounted into 19" racks or cabinets with 4
 Switches often have 24 or 48 ports and with the above channel-bonding or two port cards you need to size the networking large enough to provide enough bandwidth. Installing 40 1U servers would need 80 network ports then, so in practice you may need a staggered setup where you use multiple rack switches and then aggregate to a much larger core aggregation switch (abbreviated as CaS). This results in a two tier architecture, where the distribution is handled by the ToR switch and the aggregation by the CaS
 </p>
 <p>
-While we cannot address all the considerations for large scale setups we can still notice that this is a common design pattern. Given the operations team is part of the planning, and it is known how much data is going to be stored and how many clients are expected to read and write concurrently, this involves basic math to compute the amount of servers needed - which also drives the networking considerations. 
+While we cannot address all the considerations for large scale setups we can still notice that this is a common design pattern. Given the operations team is part of the planning, and it is known how much data is going to be stored and how many clients are expected to read and write concurrently, this involves basic math to compute the amount of servers needed - which also drives the networking considerations.
 </p>
 <p>
-When users have reported issues with HBase on the public mailing list or on other channels, especially slower than expected IO performance bulk inserting huge amounts of data it became clear that networking was either the main or a contribution issue. This ranges from misconfigured or faulty network interface cards (NICs) to completely oversubscribed switches in the IO path. Please make sure to verify every component in the cluster to avoid sudden operational problems - the kind that could have been avoided by sizing the hardware appropriately. 
+When users have reported issues with HBase on the public mailing list or on other channels, especially slower than expected IO performance bulk inserting huge amounts of data it became clear that networking was either the main or a contribution issue. This ranges from misconfigured or faulty network interface cards (NICs) to completely oversubscribed switches in the IO path. Please make sure to verify every component in the cluster to avoid sudden operational problems - the kind that could have been avoided by sizing the hardware appropriately.
 </p>
 <p>
 Finally, given the current status of built-in security into Hadoop and HBase, it is common for the entire cluster to be located in its own network, possibly protected by a firewall to control access to the few required, client-facing ports.
@@ -2769,13 +2769,13 @@ Finally, given the current status of built-in security into Hadoop and HBase, it
 <ul>
 <li>And here is the kicker: HDFS is smart enough to put the data where it is needed! It has a block placement policy in place that enforces all blocks to be written first on a colocated server. The receiving data node compares the server name of the writer with its own, and if they match the block is written to the local file system. Then a replica is sent to a server within the same rack, and another to a remote rack - assuming you are using rack awareness in HDFS. If not then the additional copies get placed on the least loaded data node in the cluster.（HDFS文件在写的时候已经可以感知尽量将数据写在和client比较近的位置上面）
 </li>
-<li>This means for HBase that if the region server stays up for long enough (which is what you want) that after a major compaction on all tables - which can be invoked manually or is triggered by a configuration setting - it has the files local on the same host. The data node that shares the same physical host has a copy of all data the region server requires. If you are running a scan or get or any other use-case you can be sure to get the best performance.（如果做compaction之后，所有的文件都尽量地写在服务的region serve上面并且通常不会出现变化，所以可以这样说基本上region server服务的数据在本地磁盘上都存在。所以这样达到的性能是比较好的） 
+<li>This means for HBase that if the region server stays up for long enough (which is what you want) that after a major compaction on all tables - which can be invoked manually or is triggered by a configuration setting - it has the files local on the same host. The data node that shares the same physical host has a copy of all data the region server requires. If you are running a scan or get or any other use-case you can be sure to get the best performance.（如果做compaction之后，所有的文件都尽量地写在服务的region serve上面并且通常不会出现变化，所以可以这样说基本上region server服务的数据在本地磁盘上都存在。所以这样达到的性能是比较好的）
 </li>
 <li>The number of splits therefore is equal to all regions between the start and stop key. If you do not set one, then all are included. （split number和region number是一致的）
 </li>
 <li>The split also contains the server name hosting the region. This is what drives the locality for MapReduce jobs over HBase: the framework compares the server name and if there is a task tracker running on the same machine, it will preferably run it on that server. Since the region server is also colocated with the data node on that same node, the scan of the region will be able to retrieve all data from local disk.（split信息包含了region的hostname，那么在选择tt的时候优先选择和hostname比较近的机器。而因为region本身就带有一定的data locality,所以通常scan的时候也是从本地磁盘进行读取的）
 </li>
-<li>When running MapReduce over HBase, it is strongly advised to turn off the speculative execution mode. It will only create more load on the same region and server, and also works against locality. This results in all data being send over the network, adding to the overall IO load.（关于预测执行模式，因为data locality比较差） 
+<li>When running MapReduce over HBase, it is strongly advised to turn off the speculative execution mode. It will only create more load on the same region and server, and also works against locality. This results in all data being send over the network, adding to the overall IO load.（关于预测执行模式，因为data locality比较差）
 </li>
 </ul>
 
@@ -2807,7 +2807,7 @@ The HRegionServer opens the region and creates a corresponding HRegion object. W
 <ul>
 <li>Put.setWriteToWAL(boolean) 控制是否写入WAL
 </li>
-<li>The WAL is a standard Hadoop SequenceFile and it stores HLogKey instances. 
+<li>The WAL is a standard Hadoop SequenceFile and it stores HLogKey instances.
 </li>
 <li>These keys contain a sequential number as well as the actual data and are used to replay not yet persisted data after a server crash.
 </li>
@@ -2915,7 +2915,7 @@ drwxr-xr-x   - dirlt supergroup          0 2013-05-30 12:32 /home/dirlt/hbase/te
 
 <p>The actual storage files are implemented by the HFile class, which was specifically created to serve one purpose: store HBase's data efficiently. They are based on Hadoop's TFile class, and mimic the SSTable format used in Google's BigTable architecture.（可以参考 <a href="./leveldb.html">leveldb</a> 代码）
 </p>
-<p> 
+<p>
 <img src="./images/hbase-hfile-structure.png"  alt="./images/hbase-hfile-structure.png" />
 </p>
 <p>
@@ -2928,9 +2928,9 @@ drwxr-xr-x   - dirlt supergroup          0 2013-05-30 12:32 /home/dirlt/hbase/te
 <img src="./images/hbase-keyvalue-format.png"  alt="./images/hbase-keyvalue-format.png" />
 </p>
 <ul>
-<li>The reason why in the example above the average key is larger than the value can be attributed to the contained fields in the key: it includes the fully specified dimensions of the cell. The key holds the row key, the column family name, the column qualifier, and so on.（注意包含了rowkey，column family，column qualifier，所以使得key存储空间还是比较大的） 
+<li>The reason why in the example above the average key is larger than the value can be attributed to the contained fields in the key: it includes the fully specified dimensions of the cell. The key holds the row key, the column family name, the column qualifier, and so on.（注意包含了rowkey，column family，column qualifier，所以使得key存储空间还是比较大的）
 </li>
-<li>On the other hand, compression should help mitigate this problem as it looks at finite windows of data, and all contained repetitive data is compressed efficiently. （但是压缩存储能够在很大程度上缓解这个问题） 
+<li>On the other hand, compression should help mitigate this problem as it looks at finite windows of data, and all contained repetitive data is compressed efficiently. （但是压缩存储能够在很大程度上缓解这个问题）
 </li>
 </ul>
 
@@ -2953,7 +2953,7 @@ drwxr-xr-x   - dirlt supergroup          0 2013-05-30 12:32 /home/dirlt/hbase/te
 <ul>
 <li>The minor compactions are responsible for rewriting the last few files into one larger one.
 <ul>
-<li>The number of files is set with the <b>hbase.hstore.compaction.min</b> property (which was previously called hbase.hstore.compactionThreshold, and although deprecated it is still supported). It is set to 3 by default, and needs to be at least 2 or more. A number too large would delay minor compactions, but also require more resources and take longer once they start. （至少多少个文件才能够触发，高数值会延迟compaction, 但是每次compaction会耗费更长时间） 
+<li>The number of files is set with the <b>hbase.hstore.compaction.min</b> property (which was previously called hbase.hstore.compactionThreshold, and although deprecated it is still supported). It is set to 3 by default, and needs to be at least 2 or more. A number too large would delay minor compactions, but also require more resources and take longer once they start. （至少多少个文件才能够触发，高数值会延迟compaction, 但是每次compaction会耗费更长时间）
 </li>
 <li>The maximum number of files to include in a minor compaction is set to 10, and configured with <b>hbase.hstore.compaction.max</b>. （但是每次最多多少个文件参与compaction）
 </li>
@@ -2966,7 +2966,7 @@ drwxr-xr-x   - dirlt supergroup          0 2013-05-30 12:32 /home/dirlt/hbase/te
 </ul>
 
 </li>
-<li>The algorithm uses <b>hbase.hstore.compaction.ratio</b> (defaults to 1.2, or 120%) to ensure that it does include enough files into the selection process. The ratio will also select files that are up to that size compared to the sum of the store file sizes of all newer files. The evaluation always checks the files from the oldest to the newest. This ensures that older files are compacted first. The combination of these properties allows to fine-tune how many files are included into a minor compaction.（这个参数主要是用来控制已经超过max compaction file size的文件，因为按照上面的逻辑一旦超过这个file size之后那么将没有可能进行compaction了。从oldest选择，知道file size超过所有的newer file size总和。我猜想这些同时这些文件数目必须超过compaction.min但是不能够大于compaction.max会比较有意义） 
+<li>The algorithm uses <b>hbase.hstore.compaction.ratio</b> (defaults to 1.2, or 120%) to ensure that it does include enough files into the selection process. The ratio will also select files that are up to that size compared to the sum of the store file sizes of all newer files. The evaluation always checks the files from the oldest to the newest. This ensures that older files are compacted first. The combination of these properties allows to fine-tune how many files are included into a minor compaction.（这个参数主要是用来控制已经超过max compaction file size的文件，因为按照上面的逻辑一旦超过这个file size之后那么将没有可能进行compaction了。从oldest选择，知道file size超过所有的newer file size总和。我猜想这些同时这些文件数目必须超过compaction.min但是不能够大于compaction.max会比较有意义）
 </li>
 </ul>
 
@@ -2992,7 +2992,7 @@ drwxr-xr-x   - dirlt supergroup          0 2013-05-30 12:32 /home/dirlt/hbase/te
 </li>
 <li>Otherwise the server checks first if the major compaction is due, based on <b>hbase.hregion.majorcompaction</b> (set to 24 hours) from the last it ran. The <b>hbase.hregion.majorcompaction.jitter</b> (set to 0.2, in other words 20%) causes this time to be spread out for the stores. Without the jitter all stores would run a major compaction at the same time, every 24 hours.（否则根据两个参数来控制，第一个是检查一下这次major compaction是否到期，另外一个是控制不要让所有的major compaction同时启动）
 </li>
-<li>If no major compaction is due, then a minor is assumed. Based on the above configuration properties, the server determines if enough files for a minor compaction are available and continues if that is the case.（如果检查没有不需要做major compaction的话，那么就会检查是否需要做minor compaction） <b>NOTE（dirlt）：所以minor compaction的触发也可能是定时完成的</b> 
+<li>If no major compaction is due, then a minor is assumed. Based on the above configuration properties, the server determines if enough files for a minor compaction are available and continues if that is the case.（如果检查没有不需要做major compaction的话，那么就会检查是否需要做minor compaction） <b>NOTE（dirlt）：所以minor compaction的触发也可能是定时完成的</b>
 </li>
 </ul>
 
@@ -3060,9 +3060,9 @@ Currently the WAL is using a Hadoop SequenceFile, which stores records as sets o
 </li>
 <li>Every 60 minutes the log is closed and a new one started. Over time the system accumulates an increasing number of log files that need to be maintained as well. The HLog.rollWriter() method, which is called by the LogRoller to do the above rolling of the current log file, is taking care of that as well by calling HLog.cleanOldLogs() subsequently.（关闭原来的log文件重新打开新的log文件进行记录，同时会做一些清除日志的操作，应该是move到oldlogs目录下面）
 </li>
-<li>It checks what the highest sequence number written to a storage file is, because up to that number all edits are persisted. It then checks if there is a log left that has edits which are all less than that number. If that is the case it moves said logs into the .oldlogs directory, and leaves just those that are still needed.（清理的过程也非常直接，首先检查在存储文件里面最高的sequence number, 然后判断日志如果里面所有的sequence number都是小于这个sequence number的话，那么可以确定这个文件是不需要的了） 
+<li>It checks what the highest sequence number written to a storage file is, because up to that number all edits are persisted. It then checks if there is a log left that has edits which are all less than that number. If that is the case it moves said logs into the .oldlogs directory, and leaves just those that are still needed.（清理的过程也非常直接，首先检查在存储文件里面最高的sequence number, 然后判断日志如果里面所有的sequence number都是小于这个sequence number的话，那么可以确定这个文件是不需要的了）
 </li>
-<li>The other parameters controlling the log rolling are <b>hbase.regionserver.hlog.blocksize</b> (set to the file system default block size, or fs.local.block.size, defaulting to 32MB) and <b>hbase.regionserver.logroll.multiplier</b> (set to 0.95), which will rotate logs when they are at 95% of the block size. So logs are switched out when either the they are considered full, or a certain amount of time has passed - whatever comes first. （另外一个触发roll log的事件是，当log超过一定大小） 
+<li>The other parameters controlling the log rolling are <b>hbase.regionserver.hlog.blocksize</b> (set to the file system default block size, or fs.local.block.size, defaulting to 32MB) and <b>hbase.regionserver.logroll.multiplier</b> (set to 0.95), which will rotate logs when they are at 95% of the block size. So logs are switched out when either the they are considered full, or a certain amount of time has passed - whatever comes first. （另外一个触发roll log的事件是，当log超过一定大小）
 </li>
 </ul>
 

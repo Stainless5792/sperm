@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>netty</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -245,7 +245,7 @@
 </li>
 <li><b>NOTE（dirlt）：早期netty版本只是支持一个boss线程做accept，但是一个现成做accept限制了性能，所以在后续版本支持多个现成做accept</b>
 </li>
-<li>允许绑定到多个端口，因为在boss线程里面也是使用epoll来做IO复用的。 
+<li>允许绑定到多个端口，因为在boss线程里面也是使用epoll来做IO复用的。
 </li>
 </ul>
 
@@ -280,55 +280,55 @@ worker的数量如果没有指定的话，with 2 * the number of available proce
 
 
 <pre class="example">Exception in thread "pool-2-thread-1" java.lang.InternalError
-        at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:755)
-        at sun.misc.URLClassPath.getResource(URLClassPath.java:169)
-        at java.net.URLClassLoader$1.run(URLClassLoader.java:194)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
-        at sun.misc.Launcher$ExtClassLoader.findClass(Launcher.java:229)
-        at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
-        at java.lang.ClassLoader.loadClass(ClassLoader.java:295)
-        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
-        at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
-        at java.util.ResourceBundle$RBClassLoader.loadClass(ResourceBundle.java:435)
-        at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2289)
-        at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1364)
-        at java.util.ResourceBundle.findBundle(ResourceBundle.java:1328)
-        at java.util.ResourceBundle.findBundle(ResourceBundle.java:1282)
-        at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1224)
-        at java.util.ResourceBundle.getBundle(ResourceBundle.java:705)
-        at java.util.logging.Level.getLocalizedName(Level.java:223)
-        at java.util.logging.SimpleFormatter.format(SimpleFormatter.java:64)
-        at java.util.logging.StreamHandler.publish(StreamHandler.java:177)
-        at java.util.logging.ConsoleHandler.publish(ConsoleHandler.java:88)
-        at java.util.logging.Logger.log(Logger.java:478)
-        at java.util.logging.Logger.doLog(Logger.java:500)
-        at java.util.logging.Logger.logp(Logger.java:700)
-        at org.jboss.netty.logging.JdkLogger.warn(JdkLogger.java:80)
-        at org.jboss.netty.logging.InternalLoggerFactory$1.warn(InternalLoggerFactory.java:128)
-        at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:316)
-        at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
-        at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
-        at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
-        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-        at java.lang.Thread.run(Thread.java:662)
+at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:755)
+at sun.misc.URLClassPath.getResource(URLClassPath.java:169)
+at java.net.URLClassLoader$1.run(URLClassLoader.java:194)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+at sun.misc.Launcher$ExtClassLoader.findClass(Launcher.java:229)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:295)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+at java.util.ResourceBundle$RBClassLoader.loadClass(ResourceBundle.java:435)
+at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2289)
+at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1364)
+at java.util.ResourceBundle.findBundle(ResourceBundle.java:1328)
+at java.util.ResourceBundle.findBundle(ResourceBundle.java:1282)
+at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1224)
+at java.util.ResourceBundle.getBundle(ResourceBundle.java:705)
+at java.util.logging.Level.getLocalizedName(Level.java:223)
+at java.util.logging.SimpleFormatter.format(SimpleFormatter.java:64)
+at java.util.logging.StreamHandler.publish(StreamHandler.java:177)
+at java.util.logging.ConsoleHandler.publish(ConsoleHandler.java:88)
+at java.util.logging.Logger.log(Logger.java:478)
+at java.util.logging.Logger.doLog(Logger.java:500)
+at java.util.logging.Logger.logp(Logger.java:700)
+at org.jboss.netty.logging.JdkLogger.warn(JdkLogger.java:80)
+at org.jboss.netty.logging.InternalLoggerFactory$1.warn(InternalLoggerFactory.java:128)
+at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:316)
+at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+at java.lang.Thread.run(Thread.java:662)
 Caused by: java.util.zip.ZipException: error in opening zip file
-        at java.util.zip.ZipFile.open(Native Method)
-        at java.util.zip.ZipFile.&lt;init&gt;(ZipFile.java:127)
-        at java.util.jar.JarFile.&lt;init&gt;(JarFile.java:135)
-        at java.util.jar.JarFile.&lt;init&gt;(JarFile.java:72)
-        at sun.misc.URLClassPath$JarLoader.getJarFile(URLClassPath.java:646)
-        at sun.misc.URLClassPath$JarLoader.access$600(URLClassPath.java:540)
-        at sun.misc.URLClassPath$JarLoader$1.run(URLClassPath.java:607)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at sun.misc.URLClassPath$JarLoader.ensureOpen(URLClassPath.java:599)
-        at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:753)
-        ... 32 more
+at java.util.zip.ZipFile.open(Native Method)
+at java.util.zip.ZipFile.&lt;init&gt;(ZipFile.java:127)
+at java.util.jar.JarFile.&lt;init&gt;(JarFile.java:135)
+at java.util.jar.JarFile.&lt;init&gt;(JarFile.java:72)
+at sun.misc.URLClassPath$JarLoader.getJarFile(URLClassPath.java:646)
+at sun.misc.URLClassPath$JarLoader.access$600(URLClassPath.java:540)
+at sun.misc.URLClassPath$JarLoader$1.run(URLClassPath.java:607)
+at java.security.AccessController.doPrivileged(Native Method)
+at sun.misc.URLClassPath$JarLoader.ensureOpen(URLClassPath.java:599)
+at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:753)
+... 32 more
 </pre>
 
 <p>
-从这个excetion backtrace上看，似乎是log找不到出现的问题。 
+从这个excetion backtrace上看，似乎是log找不到出现的问题。
 </p>
 <p>
 Bug 745866 – Possible netty logging config problem

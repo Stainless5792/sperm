@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>mapred</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -163,7 +163,7 @@
 
 <ul>
 <li id="sec-1-1-1-1">Introducing Apache Hadoop YARN | Hortonworks<br/>
-<a href="http://hortonworks.com/blog/introducing-apache-hadoop-yarn/">http://hortonworks.com/blog/introducing-apache-hadoop-yarn/</a> 
+<a href="http://hortonworks.com/blog/introducing-apache-hadoop-yarn/">http://hortonworks.com/blog/introducing-apache-hadoop-yarn/</a>
 
 <p>
 看起来YARN的主要目的是将Hadoop不仅仅用于map-reduce的计算方式，还包括MPI，graph-processing，simple services等，
@@ -178,7 +178,7 @@
 <p>
 对于MR来说，最关键的一点就是lack of data motion。通过将任务放在数据所在的机器上面，而不是将数据移动到任务所在的机器上面，可以节省带宽提高计算效率。现在来说MR分为下面三个部分：
 </p><ul>
-<li>The end-user <b>MapReduce API</b> for programming the desired MapReduce application. 
+<li>The end-user <b>MapReduce API</b> for programming the desired MapReduce application.
 </li>
 <li>The <b>MapReduce framework</b>, which is the runtime implementation of various phases such as the map phase, the sort/shuffle/merge aggregation and the reduce phase. （framework做的事情是runtime的工作，比如怎么划分数据，怎么进行reducer上面的拉数据等）
 </li>
@@ -226,7 +226,7 @@ YARN主要做的工作就是在资源利用的改进上面，将资源利用已�
 </ul>
 
 
-<p>     
+<p>
 <img src="./images/YARNArch.png"  alt="./images/YARNArch.png" />
 </p>
 </li>
@@ -400,7 +400,7 @@ Let’s walk through an application execution sequence (steps are illustrated in
 </ul>
 
 </li>
-<li>Components interacting with the per-application AMs 
+<li>Components interacting with the per-application AMs
 <ul>
 <li>ApplicationMasterService 用来和AM交互部分接口，AM的资源请求通过这个接口提交，然后转向YarnScheduler处理
 </li>
@@ -570,7 +570,7 @@ Number of Reduces：
 
 
 <p>
-Facebook’s solution: Corona 
+Facebook’s solution: Corona
 <img src="./images/facebook-corona.jpg"  alt="./images/facebook-corona.jpg" />
 </p>
 <ul>
@@ -587,9 +587,9 @@ Facebook’s solution: Corona
 </ul>
 
 </li>
-<li>The cluster manager also has a new implementation of fair-share scheduling. 
+<li>The cluster manager also has a new implementation of fair-share scheduling.
 <ul>
-<li>This scheduler is able to provide better fairness guarantees because it has access to the full snapshot of the cluster and jobs when making scheduling decisions. 
+<li>This scheduler is able to provide better fairness guarantees because it has access to the full snapshot of the cluster and jobs when making scheduling decisions.
 </li>
 <li>It also provides better support for multi-tenant usage by providing the ability to group the scheduler pools into pool groups. 通过pool group机制来为多用户服务。
 </li>
@@ -709,8 +709,8 @@ Corona在fb部署过程是这样的
 
 
 <pre class="src src-Java">public int getPartition(K key, V value,
-                        int numReduceTasks) {
-  return (key.hashCode() &amp; Integer.MAX_VALUE) % numReduceTasks;
+int numReduceTasks) {
+return (key.hashCode() &amp; Integer.MAX_VALUE) % numReduceTasks;
 }
 </pre>
 
@@ -728,7 +728,7 @@ Corona在fb部署过程是这样的
 </li>
 </ul>
 
-<p>framework会比较智能地决定shuffle应该在memory还是在disk上面完成。ReduckTask:getMapOutput里面调用ramManager.canFitInMemory(decompressedLength);判断是否可以在内存里面做shuffle. 
+<p>framework会比较智能地决定shuffle应该在memory还是在disk上面完成。ReduckTask:getMapOutput里面调用ramManager.canFitInMemory(decompressedLength);判断是否可以在内存里面做shuffle.
 </p>
 <p>
 这个函数比较简单，主要是和maxSingleShuffleLimit来做对比。
@@ -736,9 +736,9 @@ Corona在fb部署过程是这样的
 
 
 <pre class="src src-Java">boolean canFitInMemory(long requestedSize) {
-        return (requestedSize &lt; Integer.MAX_VALUE &amp;&amp; 
-                requestedSize &lt; maxSingleShuffleLimit);
-      }
+return (requestedSize &lt; Integer.MAX_VALUE &amp;&amp;
+requestedSize &lt; maxSingleShuffleLimit);
+}
 </pre>
 
 
@@ -748,19 +748,19 @@ Corona在fb部署过程是这样的
 
 
 <pre class="src src-Java">public ShuffleRamManager(Configuration conf) throws IOException {
-  final float maxInMemCopyUse =
-    conf.getFloat(<span style="color: #ffff00;">"mapred.job.shuffle.input.buffer.percent"</span>, 0.70f);
-  if (maxInMemCopyUse &gt; 1.0 || maxInMemCopyUse &lt; 0.0) {
-    throw new IOException(<span style="color: #ffff00;">"mapred.job.shuffle.input.buffer.percent"</span> +
-                          maxInMemCopyUse);
-  }
-  // Allow unit tests to fix Runtime memory
-  maxSize = (int)(conf.getInt(<span style="color: #ffff00;">"mapred.job.reduce.total.mem.bytes"</span>,
-      (int)Math.min(Runtime.getRuntime().maxMemory(), Integer.MAX_VALUE))
-    * maxInMemCopyUse);
-  maxSingleShuffleLimit = (long)(maxSize * MAX_SINGLE_SHUFFLE_SEGMENT_FRACTION);
-  LOG.info(<span style="color: #ffff00;">"ShuffleRamManager: MemoryLimit="</span> + maxSize + 
-           <span style="color: #ffff00;">", MaxSingleShuffleLimit="</span> + maxSingleShuffleLimit);
+final float maxInMemCopyUse =
+conf.getFloat(<span style="color: #ffff00;">"mapred.job.shuffle.input.buffer.percent"</span>, 0.70f);
+if (maxInMemCopyUse &gt; 1.0 || maxInMemCopyUse &lt; 0.0) {
+throw new IOException(<span style="color: #ffff00;">"mapred.job.shuffle.input.buffer.percent"</span> +
+maxInMemCopyUse);
+}
+// Allow unit tests to fix Runtime memory
+maxSize = (int)(conf.getInt(<span style="color: #ffff00;">"mapred.job.reduce.total.mem.bytes"</span>,
+(int)Math.min(Runtime.getRuntime().maxMemory(), Integer.MAX_VALUE))
+* maxInMemCopyUse);
+maxSingleShuffleLimit = (long)(maxSize * MAX_SINGLE_SHUFFLE_SEGMENT_FRACTION);
+LOG.info(<span style="color: #ffff00;">"ShuffleRamManager: MemoryLimit="</span> + maxSize +
+<span style="color: #ffff00;">", MaxSingleShuffleLimit="</span> + maxSingleShuffleLimit);
 }
 </pre>
 
@@ -813,114 +813,114 @@ dp41上面出现如下错误日志，可以看到dp41在作为map output server�
 
 <pre class="example">2013-05-13 12:23:06,708 WARN org.apache.hadoop.mapred.TaskTracker: getMapOutput(attempt_201301231102_33841_m_000331_0,15) failed :
 org.mortbay.jetty.EofException
-        at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:791)
-        at org.mortbay.jetty.AbstractGenerator$Output.blockForOutput(AbstractGenerator.java:551)
-        at org.mortbay.jetty.AbstractGenerator$Output.flush(AbstractGenerator.java:572)
-        at org.mortbay.jetty.HttpConnection$Output.flush(HttpConnection.java:1012)
-        at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:651)
-        at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:580)
-        at org.apache.hadoop.mapred.TaskTracker$MapOutputServlet.doGet(TaskTracker.java:4061)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
-        at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
-        at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1221)
-        at org.apache.hadoop.http.HttpServer$QuotingInputFilter.doFilter(HttpServer.java:829)
-        at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
-        at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
-        at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
-        at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
-        at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
-        at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
-        at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
-        at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
-        at org.mortbay.jetty.Server.handle(Server.java:326)
-        at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
-        at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
-        at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
-        at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
-        at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
-        at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
-        at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:791)
+at org.mortbay.jetty.AbstractGenerator$Output.blockForOutput(AbstractGenerator.java:551)
+at org.mortbay.jetty.AbstractGenerator$Output.flush(AbstractGenerator.java:572)
+at org.mortbay.jetty.HttpConnection$Output.flush(HttpConnection.java:1012)
+at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:651)
+at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:580)
+at org.apache.hadoop.mapred.TaskTracker$MapOutputServlet.doGet(TaskTracker.java:4061)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1221)
+at org.apache.hadoop.http.HttpServer$QuotingInputFilter.doFilter(HttpServer.java:829)
+at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
+at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+at org.mortbay.jetty.Server.handle(Server.java:326)
+at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
 Caused by: java.io.IOException: Broken pipe
-        at sun.nio.ch.FileDispatcher.write0(Native Method)
-        at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:29)
-        at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:69)
-        at sun.nio.ch.IOUtil.write(IOUtil.java:40)
-        at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:336)
-        at org.mortbay.io.nio.ChannelEndPoint.flush(ChannelEndPoint.java:171)
-        at org.mortbay.io.nio.SelectChannelEndPoint.flush(SelectChannelEndPoint.java:221)
-        at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:725)
-        ... 27 more
+at sun.nio.ch.FileDispatcher.write0(Native Method)
+at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:29)
+at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:69)
+at sun.nio.ch.IOUtil.write(IOUtil.java:40)
+at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:336)
+at org.mortbay.io.nio.ChannelEndPoint.flush(ChannelEndPoint.java:171)
+at org.mortbay.io.nio.SelectChannelEndPoint.flush(SelectChannelEndPoint.java:221)
+at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:725)
+... 27 more
 
 2013-05-13 12:23:06,708 WARN org.mortbay.log: Committed before 410 getMapOutput(attempt_201301231102_33841_m_000331_0,15) failed :
 org.mortbay.jetty.EofException
-        at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:791)
-        at org.mortbay.jetty.AbstractGenerator$Output.blockForOutput(AbstractGenerator.java:551)
-        at org.mortbay.jetty.AbstractGenerator$Output.flush(AbstractGenerator.java:572)
-        at org.mortbay.jetty.HttpConnection$Output.flush(HttpConnection.java:1012)
-        at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:651)
-        at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:580)
-        at org.apache.hadoop.mapred.TaskTracker$MapOutputServlet.doGet(TaskTracker.java:4061)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:791)
+at org.mortbay.jetty.AbstractGenerator$Output.blockForOutput(AbstractGenerator.java:551)
+at org.mortbay.jetty.AbstractGenerator$Output.flush(AbstractGenerator.java:572)
+at org.mortbay.jetty.HttpConnection$Output.flush(HttpConnection.java:1012)
+at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:651)
+at org.mortbay.jetty.AbstractGenerator$Output.write(AbstractGenerator.java:580)
+at org.apache.hadoop.mapred.TaskTracker$MapOutputServlet.doGet(TaskTracker.java:4061)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
 
-        at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
-        at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1221)
-        at org.apache.hadoop.http.HttpServer$QuotingInputFilter.doFilter(HttpServer.java:829)
-        at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
-        at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
-        at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
-        at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
-        at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
-        at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
-        at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
-        at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
-        at org.mortbay.jetty.Server.handle(Server.java:326)
-        at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
-        at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
-        at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
-        at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
-        at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
-        at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
-        at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1221)
+at org.apache.hadoop.http.HttpServer$QuotingInputFilter.doFilter(HttpServer.java:829)
+at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
+at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+at org.mortbay.jetty.Server.handle(Server.java:326)
+at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
 Caused by: java.io.IOException: Broken pipe
-        at sun.nio.ch.FileDispatcher.write0(Native Method)
-        at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:29)
-        at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:69)
-        at sun.nio.ch.IOUtil.write(IOUtil.java:40)
-        at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:336)
-        at org.mortbay.io.nio.ChannelEndPoint.flush(ChannelEndPoint.java:171)
-        at org.mortbay.io.nio.SelectChannelEndPoint.flush(SelectChannelEndPoint.java:221)
-        at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:725)
-        ... 27 more
+at sun.nio.ch.FileDispatcher.write0(Native Method)
+at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:29)
+at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:69)
+at sun.nio.ch.IOUtil.write(IOUtil.java:40)
+at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:336)
+at org.mortbay.io.nio.ChannelEndPoint.flush(ChannelEndPoint.java:171)
+at org.mortbay.io.nio.SelectChannelEndPoint.flush(SelectChannelEndPoint.java:221)
+at org.mortbay.jetty.HttpGenerator.flush(HttpGenerator.java:725)
+... 27 more
 
 2013-05-13 12:23:06,708 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 10.11.0.41:50060, dest: 10.11.0.16:3294, bytes: 0, op: MAPRED_SHUFFLE, cliID: attempt_201301231102_33841_m_000331_0, duration: 19292379
 2013-05-13 12:23:06,709 ERROR org.mortbay.log: /mapOutput
 java.lang.IllegalStateException: Committed
-        at org.mortbay.jetty.Response.resetBuffer(Response.java:1023)
-        at org.mortbay.jetty.Response.sendError(Response.java:240)
-        at org.apache.hadoop.mapred.TaskTracker$MapOutputServlet.doGet(TaskTracker.java:4094)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
-        at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
-        at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1221)
-        at org.apache.hadoop.http.HttpServer$QuotingInputFilter.doFilter(HttpServer.java:829)
-        at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
-        at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
-        at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
-        at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
-        at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
-        at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
-        at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
-        at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
-        at org.mortbay.jetty.Server.handle(Server.java:326)
-        at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
-        at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
-        at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
-        at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
-        at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
-        at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
-        at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+at org.mortbay.jetty.Response.resetBuffer(Response.java:1023)
+at org.mortbay.jetty.Response.sendError(Response.java:240)
+at org.apache.hadoop.mapred.TaskTracker$MapOutputServlet.doGet(TaskTracker.java:4094)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1221)
+at org.apache.hadoop.http.HttpServer$QuotingInputFilter.doFilter(HttpServer.java:829)
+at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
+at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+at org.mortbay.jetty.Server.handle(Server.java:326)
+at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
 </pre>
 
 
@@ -991,15 +991,15 @@ Reduce input records    321,140,243
 </p>
 
 
-<pre class="example">2013-05-13 12:23:04,575 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_r_000015_0 0.01798942% reduce &gt; copy (102 of 1890 at 19.63 MB/s) &gt; 
+<pre class="example">2013-05-13 12:23:04,575 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_r_000015_0 0.01798942% reduce &gt; copy (102 of 1890 at 19.63 MB/s) &gt;
 2013-05-13 12:23:04,620 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 10.11.0.16:50060, dest: 10.11.0.50:29582, bytes: 28814, op: MAPRED_SHUFFLE, cliID: attempt_201301231102_33841_m_000480_0, duration: 3011431376
 2013-05-13 12:23:05,438 INFO org.apache.hadoop.mapred.TaskTracker.clienttrace: src: 10.11.0.16:50060, dest: 10.11.0.54:38101, bytes: 13541361, op: MAPRED_SHUFFLE, cliID: attempt_201301231102_33841_m_000480_0, duration: 28773030913
-2013-05-13 12:23:05,843 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000520_0 0.26028645% 
-2013-05-13 12:23:05,924 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000241_0 0.7132669% 
-2013-05-13 12:23:05,947 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000441_0 0.70975286% 
-2013-05-13 12:23:06,114 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33840_m_000000_0 0.47209314% 
-2013-05-13 12:23:06,579 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000094_0 0.8537282% 
-2013-05-13 12:23:06,755 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000342_0 0.54360586% 
+2013-05-13 12:23:05,843 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000520_0 0.26028645%
+2013-05-13 12:23:05,924 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000241_0 0.7132669%
+2013-05-13 12:23:05,947 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000441_0 0.70975286%
+2013-05-13 12:23:06,114 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33840_m_000000_0 0.47209314%
+2013-05-13 12:23:06,579 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000094_0 0.8537282%
+2013-05-13 12:23:06,755 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_m_000342_0 0.54360586%
 2013-05-13 12:23:08,298 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_33841_r_000015_0 0.019400354% reduce &gt; copy (110 of 1890 at 20.45 MB/s) &gt;
 </pre>
 
@@ -1045,42 +1045,42 @@ dp31出现如下日志，这个过程是非常诡异的。从stacktrace上面可
 2013-05-14 00:20:56,312 WARN org.apache.hadoop.conf.Configuration: /data/data5/mapred/local/ttprivate/taskTracker/xiarong/jobcache/job_201301231102_34166/job.xml:a attempt to override final parameter: mapred.submit.replication;  Ignoring.
 2013-05-14 00:20:56,327 INFO org.apache.hadoop.mapred.JobLocalizer: Initializing user xiarong on this TT.
 2013-05-14 00:20:56,334 WARN org.apache.hadoop.mapred.TaskTracker: Exception while localization ENOENT: No such file or directory
-        at org.apache.hadoop.io.nativeio.NativeIO.chmod(Native Method)
-        at org.apache.hadoop.fs.RawLocalFileSystem.setPermission(RawLocalFileSystem.java:521)
-        at org.apache.hadoop.fs.RawLocalFileSystem.mkdirs(RawLocalFileSystem.java:344)
-        at org.apache.hadoop.mapred.JobLocalizer.createJobDirs(JobLocalizer.java:222)
-        at org.apache.hadoop.mapred.DefaultTaskController.initializeJob(DefaultTaskController.java:204)
-        at org.apache.hadoop.mapred.TaskTracker$4.run(TaskTracker.java:1352)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at javax.security.auth.Subject.doAs(Subject.java:396)
-        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
-        at org.apache.hadoop.mapred.TaskTracker.initializeJob(TaskTracker.java:1327)
-        at org.apache.hadoop.mapred.TaskTracker.localizeJob(TaskTracker.java:1242)
-        at org.apache.hadoop.mapred.TaskTracker.startNewTask(TaskTracker.java:2563)
-        at org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run(TaskTracker.java:2527)
+at org.apache.hadoop.io.nativeio.NativeIO.chmod(Native Method)
+at org.apache.hadoop.fs.RawLocalFileSystem.setPermission(RawLocalFileSystem.java:521)
+at org.apache.hadoop.fs.RawLocalFileSystem.mkdirs(RawLocalFileSystem.java:344)
+at org.apache.hadoop.mapred.JobLocalizer.createJobDirs(JobLocalizer.java:222)
+at org.apache.hadoop.mapred.DefaultTaskController.initializeJob(DefaultTaskController.java:204)
+at org.apache.hadoop.mapred.TaskTracker$4.run(TaskTracker.java:1352)
+at java.security.AccessController.doPrivileged(Native Method)
+at javax.security.auth.Subject.doAs(Subject.java:396)
+at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
+at org.apache.hadoop.mapred.TaskTracker.initializeJob(TaskTracker.java:1327)
+at org.apache.hadoop.mapred.TaskTracker.localizeJob(TaskTracker.java:1242)
+at org.apache.hadoop.mapred.TaskTracker.startNewTask(TaskTracker.java:2563)
+at org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run(TaskTracker.java:2527)
 
 2013-05-14 00:20:56,334 ERROR org.apache.hadoop.security.UserGroupInformation: PriviledgedActionException as:xiarong (auth:SIMPLE) cause:ENOENT: No such file or directory
 2013-05-14 00:20:56,334 WARN org.apache.hadoop.mapred.TaskTracker: Error initializing attempt_201301231102_34166_m_000000_0:
 ENOENT: No such file or directory
-        at org.apache.hadoop.io.nativeio.NativeIO.chmod(Native Method)
-        at org.apache.hadoop.fs.RawLocalFileSystem.setPermission(RawLocalFileSystem.java:521)
-        at org.apache.hadoop.fs.RawLocalFileSystem.mkdirs(RawLocalFileSystem.java:344)
-        at org.apache.hadoop.mapred.JobLocalizer.createJobDirs(JobLocalizer.java:222)
-        at org.apache.hadoop.mapred.DefaultTaskController.initializeJob(DefaultTaskController.java:204)
-        at org.apache.hadoop.mapred.TaskTracker$4.run(TaskTracker.java:1352)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at javax.security.auth.Subject.doAs(Subject.java:396)
-        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
-        at org.apache.hadoop.mapred.TaskTracker.initializeJob(TaskTracker.java:1327)
-        at org.apache.hadoop.mapred.TaskTracker.localizeJob(TaskTracker.java:1242)
-        at org.apache.hadoop.mapred.TaskTracker.startNewTask(TaskTracker.java:2563)
-        at org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run(TaskTracker.java:2527)
+at org.apache.hadoop.io.nativeio.NativeIO.chmod(Native Method)
+at org.apache.hadoop.fs.RawLocalFileSystem.setPermission(RawLocalFileSystem.java:521)
+at org.apache.hadoop.fs.RawLocalFileSystem.mkdirs(RawLocalFileSystem.java:344)
+at org.apache.hadoop.mapred.JobLocalizer.createJobDirs(JobLocalizer.java:222)
+at org.apache.hadoop.mapred.DefaultTaskController.initializeJob(DefaultTaskController.java:204)
+at org.apache.hadoop.mapred.TaskTracker$4.run(TaskTracker.java:1352)
+at java.security.AccessController.doPrivileged(Native Method)
+at javax.security.auth.Subject.doAs(Subject.java:396)
+at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
+at org.apache.hadoop.mapred.TaskTracker.initializeJob(TaskTracker.java:1327)
+at org.apache.hadoop.mapred.TaskTracker.localizeJob(TaskTracker.java:1242)
+at org.apache.hadoop.mapred.TaskTracker.startNewTask(TaskTracker.java:2563)
+at org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run(TaskTracker.java:2527)
 
 2013-05-14 00:20:56,334 ERROR org.apache.hadoop.mapred.TaskStatus: Trying to set finish time for task attempt_201301231102_34166_m_000000_0 when no start time is set, stackTrace is : java.lang.Exception
-        at org.apache.hadoop.mapred.TaskStatus.setFinishTime(TaskStatus.java:185)
-        at org.apache.hadoop.mapred.TaskTracker$TaskInProgress.kill(TaskTracker.java:3280)
-        at org.apache.hadoop.mapred.TaskTracker.startNewTask(TaskTracker.java:2573)
-        at org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run(TaskTracker.java:2527)
+at org.apache.hadoop.mapred.TaskStatus.setFinishTime(TaskStatus.java:185)
+at org.apache.hadoop.mapred.TaskTracker$TaskInProgress.kill(TaskTracker.java:3280)
+at org.apache.hadoop.mapred.TaskTracker.startNewTask(TaskTracker.java:2573)
+at org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run(TaskTracker.java:2527)
 </pre>
 
 
@@ -1103,10 +1103,10 @@ ENOENT: No such file or directory
 
 
 <pre class="example">2013-06-19 07:16:17,180 FATAL org.apache.hadoop.mapred.Task: attempt_201306141608_1574_r_009039_0 : Map output copy failure : java.lang.OutOfMemoryError: Java heap space
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.shuffleInMemory(ReduceTask.java:1612)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.getMapOutput(ReduceTask.java:1472)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.copyOutput(ReduceTask.java:1321)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1253)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.shuffleInMemory(ReduceTask.java:1612)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.getMapOutput(ReduceTask.java:1472)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.copyOutput(ReduceTask.java:1321)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1253)
 </pre>
 
 
@@ -1152,7 +1152,7 @@ ENOENT: No such file or directory
 </ul>
 
 </li>
-<li>编译，ant compile-native tar 
+<li>编译，ant compile-native tar
 </li>
 <li>将结果build/hadoop-lzo-0.4.14的hadoop-lzo-0.4.14.jar复制到 $HADOOP_HOME/lib，将build/hadoop-lzo-0.4.14/lib/native下的文件复制到$HADOOP_HOME/lib/native (native/Linux-amd64-64)
 <ul>
@@ -1173,7 +1173,7 @@ ENOENT: No such file or directory
 
 
 <pre class="src src-XML">&lt;property&gt;
-&lt;name&gt;io.compression.codecs&lt;/name&gt;    
+&lt;name&gt;io.compression.codecs&lt;/name&gt;
 &lt;value&gt;org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.BZip2Codec&lt;/value&gt;
 &lt;/property&gt;
 &lt;property&gt;
@@ -1198,7 +1198,7 @@ ENOENT: No such file or directory
 </ul>
 
 </li>
-<li>如果使用本地测试集群的话，那么需要提供lzo encoder/decoder. 
+<li>如果使用本地测试集群的话，那么需要提供lzo encoder/decoder.
 <ul>
 <li>Configuration conf = new Configuration(); // 如果是本地测试集群的话，那么是没有读取core-site.xml的，因此也就是没有编码解码信息，需要通过下面语句提供
 </li>
@@ -1252,7 +1252,7 @@ elephant-bird实现了protobuf+lzo组合使用方式。
 option java_outer_classname = "MessageProtos1";
 
 message Message {
-  required string text = 1;
+required string text = 1;
 }
 </pre>
 
@@ -1276,10 +1276,10 @@ message Message {
 
 
 <pre class="src src-Java">public class MessageLzoProtobufInputFormat extends LzoProtobufBlockInputFormat&lt;MessageProtos1.Message&gt; {
-    public MessageLzoProtobufInputFormat() {
-        super(new TypeRef&lt;MessageProtos1.Message&gt;() {
-        });
-    }
+public MessageLzoProtobufInputFormat() {
+super(new TypeRef&lt;MessageProtos1.Message&gt;() {
+});
+}
 }
 </pre>
 
@@ -1293,10 +1293,10 @@ message Message {
 
 
 <pre class="src src-Java">public class MessageLzoProtobufOutputFormat extends LzoProtobufBlockOutputFormat&lt;MessageProtos1.Message&gt; {
-    public MessageLzoProtobufOutputFormat() {
-        super(new TypeRef&lt;MessageProtos1.Message&gt;() {
-        });
-    }
+public MessageLzoProtobufOutputFormat() {
+super(new TypeRef&lt;MessageProtos1.Message&gt;() {
+});
+}
 }
 </pre>
 
@@ -1310,15 +1310,15 @@ message Message {
 
 
 <pre class="src src-Java">public class MessageLzoProtobufWritable extends ProtobufWritable&lt;MessageProtos1.Message&gt; {
-    public MessageLzoProtobufWritable() {
-        super(new TypeRef&lt;MessageProtos1.Message&gt;() {
-        });
-    }
+public MessageLzoProtobufWritable() {
+super(new TypeRef&lt;MessageProtos1.Message&gt;() {
+});
+}
 
-    public MessageLzoProtobufWritable(MessageProtos1.Message message) {
-        super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
-        });
-    }
+public MessageLzoProtobufWritable(MessageProtos1.Message message) {
+super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
+});
+}
 }
 
 </pre>
@@ -1363,7 +1363,7 @@ message Message {
 </li>
 <li>DelegateInputFormat根据每个className初始化实例并且将inputPath给这个实例，这些对于FileInputFormat工作很好
 </li>
-<li>而对于TableInputFormat没有使用这个inputPath，而是直接读取configuration里面设置的TableOutputFormat.OUTPUT_TABLE这个值 
+<li>而对于TableInputFormat没有使用这个inputPath，而是直接读取configuration里面设置的TableOutputFormat.OUTPUT_TABLE这个值
 </li>
 </ul>
 
@@ -1389,11 +1389,11 @@ message Message {
 </li>
 <li>大致原理如下：
 <ul>
-<li>MultipleInputs底层使用Delegate模式，将inputFormat以及mapper和Path关联，然后将InputFormat实例化来对path进行切片得到InputSplit以及RecordReader.      
+<li>MultipleInputs底层使用Delegate模式，将inputFormat以及mapper和Path关联，然后将InputFormat实例化来对path进行切片得到InputSplit以及RecordReader.
 </li>
 <li>为了能够和MultipleInputs兼容使用，代码实现上将TableInput转换成为String然后表示成为Path（TableInput包括tableName以及多个scan对象）
 <ul>
-<li>string格式为 &lt;tableName&gt; ! hexString(scan) ! hexString(scan) 
+<li>string格式为 &lt;tableName&gt; ! hexString(scan) ! hexString(scan)
 </li>
 <li>从path中将TableInput字符串分离的代码是 path.toString().substring(path.getParent().toString().length() + 1); <b>TODO（dirlt）：对于大部分的情况是可以正常handle的</b>
 </li>
@@ -1439,7 +1439,7 @@ message Message {
 </li>
 <li>如果使用write(String namedOutput, K key, V value)会写到FileOutputFormat设置的目录下面，文件附上前缀namedOutput-，
 </li>
-<li>如果使用write(String namedOutput, K key, V value, String baseOutputPath) 
+<li>如果使用write(String namedOutput, K key, V value, String baseOutputPath)
 <ul>
 <li>如果baseOutputPath以/开头的话比如/a/b/c的话，那么输出文件为/a/b/c-m-00000
 </li>
@@ -1528,7 +1528,7 @@ message Message {
 </li>
 <li>Make sure that the limit of open files is not reached, I had already done this by adding “mapred – nofile 65536″ in /etc/security/limits.conf.  This did not solve it. （增加文件数目限制）
 </li>
-<li>Adding the following to /etc/security/limits.conf and restarting the TaskTracker solved it "mapred – nproc 8192" （增加开辟子进程的数目） 
+<li>Adding the following to /etc/security/limits.conf and restarting the TaskTracker solved it "mapred – nproc 8192" （增加开辟子进程的数目）
 </li>
 </ul>
 
@@ -1554,7 +1554,7 @@ message Message {
 
 
 <pre class="src src-Java">public interface DNSToSwitchMapping {
-  public List&lt;String&gt; resolve(List&lt;String&gt; names);
+public List&lt;String&gt; resolve(List&lt;String&gt; names);
 }
 </pre>
 
@@ -1586,15 +1586,15 @@ streaming允许用户使用脚本来编写mapper/reducer，使用stdin/stdout作
 <p>
 调用方式：hadoop $HADOOP_HOME/contrib/streaming/hadoop-streaming-*.jar &lt;OPTIONS&gt; 其中OPTIONS如下：
 </p><ul>
-<li>-input 
+<li>-input
 </li>
 <li>-output
 </li>
-<li>-mapper # 执行命令比如cat,grep等，也可以是脚本但是必须+x 
+<li>-mapper # 执行命令比如cat,grep等，也可以是脚本但是必须+x
 </li>
 <li>-reducer
 </li>
-<li>-libjars 
+<li>-libjars
 </li>
 <li>-file # 执行任务中需要的文件. 如果是运行脚本的话那么脚本必须在这里也指定，这样才能分发到所有机器上
 </li>
@@ -1616,7 +1616,7 @@ streaming允许用户使用脚本来编写mapper/reducer，使用stdin/stdout作
 </li>
 <li>-mapdebug  # Script to call when map task fails
 </li>
-<li>-reducedebug # Script to call when reduce task fails 
+<li>-reducedebug # Script to call when reduce task fails
 </li>
 </ul>
 
@@ -1630,7 +1630,7 @@ streaming允许用户使用脚本来编写mapper/reducer，使用stdin/stdout作
 </li>
 <li>stream.reduce.input.field.seperator / stream.reduce.outout.field.separator
 </li>
-<li>stream.reduce.output.key.fields 
+<li>stream.reduce.output.key.fields
 </li>
 <li>stream.non.zero.exit.is.failure = false # 默认返回0正常，但是也可以忽略
 </li>
@@ -1650,10 +1650,10 @@ streaming允许用户使用脚本来编写mapper/reducer，使用stdin/stdout作
 
 
 
-<pre class="example">2013-04-26 13:57:01,144 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000050_1 0.1976251% reduce &gt; copy (466 of 786 at 24.13 MB/s) &gt; 
-2013-04-26 13:57:03,595 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000049_1 0.1976251% reduce &gt; copy (466 of 786 at 24.40 MB/s) &gt; 
-2013-04-26 13:57:04,179 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000050_1 0.1976251% reduce &gt; copy (466 of 786 at 24.13 MB/s) &gt; 
-2013-04-26 13:57:09,620 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000049_1 0.1976251% reduce &gt; copy (466 of 786 at 24.40 MB/s) &gt; 
+<pre class="example">2013-04-26 13:57:01,144 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000050_1 0.1976251% reduce &gt; copy (466 of 786 at 24.13 MB/s) &gt;
+2013-04-26 13:57:03,595 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000049_1 0.1976251% reduce &gt; copy (466 of 786 at 24.40 MB/s) &gt;
+2013-04-26 13:57:04,179 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000050_1 0.1976251% reduce &gt; copy (466 of 786 at 24.13 MB/s) &gt;
+2013-04-26 13:57:09,620 INFO org.apache.hadoop.mapred.TaskTracker: attempt_201301231102_24403_r_000049_1 0.1976251% reduce &gt; copy (466 of 786 at 24.40 MB/s) &gt;
 </pre>
 
 
@@ -1667,195 +1667,195 @@ streaming允许用户使用脚本来编写mapper/reducer，使用stdin/stdout作
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.12-b01 mixed mode):
 
 "Thread for polling Map Completion Events" daemon prio=10 tid=0x00007fd5447d5000 nid=0x33e7e waiting on condition [0x00007fd51d66c000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-        at java.lang.Thread.sleep(Native Method)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$GetMapEventsThread.run(ReduceTask.java:2769)
+java.lang.Thread.State: TIMED_WAITING (sleeping)
+at java.lang.Thread.sleep(Native Method)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$GetMapEventsThread.run(ReduceTask.java:2769)
 
 "Thread for merging in memory files" daemon prio=10 tid=0x00007fd5447d3000 nid=0x33e7d in Object.wait() [0x00007fd51d76d000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        - waiting on &lt;0x0000000716b55598&gt; (a java.lang.Object)
-        at java.lang.Object.wait(Object.java:485)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+- waiting on &lt;0x0000000716b55598&gt; (a java.lang.Object)
+at java.lang.Object.wait(Object.java:485)
 g       at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$ShuffleRamManager.waitForDataToMerge(ReduceTask.java:1117)
-        - locked &lt;0x0000000716b55598&gt; (a java.lang.Object)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$InMemFSMergeThread.run(ReduceTask.java:2650)
+- locked &lt;0x0000000716b55598&gt; (a java.lang.Object)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$InMemFSMergeThread.run(ReduceTask.java:2650)
 
 "Thread for merging on-disk files" daemon prio=10 tid=0x00007fd5447cf000 nid=0x33e7c in Object.wait() [0x00007fd51d86e000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        - waiting on &lt;0x0000000716b55668&gt; (a java.util.TreeSet)
-        at java.lang.Object.wait(Object.java:485)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$LocalFSMerger.run(ReduceTask.java:2549)
-        - locked &lt;0x0000000716b55668&gt; (a java.util.TreeSet)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+- waiting on &lt;0x0000000716b55668&gt; (a java.util.TreeSet)
+at java.lang.Object.wait(Object.java:485)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$LocalFSMerger.run(ReduceTask.java:2549)
+- locked &lt;0x0000000716b55668&gt; (a java.util.TreeSet)
 
 "MapOutputCopier attempt_201301231102_24403_r_000049_1.4" prio=10 tid=0x00007fd5447cd000 nid=0x33e7b in Object.wait() [0x00007fd51d96f000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.lang.Object.wait(Object.java:485)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
-        - locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.lang.Object.wait(Object.java:485)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
+- locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
 
 "MapOutputCopier attempt_201301231102_24403_r_000049_1.3" prio=10 tid=0x00007fd5447cb000 nid=0x33e7a in Object.wait() [0x00007fd51da70000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.lang.Object.wait(Object.java:485)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
-        - locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.lang.Object.wait(Object.java:485)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
+- locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
 
 "MapOutputCopier attempt_201301231102_24403_r_000049_1.2" prio=10 tid=0x00007fd54460c000 nid=0x33e79 in Object.wait() [0x00007fd51db71000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.lang.Object.wait(Object.java:485)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
-        - locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.lang.Object.wait(Object.java:485)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
+- locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
 
 "MapOutputCopier attempt_201301231102_24403_r_000049_1.1" prio=10 tid=0x00007fd54460a000 nid=0x33e78 in Object.wait() [0x00007fd51dc72000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.lang.Object.wait(Object.java:485)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
-        - locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.lang.Object.wait(Object.java:485)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
+- locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
 
 "MapOutputCopier attempt_201301231102_24403_r_000049_1.0" prio=10 tid=0x00007fd544609800 nid=0x33e77 in Object.wait() [0x00007fd51dd73000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.lang.Object.wait(Object.java:485)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
-        - locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.lang.Object.wait(Object.java:485)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTask.java:1244)
+- locked &lt;0x0000000716b3bf00&gt; (a java.util.ArrayList)
 
 "Timer thread for monitoring mapred" daemon prio=10 tid=0x00007fd54464f000 nid=0x33e76 in Object.wait() [0x00007fd51de74000]
-   java.lang.Thread.State: TIMED_WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.util.TimerThread.mainLoop(Timer.java:509)
-        - locked &lt;0x0000000716b74b90&gt; (a java.util.TaskQueue)
-        at java.util.TimerThread.run(Timer.java:462)
+java.lang.Thread.State: TIMED_WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.util.TimerThread.mainLoop(Timer.java:509)
+- locked &lt;0x0000000716b74b90&gt; (a java.util.TaskQueue)
+at java.util.TimerThread.run(Timer.java:462)
 
 "communication thread" daemon prio=10 tid=0x00007fd544586800 nid=0x33e6c waiting on condition [0x00007fd51df75000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-        at java.lang.Thread.sleep(Native Method)
-        at org.apache.hadoop.mapred.Task$TaskReporter.run(Task.java:645)
-        at java.lang.Thread.run(Thread.java:662)
+java.lang.Thread.State: TIMED_WAITING (sleeping)
+at java.lang.Thread.sleep(Native Method)
+at org.apache.hadoop.mapred.Task$TaskReporter.run(Task.java:645)
+at java.lang.Thread.run(Thread.java:662)
 
 "Timer thread for monitoring jvm" daemon prio=10 tid=0x00007fd544525800 nid=0x33e6a in Object.wait() [0x00007fd51e177000]
-   java.lang.Thread.State: TIMED_WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.util.TimerThread.mainLoop(Timer.java:509)
-        - locked &lt;0x0000000716b74cf0&gt; (a java.util.TaskQueue)
-        at java.util.TimerThread.run(Timer.java:462)
+java.lang.Thread.State: TIMED_WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.util.TimerThread.mainLoop(Timer.java:509)
+- locked &lt;0x0000000716b74cf0&gt; (a java.util.TaskQueue)
+at java.util.TimerThread.run(Timer.java:462)
 
 "Thread for syncLogs" daemon prio=10 tid=0x00007fd544497800 nid=0x33e51 waiting on condition [0x00007fd51e481000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-        at java.lang.Thread.sleep(Native Method)
-        at org.apache.hadoop.mapred.Child$3.run(Child.java:155)
+java.lang.Thread.State: TIMED_WAITING (sleeping)
+at java.lang.Thread.sleep(Native Method)
+at org.apache.hadoop.mapred.Child$3.run(Child.java:155)
 
 "sendParams-0" daemon prio=10 tid=0x00007fd544464800 nid=0x33e50 waiting on condition [0x00007fd51e582000]
-   java.lang.Thread.State: TIMED_WAITING (parking)
-        at sun.misc.Unsafe.park(Native Method)
-        - parking to wait for  &lt;0x0000000716b3bcf8&gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
-        at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
-        at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
-        at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
-        at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
-        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
-        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
-        at java.lang.Thread.run(Thread.java:662)
+java.lang.Thread.State: TIMED_WAITING (parking)
+at sun.misc.Unsafe.park(Native Method)
+- parking to wait for  &lt;0x0000000716b3bcf8&gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
+at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
+at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
+at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
+at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+at java.lang.Thread.run(Thread.java:662)
 
 "IPC Client (47) connection to /127.0.0.1:12540 from job_201301231102_24403" daemon prio=10 tid=0x00007fd544430000 nid=0x33e4f in Object.wait() [0x00007fd51e683000]
-   java.lang.Thread.State: TIMED_WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at org.apache.hadoop.ipc.Client$Connection.waitForWork(Client.java:680)
-        - locked &lt;0x0000000716a64810&gt; (a org.apache.hadoop.ipc.Client$Connection)
-        at org.apache.hadoop.ipc.Client$Connection.run(Client.java:723)
+java.lang.Thread.State: TIMED_WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at org.apache.hadoop.ipc.Client$Connection.waitForWork(Client.java:680)
+- locked &lt;0x0000000716a64810&gt; (a org.apache.hadoop.ipc.Client$Connection)
+at org.apache.hadoop.ipc.Client$Connection.run(Client.java:723)
 
 "Low Memory Detector" daemon prio=10 tid=0x00007fd5440ae800 nid=0x33e38 runnable [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
+java.lang.Thread.State: RUNNABLE
 
 "C2 CompilerThread1" daemon prio=10 tid=0x00007fd5440ac000 nid=0x33e37 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
+java.lang.Thread.State: RUNNABLE
 
 "C2 CompilerThread0" daemon prio=10 tid=0x00007fd5440a9000 nid=0x33e36 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
+java.lang.Thread.State: RUNNABLE
 
 "Signal Dispatcher" daemon prio=10 tid=0x00007fd5440a7000 nid=0x33e35 waiting on condition [0x0000000000000000]
-   java.lang.Thread.State: RUNNABLE
+java.lang.Thread.State: RUNNABLE
 
 "Finalizer" daemon prio=10 tid=0x00007fd54408b000 nid=0x33e34 in Object.wait() [0x00007fd53cf41000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
-        - locked &lt;0x0000000716b74f78&gt; (a java.lang.ref.ReferenceQueue$Lock)
-        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
-        at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+- locked &lt;0x0000000716b74f78&gt; (a java.lang.ref.ReferenceQueue$Lock)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
 
 "Reference Handler" daemon prio=10 tid=0x00007fd544089000 nid=0x33e32 in Object.wait() [0x00007fd53d042000]
-   java.lang.Thread.State: WAITING (on object monitor)
-        at java.lang.Object.wait(Native Method)
-        at java.lang.Object.wait(Object.java:485)
-        at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
-        - locked &lt;0x0000000716b3ba60&gt; (a java.lang.ref.Reference$Lock)
+java.lang.Thread.State: WAITING (on object monitor)
+at java.lang.Object.wait(Native Method)
+at java.lang.Object.wait(Object.java:485)
+at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+- locked &lt;0x0000000716b3ba60&gt; (a java.lang.ref.Reference$Lock)
 
 "main" prio=10 tid=0x00007fd544009800 nid=0x33e0a waiting on condition [0x00007fd5484ee000]
-   java.lang.Thread.State: TIMED_WAITING (sleeping)
-        at java.lang.Thread.sleep(Native Method)
-        at org.apache.hadoop.mapred.ReduceTask$ReduceCopier.fetchOutputs(ReduceTask.java:2099)
-        at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:382)
-        at org.apache.hadoop.mapred.Child$4.run(Child.java:270)
-        at java.security.AccessController.doPrivileged(Native Method)
-        at javax.security.auth.Subject.doAs(Subject.java:396)
-        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
-        at org.apache.hadoop.mapred.Child.main(Child.java:264)
+java.lang.Thread.State: TIMED_WAITING (sleeping)
+at java.lang.Thread.sleep(Native Method)
+at org.apache.hadoop.mapred.ReduceTask$ReduceCopier.fetchOutputs(ReduceTask.java:2099)
+at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:382)
+at org.apache.hadoop.mapred.Child$4.run(Child.java:270)
+at java.security.AccessController.doPrivileged(Native Method)
+at javax.security.auth.Subject.doAs(Subject.java:396)
+at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1157)
+at org.apache.hadoop.mapred.Child.main(Child.java:264)
 
-"VM Thread" prio=10 tid=0x00007fd544082800 nid=0x33e30 runnable 
+"VM Thread" prio=10 tid=0x00007fd544082800 nid=0x33e30 runnable
 
-"GC task thread#0 (ParallelGC)" prio=10 tid=0x00007fd54401c800 nid=0x33e11 runnable 
+"GC task thread#0 (ParallelGC)" prio=10 tid=0x00007fd54401c800 nid=0x33e11 runnable
 
-"GC task thread#1 (ParallelGC)" prio=10 tid=0x00007fd54401e800 nid=0x33e13 runnable 
+"GC task thread#1 (ParallelGC)" prio=10 tid=0x00007fd54401e800 nid=0x33e13 runnable
 
-"GC task thread#2 (ParallelGC)" prio=10 tid=0x00007fd544020800 nid=0x33e15 runnable 
+"GC task thread#2 (ParallelGC)" prio=10 tid=0x00007fd544020800 nid=0x33e15 runnable
 
-"GC task thread#3 (ParallelGC)" prio=10 tid=0x00007fd544022000 nid=0x33e17 runnable 
+"GC task thread#3 (ParallelGC)" prio=10 tid=0x00007fd544022000 nid=0x33e17 runnable
 
-"GC task thread#4 (ParallelGC)" prio=10 tid=0x00007fd544024000 nid=0x33e19 runnable 
+"GC task thread#4 (ParallelGC)" prio=10 tid=0x00007fd544024000 nid=0x33e19 runnable
 
-"GC task thread#5 (ParallelGC)" prio=10 tid=0x00007fd544026000 nid=0x33e1b runnable 
+"GC task thread#5 (ParallelGC)" prio=10 tid=0x00007fd544026000 nid=0x33e1b runnable
 
-"GC task thread#6 (ParallelGC)" prio=10 tid=0x00007fd544027800 nid=0x33e1d runnable 
+"GC task thread#6 (ParallelGC)" prio=10 tid=0x00007fd544027800 nid=0x33e1d runnable
 
-"GC task thread#7 (ParallelGC)" prio=10 tid=0x00007fd544029800 nid=0x33e1f runnable 
+"GC task thread#7 (ParallelGC)" prio=10 tid=0x00007fd544029800 nid=0x33e1f runnable
 
-"GC task thread#8 (ParallelGC)" prio=10 tid=0x00007fd54402b000 nid=0x33e21 runnable 
+"GC task thread#8 (ParallelGC)" prio=10 tid=0x00007fd54402b000 nid=0x33e21 runnable
 
-"GC task thread#9 (ParallelGC)" prio=10 tid=0x00007fd54402d000 nid=0x33e23 runnable 
+"GC task thread#9 (ParallelGC)" prio=10 tid=0x00007fd54402d000 nid=0x33e23 runnable
 
-"GC task thread#10 (ParallelGC)" prio=10 tid=0x00007fd54402f000 nid=0x33e25 runnable 
+"GC task thread#10 (ParallelGC)" prio=10 tid=0x00007fd54402f000 nid=0x33e25 runnable
 
-"GC task thread#11 (ParallelGC)" prio=10 tid=0x00007fd544030800 nid=0x33e27 runnable 
+"GC task thread#11 (ParallelGC)" prio=10 tid=0x00007fd544030800 nid=0x33e27 runnable
 
-"GC task thread#12 (ParallelGC)" prio=10 tid=0x00007fd544032800 nid=0x33e29 runnable 
+"GC task thread#12 (ParallelGC)" prio=10 tid=0x00007fd544032800 nid=0x33e29 runnable
 
-"GC task thread#13 (ParallelGC)" prio=10 tid=0x00007fd544034800 nid=0x33e2a runnable 
+"GC task thread#13 (ParallelGC)" prio=10 tid=0x00007fd544034800 nid=0x33e2a runnable
 
-"GC task thread#14 (ParallelGC)" prio=10 tid=0x00007fd544036000 nid=0x33e2b runnable 
+"GC task thread#14 (ParallelGC)" prio=10 tid=0x00007fd544036000 nid=0x33e2b runnable
 
-"GC task thread#15 (ParallelGC)" prio=10 tid=0x00007fd544038000 nid=0x33e2c runnable 
+"GC task thread#15 (ParallelGC)" prio=10 tid=0x00007fd544038000 nid=0x33e2c runnable
 
-"GC task thread#16 (ParallelGC)" prio=10 tid=0x00007fd54403a000 nid=0x33e2d runnable 
+"GC task thread#16 (ParallelGC)" prio=10 tid=0x00007fd54403a000 nid=0x33e2d runnable
 
-"GC task thread#17 (ParallelGC)" prio=10 tid=0x00007fd54403b800 nid=0x33e2e runnable 
+"GC task thread#17 (ParallelGC)" prio=10 tid=0x00007fd54403b800 nid=0x33e2e runnable
 
-"VM Periodic Task Thread" prio=10 tid=0x00007fd5440c1000 nid=0x33e39 waiting on condition 
+"VM Periodic Task Thread" prio=10 tid=0x00007fd5440c1000 nid=0x33e39 waiting on condition
 
 JNI global references: 1033
 
 Heap
- PSYoungGen      total 93120K, used 32400K [0x00000007aaab0000, 0x00000007b2ec0000, 0x0000000800000000)
-  eden space 92352K, 34% used [0x00000007aaab0000,0x00000007ac9940b0,0x00000007b04e0000)
-  from space 768K, 100% used [0x00000007b0600000,0x00000007b06c0000,0x00000007b06c0000)
-  to   space 21440K, 0% used [0x00000007b19d0000,0x00000007b19d0000,0x00000007b2ec0000)
- PSOldGen        total 898368K, used 604768K [0x0000000700000000, 0x0000000736d50000, 0x00000007aaab0000)
-  object space 898368K, 67% used [0x0000000700000000,0x0000000724e980d8,0x0000000736d50000)
- PSPermGen       total 29120K, used 14619K [0x00000006fae00000, 0x00000006fca70000, 0x0000000700000000)
-  object space 29120K, 50% used [0x00000006fae00000,0x00000006fbc46da8,0x00000006fca70000)
+PSYoungGen      total 93120K, used 32400K [0x00000007aaab0000, 0x00000007b2ec0000, 0x0000000800000000)
+eden space 92352K, 34% used [0x00000007aaab0000,0x00000007ac9940b0,0x00000007b04e0000)
+from space 768K, 100% used [0x00000007b0600000,0x00000007b06c0000,0x00000007b06c0000)
+to   space 21440K, 0% used [0x00000007b19d0000,0x00000007b19d0000,0x00000007b2ec0000)
+PSOldGen        total 898368K, used 604768K [0x0000000700000000, 0x0000000736d50000, 0x00000007aaab0000)
+object space 898368K, 67% used [0x0000000700000000,0x0000000724e980d8,0x0000000736d50000)
+PSPermGen       total 29120K, used 14619K [0x00000006fae00000, 0x00000006fca70000, 0x0000000700000000)
+object space 29120K, 50% used [0x00000006fae00000,0x00000006fbc46da8,0x00000006fca70000)
 </pre>
 
 
@@ -1953,7 +1953,7 @@ Heap
 dp24 OOM
 </p>
 <p>
-dp31 
+dp31
 </p>
 
 

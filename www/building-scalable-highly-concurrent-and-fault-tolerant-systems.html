@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Building Scalable, Highly Concurrent &amp; Fault-Tolerant Systems: Lessons Learned</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -128,7 +128,7 @@
 </li>
 <li>Go Fault-Tolerant
 </li>
-<li>Go More &amp; Go Faster 
+<li>Go More &amp; Go Faster
 </li>
 <li>Go Distributed
 </li>
@@ -186,7 +186,7 @@
 </li>
 <li>Taking the wrong locks
 </li>
-<li>Taking locks in the wrong order 错误顺序 
+<li>Taking locks in the wrong order 错误顺序
 </li>
 <li>Error recovery is hard 错误恢复处理
 </li>
@@ -203,14 +203,14 @@
 </li>
 <li>Data-driven
 <ul>
-<li>Threads are suspended until data is available 
+<li>Threads are suspended until data is available
 </li>
 <li>Lazy &amp; On-demand
 </li>
 </ul>
 
 </li>
-<li>No difference between 
+<li>No difference between
 <ul>
 <li>Concurrent &amp;
 </li>
@@ -250,7 +250,7 @@
 </ul>
 
 </li>
-<li>Agents <b>相当于worker角色，做一些异步操作的工作</b> 
+<li>Agents <b>相当于worker角色，做一些异步操作的工作</b>
 </li>
 </ul>
 
@@ -267,7 +267,7 @@
 <div class="outline-text-3" id="text-1-3">
 
 <ul>
-<li>Failure management in Java/C/C# etc <b>在独立的线程里面必须进行错误处理，否则外部没有办法发现错误。这样在线程里面整个错误处理贯穿于逻辑本身</b> 
+<li>Failure management in Java/C/C# etc <b>在独立的线程里面必须进行错误处理，否则外部没有办法发现错误。这样在线程里面整个错误处理贯穿于逻辑本身</b>
 <ul>
 <li>You are given a SINGLE thread of control
 </li>
@@ -295,7 +295,7 @@
 </li>
 <li>Process Supervision
 <ul>
-<li>Each running process has a supervising process 
+<li>Each running process has a supervising process
 </li>
 <li>Errors are sent to the supervisor
 </li>
@@ -306,7 +306,7 @@
 </li>
 <li>Same semantics local as remote
 </li>
-<li>For example the Actor Model solves it nicely 
+<li>For example the Actor Model solves it nicely
 </li>
 </ul>
 
@@ -327,7 +327,7 @@
 <ul>
 <li>&hellip;unless you really have to
 </li>
-<li>Blocking kills scalability (and performance) 
+<li>Blocking kills scalability (and performance)
 </li>
 <li>Never sit on resources you don’t use
 </li>
@@ -351,11 +351,11 @@
 </li>
 <li>How fast is fast enough?
 <ul>
-<li>Measure, measure and measure 
+<li>Measure, measure and measure
 </li>
 <li>Start with a baseline
 </li>
-<li>Define “good enough” 
+<li>Define “good enough”
 </li>
 <li>Beware of micro-benchmarks
 </li>
@@ -377,7 +377,7 @@
 </p><ol>
 <li>Transparency is the ultimate goal
 </li>
-<li>Automatic object replication is desirable 
+<li>Automatic object replication is desirable
 </li>
 <li>All replicas are equal and deterministic
 </li>
@@ -389,7 +389,7 @@
 </p><ul>
 <li>The CALM Conjecture
 </li>
-<li>Could be the future of Distributed Computing 
+<li>Could be the future of Distributed Computing
 </li>
 <li>Declarative
 </li>

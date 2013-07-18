@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>hadoop</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -606,7 +606,7 @@ As JMX port, ZooKeeper will also use another randomly selected port for RMI. In 
 <h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Hadoop即将过时了吗？</h4>
 <div class="outline-text-4" id="text-1-2-1">
 
-<p><a href="http://www.kuqin.com/database/20120715/322528.html">http://www.kuqin.com/database/20120715/322528.html</a> 
+<p><a href="http://www.kuqin.com/database/20120715/322528.html">http://www.kuqin.com/database/20120715/322528.html</a>
 </p>
 <p>
 google提出的三个东西都是解决hadoop的软肋，最终目的还是需要解决大数据上面的实时性问题。
@@ -670,7 +670,7 @@ RAID cards, redundant power supplies and other per-component reliability feature
 <ul>
 <li>Thomas Jungblut's Blog: Dealing with "OutOfMemoryError" in Hadoop <a href="http://codingwiththomas.blogspot.jp/2011/07/dealing-with-outofmemoryerror-in-hadoop.html">http://codingwiththomas.blogspot.jp/2011/07/dealing-with-outofmemoryerror-in-hadoop.html</a> 作者给出的解决办法就是修改hadoop的代码，通过调用Java API而不是使用ProcessBuilder来解决。
 </li>
-<li><b>NOTE(dirlt):出现OOM的话必须区分JVM还是Linux System本身的OOM。JVM出现OOM是抛出异常，而Linux出现OOM是会触发OOM killer</b> 
+<li><b>NOTE(dirlt):出现OOM的话必须区分JVM还是Linux System本身的OOM。JVM出现OOM是抛出异常，而Linux出现OOM是会触发OOM killer</b>
 </li>
 </ul>
 
@@ -699,12 +699,12 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 <h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> CDH3u3搭建单节点集群</h4>
 <div class="outline-text-4" id="text-1-3-1">
 
-<p>搭建单节点集群允许我们在单机做一些模拟或者是测试，还是非常有意义的。如何操作的话可以参考链接 <a href="http://localhost/utils/hadoop-0.20.2-cdh3u3/docs/single_node_setup.html">http://localhost/utils/hadoop-0.20.2-cdh3u3/docs/single_node_setup.html</a> 
+<p>搭建单节点集群允许我们在单机做一些模拟或者是测试，还是非常有意义的。如何操作的话可以参考链接 <a href="http://localhost/utils/hadoop-0.20.2-cdh3u3/docs/single_node_setup.html">http://localhost/utils/hadoop-0.20.2-cdh3u3/docs/single_node_setup.html</a>
 </p>
 <p>
 这里稍微总结一下：
 </p><ul>
-<li>首先安装ssh和rsync # sudo apt-get install ssh &amp;&amp;  sudo apt-get install rsync 
+<li>首先安装ssh和rsync # sudo apt-get install ssh &amp;&amp;  sudo apt-get install rsync
 </li>
 <li>本机建立好信任关系 # cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys
 </li>
@@ -718,10 +718,10 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 
 
 <pre class="src src-XML">&lt;configuration&gt;
-     &lt;property&gt;
-         &lt;name&gt;fs.default.name&lt;/name&gt;
-         &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
-     &lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;fs.default.name&lt;/name&gt;
+&lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+&lt;/property&gt;
 &lt;/configuration&gt;
 </pre>
 
@@ -734,10 +734,10 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 
 
 <pre class="src src-XML">&lt;configuration&gt;
-     &lt;property&gt;
-         &lt;name&gt;dfs.replication&lt;/name&gt;
-         &lt;value&gt;1&lt;/value&gt;
-     &lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;dfs.replication&lt;/name&gt;
+&lt;value&gt;1&lt;/value&gt;
+&lt;/property&gt;
 &lt;/configuration&gt;
 </pre>
 
@@ -751,10 +751,10 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 
 
 <pre class="src src-XML">&lt;configuration&gt;
-     &lt;property&gt;
-         &lt;name&gt;mapred.job.tracker&lt;/name&gt;
-         &lt;value&gt;localhost:9001&lt;/value&gt;
-     &lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.job.tracker&lt;/name&gt;
+&lt;value&gt;localhost:9001&lt;/value&gt;
+&lt;/property&gt;
 &lt;/configuration&gt;
 </pre>
 
@@ -767,7 +767,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 </li>
 <li>webconsole
 <ul>
-<li>NameNode - <a href="http://localhost:50070/">http://localhost:50070/</a> 
+<li>NameNode - <a href="http://localhost:50070/">http://localhost:50070/</a>
 </li>
 <li>JobTracker - <a href="http://localhost:50030/">http://localhost:50030/</a>
 </li>
@@ -849,7 +849,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 </li>
 <li>外围环境的访问比如访问hdfs以及hbase
 </li>
-<li>程序打包。比如使用很多第三方库的话在其他机器上面没有部署。 
+<li>程序打包。比如使用很多第三方库的话在其他机器上面没有部署。
 </li>
 </ul>
 
@@ -925,7 +925,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 <ul>
 <li>文件系统
 <ul>
-<li>ChecksumFileSystem 
+<li>ChecksumFileSystem
 <ul>
 <li>使用decorator设计模式，底层filesystem称为RawFileSystem
 </li>
@@ -937,7 +937,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 </li>
 <li>考虑到存在多副本的情况，如果读取某个副本出错的话，期间那么会调用reportChecksumFailure方法
 <ul>
-<li><b>NOTE（dirlt）：这个部分的代码不太好读，非常绕</b>    
+<li><b>NOTE（dirlt）：这个部分的代码不太好读，非常绕</b>
 </li>
 </ul>
 
@@ -1036,7 +1036,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 </li>
 <li>mapred.output.compress.type = BLOCK/RECORD 如果输出格式为SequenceFile的话，那么这个参数可以控制是块压缩还是记录压缩
 </li>
-<li><b>NOTE（dirlt）：我现在强烈感觉MR的中间结果存储格式为SequenceFile</b> 
+<li><b>NOTE（dirlt）：我现在强烈感觉MR的中间结果存储格式为SequenceFile</b>
 </li>
 <li><b>NOTE（dirlt）：应该是IFile，但是是否共享了这个配置呢？</b>
 </li>
@@ -1173,7 +1173,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 <ul>
 <li>fs.default.name = hdfs://localhost
 </li>
-<li>mapred.job.tracker = localhost:8021 
+<li>mapred.job.tracker = localhost:8021
 </li>
 </ul>
 
@@ -1232,7 +1232,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 </li>
 <li>MiniMRCluster
 </li>
-<li>MiniHBaseCluster 
+<li>MiniHBaseCluster
 </li>
 <li>MiniZooKeeperClutser
 </li>
@@ -1240,10 +1240,10 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
 </li>
 </ul>
 
-<p>另外还有自带的ClusterMapReduceTestCase以及HBaseTestingUtility来帮助进行mapreduce的testcase. 这些类散步在hadoop,hbase,hadoop-test以及hbase-test里面。 
+<p>另外还有自带的ClusterMapReduceTestCase以及HBaseTestingUtility来帮助进行mapreduce的testcase. 这些类散步在hadoop,hbase,hadoop-test以及hbase-test里面。
 </p>
 <p>
-<b>NOTE（dirlt）：但是个人觉得可能还是没有本地测试方便，不过倒是可以试试</b> 
+<b>NOTE（dirlt）：但是个人觉得可能还是没有本地测试方便，不过倒是可以试试</b>
 </p>
 
 <hr/>
@@ -1298,7 +1298,7 @@ job，task and attempt
 </li>
 <li>hadoop.job.history.location 历史作业信息存放位置，超过30天删除，默认在_logs/history
 </li>
-<li>hadoop.job.history.user.location 如果不为none那么历史作业信息在这里也会存在一份，不会删除。 
+<li>hadoop.job.history.user.location 如果不为none那么历史作业信息在这里也会存在一份，不会删除。
 </li>
 </ul>
 
@@ -1448,7 +1448,7 @@ Hadoop运行MapReduce作业的工作原理
 </li>
 <li>计数器修改
 </li>
-<li>reporter的progress 
+<li>reporter的progress
 </li>
 </ul>
 
@@ -1560,7 +1560,7 @@ shuffle和排序
 <img src="./images/mapreduce-shuffle-sort-2.png"  alt="./images/mapreduce-shuffle-sort-2.png" />
 </p>
 <p>
- 有下面这些参数控制shuffle和sort的过程 <b>NOTE（dirlt）：书上倒是有很多参数，但是好多还是不太理解</b>
+有下面这些参数控制shuffle和sort的过程 <b>NOTE（dirlt）：书上倒是有很多参数，但是好多还是不太理解</b>
 </p><ul>
 <li>io.sort.mb map输出缓存空间大小，默认是100MB. 建议设置10* io.sort.factor.
 </li>
@@ -1597,7 +1597,7 @@ shuffle和排序
 </ul>
 
 </li>
-<li>mapred.reduce.copy.backoff = 300(s) reduce下载线程最大等待时间    
+<li>mapred.reduce.copy.backoff = 300(s) reduce下载线程最大等待时间
 </li>
 <li>mapred.job.shuffle.input.buffer.percent = 0.7 用来缓存shuffle数据的reduce task heap百分比
 </li>
@@ -1701,16 +1701,16 @@ MapReduce的类型
 
 
 
-<pre class="src src-Java">protected void map(KEYIN key, VALUEIN value, 
-                   Context context) throws IOException, InterruptedException {
-  context.write((KEYOUT) key, (VALUEOUT) value);
+<pre class="src src-Java">protected void map(KEYIN key, VALUEIN value,
+Context context) throws IOException, InterruptedException {
+context.write((KEYOUT) key, (VALUEOUT) value);
 }
 public void run(Context context) throws IOException, InterruptedException {
-  setup(context);
-  while (context.nextKeyValue()) {
-    map(context.getCurrentKey(), context.getCurrentValue(), context);
-  }
-  cleanup(context);
+setup(context);
+while (context.nextKeyValue()) {
+map(context.getCurrentKey(), context.getCurrentValue(), context);
+}
+cleanup(context);
 }
 </pre>
 
@@ -1764,42 +1764,42 @@ public void run(Context context) throws IOException, InterruptedException {
 
 
 <pre class="src src-Java">public abstract class InputFormat&lt;K, V&gt; {
-  public abstract 
-    List&lt;InputSplit&gt; getSplits(JobContext context
-                               ) throws IOException, InterruptedException;
+public abstract
+List&lt;InputSplit&gt; getSplits(JobContext context
+) throws IOException, InterruptedException;
 
-   public abstract 
-    RecordReader&lt;K,V&gt; createRecordReader(InputSplit split,
-                                         TaskAttemptContext context
-                                        ) throws IOException, 
-                                                 InterruptedException;
+public abstract
+RecordReader&lt;K,V&gt; createRecordReader(InputSplit split,
+TaskAttemptContext context
+) throws IOException,
+InterruptedException;
 
 }
 
 public abstract class InputSplit {
-  public abstract long getLength() throws IOException, InterruptedException;
+public abstract long getLength() throws IOException, InterruptedException;
 
-  public abstract 
-    String[] getLocations() throws IOException, InterruptedException;
+public abstract
+String[] getLocations() throws IOException, InterruptedException;
 }
 
 public abstract class RecordReader&lt;KEYIN, VALUEIN&gt; implements Closeable {
-  public abstract void initialize(InputSplit split,
-                                  TaskAttemptContext context
-                                  ) throws IOException, InterruptedException;
+public abstract void initialize(InputSplit split,
+TaskAttemptContext context
+) throws IOException, InterruptedException;
 
-  public abstract 
-  boolean nextKeyValue() throws IOException, InterruptedException;
+public abstract
+boolean nextKeyValue() throws IOException, InterruptedException;
 
-  public abstract
-  KEYIN getCurrentKey() throws IOException, InterruptedException;
+public abstract
+KEYIN getCurrentKey() throws IOException, InterruptedException;
 
-  public abstract 
-  VALUEIN getCurrentValue() throws IOException, InterruptedException;
+public abstract
+VALUEIN getCurrentValue() throws IOException, InterruptedException;
 
-  public abstract float getProgress() throws IOException, InterruptedException;
+public abstract float getProgress() throws IOException, InterruptedException;
 
-  public abstract void close() throws IOException;
+public abstract void close() throws IOException;
 }
 </pre>
 
@@ -1867,7 +1867,7 @@ public abstract class RecordReader&lt;KEYIN, VALUEIN&gt; implements Closeable {
 </li>
 <li>XML
 <ul>
-<li>InputFormat使用StreamInputFormat,       
+<li>InputFormat使用StreamInputFormat,
 </li>
 <li>设置RecordReader使用stream.recordreader.class来设置
 </li>
@@ -1920,7 +1920,7 @@ public abstract class RecordReader&lt;KEYIN, VALUEIN&gt; implements Closeable {
 </li>
 <li>MapFileOutputFormat
 </li>
-<li>MultipleOutputFormat 
+<li>MultipleOutputFormat
 </li>
 <li>MultipleOutputs
 <ul>
@@ -2131,7 +2131,7 @@ public abstract class RecordReader&lt;KEYIN, VALUEIN&gt; implements Closeable {
 </li>
 <li>dfs.secondary.http.address 0.0.0.0:50090 secondard namenode的HTTP接口
 </li>
-<li>dfs.datanode.dns.interface default 绑定的NIC，默认是绑定默认的NIC比如eth0       
+<li>dfs.datanode.dns.interface default 绑定的NIC，默认是绑定默认的NIC比如eth0
 </li>
 <li>dfs.hosts / dfs.hosts.exclude 加入的datanode以及排除的datanode
 </li>
@@ -2468,22 +2468,22 @@ Usage: TestDFSIO [genericOptions] -read | -write | -append | -clean [-nrFiles N]
 
 
 <pre class="example">----- TestDFSIO ----- : write
-           Date &amp; time: Thu Apr 25 19:14:21 CST 2013
-       Number of files: 2
+Date &amp; time: Thu Apr 25 19:14:21 CST 2013
+Number of files: 2
 Total MBytes processed: 2.0
-     Throughput mb/sec: 7.575757575757576
+Throughput mb/sec: 7.575757575757576
 Average IO rate mb/sec: 7.61113977432251
- IO rate std deviation: 0.5189420757292891
-    Test exec time sec: 14.565
+IO rate std deviation: 0.5189420757292891
+Test exec time sec: 14.565
 
 ----- TestDFSIO ----- : read
-           Date &amp; time: Thu Apr 25 19:15:13 CST 2013
-       Number of files: 2
+Date &amp; time: Thu Apr 25 19:15:13 CST 2013
+Number of files: 2
 Total MBytes processed: 2.0
-     Throughput mb/sec: 27.77777777777778
+Throughput mb/sec: 27.77777777777778
 Average IO rate mb/sec: 28.125
- IO rate std deviation: 3.125
-    Test exec time sec: 14.664
+IO rate std deviation: 3.125
+Test exec time sec: 14.664
 </pre>
 
 
@@ -2536,7 +2536,7 @@ Average IO rate mb/sec: 28.125
 </li>
 <li>terasort 对数据排序
 <ul>
-<li>&lt;input dir&gt; 
+<li>&lt;input dir&gt;
 </li>
 <li>&lt;output dir&gt;
 </li>
@@ -2568,19 +2568,19 @@ Average IO rate mb/sec: 28.125
 NameNode Benchmark 0.4
 Usage: nnbench &lt;options&gt;
 Options:
-        -operation &lt;Available operations are create_write open_read rename delete. This option is mandatory&gt;
-         * NOTE: The open_read, rename and delete operations assume that the files they operate on, are already available. The create_write operation must be run before running the other operations.
-        -maps &lt;number of maps. default is 1. This is not mandatory&gt;
-        -reduces &lt;number of reduces. default is 1. This is not mandatory&gt;
-        -startTime &lt;time to start, given in seconds from the epoch. Make sure this is far enough into the future, so all maps (operations) will start at the same time&gt;. default is launch time + 2 mins. This is not mandatory 
-        -blockSize &lt;Block size in bytes. default is 1. This is not mandatory&gt;
-        -bytesToWrite &lt;Bytes to write. default is 0. This is not mandatory&gt;
-        -bytesPerChecksum &lt;Bytes per checksum for the files. default is 1. This is not mandatory&gt;
-        -numberOfFiles &lt;number of files to create. default is 1. This is not mandatory&gt;
-        -replicationFactorPerFile &lt;Replication factor for the files. default is 1. This is not mandatory&gt;
-        -baseDir &lt;base DFS path. default is /becnhmarks/NNBench. This is not mandatory&gt;
-        -readFileAfterOpen &lt;true or false. if true, it reads the file and reports the average time to read. This is valid with the open_read operation. default is false. This is not mandatory&gt;
-        -help: Display the help statement
+-operation &lt;Available operations are create_write open_read rename delete. This option is mandatory&gt;
+* NOTE: The open_read, rename and delete operations assume that the files they operate on, are already available. The create_write operation must be run before running the other operations.
+-maps &lt;number of maps. default is 1. This is not mandatory&gt;
+-reduces &lt;number of reduces. default is 1. This is not mandatory&gt;
+-startTime &lt;time to start, given in seconds from the epoch. Make sure this is far enough into the future, so all maps (operations) will start at the same time&gt;. default is launch time + 2 mins. This is not mandatory
+-blockSize &lt;Block size in bytes. default is 1. This is not mandatory&gt;
+-bytesToWrite &lt;Bytes to write. default is 0. This is not mandatory&gt;
+-bytesPerChecksum &lt;Bytes per checksum for the files. default is 1. This is not mandatory&gt;
+-numberOfFiles &lt;number of files to create. default is 1. This is not mandatory&gt;
+-replicationFactorPerFile &lt;Replication factor for the files. default is 1. This is not mandatory&gt;
+-baseDir &lt;base DFS path. default is /becnhmarks/NNBench. This is not mandatory&gt;
+-readFileAfterOpen &lt;true or false. if true, it reads the file and reports the average time to read. This is valid with the open_read operation. default is false. This is not mandatory&gt;
+-help: Display the help statement
 </pre>
 
 <ul>
@@ -2593,7 +2593,7 @@ Options:
 
 
 <pre class="example">➜  ~HADOOP_HOME  hadoop jar hadoop-test-0.20.2-cdh3u3.jar nnbench -operation create_write -bytesToWrite 0 -numberOfFiles 1200
-➜  ~HADOOP_HOME  hadoop jar hadoop-test-0.20.2-cdh3u3.jar nnbench -operation open_read 
+➜  ~HADOOP_HOME  hadoop jar hadoop-test-0.20.2-cdh3u3.jar nnbench -operation open_read
 </pre>
 
 
@@ -2602,64 +2602,64 @@ Options:
 </p>
 
 
-<pre class="example">-------------- NNBench -------------- : 
-                               Version: NameNode Benchmark 0.4
-                           Date &amp; time: 2013-04-25 19:41:02,873
+<pre class="example">-------------- NNBench -------------- :
+Version: NameNode Benchmark 0.4
+Date &amp; time: 2013-04-25 19:41:02,873
 
-                        Test Operation: create_write
-                            Start time: 2013-04-25 19:40:21,70
-                           Maps to run: 1
-                        Reduces to run: 1
-                    Block Size (bytes): 1
-                        Bytes to write: 0
-                    Bytes per checksum: 1
-                       Number of files: 1200
-                    Replication factor: 1
-            Successful file operations: 1200
+Test Operation: create_write
+Start time: 2013-04-25 19:40:21,70
+Maps to run: 1
+Reduces to run: 1
+Block Size (bytes): 1
+Bytes to write: 0
+Bytes per checksum: 1
+Number of files: 1200
+Replication factor: 1
+Successful file operations: 1200
 
-        # maps that missed the barrier: 0
-                          # exceptions: 0
+# maps that missed the barrier: 0
+# exceptions: 0
 
-               TPS: Create/Write/Close: 75
+TPS: Create/Write/Close: 75
 Avg exec time (ms): Create/Write/Close: 26.526666666666667
-            Avg Lat (ms): Create/Write: 13.236666666666666
-                   Avg Lat (ms): Close: 13.164166666666667
+Avg Lat (ms): Create/Write: 13.236666666666666
+Avg Lat (ms): Close: 13.164166666666667
 
-                 RAW DATA: AL Total #1: 15884
-                 RAW DATA: AL Total #2: 15797
-              RAW DATA: TPS Total (ms): 31832
-       RAW DATA: Longest Map Time (ms): 31832.0
-                   RAW DATA: Late maps: 0
-             RAW DATA: # of exceptions: 0
+RAW DATA: AL Total #1: 15884
+RAW DATA: AL Total #2: 15797
+RAW DATA: TPS Total (ms): 31832
+RAW DATA: Longest Map Time (ms): 31832.0
+RAW DATA: Late maps: 0
+RAW DATA: # of exceptions: 0
 
--------------- NNBench -------------- : 
-                               Version: NameNode Benchmark 0.4
-                           Date &amp; time: 2013-04-25 19:44:42,354
+-------------- NNBench -------------- :
+Version: NameNode Benchmark 0.4
+Date &amp; time: 2013-04-25 19:44:42,354
 
-                        Test Operation: open_read
-                            Start time: 2013-04-25 19:44:31,921
-                           Maps to run: 1
-                        Reduces to run: 1
-                    Block Size (bytes): 1
-                        Bytes to write: 0
-                    Bytes per checksum: 1
-                       Number of files: 1
-                    Replication factor: 1
-            Successful file operations: 1
+Test Operation: open_read
+Start time: 2013-04-25 19:44:31,921
+Maps to run: 1
+Reduces to run: 1
+Block Size (bytes): 1
+Bytes to write: 0
+Bytes per checksum: 1
+Number of files: 1
+Replication factor: 1
+Successful file operations: 1
 
-        # maps that missed the barrier: 0
-                          # exceptions: 0
+# maps that missed the barrier: 0
+# exceptions: 0
 
-                        TPS: Open/Read: 500
-         Avg Exec time (ms): Open/Read: 2.0
-                    Avg Lat (ms): Open: 2.0
+TPS: Open/Read: 500
+Avg Exec time (ms): Open/Read: 2.0
+Avg Lat (ms): Open: 2.0
 
-                 RAW DATA: AL Total #1: 2
-                 RAW DATA: AL Total #2: 0
-              RAW DATA: TPS Total (ms): 2
-       RAW DATA: Longest Map Time (ms): 2.0
-                   RAW DATA: Late maps: 0
-             RAW DATA: # of exceptions: 0
+RAW DATA: AL Total #1: 2
+RAW DATA: AL Total #2: 0
+RAW DATA: TPS Total (ms): 2
+RAW DATA: Longest Map Time (ms): 2.0
+RAW DATA: Late maps: 0
+RAW DATA: # of exceptions: 0
 </pre>
 
 <ul>
@@ -2745,34 +2745,34 @@ DataLines       Maps    Reduces AvgTime (milliseconds)
 
 <pre class="example">hdfs@hadoop1:~$ hbase org.apache.hadoop.hbase.PerformanceEvaluation
 Usage: java org.apache.hadoop.hbase.PerformanceEvaluation \
-  [--miniCluster] [--nomapred] [--rows=ROWS] &lt;command&gt; &lt;nclients&gt;
+[--miniCluster] [--nomapred] [--rows=ROWS] &lt;command&gt; &lt;nclients&gt;
 
 Options:
- miniCluster     Run the test on an HBaseMiniCluster
- nomapred        Run multiple clients using threads (rather than use mapreduce)
- rows            Rows each client runs. Default: One million
- flushCommits    Used to determine if the test should flush the table.  Default: false
- writeToWAL      Set writeToWAL on puts. Default: True
+miniCluster     Run the test on an HBaseMiniCluster
+nomapred        Run multiple clients using threads (rather than use mapreduce)
+rows            Rows each client runs. Default: One million
+flushCommits    Used to determine if the test should flush the table.  Default: false
+writeToWAL      Set writeToWAL on puts. Default: True
 
 Command:
- filterScan      Run scan test using a filter to find a specific row based on it's value (make sure to use --rows=20)
- randomRead      Run random read test
- randomSeekScan  Run random seek and scan 100 test
- randomWrite     Run random write test
- scan            Run scan test (read every row)
- scanRange10     Run random seek scan with both start and stop row (max 10 rows)
- scanRange100    Run random seek scan with both start and stop row (max 100 rows)
- scanRange1000   Run random seek scan with both start and stop row (max 1000 rows)
- scanRange10000  Run random seek scan with both start and stop row (max 10000 rows)
- sequentialRead  Run sequential read test
- sequentialWrite Run sequential write test
+filterScan      Run scan test using a filter to find a specific row based on it's value (make sure to use --rows=20)
+randomRead      Run random read test
+randomSeekScan  Run random seek and scan 100 test
+randomWrite     Run random write test
+scan            Run scan test (read every row)
+scanRange10     Run random seek scan with both start and stop row (max 10 rows)
+scanRange100    Run random seek scan with both start and stop row (max 100 rows)
+scanRange1000   Run random seek scan with both start and stop row (max 1000 rows)
+scanRange10000  Run random seek scan with both start and stop row (max 10000 rows)
+sequentialRead  Run sequential read test
+sequentialWrite Run sequential write test
 
 Args:
- nclients        Integer. Required. Total number of clients (and HRegionServers)
-                 running: 1 &lt;= value &lt;= 500
+nclients        Integer. Required. Total number of clients (and HRegionServers)
+running: 1 &lt;= value &lt;= 500
 Examples:
- To run a single evaluation client:
- $ bin/hbase org.apache.hadoop.hbase.PerformanceEvaluation sequentialWrite 1
+To run a single evaluation client:
+$ bin/hbase org.apache.hadoop.hbase.PerformanceEvaluation sequentialWrite 1
 
 </pre>
 

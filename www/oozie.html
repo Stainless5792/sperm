@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>oozie</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -230,12 +230,12 @@ oozie执行分为三种模式：
 
 
 <pre class="src src-XML">&lt;property&gt;
-  &lt;name&gt;hadoop.proxyuser.dirlt.hosts&lt;/name&gt;
-  &lt;value&gt;*&lt;/value&gt;
+&lt;name&gt;hadoop.proxyuser.dirlt.hosts&lt;/name&gt;
+&lt;value&gt;*&lt;/value&gt;
 &lt;/property&gt;
 &lt;property&gt;
-  &lt;name&gt;hadoop.proxyuser.dirlt.groups&lt;/name&gt;
-  &lt;value&gt;*&lt;/value&gt;
+&lt;name&gt;hadoop.proxyuser.dirlt.groups&lt;/name&gt;
+&lt;value&gt;*&lt;/value&gt;
 &lt;/property&gt;
 </pre>
 
@@ -281,7 +281,7 @@ oozie执行分为三种模式：
 
 <p>下面是一些具体细节：
 </p><ul>
-<li>action有两个状态ok/error <a href="http://localhost/utils/oozie-2.3.2-cdh3u3/docs/WorkflowFunctionalSpec.html#a3.2.1.3_Actions_Have_2_Transitions_ok_and_error">http://localhost/utils/oozie-2.3.2-cdh3u3/docs/WorkflowFunctionalSpec.html#a3.2.1.3_Actions_Have_2_Transitions_ok_and_error</a> 
+<li>action有两个状态ok/error <a href="http://localhost/utils/oozie-2.3.2-cdh3u3/docs/WorkflowFunctionalSpec.html#a3.2.1.3_Actions_Have_2_Transitions_ok_and_error">http://localhost/utils/oozie-2.3.2-cdh3u3/docs/WorkflowFunctionalSpec.html#a3.2.1.3_Actions_Have_2_Transitions_ok_and_error</a>
 <ul>
 <li>对于error而言的话，需要提供error-code以及error-message，这样可以方便下面的决策。
 </li>
@@ -338,62 +338,62 @@ oozie执行分为三种模式：
 
 
 <pre class="src src-XML">&lt;!--
-  Copyright (c) 2010 Yahoo! Inc. All rights reserved.
-  Licensed under the Apache License, Version 2.0 (the <span style="color: #ffff00;">"License"</span>);
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
+Copyright (c) 2010 Yahoo! Inc. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the <span style="color: #ffff00;">"License"</span>);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an <span style="color: #ffff00;">"AS IS"</span> BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License. See accompanying LICENSE file.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an <span style="color: #ffff00;">"AS IS"</span> BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. See accompanying LICENSE file.
 --&gt;
 &lt;workflow-app xmlns=<span style="color: #ffff00;">"uri:oozie:workflow:0.1"</span> name=<span style="color: #ffff00;">"map-reduce-wf"</span>&gt;
-    &lt;start to=<span style="color: #ffff00;">"mr-node"</span>/&gt;
-    &lt;action name=<span style="color: #ffff00;">"mr-node"</span>&gt;
-        &lt;map-reduce&gt;
-            &lt;job-tracker&gt;${jobTracker}&lt;/job-tracker&gt;
-            &lt;name-node&gt;${nameNode}&lt;/name-node&gt;
-            &lt;prepare&gt;
-                &lt;delete path=<span style="color: #ffff00;">"${nameNode}/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}"</span>/&gt;
-            &lt;/prepare&gt;
-            &lt;configuration&gt;
-                &lt;property&gt;
-                    &lt;name&gt;mapred.job.queue.name&lt;/name&gt;
-                    &lt;value&gt;${queueName}&lt;/value&gt;
-                &lt;/property&gt;
-                &lt;property&gt;
-                    &lt;name&gt;mapred.mapper.class&lt;/name&gt;
-                    &lt;value&gt;org.apache.oozie.example.SampleMapper&lt;/value&gt;
-                &lt;/property&gt;
-                &lt;property&gt;
-                    &lt;name&gt;mapred.reducer.class&lt;/name&gt;
-                    &lt;value&gt;org.apache.oozie.example.SampleReducer&lt;/value&gt;
-                &lt;/property&gt;
-                &lt;property&gt;
-                    &lt;name&gt;mapred.map.tasks&lt;/name&gt;
-                    &lt;value&gt;1&lt;/value&gt;
-                &lt;/property&gt;
-                &lt;property&gt;
-                    &lt;name&gt;mapred.input.dir&lt;/name&gt;
-                    &lt;value&gt;/user/${wf:user()}/${examplesRoot}/input-data/text&lt;/value&gt;
-                &lt;/property&gt;
-                &lt;property&gt;
-                    &lt;name&gt;mapred.output.dir&lt;/name&gt;
-                    &lt;value&gt;/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}&lt;/value&gt;
-                &lt;/property&gt;
-            &lt;/configuration&gt;
-        &lt;/map-reduce&gt;
-        &lt;ok to=<span style="color: #ffff00;">"end"</span>/&gt;
-        &lt;error to=<span style="color: #ffff00;">"fail"</span>/&gt;
-    &lt;/action&gt;
-    &lt;kill name=<span style="color: #ffff00;">"fail"</span>&gt;
-        &lt;message&gt;Map/Reduce failed, error message[${wf:errorMessage(wf:lastErrorNode())}]&lt;/message&gt;
-    &lt;/kill&gt;
-    &lt;end name=<span style="color: #ffff00;">"end"</span>/&gt;
+&lt;start to=<span style="color: #ffff00;">"mr-node"</span>/&gt;
+&lt;action name=<span style="color: #ffff00;">"mr-node"</span>&gt;
+&lt;map-reduce&gt;
+&lt;job-tracker&gt;${jobTracker}&lt;/job-tracker&gt;
+&lt;name-node&gt;${nameNode}&lt;/name-node&gt;
+&lt;prepare&gt;
+&lt;delete path=<span style="color: #ffff00;">"${nameNode}/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}"</span>/&gt;
+&lt;/prepare&gt;
+&lt;configuration&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.job.queue.name&lt;/name&gt;
+&lt;value&gt;${queueName}&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.mapper.class&lt;/name&gt;
+&lt;value&gt;org.apache.oozie.example.SampleMapper&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.reducer.class&lt;/name&gt;
+&lt;value&gt;org.apache.oozie.example.SampleReducer&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.map.tasks&lt;/name&gt;
+&lt;value&gt;1&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.input.dir&lt;/name&gt;
+&lt;value&gt;/user/${wf:user()}/${examplesRoot}/input-data/text&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.output.dir&lt;/name&gt;
+&lt;value&gt;/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+&lt;/map-reduce&gt;
+&lt;ok to=<span style="color: #ffff00;">"end"</span>/&gt;
+&lt;error to=<span style="color: #ffff00;">"fail"</span>/&gt;
+&lt;/action&gt;
+&lt;kill name=<span style="color: #ffff00;">"fail"</span>&gt;
+&lt;message&gt;Map/Reduce failed, error message[${wf:errorMessage(wf:lastErrorNode())}]&lt;/message&gt;
+&lt;/kill&gt;
+&lt;end name=<span style="color: #ffff00;">"end"</span>/&gt;
 &lt;/workflow-app&gt;
 </pre>
 
@@ -471,7 +471,7 @@ hadoop fs -put workflow.xml /user/dirlt/examples/apps/map-reduce/
 </li>
 <li>sync dataset // 可以用来指定各个workflow之间的相互数据依赖 <a href="http://localhost/utils/oozie-2.3.2-cdh3u3/docs/CoordinatorFunctionalSpec.html#a5.1._Synchronous_Datasets">http://localhost/utils/oozie-2.3.2-cdh3u3/docs/CoordinatorFunctionalSpec.html#a5.1._Synchronous_Datasets</a>
 <ul>
-<li>input events       
+<li>input events
 </li>
 <li>output events
 </li>
@@ -482,7 +482,7 @@ hadoop fs -put workflow.xml /user/dirlt/examples/apps/map-reduce/
 </ul>
 
 </li>
-<li>coord application 
+<li>coord application
 <ul>
 <li>coord job // app的instance <a href="http://localhost/utils/oozie-2.3.2-cdh3u3/docs/CoordinatorFunctionalSpec.html#a6.1.2._Coordinator_Job">http://localhost/utils/oozie-2.3.2-cdh3u3/docs/CoordinatorFunctionalSpec.html#a6.1.2._Coordinator_Job</a>
 <ul>
@@ -535,61 +535,61 @@ NOTE（dirlt）：关于coordinator的文档非常少，而且使用起来有诸
 
 
 <pre class="src src-XML">&lt;coordinator-app name=<span style="color: #ffff00;">"coord"</span> frequency=<span style="color: #ffff00;">"${coord:hours(1)}"</span>
-                 start=<span style="color: #ffff00;">"${startTime}"</span> end=<span style="color: #ffff00;">"${endTime}"</span> timezone=<span style="color: #ffff00;">"${tz}"</span>
-                 xmlns=<span style="color: #ffff00;">"uri:oozie:coordinator:0.1"</span>&gt;
-  &lt;controls&gt;
-    &lt;timeout&gt;-1&lt;/timeout&gt;
-    &lt;concurrency&gt;2&lt;/concurrency&gt;
-    &lt;execution&gt;FIFO&lt;/execution&gt;
-  &lt;/controls&gt;     
+start=<span style="color: #ffff00;">"${startTime}"</span> end=<span style="color: #ffff00;">"${endTime}"</span> timezone=<span style="color: #ffff00;">"${tz}"</span>
+xmlns=<span style="color: #ffff00;">"uri:oozie:coordinator:0.1"</span>&gt;
+&lt;controls&gt;
+&lt;timeout&gt;-1&lt;/timeout&gt;
+&lt;concurrency&gt;2&lt;/concurrency&gt;
+&lt;execution&gt;FIFO&lt;/execution&gt;
+&lt;/controls&gt;
 
-  &lt;datasets&gt;
-    &lt;dataset name=<span style="color: #ffff00;">"ds"</span> frequency=<span style="color: #ffff00;">"${coord:hours(1)}"</span>
-             initial-instance=<span style="color: #ffff00;">"${dsStartTime}"</span> timezone=<span style="color: #ffff00;">"${tz}"</span>&gt;
-      &lt;uri-template&gt;${appPath}/data/${YEAR}/${MONTH}/${DAY}/${HOUR}&lt;/uri-template&gt;
-    &lt;/dataset&gt;
-  &lt;/datasets&gt;
+&lt;datasets&gt;
+&lt;dataset name=<span style="color: #ffff00;">"ds"</span> frequency=<span style="color: #ffff00;">"${coord:hours(1)}"</span>
+initial-instance=<span style="color: #ffff00;">"${dsStartTime}"</span> timezone=<span style="color: #ffff00;">"${tz}"</span>&gt;
+&lt;uri-template&gt;${appPath}/data/${YEAR}/${MONTH}/${DAY}/${HOUR}&lt;/uri-template&gt;
+&lt;/dataset&gt;
+&lt;/datasets&gt;
 
-  &lt;input-events&gt;
-    &lt;data-in name=<span style="color: #ffff00;">"input"</span> dataset=<span style="color: #ffff00;">"ds"</span>&gt;
-      &lt;instance&gt;${coord:current(-1)}&lt;/instance&gt;
-    &lt;/data-in&gt;
-  &lt;/input-events&gt;
-  &lt;output-events&gt;
-    &lt;data-out name=<span style="color: #ffff00;">"output"</span> dataset=<span style="color: #ffff00;">"ds"</span>&gt;
-      &lt;instance&gt;${coord:current(0)}&lt;/instance&gt;
-    &lt;/data-out&gt;
-  &lt;/output-events&gt;
+&lt;input-events&gt;
+&lt;data-in name=<span style="color: #ffff00;">"input"</span> dataset=<span style="color: #ffff00;">"ds"</span>&gt;
+&lt;instance&gt;${coord:current(-1)}&lt;/instance&gt;
+&lt;/data-in&gt;
+&lt;/input-events&gt;
+&lt;output-events&gt;
+&lt;data-out name=<span style="color: #ffff00;">"output"</span> dataset=<span style="color: #ffff00;">"ds"</span>&gt;
+&lt;instance&gt;${coord:current(0)}&lt;/instance&gt;
+&lt;/data-out&gt;
+&lt;/output-events&gt;
 
-  &lt;action&gt;
-    &lt;workflow&gt;
-      &lt;app-path&gt;${appPath}&lt;/app-path&gt;
-      &lt;configuration&gt;
-        &lt;property&gt;
-          &lt;name&gt;jobTracker&lt;/name&gt;
-          &lt;value&gt;${jobTracker}&lt;/value&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;name&gt;nameNode&lt;/name&gt;
-          &lt;value&gt;${nameNode}&lt;/value&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;name&gt;queueName&lt;/name&gt;
-          &lt;value&gt;${queueName}&lt;/value&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;name&gt;inputData&lt;/name&gt;
-          &lt;value&gt;${coord:dataIn('input')}&lt;/value&gt;
-          &lt;!-- &lt;value&gt;${inputData}&lt;/value&gt; --&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;name&gt;outputData&lt;/name&gt;
-          &lt;value&gt;${coord:dataOut('output')}&lt;/value&gt;
-          &lt;!-- &lt;value&gt;${outputData}&lt;/value&gt; --&gt;
-        &lt;/property&gt;        
-      &lt;/configuration&gt;
-    &lt;/workflow&gt;
-  &lt;/action&gt;
+&lt;action&gt;
+&lt;workflow&gt;
+&lt;app-path&gt;${appPath}&lt;/app-path&gt;
+&lt;configuration&gt;
+&lt;property&gt;
+&lt;name&gt;jobTracker&lt;/name&gt;
+&lt;value&gt;${jobTracker}&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;nameNode&lt;/name&gt;
+&lt;value&gt;${nameNode}&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;queueName&lt;/name&gt;
+&lt;value&gt;${queueName}&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;inputData&lt;/name&gt;
+&lt;value&gt;${coord:dataIn('input')}&lt;/value&gt;
+&lt;!-- &lt;value&gt;${inputData}&lt;/value&gt; --&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;outputData&lt;/name&gt;
+&lt;value&gt;${coord:dataOut('output')}&lt;/value&gt;
+&lt;!-- &lt;value&gt;${outputData}&lt;/value&gt; --&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+&lt;/workflow&gt;
+&lt;/action&gt;
 &lt;/coordinator-app&gt;
 </pre>
 

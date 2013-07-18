@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>tcmalloc</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -261,10 +261,10 @@ tcmallo.cc里面定义了函数入口.对于安排在section(google_malloc)不�
 #define __THROW
 # define ATTRIBUTE_SECTION(name) __attribute__ ((section (#name)))
 extern <span style="color: #ffff00;">"C"</span> {
-  void* tc_malloc(size_t size) __THROW
-      ATTRIBUTE_SECTION(google_malloc);
-  void tc_free(void* ptr) __THROW
-      ATTRIBUTE_SECTION(google_malloc);
+void* tc_malloc(size_t size) __THROW
+ATTRIBUTE_SECTION(google_malloc);
+void tc_free(void* ptr) __THROW
+ATTRIBUTE_SECTION(google_malloc);
 }
 </pre>
 
@@ -276,12 +276,12 @@ extern <span style="color: #ffff00;">"C"</span> {
 
 <pre class="src src-C++">#define ALIAS(tc_fn)   __attribute__ ((alias (#tc_fn)))
 extern <span style="color: #ffff00;">"C"</span> {
-  void* __libc_malloc(size_t size)                ALIAS(tc_malloc);
-  void __libc_free(void* ptr)                     ALIAS(tc_free);
+void* __libc_malloc(size_t size)                ALIAS(tc_malloc);
+void __libc_free(void* ptr)                     ALIAS(tc_free);
 } // extern <span style="color: #ffff00;">"C"</span>
 extern <span style="color: #ffff00;">"C"</span> {
-  void* malloc(size_t size) __THROW               ALIAS(tc_malloc);
-  void free(void* ptr) __THROW                    ALIAS(tc_free);
+void* malloc(size_t size) __THROW               ALIAS(tc_malloc);
+void free(void* ptr) __THROW                    ALIAS(tc_free);
 } // extern <span style="color: #ffff00;">"C"</span>
 </pre>
 
@@ -294,15 +294,15 @@ extern <span style="color: #ffff00;">"C"</span> {
 
 <pre class="src src-C++">extern <span style="color: #ffff00;">"C"</span> {
 static void* glibc_override_malloc(size_t size, const void *caller) {
-  return tc_malloc(size);
+return tc_malloc(size);
 }
 static void glibc_override_free(void *ptr, const void *caller) {
-  tc_free(ptr);
+tc_free(ptr);
 }
 void* (* MALLOC_HOOK_MAYBE_VOLATILE __malloc_hook)(size_t, const void*)
-    = &amp;glibc_override_malloc;
+= &amp;glibc_override_malloc;
 void (* MALLOC_HOOK_MAYBE_VOLATILE __free_hook)(void*, const void*)
-    = &amp;glibc_override_free;
+= &amp;glibc_override_free;
 } // extern <span style="color: #ffff00;">"C"</span>
 </pre>
 
@@ -339,7 +339,7 @@ int tc_mallopt(int cmd, int value) __THROW ATTRIBUTE_SECTION(google_malloc);
 
 
 <pre class="src src-C++">extern void* TCMalloc_SystemAlloc(size_t bytes, size_t *actual_bytes,
-                                  size_t alignment = 0);
+size_t alignment = 0);
 extern void TCMalloc_SystemRelease(void* start, size_t length);
 </pre>
 
@@ -372,11 +372,11 @@ static char default_space[sizeof(DefaultSysAllocator)];
 SbrkSysAllocator *sbrk = new (sbrk_space) SbrkSysAllocator();
 DefaultSysAllocator *sdef = new (default_space) DefaultSysAllocator();
 if (kDebugMode &amp;&amp; sizeof(void*) &gt; 4) {
-  sdef-&gt;SetChildAllocator(mmap, 0, mmap_name);
-  sdef-&gt;SetChildAllocator(sbrk, 1, sbrk_name);
+sdef-&gt;SetChildAllocator(mmap, 0, mmap_name);
+sdef-&gt;SetChildAllocator(sbrk, 1, sbrk_name);
 } else {
-  sdef-&gt;SetChildAllocator(sbrk, 0, sbrk_name);
-  sdef-&gt;SetChildAllocator(mmap, 1, mmap_name);
+sdef-&gt;SetChildAllocator(sbrk, 0, sbrk_name);
+sdef-&gt;SetChildAllocator(mmap, 1, mmap_name);
 }
 </pre>
 
@@ -386,23 +386,23 @@ if (kDebugMode &amp;&amp; sizeof(void*) &gt; 4) {
 
 
 <pre class="src src-C++">void* DefaultSysAllocator::Alloc(size_t size, size_t *actual_size,
-                                 size_t alignment) {
-  for (int i = 0; i &lt; kMaxAllocators; i++) {
-    if (!failed_[i] &amp;&amp; allocs_[i] != NULL) {
-      void* result = allocs_[i]-&gt;Alloc(size, actual_size, alignment);
-      if (result != NULL) {
-        return result;
-      }
-      TCMalloc_MESSAGE(__FILE__, __LINE__, <span style="color: #ffff00;">"%s failed.\n"</span>, names_[i]);
-      failed_[i] = true;
-    }
-  }
-  // After both failed, reset <span style="color: #ffff00;">"failed_"</span> to false so that a single failed
-  // allocation won't make the allocator never work again.
-  for (int i = 0; i &lt; kMaxAllocators; i++) {
-    failed_[i] = false;
-  }
-  return NULL;
+size_t alignment) {
+for (int i = 0; i &lt; kMaxAllocators; i++) {
+if (!failed_[i] &amp;&amp; allocs_[i] != NULL) {
+void* result = allocs_[i]-&gt;Alloc(size, actual_size, alignment);
+if (result != NULL) {
+return result;
+}
+TCMalloc_MESSAGE(__FILE__, __LINE__, <span style="color: #ffff00;">"%s failed.\n"</span>, names_[i]);
+failed_[i] = true;
+}
+}
+// After both failed, reset <span style="color: #ffff00;">"failed_"</span> to false so that a single failed
+// allocation won't make the allocator never work again.
+for (int i = 0; i &lt; kMaxAllocators; i++) {
+failed_[i] = false;
+}
+return NULL;
 }
 </pre>
 
@@ -457,17 +457,17 @@ TCMallocGuard主要是为了确保在tc_malloc之前所有静态变量都已经�
 
 <pre class="src src-C++">static int tcmallocguard_refcount = 0;  // no lock needed: runs before main()
 TCMallocGuard::TCMallocGuard() {
-  if (tcmallocguard_refcount++ == 0) {
-    ReplaceSystemAlloc();    // defined in libc_override_*.h // &#36825;&#20010;&#23545;&#20110;Linux&#26469;&#35828;&#27809;&#26377;&#20219;&#20309;&#25805;&#20316;
-    tc_free(tc_malloc(1)); // &#36825;&#20010;&#22320;&#26041;&#20010;&#20154;&#35273;&#24471;&#27809;&#26377;&#24517;&#35201;&#65292;&#21487;&#33021;&#21482;&#26159;&#20026;&#20102;&#30475;&#30475;&#26159;&#21542;&#21487;&#20197;&#20877;InitTSD&#20043;&#21069;run&#36215;&#26469;
-    ThreadCache::InitTSD(); // &#21021;&#22987;&#21270;&#19968;&#19979;tc&#30340;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;
-    tc_free(tc_malloc(1));
-    if (RunningOnValgrind()) { // &#20174;&#20195;&#30721;&#19978;&#30475;&#21487;&#33021;&#26159;&#20174;&#29615;&#22659;&#21464;&#37327;&#37324;&#38754;&#33719;&#21462;&#30340;&#12290;
-      // Let Valgrind uses its own malloc (so don't register our extension).
-    } else { // TODO.???&#23545;&#20110;MallocExtension&#20197;&#21450;MallocHook&#36824;&#19981;&#26159;&#24456;&#20102;&#35299;
-      MallocExtension::Register(new TCMallocImplementation);
-    }
-  }
+if (tcmallocguard_refcount++ == 0) {
+ReplaceSystemAlloc();    // defined in libc_override_*.h // &#36825;&#20010;&#23545;&#20110;Linux&#26469;&#35828;&#27809;&#26377;&#20219;&#20309;&#25805;&#20316;
+tc_free(tc_malloc(1)); // &#36825;&#20010;&#22320;&#26041;&#20010;&#20154;&#35273;&#24471;&#27809;&#26377;&#24517;&#35201;&#65292;&#21487;&#33021;&#21482;&#26159;&#20026;&#20102;&#30475;&#30475;&#26159;&#21542;&#21487;&#20197;&#20877;InitTSD&#20043;&#21069;run&#36215;&#26469;
+ThreadCache::InitTSD(); // &#21021;&#22987;&#21270;&#19968;&#19979;tc&#30340;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;
+tc_free(tc_malloc(1));
+if (RunningOnValgrind()) { // &#20174;&#20195;&#30721;&#19978;&#30475;&#21487;&#33021;&#26159;&#20174;&#29615;&#22659;&#21464;&#37327;&#37324;&#38754;&#33719;&#21462;&#30340;&#12290;
+// Let Valgrind uses its own malloc (so don't register our extension).
+} else { // TODO.???&#23545;&#20110;MallocExtension&#20197;&#21450;MallocHook&#36824;&#19981;&#26159;&#24456;&#20102;&#35299;
+MallocExtension::Register(new TCMallocImplementation);
+}
+}
 }
 </pre>
 
@@ -478,14 +478,14 @@ TCMallocGuard::TCMallocGuard() {
 
 
 <pre class="src src-C++">TCMallocGuard::~TCMallocGuard() {
-  if (--tcmallocguard_refcount == 0) {
-    const char* env = getenv(<span style="color: #ffff00;">"MALLOCSTATS"</span>);
-    if (env != NULL) {
-      int level = atoi(env);
-      if (level &lt; 1) level = 1;
-      PrintStats(level);
-    }
-  }
+if (--tcmallocguard_refcount == 0) {
+const char* env = getenv(<span style="color: #ffff00;">"MALLOCSTATS"</span>);
+if (env != NULL) {
+int level = atoi(env);
+if (level &lt; 1) level = 1;
+PrintStats(level);
+}
+}
 }
 </pre>
 
@@ -524,11 +524,11 @@ page_heap_allocator.h里面实现了一个sample_alloc叫做PageHeapAllocator.�
 
 <pre class="src src-C++">static uint64_t metadata_system_bytes_ = 0;
 void* MetaDataAlloc(size_t bytes) {
-  void* result = TCMalloc_SystemAlloc(bytes, NULL);
-  if (result != NULL) {
-    metadata_system_bytes_ += bytes;
-  }
-  return result;
+void* result = TCMalloc_SystemAlloc(bytes, NULL);
+if (result != NULL) {
+metadata_system_bytes_ += bytes;
+}
+return result;
 }
 uint64_t metadata_system_bytes() { return metadata_system_bytes_; }
 </pre>
@@ -575,19 +575,19 @@ tcmalloc提供了一个Dump方法可以查看最终这些数值。我们需要�
 
 char buf[1024*1024];
 int main() {
-  // initialize tcmalloc
-  void* p=malloc(10);
-  free(p);
-  tcmalloc::SizeMap* sizemap=tcmalloc::Static::sizemap();
-  // print aux info
-  for(int i=1;i&lt;kNumClasses;i++){
-    printf(<span style="color: #ffff00;">"SC %d [%d]\n"</span>,i,sizemap-&gt;num_objects_to_move(i));
-  }
-  // print stats.
-  TCMalloc_Printer printer(buf,sizeof(buf));
-  sizemap-&gt;Dump(&amp;printer);
-  printf(<span style="color: #ffff00;">"%s\n"</span>,buf);
-  return 0;
+// initialize tcmalloc
+void* p=malloc(10);
+free(p);
+tcmalloc::SizeMap* sizemap=tcmalloc::Static::sizemap();
+// print aux info
+for(int i=1;i&lt;kNumClasses;i++){
+printf(<span style="color: #ffff00;">"SC %d [%d]\n"</span>,i,sizemap-&gt;num_objects_to_move(i));
+}
+// print stats.
+TCMalloc_Printer printer(buf,sizeof(buf));
+sizemap-&gt;Dump(&amp;printer);
+printf(<span style="color: #ffff00;">"%s\n"</span>,buf);
+return 0;
 }
 </pre>
 
@@ -649,8 +649,8 @@ SC   7 [       81 ..       96 ] from     8192 ; 16% maxwaste
 
 <pre class="src src-C++">template&lt;int kFreeListSizeMod64&gt;
 class CentralFreeListPaddedTo : public CentralFreeList {
- private:
-  char pad_[64 - kFreeListSizeMod64];
+private:
+char pad_[64 - kFreeListSizeMod64];
 };
 
 template&lt;&gt;
@@ -658,7 +658,7 @@ class CentralFreeListPaddedTo&lt;0&gt; : public CentralFreeList {
 };
 
 class CentralFreeListPadded : public CentralFreeListPaddedTo&lt;
-  sizeof(CentralFreeList) % 64&gt; {
+sizeof(CentralFreeList) % 64&gt; {
 };
 </pre>
 
@@ -671,52 +671,52 @@ class CentralFreeListPadded : public CentralFreeListPaddedTo&lt;
 
 
 <pre class="src src-C++">class CentralFreeList {
- private:
-  // TransferCache is used to cache transfers of
-  // sizemap.num_objects_to_move(size_class) back and forth between
-  // thread caches and the central cache for a given size class.
-  struct TCEntry {
-    void *head;  // Head of chain of objects.
-    void *tail;  // Tail of chain of objects.
-  };
-  // A central cache freelist can have anywhere from 0 to kMaxNumTransferEntries
-  // slots to put link list chains into.
+private:
+// TransferCache is used to cache transfers of
+// sizemap.num_objects_to_move(size_class) back and forth between
+// thread caches and the central cache for a given size class.
+struct TCEntry {
+void *head;  // Head of chain of objects.
+void *tail;  // Tail of chain of objects.
+};
+// A central cache freelist can have anywhere from 0 to kMaxNumTransferEntries
+// slots to put link list chains into.
 #ifdef TCMALLOC_SMALL_BUT_SLOW
-  // For the small memory model, the transfer cache is not used.
-  static const int kMaxNumTransferEntries = 0;
+// For the small memory model, the transfer cache is not used.
+static const int kMaxNumTransferEntries = 0;
 #else
-  // Starting point for the the maximum number of entries in the transfer cache.
-  // This actual maximum for a given size class may be lower than this
-  // maximum value.
-  static const int kMaxNumTransferEntries = 64;
+// Starting point for the the maximum number of entries in the transfer cache.
+// This actual maximum for a given size class may be lower than this
+// maximum value.
+static const int kMaxNumTransferEntries = 64;
 #endif
-  // This lock protects all the data members.  cached_entries and cache_size_
-  // may be looked at without holding the lock.
-  SpinLock lock_;
+// This lock protects all the data members.  cached_entries and cache_size_
+// may be looked at without holding the lock.
+SpinLock lock_;
 
-  // We keep linked lists of empty and non-empty spans.
-  size_t   size_class_;     // My size class
-  Span     empty_;          // Dummy header for list of empty spans
-  Span     nonempty_;       // Dummy header for list of non-empty spans
-  size_t   num_spans_;      // Number of spans in empty_ plus nonempty_
-  size_t   counter_;        // Number of free objects in cache entry
+// We keep linked lists of empty and non-empty spans.
+size_t   size_class_;     // My size class
+Span     empty_;          // Dummy header for list of empty spans
+Span     nonempty_;       // Dummy header for list of non-empty spans
+size_t   num_spans_;      // Number of spans in empty_ plus nonempty_
+size_t   counter_;        // Number of free objects in cache entry
 
-  // Here we reserve space for TCEntry cache slots.  Space is preallocated
-  // for the largest possible number of entries than any one size class may
-  // accumulate.  Not all size classes are allowed to accumulate
-  // kMaxNumTransferEntries, so there is some wasted space for those size
-  // classes.
-  TCEntry tc_slots_[kMaxNumTransferEntries];
+// Here we reserve space for TCEntry cache slots.  Space is preallocated
+// for the largest possible number of entries than any one size class may
+// accumulate.  Not all size classes are allowed to accumulate
+// kMaxNumTransferEntries, so there is some wasted space for those size
+// classes.
+TCEntry tc_slots_[kMaxNumTransferEntries];
 
-  // Number of currently used cached entries in tc_slots_.  This variable is
-  // updated under a lock but can be read without one.
-  int32_t used_slots_;  // &#24403;&#21069;&#20351;&#29992;&#30340;tc entries.
-  // The current number of slots for this size class.  This is an
-  // adaptive value that is increased if there is lots of traffic
-  // on a given size class.
-  int32_t cache_size_; // &#24403;&#21069;&#20801;&#35768;&#30340;&#26368;&#22823;&#30340;tc entries.
-  // Maximum size of the cache for a given size class.
-  int32_t max_cache_size_; // &#26368;&#22823;&#20801;&#35768;&#22810;&#23569;&#20010;tc entries.
+// Number of currently used cached entries in tc_slots_.  This variable is
+// updated under a lock but can be read without one.
+int32_t used_slots_;  // &#24403;&#21069;&#20351;&#29992;&#30340;tc entries.
+// The current number of slots for this size class.  This is an
+// adaptive value that is increased if there is lots of traffic
+// on a given size class.
+int32_t cache_size_; // &#24403;&#21069;&#20801;&#35768;&#30340;&#26368;&#22823;&#30340;tc entries.
+// Maximum size of the cache for a given size class.
+int32_t max_cache_size_; // &#26368;&#22823;&#20801;&#35768;&#22810;&#23569;&#20010;tc entries.
 }
 </pre>
 
@@ -758,28 +758,28 @@ CentralFreeList的接口非常少
 
 
 <pre class="src src-C++">void CentralFreeList::Init(size_t cl) {
-  size_class_ = cl;
-  tcmalloc::DLL_Init(&amp;empty_);
-  tcmalloc::DLL_Init(&amp;nonempty_);
-  num_spans_ = 0;
-  counter_ = 0;
+size_class_ = cl;
+tcmalloc::DLL_Init(&amp;empty_);
+tcmalloc::DLL_Init(&amp;nonempty_);
+num_spans_ = 0;
+counter_ = 0;
 
-  max_cache_size_ = kMaxNumTransferEntries;
+max_cache_size_ = kMaxNumTransferEntries;
 #ifdef TCMALLOC_SMALL_BUT_SLOW
-  // Disable the transfer cache for the small footprint case.
-  cache_size_ = 0;
+// Disable the transfer cache for the small footprint case.
+cache_size_ = 0;
 #else
-  cache_size_ = 16;
+cache_size_ = 16;
 #endif
-  if (cl &gt; 0) {
-    int32_t bytes = Static::sizemap()-&gt;ByteSizeForClass(cl);
-    int32_t objs_to_move = Static::sizemap()-&gt;num_objects_to_move(cl);
-    max_cache_size_ = (min)(max_cache_size_,
-                          (max)(1, (1024 * 1024) / (bytes * objs_to_move)));
-    cache_size_ = (min)(cache_size_, max_cache_size_);
-  }
-  used_slots_ = 0;
-  ASSERT(cache_size_ &lt;= max_cache_size_);
+if (cl &gt; 0) {
+int32_t bytes = Static::sizemap()-&gt;ByteSizeForClass(cl);
+int32_t objs_to_move = Static::sizemap()-&gt;num_objects_to_move(cl);
+max_cache_size_ = (min)(max_cache_size_,
+(max)(1, (1024 * 1024) / (bytes * objs_to_move)));
+cache_size_ = (min)(cache_size_, max_cache_size_);
+}
+used_slots_ = 0;
+ASSERT(cache_size_ &lt;= max_cache_size_);
 }
 </pre>
 
@@ -798,20 +798,20 @@ CentralFreeList的接口非常少
 
 
 <pre class="src src-C++">void CentralFreeList::InsertRange(void *start, void *end, int N) {
-  SpinLockHolder h(&amp;lock_);
-  if (N == Static::sizemap()-&gt;num_objects_to_move(size_class_) &amp;&amp;
-    MakeCacheSpace()) { // &#36825;&#37324;&#27809;&#26377;&#30475;&#25026;MakeCacheSpace&#37324;&#38754;&#19968;&#20010;&#36923;&#36753;&#65292;&#25105;&#33258;&#24049;&#35273;&#24471;&#26159;&#26080;&#20851;&#32039;&#35201;&#30340;&#12290;
-    // &#22240;&#20026;&#30475;&#19978;&#21435;&#20687;&#26159;&#25910;&#32553;&#20854;&#20182;&#30340;slab cc(EvictRandomSizeClass).
-    // &#36825;&#37324;&#25105;&#20204;&#21487;&#20197;&#31616;&#21333;&#22320;&#35748;&#20026;&#65292;&#23427;&#23601;&#26159;&#22312;&#35745;&#31639;tc_slots&#37324;&#38754;&#26159;&#21542;&#26377;slot&#21487;&#20197;&#20998;&#37197;.
-    int slot = used_slots_++;
-    ASSERT(slot &gt;=0);
-    ASSERT(slot &lt; max_cache_size_);
-    TCEntry *entry = &amp;tc_slots_[slot]; // &#22914;&#26524;&#20998;&#37197;&#25104;&#21151;&#30340;&#35805;&#65292;&#37027;&#20040;&#30452;&#25509;&#25346;&#36733;.
-    entry-&gt;head = start;
-    entry-&gt;tail = end;
-    return;
-  }
-  ReleaseListToSpans(start); // &#22914;&#26524;&#19981;&#20801;&#35768;&#25346;&#21040;tc&#30340;&#35805;&#65292;&#37027;&#20040;&#23601;&#38656;&#35201;&#21333;&#29420;&#22788;&#29702;.
+SpinLockHolder h(&amp;lock_);
+if (N == Static::sizemap()-&gt;num_objects_to_move(size_class_) &amp;&amp;
+MakeCacheSpace()) { // &#36825;&#37324;&#27809;&#26377;&#30475;&#25026;MakeCacheSpace&#37324;&#38754;&#19968;&#20010;&#36923;&#36753;&#65292;&#25105;&#33258;&#24049;&#35273;&#24471;&#26159;&#26080;&#20851;&#32039;&#35201;&#30340;&#12290;
+// &#22240;&#20026;&#30475;&#19978;&#21435;&#20687;&#26159;&#25910;&#32553;&#20854;&#20182;&#30340;slab cc(EvictRandomSizeClass).
+// &#36825;&#37324;&#25105;&#20204;&#21487;&#20197;&#31616;&#21333;&#22320;&#35748;&#20026;&#65292;&#23427;&#23601;&#26159;&#22312;&#35745;&#31639;tc_slots&#37324;&#38754;&#26159;&#21542;&#26377;slot&#21487;&#20197;&#20998;&#37197;.
+int slot = used_slots_++;
+ASSERT(slot &gt;=0);
+ASSERT(slot &lt; max_cache_size_);
+TCEntry *entry = &amp;tc_slots_[slot]; // &#22914;&#26524;&#20998;&#37197;&#25104;&#21151;&#30340;&#35805;&#65292;&#37027;&#20040;&#30452;&#25509;&#25346;&#36733;.
+entry-&gt;head = start;
+entry-&gt;tail = end;
+return;
+}
+ReleaseListToSpans(start); // &#22914;&#26524;&#19981;&#20801;&#35768;&#25346;&#21040;tc&#30340;&#35805;&#65292;&#37027;&#20040;&#23601;&#38656;&#35201;&#21333;&#29420;&#22788;&#29702;.
 }
 </pre>
 
@@ -823,39 +823,39 @@ CentralFreeList的接口非常少
 
 
 <pre class="src src-C++">void CentralFreeList::ReleaseToSpans(void* object) {
-  Span* span = MapObjectToSpan(object); // &#23558;object&#26144;&#23556;&#21040;span
-  ASSERT(span != NULL);
-  ASSERT(span-&gt;refcount &gt; 0);
+Span* span = MapObjectToSpan(object); // &#23558;object&#26144;&#23556;&#21040;span
+ASSERT(span != NULL);
+ASSERT(span-&gt;refcount &gt; 0);
 
-  // If span is empty, move it to non-empty list
-  if (span-&gt;objects == NULL) { // &#22914;&#26524;span&#19978;&#38754;&#27809;&#26377;&#20219;&#20309;free objects&#30340;&#35805;.
-    tcmalloc::DLL_Remove(span); // &#37027;&#20040;&#23558;span&#20174;&#21407;&#26469;&#25346;&#36733;&#38142;&#34920;&#21024;&#38500;(empty).
-    tcmalloc::DLL_Prepend(&amp;nonempty_, span); // &#25346;&#36733;&#21040;&#36825;&#20010;cc&#30340;nonempty&#38142;&#34920;&#19978;.
-    Event(span, 'N', 0);
-  }
+// If span is empty, move it to non-empty list
+if (span-&gt;objects == NULL) { // &#22914;&#26524;span&#19978;&#38754;&#27809;&#26377;&#20219;&#20309;free objects&#30340;&#35805;.
+tcmalloc::DLL_Remove(span); // &#37027;&#20040;&#23558;span&#20174;&#21407;&#26469;&#25346;&#36733;&#38142;&#34920;&#21024;&#38500;(empty).
+tcmalloc::DLL_Prepend(&amp;nonempty_, span); // &#25346;&#36733;&#21040;&#36825;&#20010;cc&#30340;nonempty&#38142;&#34920;&#19978;.
+Event(span, 'N', 0);
+}
 
-  counter_++; // &#24403;&#21069;free objects&#22686;&#21152;&#20102;
-  span-&gt;refcount--; // &#36825;&#20010;span&#30340;ref count&#20943;&#23569;&#20102;.
-  // span refcount&#34920;&#31034;&#37324;&#38754;&#26377;&#22810;&#23569;&#20010;objects&#20998;&#37197;&#20986;&#21435;&#20102;.
-  if (span-&gt;refcount == 0) { // &#22914;&#26524;==0&#30340;&#35805;&#65292;&#37027;&#20040;&#35828;&#26126;&#36825;&#20010;span&#21487;&#20197;&#22238;&#25910;&#20102;.
-    Event(span, '#', 0);
-    counter_ -= ((span-&gt;length&lt;&lt;kPageShift) /
-                 Static::sizemap()-&gt;ByteSizeForClass(span-&gt;sizeclass));
-    tcmalloc::DLL_Remove(span);
-    --num_spans_;
+counter_++; // &#24403;&#21069;free objects&#22686;&#21152;&#20102;
+span-&gt;refcount--; // &#36825;&#20010;span&#30340;ref count&#20943;&#23569;&#20102;.
+// span refcount&#34920;&#31034;&#37324;&#38754;&#26377;&#22810;&#23569;&#20010;objects&#20998;&#37197;&#20986;&#21435;&#20102;.
+if (span-&gt;refcount == 0) { // &#22914;&#26524;==0&#30340;&#35805;&#65292;&#37027;&#20040;&#35828;&#26126;&#36825;&#20010;span&#21487;&#20197;&#22238;&#25910;&#20102;.
+Event(span, '#', 0);
+counter_ -= ((span-&gt;length&lt;&lt;kPageShift) /
+Static::sizemap()-&gt;ByteSizeForClass(span-&gt;sizeclass));
+tcmalloc::DLL_Remove(span);
+--num_spans_;
 
-    // Release central list lock while operating on pageheap
-    lock_.Unlock();
-    {
-      SpinLockHolder h(Static::pageheap_lock());
-      Static::pageheap()-&gt;Delete(span); // &#23558;span&#22238;&#25910;pageheap&#37324;&#38754;&#21435;&#65292;&#36825;&#20010;&#22320;&#26041;&#21487;&#33021;&#20250;&#36827;&#34892;&#20869;&#23384;&#21512;&#24182;
-    }
-    lock_.Lock();
-  } else {
-    // &#21542;&#21017;&#23601;&#23558;&#36825;&#20010;object&#25346;&#22312;span&#38142;&#19978;.
-    *(reinterpret_cast&lt;void**&gt;(object)) = span-&gt;objects;
-    span-&gt;objects = object;
-  }
+// Release central list lock while operating on pageheap
+lock_.Unlock();
+{
+SpinLockHolder h(Static::pageheap_lock());
+Static::pageheap()-&gt;Delete(span); // &#23558;span&#22238;&#25910;pageheap&#37324;&#38754;&#21435;&#65292;&#36825;&#20010;&#22320;&#26041;&#21487;&#33021;&#20250;&#36827;&#34892;&#20869;&#23384;&#21512;&#24182;
+}
+lock_.Lock();
+} else {
+// &#21542;&#21017;&#23601;&#23558;&#36825;&#20010;object&#25346;&#22312;span&#38142;&#19978;.
+*(reinterpret_cast&lt;void**&gt;(object)) = span-&gt;objects;
+span-&gt;objects = object;
+}
 }
 </pre>
 
@@ -878,39 +878,39 @@ CentralFreeList的接口非常少
 
 
 <pre class="src src-C++">int CentralFreeList::RemoveRange(void **start, void **end, int N) {
-  ASSERT(N &gt; 0);
-  lock_.Lock();
-  if (N == Static::sizemap()-&gt;num_objects_to_move(size_class_) &amp;&amp;
-      used_slots_ &gt; 0) { // &#22914;&#26524;&#21487;&#20197;&#30452;&#25509;&#20174;tc&#37324;&#38754;&#20998;&#37197;.
-    int slot = --used_slots_;
-    ASSERT(slot &gt;= 0);
-    TCEntry *entry = &amp;tc_slots_[slot];
-    *start = entry-&gt;head;
-    *end = entry-&gt;tail;
-    lock_.Unlock();
-    return N;
-  }
+ASSERT(N &gt; 0);
+lock_.Lock();
+if (N == Static::sizemap()-&gt;num_objects_to_move(size_class_) &amp;&amp;
+used_slots_ &gt; 0) { // &#22914;&#26524;&#21487;&#20197;&#30452;&#25509;&#20174;tc&#37324;&#38754;&#20998;&#37197;.
+int slot = --used_slots_;
+ASSERT(slot &gt;= 0);
+TCEntry *entry = &amp;tc_slots_[slot];
+*start = entry-&gt;head;
+*end = entry-&gt;tail;
+lock_.Unlock();
+return N;
+}
 
-  int result = 0;
-  void* head = NULL;
-  void* tail = NULL;
-  // TODO: Prefetch multiple TCEntries?
-  tail = FetchFromSpansSafe(); // &#36923;&#36753;&#26159;&#39318;&#20808;&#25918;&#22312;&#23614;&#37096;,&#28982;&#21518;&#19981;&#26029;&#22320;&#22312;&#22836;&#37096;&#25340;&#25509;.
-  if (tail != NULL) {
-    SLL_SetNext(tail, NULL);
-    head = tail;
-    result = 1;
-    while (result &lt; N) {
-      void *t = FetchFromSpans();
-      if (!t) break;
-      SLL_Push(&amp;head, t);
-      result++;
-    }
-  }
-  lock_.Unlock();
-  *start = head;
-  *end = tail;
-  return result;
+int result = 0;
+void* head = NULL;
+void* tail = NULL;
+// TODO: Prefetch multiple TCEntries?
+tail = FetchFromSpansSafe(); // &#36923;&#36753;&#26159;&#39318;&#20808;&#25918;&#22312;&#23614;&#37096;,&#28982;&#21518;&#19981;&#26029;&#22320;&#22312;&#22836;&#37096;&#25340;&#25509;.
+if (tail != NULL) {
+SLL_SetNext(tail, NULL);
+head = tail;
+result = 1;
+while (result &lt; N) {
+void *t = FetchFromSpans();
+if (!t) break;
+SLL_Push(&amp;head, t);
+result++;
+}
+}
+lock_.Unlock();
+*start = head;
+*end = tail;
+return result;
 }
 </pre>
 
@@ -921,12 +921,12 @@ CentralFreeList的接口非常少
 
 
 <pre class="src src-C++">void* CentralFreeList::FetchFromSpansSafe() {
-  void *t = FetchFromSpans();
-  if (!t) {
-    Populate(); // &#23581;&#35797;&#36801;&#31227;
-    t = FetchFromSpans();
-  }
-  return t;
+void *t = FetchFromSpans();
+if (!t) {
+Populate(); // &#23581;&#35797;&#36801;&#31227;
+t = FetchFromSpans();
+}
+return t;
 }
 </pre>
 
@@ -937,21 +937,21 @@ CentralFreeList的接口非常少
 
 
 <pre class="src src-C++">void* CentralFreeList::FetchFromSpans() {
-  if (tcmalloc::DLL_IsEmpty(&amp;nonempty_)) return NULL; // &#22914;&#26524;span&#37324;&#38754;&#37117;&#31354;&#20102;&#30340;.
-  Span* span = nonempty_.next;
+if (tcmalloc::DLL_IsEmpty(&amp;nonempty_)) return NULL; // &#22914;&#26524;span&#37324;&#38754;&#37117;&#31354;&#20102;&#30340;.
+Span* span = nonempty_.next;
 
-  ASSERT(span-&gt;objects != NULL);
-  span-&gt;refcount++;
-  void* result = span-&gt;objects; // &#21542;&#21017;&#23601;&#20250;&#20174;span&#37324;&#38754;&#20998;&#37197;object.
-  span-&gt;objects = *(reinterpret_cast&lt;void**&gt;(result));
-  if (span-&gt;objects == NULL) {
-    // Move to empty list
-    tcmalloc::DLL_Remove(span);
-    tcmalloc::DLL_Prepend(&amp;empty_, span);
-    Event(span, 'E', 0);
-  }
-  counter_--;
-  return result;
+ASSERT(span-&gt;objects != NULL);
+span-&gt;refcount++;
+void* result = span-&gt;objects; // &#21542;&#21017;&#23601;&#20250;&#20174;span&#37324;&#38754;&#20998;&#37197;object.
+span-&gt;objects = *(reinterpret_cast&lt;void**&gt;(result));
+if (span-&gt;objects == NULL) {
+// Move to empty list
+tcmalloc::DLL_Remove(span);
+tcmalloc::DLL_Prepend(&amp;empty_, span);
+Event(span, 'E', 0);
+}
+counter_--;
+return result;
 }
 </pre>
 
@@ -971,51 +971,51 @@ CentralFreeList的接口非常少
 
 
 <pre class="src src-C++">void CentralFreeList::Populate() {
-  // Release central list lock while operating on pageheap
-  lock_.Unlock();  // &#39318;&#20808;&#38656;&#35201;&#35745;&#31639;&#20986;&#25105;&#20204;&#38656;&#35201;&#22810;&#23569;&#20010;pages
-  const size_t npages = Static::sizemap()-&gt;class_to_pages(size_class_);
+// Release central list lock while operating on pageheap
+lock_.Unlock();  // &#39318;&#20808;&#38656;&#35201;&#35745;&#31639;&#20986;&#25105;&#20204;&#38656;&#35201;&#22810;&#23569;&#20010;pages
+const size_t npages = Static::sizemap()-&gt;class_to_pages(size_class_);
 
-  Span* span;
-  {
-    SpinLockHolder h(Static::pageheap_lock());
-    span = Static::pageheap()-&gt;New(npages); // &#20998;&#37197;&#21040;pages&#24471;&#21040;span.
-    if (span) Static::pageheap()-&gt;RegisterSizeClass(span, size_class_);
-  }
-  if (span == NULL) {
-    MESSAGE(<span style="color: #ffff00;">"tcmalloc: allocation failed"</span>, npages &lt;&lt; kPageShift);
-    lock_.Lock();
-    return;
-  }
-  ASSERT(span-&gt;length == npages);
-  for (int i = 0; i &lt; npages; i++) { // &#23558;span&#21644;size_class&#20043;&#38388;&#20851;&#32852;&#36215;&#26469;
-    // &#24212;&#35813;&#26159;&#20026;&#20102;&#21518;&#38754;&#26597;&#25214;&#26041;&#20415;&#65292;&#20294;&#26159;&#29616;&#22312;&#36824;&#19981;&#30693;&#36947;&#26377;&#20160;&#20040;&#29992;&#36884;&#12290;&#20294;&#26159;&#19981;&#24433;&#21709;&#38405;&#35835;.
-    Static::pageheap()-&gt;CacheSizeClass(span-&gt;start + i, size_class_);
-  }
+Span* span;
+{
+SpinLockHolder h(Static::pageheap_lock());
+span = Static::pageheap()-&gt;New(npages); // &#20998;&#37197;&#21040;pages&#24471;&#21040;span.
+if (span) Static::pageheap()-&gt;RegisterSizeClass(span, size_class_);
+}
+if (span == NULL) {
+MESSAGE(<span style="color: #ffff00;">"tcmalloc: allocation failed"</span>, npages &lt;&lt; kPageShift);
+lock_.Lock();
+return;
+}
+ASSERT(span-&gt;length == npages);
+for (int i = 0; i &lt; npages; i++) { // &#23558;span&#21644;size_class&#20043;&#38388;&#20851;&#32852;&#36215;&#26469;
+// &#24212;&#35813;&#26159;&#20026;&#20102;&#21518;&#38754;&#26597;&#25214;&#26041;&#20415;&#65292;&#20294;&#26159;&#29616;&#22312;&#36824;&#19981;&#30693;&#36947;&#26377;&#20160;&#20040;&#29992;&#36884;&#12290;&#20294;&#26159;&#19981;&#24433;&#21709;&#38405;&#35835;.
+Static::pageheap()-&gt;CacheSizeClass(span-&gt;start + i, size_class_);
+}
 
-  // &#23545;&#36825;&#20010;span&#37324;&#38754;&#30340;&#25152;&#26377;objects&#32452;&#32455;&#25104;&#38142;&#34920;&#24418;&#24335;
-  // Split the block into pieces and add to the free-list
-  // TODO: coloring of objects to avoid cache conflicts?
-  void** tail = &amp;span-&gt;objects;
-  char* ptr = reinterpret_cast&lt;char*&gt;(span-&gt;start &lt;&lt; kPageShift);
-  char* limit = ptr + (npages &lt;&lt; kPageShift);
-  const size_t size = Static::sizemap()-&gt;ByteSizeForClass(size_class_);
-  int num = 0;
-  while (ptr + size &lt;= limit) {
-    *tail = ptr;
-    tail = reinterpret_cast&lt;void**&gt;(ptr);
-    ptr += size;
-    num++;
-  }
-  ASSERT(ptr &lt;= limit);
-  *tail = NULL;
-  span-&gt;refcount = 0; // No sub-object in use yet
+// &#23545;&#36825;&#20010;span&#37324;&#38754;&#30340;&#25152;&#26377;objects&#32452;&#32455;&#25104;&#38142;&#34920;&#24418;&#24335;
+// Split the block into pieces and add to the free-list
+// TODO: coloring of objects to avoid cache conflicts?
+void** tail = &amp;span-&gt;objects;
+char* ptr = reinterpret_cast&lt;char*&gt;(span-&gt;start &lt;&lt; kPageShift);
+char* limit = ptr + (npages &lt;&lt; kPageShift);
+const size_t size = Static::sizemap()-&gt;ByteSizeForClass(size_class_);
+int num = 0;
+while (ptr + size &lt;= limit) {
+*tail = ptr;
+tail = reinterpret_cast&lt;void**&gt;(ptr);
+ptr += size;
+num++;
+}
+ASSERT(ptr &lt;= limit);
+*tail = NULL;
+span-&gt;refcount = 0; // No sub-object in use yet
 
-  // &#23558;&#36825;&#20010;span&#21152;&#20837;nonempty&#38142;&#34920;&#30340;&#35805;&#38656;&#35201;&#21152;&#38145;&#12290;
-  // Add span to list of non-empty spans
-  lock_.Lock();
-  tcmalloc::DLL_Prepend(&amp;nonempty_, span);
-  ++num_spans_;
-  counter_ += num;
+// &#23558;&#36825;&#20010;span&#21152;&#20837;nonempty&#38142;&#34920;&#30340;&#35805;&#38656;&#35201;&#21152;&#38145;&#12290;
+// Add span to list of non-empty spans
+lock_.Lock();
+tcmalloc::DLL_Prepend(&amp;nonempty_, span);
+++num_spans_;
+counter_ += num;
 }
 </pre>
 
@@ -1047,8 +1047,8 @@ CentralFreeList的接口非常少
 // lists: one for normal spans, and one for spans whose memory
 // has been returned to the system.
 struct SpanList {
-  Span        normal;
-  Span        returned; // &#20854;&#23454;&#23545;&#20110;&#36825;&#20010;&#37096;&#20998;&#27809;&#26377;&#24517;&#35201;&#21306;&#20998;&#30340;&#65292;&#22240;&#20026;&#20195;&#30721;&#37324;&#38754;&#22823;&#37096;&#20998;&#37117;&#26159;&#25346;&#22312;normal&#36825;&#20010;&#38142;&#19978;&#30340;&#12290;
+Span        normal;
+Span        returned; // &#20854;&#23454;&#23545;&#20110;&#36825;&#20010;&#37096;&#20998;&#27809;&#26377;&#24517;&#35201;&#21306;&#20998;&#30340;&#65292;&#22240;&#20026;&#20195;&#30721;&#37324;&#38754;&#22823;&#37096;&#20998;&#37117;&#26159;&#25346;&#22312;normal&#36825;&#20010;&#38142;&#19978;&#30340;&#12290;
 };
 
 // List of free spans of length &gt;= kMaxPages
@@ -1072,16 +1072,16 @@ normal freelist是普通的回收进行缓存起来，而returned freelist表示
 
 <pre class="src src-C++">// Selector class -- general selector uses 3-level map
 template &lt;int BITS&gt; class MapSelector {
- public:
-  typedef TCMalloc_PageMap3&lt;BITS-kPageShift&gt; Type;
-  typedef PackedCache&lt;BITS-kPageShift, uint64_t&gt; CacheType;
+public:
+typedef TCMalloc_PageMap3&lt;BITS-kPageShift&gt; Type;
+typedef PackedCache&lt;BITS-kPageShift, uint64_t&gt; CacheType;
 };
 
-  // Pick the appropriate map and cache types based on pointer size
-  typedef MapSelector&lt;kAddressBits&gt;::Type PageMap;
-  typedef MapSelector&lt;kAddressBits&gt;::CacheType PageMapCache;
-  PageMap pagemap_;
-  mutable PageMapCache pagemap_cache_;
+// Pick the appropriate map and cache types based on pointer size
+typedef MapSelector&lt;kAddressBits&gt;::Type PageMap;
+typedef MapSelector&lt;kAddressBits&gt;::CacheType PageMapCache;
+PageMap pagemap_;
+mutable PageMapCache pagemap_cache_;
 </pre>
 
 <p>
@@ -1145,19 +1145,19 @@ tcmalloc代码里面kMaxPages==1 &lt;&lt; (20- kPageShift) 相同于有256种页
 
 
 <pre class="src src-C++">Span* PageHeap::New(Length n) {
-  ASSERT(Check());
-  ASSERT(n &gt; 0);
+ASSERT(Check());
+ASSERT(n &gt; 0);
 
-  Span* result = SearchFreeAndLargeLists(n);  // free list&#28982;&#21518;&#22312;large&#37324;&#38754;&#26597;&#25214;
-  if (result != NULL)
-    return result;
+Span* result = SearchFreeAndLargeLists(n);  // free list&#28982;&#21518;&#22312;large&#37324;&#38754;&#26597;&#25214;
+if (result != NULL)
+return result;
 
-  // Grow the heap and try again.
-  if (!GrowHeap(n)) { // &#19981;&#34892;&#30340;&#35805;&#23581;&#35797;&#20998;&#37197;&#26356;&#22810;&#20869;&#23384;
-    ASSERT(Check());
-    return NULL;
-  }
-  return SearchFreeAndLargeLists(n); // &#28982;&#21518;&#37325;&#26032;&#23581;&#35797;&#20998;&#37197;
+// Grow the heap and try again.
+if (!GrowHeap(n)) { // &#19981;&#34892;&#30340;&#35805;&#23581;&#35797;&#20998;&#37197;&#26356;&#22810;&#20869;&#23384;
+ASSERT(Check());
+return NULL;
+}
+return SearchFreeAndLargeLists(n); // &#28982;&#21518;&#37325;&#26032;&#23581;&#35797;&#20998;&#37197;
 }
 </pre>
 
@@ -1168,26 +1168,26 @@ SearchFreeAndLargeLists相对来说还是比较简单的，但是里面Carve这�
 
 
 <pre class="src src-C++">Span* PageHeap::SearchFreeAndLargeLists(Length n) {
-  ASSERT(Check());
-  ASSERT(n &gt; 0);
+ASSERT(Check());
+ASSERT(n &gt; 0);
 
-  // Find first size &gt;= n that has a non-empty list
-  for (Length s = n; s &lt; kMaxPages; s++) { // &#36941;&#21382;&#25152;&#26377;&#30340;Pages&#30475;&#30475;&#26159;&#21542;&#26377;&#21512;&#36866;&#30340;&#12290;
-    Span* ll = &amp;free_[s].normal;
-    // If we're lucky, ll is non-empty, meaning it has a suitable span.
-    if (!DLL_IsEmpty(ll)) {
-      ASSERT(ll-&gt;next-&gt;location == Span::ON_NORMAL_FREELIST);
-      return Carve(ll-&gt;next, n); // &#22914;&#26524;&#26377;&#21512;&#36866;&#30340;&#35805;&#65292;&#37027;&#20040;&#21487;&#33021;&#38656;&#35201;&#20999;&#21106;&#19968;&#19979;,&#20174;&#37324;&#38754;&#20999;&#21106;&#20986;n pages&#20986;&#26469;
-    }
-    // Alternatively, maybe there's a usable returned span.
-    ll = &amp;free_[s].returned;
-    if (!DLL_IsEmpty(ll)) {
-      ASSERT(ll-&gt;next-&gt;location == Span::ON_RETURNED_FREELIST);
-      return Carve(ll-&gt;next, n);
-    }
-  }
-  // No luck in free lists, our last chance is in a larger class.
-  return AllocLarge(n);  // May be NULL // &#22914;&#26524;&#27809;&#26377;&#20998;&#37197;&#25104;&#21151;&#30340;&#35805;&#37027;&#20040;&#20174;AllocLarge&#37324;&#38754;&#20998;&#37197;
+// Find first size &gt;= n that has a non-empty list
+for (Length s = n; s &lt; kMaxPages; s++) { // &#36941;&#21382;&#25152;&#26377;&#30340;Pages&#30475;&#30475;&#26159;&#21542;&#26377;&#21512;&#36866;&#30340;&#12290;
+Span* ll = &amp;free_[s].normal;
+// If we're lucky, ll is non-empty, meaning it has a suitable span.
+if (!DLL_IsEmpty(ll)) {
+ASSERT(ll-&gt;next-&gt;location == Span::ON_NORMAL_FREELIST);
+return Carve(ll-&gt;next, n); // &#22914;&#26524;&#26377;&#21512;&#36866;&#30340;&#35805;&#65292;&#37027;&#20040;&#21487;&#33021;&#38656;&#35201;&#20999;&#21106;&#19968;&#19979;,&#20174;&#37324;&#38754;&#20999;&#21106;&#20986;n pages&#20986;&#26469;
+}
+// Alternatively, maybe there's a usable returned span.
+ll = &amp;free_[s].returned;
+if (!DLL_IsEmpty(ll)) {
+ASSERT(ll-&gt;next-&gt;location == Span::ON_RETURNED_FREELIST);
+return Carve(ll-&gt;next, n);
+}
+}
+// No luck in free lists, our last chance is in a larger class.
+return AllocLarge(n);  // May be NULL // &#22914;&#26524;&#27809;&#26377;&#20998;&#37197;&#25104;&#21151;&#30340;&#35805;&#37027;&#20040;&#20174;AllocLarge&#37324;&#38754;&#20998;&#37197;
 }
 </pre>
 
@@ -1207,26 +1207,26 @@ SearchFreeAndLargeLists相对来说还是比较简单的，但是里面Carve这�
 
 
 <pre class="src src-C++">Span* PageHeap::Carve(Span* span, Length n) {
-  ASSERT(n &gt; 0);
-  ASSERT(span-&gt;location != Span::IN_USE);
-  const int old_location = span-&gt;location;
-  RemoveFromFreeList(span); // &#20174;freelist&#37324;&#38754;&#21024;&#38500;&#65292;&#21516;&#26102;&#35760;&#24405;&#20449;&#24687;&#20063;&#20250;&#26356;&#25913;&#12290;
-  span-&gt;location = Span::IN_USE; // &#20462;&#25913;&#19968;&#19979;location.
-  Event(span, 'A', n);
+ASSERT(n &gt; 0);
+ASSERT(span-&gt;location != Span::IN_USE);
+const int old_location = span-&gt;location;
+RemoveFromFreeList(span); // &#20174;freelist&#37324;&#38754;&#21024;&#38500;&#65292;&#21516;&#26102;&#35760;&#24405;&#20449;&#24687;&#20063;&#20250;&#26356;&#25913;&#12290;
+span-&gt;location = Span::IN_USE; // &#20462;&#25913;&#19968;&#19979;location.
+Event(span, 'A', n);
 
-  const int extra = span-&gt;length - n;
-  ASSERT(extra &gt;= 0);
-  if (extra &gt; 0) {
-    Span* leftover = NewSpan(span-&gt;start + n, extra); // &#21019;&#24314;&#19968;&#20010;&#26032;&#30340;span&#23545;&#35937;
-    leftover-&gt;location = old_location; // &#36825;&#20010;&#26032;&#30340;&#23545;&#35937;&#37324;&#38754;&#23384;&#25918;&#21040;&#26159;&#21407;&#26469;location.
-    Event(leftover, 'S', extra);
-    RecordSpan(leftover); // &#23558;&#21097;&#20313;&#30340;span&#35760;&#24405;&#19979;&#26469;&#24182;&#19988;&#25554;&#20837;&#21040;free list&#37324;&#38754;.
-    PrependToFreeList(leftover);  // Skip coalescing - no candidates possible
-    span-&gt;length = n;
-    pagemap_.set(span-&gt;start + n - 1, span); // &#21516;&#26102;&#26631;&#35760;span&#31649;&#29702;&#30340;&#33539;&#22260;.
-  }
-  ASSERT(Check());
-  return span;
+const int extra = span-&gt;length - n;
+ASSERT(extra &gt;= 0);
+if (extra &gt; 0) {
+Span* leftover = NewSpan(span-&gt;start + n, extra); // &#21019;&#24314;&#19968;&#20010;&#26032;&#30340;span&#23545;&#35937;
+leftover-&gt;location = old_location; // &#36825;&#20010;&#26032;&#30340;&#23545;&#35937;&#37324;&#38754;&#23384;&#25918;&#21040;&#26159;&#21407;&#26469;location.
+Event(leftover, 'S', extra);
+RecordSpan(leftover); // &#23558;&#21097;&#20313;&#30340;span&#35760;&#24405;&#19979;&#26469;&#24182;&#19988;&#25554;&#20837;&#21040;free list&#37324;&#38754;.
+PrependToFreeList(leftover);  // Skip coalescing - no candidates possible
+span-&gt;length = n;
+pagemap_.set(span-&gt;start + n - 1, span); // &#21516;&#26102;&#26631;&#35760;span&#31649;&#29702;&#30340;&#33539;&#22260;.
+}
+ASSERT(Check());
+return span;
 }
 </pre>
 
@@ -1240,10 +1240,10 @@ SearchFreeAndLargeLists相对来说还是比较简单的，但是里面Carve这�
 
 
 <pre class="src src-C++">void RecordSpan(Span* span) {
-  pagemap_.set(span-&gt;start, span); // &#36825;&#26102;span&#24320;&#22987;
-  if (span-&gt;length &gt; 1) {
-    pagemap_.set(span-&gt;start + span-&gt;length - 1, span); // &#35774;&#32622;span&#32467;&#26463;
-  }
+pagemap_.set(span-&gt;start, span); // &#36825;&#26102;span&#24320;&#22987;
+if (span-&gt;length &gt; 1) {
+pagemap_.set(span-&gt;start + span-&gt;length - 1, span); // &#35774;&#32622;span&#32467;&#26463;
+}
 }
 </pre>
 
@@ -1266,57 +1266,57 @@ static const Length kMaxValidPages = (~static_cast&lt;Length&gt;(0)) &gt;&gt; kP
 static const int kMinSystemAlloc = kMaxPages; // &#35843;&#29992;GrowHeap&#26368;&#23567;&#30340;&#39029;&#25968;
 
 bool PageHeap::GrowHeap(Length n) {
-  ASSERT(kMaxPages &gt;= kMinSystemAlloc);
-  if (n &gt; kMaxValidPages) return false;
-  Length ask = (n&gt;kMinSystemAlloc) ? n : static_cast&lt;Length&gt;(kMinSystemAlloc); // &#20250;&#21028;&#26029;&#26159;&#21542;&#36229;&#36807;&#65292;&#22914;&#26524;&#27809;&#26377;&#36229;&#36807;&#30340;&#35805;&#65292;
-  // &#37027;&#20040;&#25353;&#29031;kMinSystemAlloc&#20998;&#37197;
-  size_t actual_size;
-  void* ptr = TCMalloc_SystemAlloc(ask &lt;&lt; kPageShift, &amp;actual_size, kPageSize);
-  if (ptr == NULL) {
-    if (n &lt; ask) {
-      // Try growing just <span style="color: #ffff00;">"n"</span> pages
-      ask = n;
-      ptr = TCMalloc_SystemAlloc(ask &lt;&lt; kPageShift, &amp;actual_size, kPageSize); // &#22914;&#26524;ask&#20998;&#37197;&#19981;&#20102;&#65292;&#37027;&#20040;&#23581;&#35797;&#20998;&#37197;n
-    }
-    if (ptr == NULL) return false;
-  }
-  ask = actual_size &gt;&gt; kPageShift;
-  RecordGrowth(ask &lt;&lt; kPageShift); // TODO.???
+ASSERT(kMaxPages &gt;= kMinSystemAlloc);
+if (n &gt; kMaxValidPages) return false;
+Length ask = (n&gt;kMinSystemAlloc) ? n : static_cast&lt;Length&gt;(kMinSystemAlloc); // &#20250;&#21028;&#26029;&#26159;&#21542;&#36229;&#36807;&#65292;&#22914;&#26524;&#27809;&#26377;&#36229;&#36807;&#30340;&#35805;&#65292;
+// &#37027;&#20040;&#25353;&#29031;kMinSystemAlloc&#20998;&#37197;
+size_t actual_size;
+void* ptr = TCMalloc_SystemAlloc(ask &lt;&lt; kPageShift, &amp;actual_size, kPageSize);
+if (ptr == NULL) {
+if (n &lt; ask) {
+// Try growing just <span style="color: #ffff00;">"n"</span> pages
+ask = n;
+ptr = TCMalloc_SystemAlloc(ask &lt;&lt; kPageShift, &amp;actual_size, kPageSize); // &#22914;&#26524;ask&#20998;&#37197;&#19981;&#20102;&#65292;&#37027;&#20040;&#23581;&#35797;&#20998;&#37197;n
+}
+if (ptr == NULL) return false;
+}
+ask = actual_size &gt;&gt; kPageShift;
+RecordGrowth(ask &lt;&lt; kPageShift); // TODO.???
 
-  uint64_t old_system_bytes = stats_.system_bytes;
-  stats_.system_bytes += (ask &lt;&lt; kPageShift);
-  const PageID p = reinterpret_cast&lt;uintptr_t&gt;(ptr) &gt;&gt; kPageShift;
-  ASSERT(p &gt; 0);
+uint64_t old_system_bytes = stats_.system_bytes;
+stats_.system_bytes += (ask &lt;&lt; kPageShift);
+const PageID p = reinterpret_cast&lt;uintptr_t&gt;(ptr) &gt;&gt; kPageShift;
+ASSERT(p &gt; 0);
 
-  // If we have already a lot of pages allocated, just pre allocate a bunch of
-  // memory for the page map. This prevents fragmentation by pagemap metadata
-  // when a program keeps allocating and freeing large blocks.
+// If we have already a lot of pages allocated, just pre allocate a bunch of
+// memory for the page map. This prevents fragmentation by pagemap metadata
+// when a program keeps allocating and freeing large blocks.
 
-  //  static const size_t kPageMapBigAllocationThreshold = 128 &lt;&lt; 20;(128MB)
-  // &#36825;&#20010;&#22320;&#26041;&#21028;&#26029;&#65292;&#36825;&#27425;&#20998;&#37197;&#26159;&#19981;&#26159;&#24050;&#32463;&#36234;&#36807;&#20102;&#19968;&#20010;threshold
-  // &#22914;&#26524;&#36234;&#36807;&#30340;&#35805;&#65292;&#37027;&#20040;&#24847;&#21619;&#30528;pagemap&#37324;&#38754;&#21487;&#33021;&#38656;&#35201;&#20998;&#37197;&#26356;&#22810;&#30340;&#20869;&#23384;
-  // &#20294;&#26159;&#23545;&#20110;64&#20301;&#26469;&#35828;&#30340;&#35805;&#65292;&#37324;&#38754;&#27809;&#26377;&#20219;&#20309;&#36923;&#36753;.
-  if (old_system_bytes &lt; kPageMapBigAllocationThreshold
-      &amp;&amp; stats_.system_bytes &gt;= kPageMapBigAllocationThreshold) {
-    pagemap_.PreallocateMoreMemory();
-  }
+//  static const size_t kPageMapBigAllocationThreshold = 128 &lt;&lt; 20;(128MB)
+// &#36825;&#20010;&#22320;&#26041;&#21028;&#26029;&#65292;&#36825;&#27425;&#20998;&#37197;&#26159;&#19981;&#26159;&#24050;&#32463;&#36234;&#36807;&#20102;&#19968;&#20010;threshold
+// &#22914;&#26524;&#36234;&#36807;&#30340;&#35805;&#65292;&#37027;&#20040;&#24847;&#21619;&#30528;pagemap&#37324;&#38754;&#21487;&#33021;&#38656;&#35201;&#20998;&#37197;&#26356;&#22810;&#30340;&#20869;&#23384;
+// &#20294;&#26159;&#23545;&#20110;64&#20301;&#26469;&#35828;&#30340;&#35805;&#65292;&#37324;&#38754;&#27809;&#26377;&#20219;&#20309;&#36923;&#36753;.
+if (old_system_bytes &lt; kPageMapBigAllocationThreshold
+&amp;&amp; stats_.system_bytes &gt;= kPageMapBigAllocationThreshold) {
+pagemap_.PreallocateMoreMemory();
+}
 
-  // Make sure pagemap_ has entries for all of the new pages.
-  // Plus ensure one before and one after so coalescing code
-  // does not need bounds-checking.
-  if (pagemap_.Ensure(p-1, ask+2)) {   // &#22240;&#20026;&#38656;&#35201;&#25554;&#20837;&#26032;&#30340;span,&#25152;&#20197;&#24517;&#39035;&#30830;&#20445;&#36825;&#20010;pagemap&#30830;&#23454;&#23384;&#22312;.
-    // Pretend the new area is allocated and then Delete() it to cause
-    // any necessary coalescing to occur.
-    Span* span = NewSpan(p, ask);
-    RecordSpan(span);
-    Delete(span); // &#23558;&#36825;&#20010;Span&#36820;&#22238;&#32473;large_&#37324;&#31561;&#24453;&#19979;&#27425;&#20998;&#37197;
-    ASSERT(Check());
-    return true;
-  } else {
-    // We could not allocate memory within <span style="color: #ffff00;">"pagemap_"</span>
-    // TODO: Once we can return memory to the system, return the new span
-    return false;
-  }
+// Make sure pagemap_ has entries for all of the new pages.
+// Plus ensure one before and one after so coalescing code
+// does not need bounds-checking.
+if (pagemap_.Ensure(p-1, ask+2)) {   // &#22240;&#20026;&#38656;&#35201;&#25554;&#20837;&#26032;&#30340;span,&#25152;&#20197;&#24517;&#39035;&#30830;&#20445;&#36825;&#20010;pagemap&#30830;&#23454;&#23384;&#22312;.
+// Pretend the new area is allocated and then Delete() it to cause
+// any necessary coalescing to occur.
+Span* span = NewSpan(p, ask);
+RecordSpan(span);
+Delete(span); // &#23558;&#36825;&#20010;Span&#36820;&#22238;&#32473;large_&#37324;&#31561;&#24453;&#19979;&#27425;&#20998;&#37197;
+ASSERT(Check());
+return true;
+} else {
+// We could not allocate memory within <span style="color: #ffff00;">"pagemap_"</span>
+// TODO: Once we can return memory to the system, return the new span
+return false;
+}
 }
 </pre>
 
@@ -1334,19 +1334,19 @@ bool PageHeap::GrowHeap(Length n) {
 
 
 <pre class="src src-C++">void PageHeap::Delete(Span* span) {
-  ASSERT(Check());
-  ASSERT(span-&gt;location == Span::IN_USE);
-  ASSERT(span-&gt;length &gt; 0);
-  ASSERT(GetDescriptor(span-&gt;start) == span);
-  ASSERT(GetDescriptor(span-&gt;start + span-&gt;length - 1) == span);
-  const Length n = span-&gt;length;
-  span-&gt;sizeclass = 0;
-  span-&gt;sample = 0;
-  span-&gt;location = Span::ON_NORMAL_FREELIST;
-  Event(span, 'D', span-&gt;length);
-  MergeIntoFreeList(span);  // Coalesces if possible // &#20250;&#23581;&#35797;&#36827;&#34892;&#21512;&#24182;
-  IncrementalScavenge(n); // &#22686;&#37327;&#25910;&#38598;. &#21518;&#38754;&#20250;&#20180;&#32454;&#30475;&#36825;&#20010;&#20989;&#25968;&#30340;&#23450;&#20041;
-  ASSERT(Check());
+ASSERT(Check());
+ASSERT(span-&gt;location == Span::IN_USE);
+ASSERT(span-&gt;length &gt; 0);
+ASSERT(GetDescriptor(span-&gt;start) == span);
+ASSERT(GetDescriptor(span-&gt;start + span-&gt;length - 1) == span);
+const Length n = span-&gt;length;
+span-&gt;sizeclass = 0;
+span-&gt;sample = 0;
+span-&gt;location = Span::ON_NORMAL_FREELIST;
+Event(span, 'D', span-&gt;length);
+MergeIntoFreeList(span);  // Coalesces if possible // &#20250;&#23581;&#35797;&#36827;&#34892;&#21512;&#24182;
+IncrementalScavenge(n); // &#22686;&#37327;&#25910;&#38598;. &#21518;&#38754;&#20250;&#20180;&#32454;&#30475;&#36825;&#20010;&#20989;&#25968;&#30340;&#23450;&#20041;
+ASSERT(Check());
 }
 </pre>
 
@@ -1357,36 +1357,36 @@ bool PageHeap::GrowHeap(Length n) {
 
 
 <pre class="src src-C++">void PageHeap::MergeIntoFreeList(Span* span) {
-  ASSERT(span-&gt;location != Span::IN_USE);
-  const PageID p = span-&gt;start;
-  const Length n = span-&gt;length;
-  // &#39318;&#20808;&#23581;&#35797;&#21512;&#24182;p-1 pages&#36825;&#20010;span
-  Span* prev = GetDescriptor(p-1);
-  if (prev != NULL &amp;&amp; prev-&gt;location == span-&gt;location) {
-    // Merge preceding span into this span
-    ASSERT(prev-&gt;start + prev-&gt;length == p);
-    const Length len = prev-&gt;length;
-    RemoveFromFreeList(prev);
-    DeleteSpan(prev);
-    span-&gt;start -= len;
-    span-&gt;length += len;
-    pagemap_.set(span-&gt;start, span);
-    Event(span, 'L', len);
-  }
- // &#28982;&#21518;&#23581;&#35797;&#21512;&#24182;p+n pages&#36825;&#20010;span.
-  Span* next = GetDescriptor(p+n);
-  if (next != NULL &amp;&amp; next-&gt;location == span-&gt;location) {
-    // Merge next span into this span
-    ASSERT(next-&gt;start == p+n);
-    const Length len = next-&gt;length;
-    RemoveFromFreeList(next);
-    DeleteSpan(next);
-    span-&gt;length += len;
-    pagemap_.set(span-&gt;start + span-&gt;length - 1, span);
-    Event(span, 'R', len);
-  }
-  // &#21512;&#24182;&#23436;&#25104;&#20043;&#21518;&#23601;&#20250;&#25918;&#20837;free list&#37324;&#38754;&#21435;
-  PrependToFreeList(span);
+ASSERT(span-&gt;location != Span::IN_USE);
+const PageID p = span-&gt;start;
+const Length n = span-&gt;length;
+// &#39318;&#20808;&#23581;&#35797;&#21512;&#24182;p-1 pages&#36825;&#20010;span
+Span* prev = GetDescriptor(p-1);
+if (prev != NULL &amp;&amp; prev-&gt;location == span-&gt;location) {
+// Merge preceding span into this span
+ASSERT(prev-&gt;start + prev-&gt;length == p);
+const Length len = prev-&gt;length;
+RemoveFromFreeList(prev);
+DeleteSpan(prev);
+span-&gt;start -= len;
+span-&gt;length += len;
+pagemap_.set(span-&gt;start, span);
+Event(span, 'L', len);
+}
+// &#28982;&#21518;&#23581;&#35797;&#21512;&#24182;p+n pages&#36825;&#20010;span.
+Span* next = GetDescriptor(p+n);
+if (next != NULL &amp;&amp; next-&gt;location == span-&gt;location) {
+// Merge next span into this span
+ASSERT(next-&gt;start == p+n);
+const Length len = next-&gt;length;
+RemoveFromFreeList(next);
+DeleteSpan(next);
+span-&gt;length += len;
+pagemap_.set(span-&gt;start + span-&gt;length - 1, span);
+Event(span, 'R', len);
+}
+// &#21512;&#24182;&#23436;&#25104;&#20043;&#21518;&#23601;&#20250;&#25918;&#20837;free list&#37324;&#38754;&#21435;
+PrependToFreeList(span);
 }
 </pre>
 
@@ -1407,41 +1407,41 @@ bool PageHeap::GrowHeap(Length n) {
 
 
 <pre class="src src-C++">void PageHeap::IncrementalScavenge(Length n) {
-  // Fast path; not yet time to release memory
-  scavenge_counter_ -= n;
-  if (scavenge_counter_ &gt;= 0) return;  // Not yet time to scavenge
+// Fast path; not yet time to release memory
+scavenge_counter_ -= n;
+if (scavenge_counter_ &gt;= 0) return;  // Not yet time to scavenge
 
-  // &#40664;&#35748;&#20540;&#30340;&#35805;&#26159;1.0,&#36825;&#20010;&#21487;&#20197;&#26377;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;.
-  // &#22914;&#26524;&#22238;&#25910;&#29575;&#24456;&#20302;&#30340;&#21704;&#65292;&#37027;&#20040;&#30456;&#24403;&#20110;&#19981;&#20250;&#24402;&#36824;&#32473;&#31995;&#32479;&#20869;&#23384;
-  const double rate = FLAGS_tcmalloc_release_rate;
-  if (rate &lt;= 1e-6) {
-    // Tiny release rate means that releasing is disabled.
-    //   static const int kDefaultReleaseDelay = 1 &lt;&lt; 18;
-    scavenge_counter_ = kDefaultReleaseDelay;
-    return;
-  }
+// &#40664;&#35748;&#20540;&#30340;&#35805;&#26159;1.0,&#36825;&#20010;&#21487;&#20197;&#26377;&#29615;&#22659;&#21464;&#37327;&#35774;&#32622;.
+// &#22914;&#26524;&#22238;&#25910;&#29575;&#24456;&#20302;&#30340;&#21704;&#65292;&#37027;&#20040;&#30456;&#24403;&#20110;&#19981;&#20250;&#24402;&#36824;&#32473;&#31995;&#32479;&#20869;&#23384;
+const double rate = FLAGS_tcmalloc_release_rate;
+if (rate &lt;= 1e-6) {
+// Tiny release rate means that releasing is disabled.
+//   static const int kDefaultReleaseDelay = 1 &lt;&lt; 18;
+scavenge_counter_ = kDefaultReleaseDelay;
+return;
+}
 
-  // &#23581;&#35797;&#33267;&#24402;&#36824;&#19968;&#20010;&#39029;&#38754;.
-  // &#20855;&#20307;&#36825;&#20010;&#20989;&#25968;&#23454;&#29616;&#22312;&#21518;&#38754;&#20250;&#25552;&#21040;.
-  Length released_pages = ReleaseAtLeastNPages(1);
+// &#23581;&#35797;&#33267;&#24402;&#36824;&#19968;&#20010;&#39029;&#38754;.
+// &#20855;&#20307;&#36825;&#20010;&#20989;&#25968;&#23454;&#29616;&#22312;&#21518;&#38754;&#20250;&#25552;&#21040;.
+Length released_pages = ReleaseAtLeastNPages(1);
 
-  // &#22914;&#26524;&#23454;&#38469;&#19978;&#27809;&#26377;&#24402;&#36824;&#30340;&#35805;&#65292;&#37027;&#20040;&#19979;&#27425;&#38656;&#35201;&#31561;&#24453;&#36825;&#20040;&#22810;&#27425;&#20043;&#21518;&#23581;&#35797;&#24402;&#36824;.
-  if (released_pages == 0) {
-    // Nothing to scavenge, delay for a while.
-    scavenge_counter_ = kDefaultReleaseDelay;
-  } else { // &#21542;&#21017;&#20250;&#25353;&#29031;&#19968;&#23450;&#30340;&#31574;&#30053;&#35774;&#23450;&#27425;&#25968;&#28982;&#21518;&#23581;&#35797;&#24402;&#36824;
-    // Compute how long to wait until we return memory.
-    // FLAGS_tcmalloc_release_rate==1 means wait for 1000 pages
-    // after releasing one page.
-    const double mult = 1000.0 / rate;
-    double wait = mult * static_cast&lt;double&gt;(released_pages);
-    if (wait &gt; kMaxReleaseDelay) {
-      // Avoid overflow and bound to reasonable range.
-       // static const int kMaxReleaseDelay = 1 &lt;&lt; 20;
-      wait = kMaxReleaseDelay;
-    }
-    scavenge_counter_ = static_cast&lt;int64_t&gt;(wait);
-  }
+// &#22914;&#26524;&#23454;&#38469;&#19978;&#27809;&#26377;&#24402;&#36824;&#30340;&#35805;&#65292;&#37027;&#20040;&#19979;&#27425;&#38656;&#35201;&#31561;&#24453;&#36825;&#20040;&#22810;&#27425;&#20043;&#21518;&#23581;&#35797;&#24402;&#36824;.
+if (released_pages == 0) {
+// Nothing to scavenge, delay for a while.
+scavenge_counter_ = kDefaultReleaseDelay;
+} else { // &#21542;&#21017;&#20250;&#25353;&#29031;&#19968;&#23450;&#30340;&#31574;&#30053;&#35774;&#23450;&#27425;&#25968;&#28982;&#21518;&#23581;&#35797;&#24402;&#36824;
+// Compute how long to wait until we return memory.
+// FLAGS_tcmalloc_release_rate==1 means wait for 1000 pages
+// after releasing one page.
+const double mult = 1000.0 / rate;
+double wait = mult * static_cast&lt;double&gt;(released_pages);
+if (wait &gt; kMaxReleaseDelay) {
+// Avoid overflow and bound to reasonable range.
+// static const int kMaxReleaseDelay = 1 &lt;&lt; 20;
+wait = kMaxReleaseDelay;
+}
+scavenge_counter_ = static_cast&lt;int64_t&gt;(wait);
+}
 }
 </pre>
 
@@ -1460,30 +1460,30 @@ bool PageHeap::GrowHeap(Length n) {
 
 
 <pre class="src src-C++">Length PageHeap::ReleaseAtLeastNPages(Length num_pages) {
-  Length released_pages = 0;
-  Length prev_released_pages = -1;
+Length released_pages = 0;
+Length prev_released_pages = -1;
 
-  // Round robin through the lists of free spans, releasing the last
-  // span in each list.  Stop after releasing at least num_pages.
-  while (released_pages &lt; num_pages) {
-    if (released_pages == prev_released_pages) { // &#22914;&#26524;&#33258;&#19978;&#27425;&#20381;&#36182;&#27809;&#26377;&#22810;&#20313;&#37322;&#25918;&#30340;&#35805;
-      // Last iteration of while loop made no progress.
-      break;
-    }
-    prev_released_pages = released_pages;
+// Round robin through the lists of free spans, releasing the last
+// span in each list.  Stop after releasing at least num_pages.
+while (released_pages &lt; num_pages) {
+if (released_pages == prev_released_pages) { // &#22914;&#26524;&#33258;&#19978;&#27425;&#20381;&#36182;&#27809;&#26377;&#22810;&#20313;&#37322;&#25918;&#30340;&#35805;
+// Last iteration of while loop made no progress.
+break;
+}
+prev_released_pages = released_pages;
 
-    for (int i = 0; i &lt; kMaxPages+1 &amp;&amp; released_pages &lt; num_pages;
-         i++, release_index_++) { // &#27599;&#20010;&#22823;&#23567;&#31867;&#22411;&#37117;&#20250;&#23581;&#35797;&#37322;&#25918;&#19968;&#20010;.
-      if (release_index_ &gt; kMaxPages) release_index_ = 0;
-      SpanList* slist = (release_index_ == kMaxPages) ?
-          &amp;large_ : &amp;free_[release_index_];
-      if (!DLL_IsEmpty(&amp;slist-&gt;normal)) {
-        Length released_len = ReleaseLastNormalSpan(slist);
-        released_pages += released_len;
-      }
-    }
-  }
-  return released_pages;
+for (int i = 0; i &lt; kMaxPages+1 &amp;&amp; released_pages &lt; num_pages;
+i++, release_index_++) { // &#27599;&#20010;&#22823;&#23567;&#31867;&#22411;&#37117;&#20250;&#23581;&#35797;&#37322;&#25918;&#19968;&#20010;.
+if (release_index_ &gt; kMaxPages) release_index_ = 0;
+SpanList* slist = (release_index_ == kMaxPages) ?
+&amp;large_ : &amp;free_[release_index_];
+if (!DLL_IsEmpty(&amp;slist-&gt;normal)) {
+Length released_len = ReleaseLastNormalSpan(slist);
+released_pages += released_len;
+}
+}
+}
+return released_pages;
 }
 </pre>
 
@@ -1494,17 +1494,17 @@ bool PageHeap::GrowHeap(Length n) {
 
 
 <pre class="src src-C++">Length PageHeap::ReleaseLastNormalSpan(SpanList* slist) {
-  Span* s = slist-&gt;normal.prev;
-  ASSERT(s-&gt;location == Span::ON_NORMAL_FREELIST);
-  RemoveFromFreeList(s); // &#20174;&#24403;&#21069;&#38142;&#20013;&#37322;&#25918;&#25481;.
-  const Length n = s-&gt;length;
-  // &#23454;&#38469;&#19978;&#36825;&#20010;&#37096;&#20998;&#24182;&#27809;&#26377;&#37322;&#25918;&#21734;.
-  TCMalloc_SystemRelease(reinterpret_cast&lt;void*&gt;(s-&gt;start &lt;&lt; kPageShift),
-                         static_cast&lt;size_t&gt;(s-&gt;length &lt;&lt; kPageShift));
-  s-&gt;location = Span::ON_RETURNED_FREELIST; // &#26631;&#35760;&#20026;returned&#29366;&#24577;
-   // &#20002;&#22238;return free list&#26102;&#20505;&#20250;&#23581;&#35797;&#21512;&#24182;.
-  MergeIntoFreeList(s);  // Coalesces if possible.
-  return n;
+Span* s = slist-&gt;normal.prev;
+ASSERT(s-&gt;location == Span::ON_NORMAL_FREELIST);
+RemoveFromFreeList(s); // &#20174;&#24403;&#21069;&#38142;&#20013;&#37322;&#25918;&#25481;.
+const Length n = s-&gt;length;
+// &#23454;&#38469;&#19978;&#36825;&#20010;&#37096;&#20998;&#24182;&#27809;&#26377;&#37322;&#25918;&#21734;.
+TCMalloc_SystemRelease(reinterpret_cast&lt;void*&gt;(s-&gt;start &lt;&lt; kPageShift),
+static_cast&lt;size_t&gt;(s-&gt;length &lt;&lt; kPageShift));
+s-&gt;location = Span::ON_RETURNED_FREELIST; // &#26631;&#35760;&#20026;returned&#29366;&#24577;
+// &#20002;&#22238;return free list&#26102;&#20505;&#20250;&#23581;&#35797;&#21512;&#24182;.
+MergeIntoFreeList(s);  // Coalesces if possible.
+return n;
 }
 </pre>
 
@@ -1533,21 +1533,21 @@ bool PageHeap::GrowHeap(Length n) {
 
 
 <pre class="src src-C++">struct MallocRange {
-  // &#36825;&#20010;malloc&#33539;&#22260;&#26159;&#20160;&#20040;&#31867;&#22411;
-  enum Type {
-    INUSE,                // Application is using this range
-    FREE,                 // Range is currently free
-    UNMAPPED,             // Backing physical memory has been returned to the OS
-    UNKNOWN,
-    // More enum values may be added in the future
-  };
-  // &#22320;&#22336;&#65292;&#38271;&#24230;&#65292;&#31867;&#22411;
-  uintptr_t address;    // Address of range
-  size_t length;        // Byte length of range
-  Type type;            // Type of this range
-  // =0 !INUSE,&#22914;&#26524;=1&#34920;&#31034;&#36825;&#20010;&#34987;&#24403;&#20570;page&#20351;&#29992;
-  // &#22914;&#26524;[0,1]&#20043;&#38388;&#30340;&#35805;&#65292;&#34920;&#26126;&#34987;&#20570;&#25104;&#20102;&#23567;&#23545;&#35937;&#20998;&#37197;
-  double fraction;      // Fraction of range that is being used (0 if !INUSE)
+// &#36825;&#20010;malloc&#33539;&#22260;&#26159;&#20160;&#20040;&#31867;&#22411;
+enum Type {
+INUSE,                // Application is using this range
+FREE,                 // Range is currently free
+UNMAPPED,             // Backing physical memory has been returned to the OS
+UNKNOWN,
+// More enum values may be added in the future
+};
+// &#22320;&#22336;&#65292;&#38271;&#24230;&#65292;&#31867;&#22411;
+uintptr_t address;    // Address of range
+size_t length;        // Byte length of range
+Type type;            // Type of this range
+// =0 !INUSE,&#22914;&#26524;=1&#34920;&#31034;&#36825;&#20010;&#34987;&#24403;&#20570;page&#20351;&#29992;
+// &#22914;&#26524;[0,1]&#20043;&#38388;&#30340;&#35805;&#65292;&#34920;&#26126;&#34987;&#20570;&#25104;&#20102;&#23567;&#23545;&#35937;&#20998;&#37197;
+double fraction;      // Fraction of range that is being used (0 if !INUSE)
 };
 </pre>
 
@@ -1557,35 +1557,35 @@ bool PageHeap::GrowHeap(Length n) {
 
 
 <pre class="src src-C++">bool PageHeap::GetNextRange(PageID start, base::MallocRange* r) {
-  Span* span = reinterpret_cast&lt;Span*&gt;(pagemap_.Next(start));
-  if (span == NULL) {
-    return false;
-  }
-  r-&gt;address = span-&gt;start &lt;&lt; kPageShift;
-  r-&gt;length = span-&gt;length &lt;&lt; kPageShift;
-  r-&gt;fraction = 0;
-  switch (span-&gt;location) {
-    case Span::IN_USE:
-      r-&gt;type = base::MallocRange::INUSE;
-      r-&gt;fraction = 1;
-      if (span-&gt;sizeclass &gt; 0) {
-        // Only some of the objects in this span may be in use.
-        const size_t osize = Static::sizemap()-&gt;class_to_size(span-&gt;sizeclass); // &#39318;&#20808;&#30693;&#36947;&#36825;&#20010;class&#27599;&#20010;object size&#22810;&#23569;
-       // refcount&#34920;&#31034;&#24050;&#32463;&#20351;&#29992;&#20102;&#22810;&#23569;&#20010;objects.,&#36825;&#26679;&#23601;&#21487;&#20197;&#24471;&#21040;&#20351;&#29992;&#29575;
-        r-&gt;fraction = (1.0 * osize * span-&gt;refcount) / r-&gt;length;
-      }
-      break;
-    case Span::ON_NORMAL_FREELIST:
-      r-&gt;type = base::MallocRange::FREE;
-      break;
-    case Span::ON_RETURNED_FREELIST:
-      r-&gt;type = base::MallocRange::UNMAPPED;
-      break;
-    default:
-      r-&gt;type = base::MallocRange::UNKNOWN;
-      break;
-  }
-  return true;
+Span* span = reinterpret_cast&lt;Span*&gt;(pagemap_.Next(start));
+if (span == NULL) {
+return false;
+}
+r-&gt;address = span-&gt;start &lt;&lt; kPageShift;
+r-&gt;length = span-&gt;length &lt;&lt; kPageShift;
+r-&gt;fraction = 0;
+switch (span-&gt;location) {
+case Span::IN_USE:
+r-&gt;type = base::MallocRange::INUSE;
+r-&gt;fraction = 1;
+if (span-&gt;sizeclass &gt; 0) {
+// Only some of the objects in this span may be in use.
+const size_t osize = Static::sizemap()-&gt;class_to_size(span-&gt;sizeclass); // &#39318;&#20808;&#30693;&#36947;&#36825;&#20010;class&#27599;&#20010;object size&#22810;&#23569;
+// refcount&#34920;&#31034;&#24050;&#32463;&#20351;&#29992;&#20102;&#22810;&#23569;&#20010;objects.,&#36825;&#26679;&#23601;&#21487;&#20197;&#24471;&#21040;&#20351;&#29992;&#29575;
+r-&gt;fraction = (1.0 * osize * span-&gt;refcount) / r-&gt;length;
+}
+break;
+case Span::ON_NORMAL_FREELIST:
+r-&gt;type = base::MallocRange::FREE;
+break;
+case Span::ON_RETURNED_FREELIST:
+r-&gt;type = base::MallocRange::UNMAPPED;
+break;
+default:
+r-&gt;type = base::MallocRange::UNKNOWN;
+break;
+}
+return true;
 }
 </pre>
 
@@ -1623,14 +1623,14 @@ static const int LEAF_LENGTH = 1 &lt;&lt; LEAF_BITS;
 
 
 <pre class="src src-C++">void* get(Number k) const {
-  const Number i1 = k &gt;&gt; (LEAF_BITS + INTERIOR_BITS);
-  const Number i2 = (k &gt;&gt; LEAF_BITS) &amp; (INTERIOR_LENGTH-1);
-  const Number i3 = k &amp; (LEAF_LENGTH-1);
-  if ((k &gt;&gt; BITS) &gt; 0 ||
-      root_-&gt;ptrs[i1] == NULL || root_-&gt;ptrs[i1]-&gt;ptrs[i2] == NULL) {
-    return NULL;
-  }
-  return reinterpret_cast&lt;Leaf*&gt;(root_-&gt;ptrs[i1]-&gt;ptrs[i2])-&gt;values[i3];
+const Number i1 = k &gt;&gt; (LEAF_BITS + INTERIOR_BITS);
+const Number i2 = (k &gt;&gt; LEAF_BITS) &amp; (INTERIOR_LENGTH-1);
+const Number i3 = k &amp; (LEAF_LENGTH-1);
+if ((k &gt;&gt; BITS) &gt; 0 ||
+root_-&gt;ptrs[i1] == NULL || root_-&gt;ptrs[i1]-&gt;ptrs[i2] == NULL) {
+return NULL;
+}
+return reinterpret_cast&lt;Leaf*&gt;(root_-&gt;ptrs[i1]-&gt;ptrs[i2])-&gt;values[i3];
 }
 </pre>
 
@@ -1654,26 +1654,26 @@ static const int LEAF_LENGTH = 1 &lt;&lt; LEAF_BITS;
 
 
 <pre class="src src-C++">void* Next(Number k) const {
-  while (k &lt; (Number(1) &lt;&lt; BITS)) {
-    const Number i1 = k &gt;&gt; (LEAF_BITS + INTERIOR_BITS);
-    const Number i2 = (k &gt;&gt; LEAF_BITS) &amp; (INTERIOR_LENGTH-1);
-    if (root_-&gt;ptrs[i1] == NULL) { // &#22914;&#26524;&#36825;&#23618;&#20026;&#31354;&#30340;&#35805;&#65292;&#37027;&#20040;&#30452;&#25509;&#36339;&#21040;&#19979;&#19968;&#23618;
-      // Advance to next top-level entry
-      k = (i1 + 1) &lt;&lt; (LEAF_BITS + INTERIOR_BITS);
-    } else {
-      Leaf* leaf = reinterpret_cast&lt;Leaf*&gt;(root_-&gt;ptrs[i1]-&gt;ptrs[i2]);
-      if (leaf != NULL) {
-        for (Number i3 = (k &amp; (LEAF_LENGTH-1)); i3 &lt; LEAF_LENGTH; i3++) { // &#36941;&#21382;&#36825;&#19968;&#23618;(&#31532;&#19977;&#23618;)&#30475;&#30475;&#26159;&#21542;&#23384;&#22312;.
-          if (leaf-&gt;values[i3] != NULL) {
-            return leaf-&gt;values[i3];
-          }
-        }
-      }
-      // Advance to next interior entry
-      k = ((k &gt;&gt; LEAF_BITS) + 1) &lt;&lt; LEAF_BITS; // &#22914;&#26524;&#31532;&#20108;&#23618;&#20026;&#31354;&#30340;&#35805;&#65292;&#37027;&#20040;&#21516;&#26679;&#36827;&#20837;&#19979;&#19968;&#23618;.
-    }
-  }
-  return NULL;
+while (k &lt; (Number(1) &lt;&lt; BITS)) {
+const Number i1 = k &gt;&gt; (LEAF_BITS + INTERIOR_BITS);
+const Number i2 = (k &gt;&gt; LEAF_BITS) &amp; (INTERIOR_LENGTH-1);
+if (root_-&gt;ptrs[i1] == NULL) { // &#22914;&#26524;&#36825;&#23618;&#20026;&#31354;&#30340;&#35805;&#65292;&#37027;&#20040;&#30452;&#25509;&#36339;&#21040;&#19979;&#19968;&#23618;
+// Advance to next top-level entry
+k = (i1 + 1) &lt;&lt; (LEAF_BITS + INTERIOR_BITS);
+} else {
+Leaf* leaf = reinterpret_cast&lt;Leaf*&gt;(root_-&gt;ptrs[i1]-&gt;ptrs[i2]);
+if (leaf != NULL) {
+for (Number i3 = (k &amp; (LEAF_LENGTH-1)); i3 &lt; LEAF_LENGTH; i3++) { // &#36941;&#21382;&#36825;&#19968;&#23618;(&#31532;&#19977;&#23618;)&#30475;&#30475;&#26159;&#21542;&#23384;&#22312;.
+if (leaf-&gt;values[i3] != NULL) {
+return leaf-&gt;values[i3];
+}
+}
+}
+// Advance to next interior entry
+k = ((k &gt;&gt; LEAF_BITS) + 1) &lt;&lt; LEAF_BITS; // &#22914;&#26524;&#31532;&#20108;&#23618;&#20026;&#31354;&#30340;&#35805;&#65292;&#37027;&#20040;&#21516;&#26679;&#36827;&#20837;&#19979;&#19968;&#23618;.
+}
+}
+return NULL;
 }
 </pre>
 
@@ -1696,18 +1696,18 @@ PackedCache是一种非常精巧的数据结构。它的作用主要是想知道
 
 <pre class="src src-C++">template &lt;int kKeybits, typename T&gt;
 class PackedCache {
- public:
-  typedef uintptr_t K;
-  typedef size_t V;
+public:
+typedef uintptr_t K;
+typedef size_t V;
 #ifdef TCMALLOC_SMALL_BUT_SLOW
-  // Decrease the size map cache if running in the small memory mode.
-  static const int kHashbits = 12;
+// Decrease the size map cache if running in the small memory mode.
+static const int kHashbits = 12;
 #else
-  static const int kHashbits = 16;
+static const int kHashbits = 16;
 #endif
-  // array_ is the cache.  Its elements are volatile because any
-  // thread can write any array element at any time.
-  volatile T array_[1 &lt;&lt; kHashbits];
+// array_ is the cache.  Its elements are volatile because any
+// thread can write any array element at any time.
+volatile T array_[1 &lt;&lt; kHashbits];
 };
 </pre>
 
@@ -1806,12 +1806,12 @@ pthread_key_t ThreadCache::heap_key_; // &#22914;&#26524;&#20351;&#29992;pthread
 
 
 <pre class="src src-C++">void ThreadCache::InitModule() {
-  SpinLockHolder h(Static::pageheap_lock());  // &#20840;&#23616;&#33258;&#36873;&#38145;
-  if (!phinited) {
-    Static::InitStaticVars(); // &#21021;&#22987;&#21270;&#19968;&#20123;&#38745;&#24577;&#25968;&#25454;
-    threadcache_allocator.Init(); // PageHeapAllocator&lt;ThreadCache&gt;,sample_alloc&#21021;&#22987;&#21270;
-    phinited = 1;
-  }
+SpinLockHolder h(Static::pageheap_lock());  // &#20840;&#23616;&#33258;&#36873;&#38145;
+if (!phinited) {
+Static::InitStaticVars(); // &#21021;&#22987;&#21270;&#19968;&#20123;&#38745;&#24577;&#25968;&#25454;
+threadcache_allocator.Init(); // PageHeapAllocator&lt;ThreadCache&gt;,sample_alloc&#21021;&#22987;&#21270;
+phinited = 1;
+}
 }
 </pre>
 
@@ -1828,10 +1828,10 @@ pthread_key_t ThreadCache::heap_key_; // &#22914;&#26524;&#20351;&#29992;pthread
 
 
 <pre class="src src-C++">void ThreadCache::InitTSD() {
-  ASSERT(!tsd_inited_); // &#36825;&#20010;&#21464;&#37327;&#26631;&#35760;&#26159;&#21542;&#24050;&#32463;&#21021;&#22987;&#21270;&#20102;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;&#65292;&#22914;&#26524;&#27809;&#26377;&#30340;&#35805;&#37027;&#20040;&#26159;&#27809;&#26377;&#20219;&#20309;tc&#30340;.
-  perftools_pthread_key_create(&amp;heap_key_, DestroyThreadCache); // &#36825;&#20010;&#23601;&#26159;&#35774;&#32622;&#22909;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;
-  // &#22240;&#20026;&#27599;&#19968;&#20010;&#32447;&#31243;&#37117;&#20250;&#26377;&#19968;&#20010;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;thread cache.
-  tsd_inited_ = true;
+ASSERT(!tsd_inited_); // &#36825;&#20010;&#21464;&#37327;&#26631;&#35760;&#26159;&#21542;&#24050;&#32463;&#21021;&#22987;&#21270;&#20102;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;&#65292;&#22914;&#26524;&#27809;&#26377;&#30340;&#35805;&#37027;&#20040;&#26159;&#27809;&#26377;&#20219;&#20309;tc&#30340;.
+perftools_pthread_key_create(&amp;heap_key_, DestroyThreadCache); // &#36825;&#20010;&#23601;&#26159;&#35774;&#32622;&#22909;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;
+// &#22240;&#20026;&#27599;&#19968;&#20010;&#32447;&#31243;&#37117;&#20250;&#26377;&#19968;&#20010;&#32447;&#31243;&#23616;&#37096;&#21464;&#37327;thread cache.
+tsd_inited_ = true;
 }
 </pre>
 
@@ -1841,11 +1841,11 @@ pthread_key_t ThreadCache::heap_key_; // &#22914;&#26524;&#20351;&#29992;pthread
 
 
 <pre class="src src-C++">void ThreadCache::DestroyThreadCache(void* ptr) {
-  // Note that <span style="color: #ffff00;">"ptr"</span> cannot be NULL since pthread promises not
-  // to invoke the destructor on NULL values, but for safety,
-  // we check anyway.
-  if (ptr == NULL) return;
-  DeleteCache(reinterpret_cast&lt;ThreadCache*&gt;(ptr));
+// Note that <span style="color: #ffff00;">"ptr"</span> cannot be NULL since pthread promises not
+// to invoke the destructor on NULL values, but for safety,
+// we check anyway.
+if (ptr == NULL) return;
+DeleteCache(reinterpret_cast&lt;ThreadCache*&gt;(ptr));
 }
 </pre>
 
@@ -1865,14 +1865,14 @@ pthread_key_t ThreadCache::heap_key_; // &#22914;&#26524;&#20351;&#29992;pthread
 
 
 <pre class="src src-C++">inline ThreadCache* ThreadCache::GetCache() {
-  ThreadCache* ptr = NULL;
-  if (!tsd_inited_) {
-    InitModule(); // &#21021;&#22987;&#21270;&#27169;&#22359;
-  } else {
-    ptr = GetThreadHeap(); // &#30452;&#25509;&#26597;&#30475;&#26159;&#21542;&#23384;&#22312;
-  }
-  if (ptr == NULL) ptr = CreateCacheIfNecessary(); // &#22914;&#26524;&#19981;&#23384;&#22312;&#30340;&#35805;&#37027;&#20040;&#23601;&#21019;&#24314;
-  return ptr;
+ThreadCache* ptr = NULL;
+if (!tsd_inited_) {
+InitModule(); // &#21021;&#22987;&#21270;&#27169;&#22359;
+} else {
+ptr = GetThreadHeap(); // &#30452;&#25509;&#26597;&#30475;&#26159;&#21542;&#23384;&#22312;
+}
+if (ptr == NULL) ptr = CreateCacheIfNecessary(); // &#22914;&#26524;&#19981;&#23384;&#22312;&#30340;&#35805;&#37027;&#20040;&#23601;&#21019;&#24314;
+return ptr;
 }
 </pre>
 
@@ -1883,12 +1883,12 @@ GetThreadHeap非常简单直接从线程局部变量里面取出即可
 
 
 <pre class="src src-C++">inline ThreadCache* ThreadCache::GetThreadHeap() {
-  return reinterpret_cast&lt;ThreadCache *&gt;(
-      perftools_pthread_getspecific(heap_key_));
+return reinterpret_cast&lt;ThreadCache *&gt;(
+perftools_pthread_getspecific(heap_key_));
 }
 inline ThreadCache* ThreadCache::GetCacheIfPresent() {
-  if (!tsd_inited_) return NULL;
-  return GetThreadHeap();
+if (!tsd_inited_) return NULL;
+return GetThreadHeap();
 }
 </pre>
 
@@ -1906,27 +1906,27 @@ inline ThreadCache* ThreadCache::GetCacheIfPresent() {
 
 
 <pre class="src src-C++">ThreadCache* ThreadCache::CreateCacheIfNecessary() {
-  // Initialize per-thread data if necessary
-  ThreadCache* heap = NULL;
-  {
-    SpinLockHolder h(Static::pageheap_lock());
-    const pthread_t me = pthread_self();
-    // &#26597;&#25214;&#37324;&#38754;&#26159;&#21542;&#24050;&#32463;&#23384;&#22312;,&#27599;&#20010;&#32447;&#31243;&#37117;&#21019;&#24314;&#19968;&#20010;ThreadCache.
-    // &#24182;&#19988;&#36825;&#20010;&#26159;&#25353;&#29031;&#38142;&#32452;&#32455;&#36215;&#26469;&#30340;&#12290;
-    for (ThreadCache* h = thread_heaps_; h != NULL; h = h-&gt;next_) {
-      if (h-&gt;tid_ == me) {
-        heap = h;
-        break;
-      }
-    }
-    if (heap == NULL) heap = NewHeap(me);
-  }
-  if (!heap-&gt;in_setspecific_ &amp;&amp; tsd_inited_) {
-    heap-&gt;in_setspecific_ = true; // &#36991;&#20813;setspecific&#37324;&#38754;&#36824;&#35843;&#29992;
-    perftools_pthread_setspecific(heap_key_, heap);
-    heap-&gt;in_setspecific_ = false;
-  }
-  return heap;
+// Initialize per-thread data if necessary
+ThreadCache* heap = NULL;
+{
+SpinLockHolder h(Static::pageheap_lock());
+const pthread_t me = pthread_self();
+// &#26597;&#25214;&#37324;&#38754;&#26159;&#21542;&#24050;&#32463;&#23384;&#22312;,&#27599;&#20010;&#32447;&#31243;&#37117;&#21019;&#24314;&#19968;&#20010;ThreadCache.
+// &#24182;&#19988;&#36825;&#20010;&#26159;&#25353;&#29031;&#38142;&#32452;&#32455;&#36215;&#26469;&#30340;&#12290;
+for (ThreadCache* h = thread_heaps_; h != NULL; h = h-&gt;next_) {
+if (h-&gt;tid_ == me) {
+heap = h;
+break;
+}
+}
+if (heap == NULL) heap = NewHeap(me);
+}
+if (!heap-&gt;in_setspecific_ &amp;&amp; tsd_inited_) {
+heap-&gt;in_setspecific_ = true; // &#36991;&#20813;setspecific&#37324;&#38754;&#36824;&#35843;&#29992;
+perftools_pthread_setspecific(heap_key_, heap);
+heap-&gt;in_setspecific_ = false;
+}
+return heap;
 }
 </pre>
 
@@ -1944,21 +1944,21 @@ inline ThreadCache* ThreadCache::GetCacheIfPresent() {
 
 
 <pre class="src src-C++">ThreadCache* ThreadCache::NewHeap(pthread_t tid) {
-  // Create the heap and add it to the linked list
-  ThreadCache *heap = threadcache_allocator.New();
-  heap-&gt;Init(tid); // &#35843;&#29992;Init
-  heap-&gt;next_ = thread_heaps_; // &#32452;&#32455;&#25104;&#20026;&#19968;&#20010;&#21452;&#21521;&#38142;&#34920;
-  heap-&gt;prev_ = NULL;
-  if (thread_heaps_ != NULL) {
-    thread_heaps_-&gt;prev_ = heap;
-  } else {
-    // This is the only thread heap at the momment.
-    ASSERT(next_memory_steal_ == NULL);
-    next_memory_steal_ = heap; // &#22914;&#26524;&#36825;&#20010;&#26159;&#31532;&#19968;&#20010;&#20803;&#32032;&#30340;&#35805;&#65292;&#37027;&#20040;&#35774;&#32622;next_memory_steal.
-  }
-  thread_heaps_ = heap;
-  thread_heap_count_++; // tc&#25968;&#37327;.
-  return heap;
+// Create the heap and add it to the linked list
+ThreadCache *heap = threadcache_allocator.New();
+heap-&gt;Init(tid); // &#35843;&#29992;Init
+heap-&gt;next_ = thread_heaps_; // &#32452;&#32455;&#25104;&#20026;&#19968;&#20010;&#21452;&#21521;&#38142;&#34920;
+heap-&gt;prev_ = NULL;
+if (thread_heaps_ != NULL) {
+thread_heaps_-&gt;prev_ = heap;
+} else {
+// This is the only thread heap at the momment.
+ASSERT(next_memory_steal_ == NULL);
+next_memory_steal_ = heap; // &#22914;&#26524;&#36825;&#20010;&#26159;&#31532;&#19968;&#20010;&#20803;&#32032;&#30340;&#35805;&#65292;&#37027;&#20040;&#35774;&#32622;next_memory_steal.
+}
+thread_heaps_ = heap;
+thread_heap_count_++; // tc&#25968;&#37327;.
+return heap;
 }
 </pre>
 
@@ -1976,22 +1976,22 @@ inline ThreadCache* ThreadCache::GetCacheIfPresent() {
 
 
 <pre class="src src-C++">void ThreadCache::BecomeIdle() {
-  if (!tsd_inited_) return;              // No caches yet
-  ThreadCache* heap = GetThreadHeap();
-  if (heap == NULL) return;             // No thread cache to remove
-  if (heap-&gt;in_setspecific_) return;    // Do not disturb the active caller
+if (!tsd_inited_) return;              // No caches yet
+ThreadCache* heap = GetThreadHeap();
+if (heap == NULL) return;             // No thread cache to remove
+if (heap-&gt;in_setspecific_) return;    // Do not disturb the active caller
 
-  heap-&gt;in_setspecific_ = true; // &#38450;&#27490;&#36882;&#24402;&#35843;&#29992;
-  perftools_pthread_setspecific(heap_key_, NULL);
-  heap-&gt;in_setspecific_ = false;
-  if (GetThreadHeap() == heap) { // &#24212;&#35813;&#26159;&#19981;&#20250;&#35843;&#29992;&#36825;&#20010;&#37096;&#20998;&#36923;&#36753;&#30340;.
-    // Somehow heap got reinstated by a recursive call to malloc
-    // from pthread_setspecific.  We give up in this case.
-    return;
-  }
-  // &#28982;&#21518;&#23558;&#36825;&#20010;heap&#37322;&#25918;&#25481;
-  // We can now get rid of the heap
-  DeleteCache(heap);
+heap-&gt;in_setspecific_ = true; // &#38450;&#27490;&#36882;&#24402;&#35843;&#29992;
+perftools_pthread_setspecific(heap_key_, NULL);
+heap-&gt;in_setspecific_ = false;
+if (GetThreadHeap() == heap) { // &#24212;&#35813;&#26159;&#19981;&#20250;&#35843;&#29992;&#36825;&#20010;&#37096;&#20998;&#36923;&#36753;&#30340;.
+// Somehow heap got reinstated by a recursive call to malloc
+// from pthread_setspecific.  We give up in this case.
+return;
+}
+// &#28982;&#21518;&#23558;&#36825;&#20010;heap&#37322;&#25918;&#25481;
+// We can now get rid of the heap
+DeleteCache(heap);
 }
 </pre>
 
@@ -2007,19 +2007,19 @@ inline ThreadCache* ThreadCache::GetCacheIfPresent() {
 
 char buf[1024*1024];
 void* foo(void* arg){
-  return NULL;
+return NULL;
 }
 int main() {
-  pthread_t tid;
-  for(int i=0;i&lt;10;i++){
-    pthread_create(&amp;tid,NULL,foo,NULL);
-    pthread_join(tid,NULL);
-    printf(<span style="color: #ffff00;">"%zu\n"</span>,static_cast&lt;size_t&gt;(tid));
-    pthread_create(&amp;tid,NULL,foo,NULL);
-    pthread_join(tid,NULL);
-    printf(<span style="color: #ffff00;">"%zu\n"</span>,static_cast&lt;size_t&gt;(tid));
-  }
-  return 0;
+pthread_t tid;
+for(int i=0;i&lt;10;i++){
+pthread_create(&amp;tid,NULL,foo,NULL);
+pthread_join(tid,NULL);
+printf(<span style="color: #ffff00;">"%zu\n"</span>,static_cast&lt;size_t&gt;(tid));
+pthread_create(&amp;tid,NULL,foo,NULL);
+pthread_join(tid,NULL);
+printf(<span style="color: #ffff00;">"%zu\n"</span>,static_cast&lt;size_t&gt;(tid));
+}
+return 0;
 }
 </pre>
 
@@ -2039,33 +2039,33 @@ int main() {
 
 
 <pre class="src src-C++">void ThreadCache::Init(pthread_t tid) {
-  size_ = 0;
+size_ = 0;
 
-  max_size_ = 0;
-  IncreaseCacheLimitLocked(); // &#36825;&#20010;&#22320;&#26041;&#22312;&#35745;&#31639;&#21040;&#24213;&#21487;&#20197;&#20998;&#37197;&#22810;&#23569;max size.
-  if (max_size_ == 0) {
-    // There isn't enough memory to go around.  Just give the minimum to
-    // this thread.
-    // static const size_t kMaxSize    = 256 * 1024;(256K)
-    // static const size_t kMinThreadCacheSize = kMaxSize * 2;(512K)
-    max_size_ = kMinThreadCacheSize; // 512K.
+max_size_ = 0;
+IncreaseCacheLimitLocked(); // &#36825;&#20010;&#22320;&#26041;&#22312;&#35745;&#31639;&#21040;&#24213;&#21487;&#20197;&#20998;&#37197;&#22810;&#23569;max size.
+if (max_size_ == 0) {
+// There isn't enough memory to go around.  Just give the minimum to
+// this thread.
+// static const size_t kMaxSize    = 256 * 1024;(256K)
+// static const size_t kMinThreadCacheSize = kMaxSize * 2;(512K)
+max_size_ = kMinThreadCacheSize; // 512K.
 
-    // Take unclaimed_cache_space_ negative.
-    unclaimed_cache_space_ -= kMinThreadCacheSize; // &#37027;&#20040;&#30456;&#24403;&#20110;tc&#25345;&#26377;&#31354;&#38386;&#31354;&#38388;&#20063;&#23545;&#24212;&#20943;&#23569;
-    ASSERT(unclaimed_cache_space_ &lt; 0);
-  }
+// Take unclaimed_cache_space_ negative.
+unclaimed_cache_space_ -= kMinThreadCacheSize; // &#37027;&#20040;&#30456;&#24403;&#20110;tc&#25345;&#26377;&#31354;&#38386;&#31354;&#38388;&#20063;&#23545;&#24212;&#20943;&#23569;
+ASSERT(unclaimed_cache_space_ &lt; 0);
+}
 
-  next_ = NULL;
-  prev_ = NULL;
-  tid_  = tid;
-  in_setspecific_ = false;
-  for (size_t cl = 0; cl &lt; kNumClasses; ++cl) {
-    list_[cl].Init(); // &#21021;&#22987;&#21270;&#27599;&#20010;slab
-  }
+next_ = NULL;
+prev_ = NULL;
+tid_  = tid;
+in_setspecific_ = false;
+for (size_t cl = 0; cl &lt; kNumClasses; ++cl) {
+list_[cl].Init(); // &#21021;&#22987;&#21270;&#27599;&#20010;slab
+}
 
-  uint32_t sampler_seed;
-  memcpy(&amp;sampler_seed, &amp;tid, sizeof(sampler_seed));
-  sampler_.Init(sampler_seed); // &#21021;&#22987;&#21270;sampler TODO.???
+uint32_t sampler_seed;
+memcpy(&amp;sampler_seed, &amp;tid, sizeof(sampler_seed));
+sampler_.Init(sampler_seed); // &#21021;&#22987;&#21270;sampler TODO.???
 }
 </pre>
 
@@ -2085,17 +2085,17 @@ int main() {
 
 
 <pre class="src src-C++">class FreeList {
- private:
-  void*    list_;       // Linked list of nodes
+private:
+void*    list_;       // Linked list of nodes
 
-  // On 64-bit hardware, manipulating 16-bit values may be slightly slow.
-  uint32_t length_;      // Current length. // &#24403;&#21069;&#38271;&#24230;&#22810;&#23569;
-  uint32_t lowater_;     // Low water mark for list length. // &#38271;&#24230;&#26368;&#23569;&#26102;&#20505;&#36798;&#21040;&#20102;&#22810;&#23569;
-  uint32_t max_length_;  // Dynamic max list length based on usage. // &#35748;&#20026;&#30340;&#26368;&#22823;&#38271;&#24230;&#22810;&#23569;
-  // Tracks the number of times a deallocation has caused
-  // length_ &gt; max_length_.  After the kMaxOverages'th time, max_length_
-  // shrinks and length_overages_ is reset to zero.
-  uint32_t length_overages_; // &#36229;&#36807;&#26368;&#22823;&#38271;&#24230;&#30340;&#27425;&#25968;
+// On 64-bit hardware, manipulating 16-bit values may be slightly slow.
+uint32_t length_;      // Current length. // &#24403;&#21069;&#38271;&#24230;&#22810;&#23569;
+uint32_t lowater_;     // Low water mark for list length. // &#38271;&#24230;&#26368;&#23569;&#26102;&#20505;&#36798;&#21040;&#20102;&#22810;&#23569;
+uint32_t max_length_;  // Dynamic max list length based on usage. // &#35748;&#20026;&#30340;&#26368;&#22823;&#38271;&#24230;&#22810;&#23569;
+// Tracks the number of times a deallocation has caused
+// length_ &gt; max_length_.  After the kMaxOverages'th time, max_length_
+// shrinks and length_overages_ is reset to zero.
+uint32_t length_overages_; // &#36229;&#36807;&#26368;&#22823;&#38271;&#24230;&#30340;&#27425;&#25968;
 };
 </pre>
 
@@ -2115,37 +2115,37 @@ int main() {
 
 
 <pre class="src src-C++">void ThreadCache::IncreaseCacheLimitLocked() {
-  if (unclaimed_cache_space_ &gt; 0) { // &#22914;&#26524;tc&#37324;&#38754;&#36824;&#26377;&#31354;&#38386;&#30340;&#20869;&#23481;&#30340;&#35805;&#65292;&#37027;&#20040;&#33719;&#21462;64KB&#36807;&#26469;
-    // static const size_t kStealAmount = 1 &lt;&lt; 16;(64KB)
-    // Possibly make unclaimed_cache_space_ negative.
-    unclaimed_cache_space_ -= kStealAmount;
-    max_size_ += kStealAmount;
-    return;
-  }
-  // &#22914;&#26524;&#21457;&#29616;&#20381;&#28982;&#19981;&#22815;&#30340;&#35805;&#65292;&#37027;&#20040;&#20250;&#20174;&#27599;&#19968;&#20010;&#20197;&#21518;&#30340;tc&#37324;&#38754;&#33719;&#21462;&#20599;&#21462;&#37096;&#20998;&#20986;&#26469;.
-  // &#36825;&#20010;&#38142;&#26159;&#25353;&#29031;next_memory_steal_&#21462;&#20986;&#26469;&#30340;&#65292;&#22914;&#26524;==NULL&#37027;&#20040;&#20174;&#22836;&#24320;&#22987;&#12290;
-  // &#20294;&#26159;&#24456;&#24555;&#20250;&#21457;&#29616;&#36825;&#20010;max_size&#20854;&#23454;&#24182;&#19981;&#26159;&#19968;&#25104;&#19981;&#21464;&#30340;.
-  // Don't hold pageheap_lock too long.  Try to steal from 10 other
-  // threads before giving up.  The i &lt; 10 condition also prevents an
-  // infinite loop in case none of the existing thread heaps are
-  // suitable places to steal from.
-  for (int i = 0; i &lt; 10;
-       ++i, next_memory_steal_ = next_memory_steal_-&gt;next_) {
-    // Reached the end of the linked list.  Start at the beginning.
-    if (next_memory_steal_ == NULL) {
-      ASSERT(thread_heaps_ != NULL);
-      next_memory_steal_ = thread_heaps_;
-    }
-    if (next_memory_steal_ == this ||
-        next_memory_steal_-&gt;max_size_ &lt;= kMinThreadCacheSize) {
-      continue;
-    }
-    next_memory_steal_-&gt;max_size_ -= kStealAmount;
-    max_size_ += kStealAmount;
+if (unclaimed_cache_space_ &gt; 0) { // &#22914;&#26524;tc&#37324;&#38754;&#36824;&#26377;&#31354;&#38386;&#30340;&#20869;&#23481;&#30340;&#35805;&#65292;&#37027;&#20040;&#33719;&#21462;64KB&#36807;&#26469;
+// static const size_t kStealAmount = 1 &lt;&lt; 16;(64KB)
+// Possibly make unclaimed_cache_space_ negative.
+unclaimed_cache_space_ -= kStealAmount;
+max_size_ += kStealAmount;
+return;
+}
+// &#22914;&#26524;&#21457;&#29616;&#20381;&#28982;&#19981;&#22815;&#30340;&#35805;&#65292;&#37027;&#20040;&#20250;&#20174;&#27599;&#19968;&#20010;&#20197;&#21518;&#30340;tc&#37324;&#38754;&#33719;&#21462;&#20599;&#21462;&#37096;&#20998;&#20986;&#26469;.
+// &#36825;&#20010;&#38142;&#26159;&#25353;&#29031;next_memory_steal_&#21462;&#20986;&#26469;&#30340;&#65292;&#22914;&#26524;==NULL&#37027;&#20040;&#20174;&#22836;&#24320;&#22987;&#12290;
+// &#20294;&#26159;&#24456;&#24555;&#20250;&#21457;&#29616;&#36825;&#20010;max_size&#20854;&#23454;&#24182;&#19981;&#26159;&#19968;&#25104;&#19981;&#21464;&#30340;.
+// Don't hold pageheap_lock too long.  Try to steal from 10 other
+// threads before giving up.  The i &lt; 10 condition also prevents an
+// infinite loop in case none of the existing thread heaps are
+// suitable places to steal from.
+for (int i = 0; i &lt; 10;
+++i, next_memory_steal_ = next_memory_steal_-&gt;next_) {
+// Reached the end of the linked list.  Start at the beginning.
+if (next_memory_steal_ == NULL) {
+ASSERT(thread_heaps_ != NULL);
+next_memory_steal_ = thread_heaps_;
+}
+if (next_memory_steal_ == this ||
+next_memory_steal_-&gt;max_size_ &lt;= kMinThreadCacheSize) {
+continue;
+}
+next_memory_steal_-&gt;max_size_ -= kStealAmount;
+max_size_ += kStealAmount;
 
-    next_memory_steal_ = next_memory_steal_-&gt;next_;
-    return;
-  }
+next_memory_steal_ = next_memory_steal_-&gt;next_;
+return;
+}
 }
 </pre>
 
@@ -2166,21 +2166,21 @@ int main() {
 
 
 <pre class="src src-C++">void ThreadCache::DeleteCache(ThreadCache* heap) {
-  // Remove all memory from heap
-  heap-&gt;Cleanup(); // &#31245;&#21518;&#25105;&#20204;&#26597;&#30475;Cleanup&#23454;&#29616;&#12290;
+// Remove all memory from heap
+heap-&gt;Cleanup(); // &#31245;&#21518;&#25105;&#20204;&#26597;&#30475;Cleanup&#23454;&#29616;&#12290;
 
-  // Remove from linked list
-  SpinLockHolder h(Static::pageheap_lock());
-  if (heap-&gt;next_ != NULL) heap-&gt;next_-&gt;prev_ = heap-&gt;prev_;
-  if (heap-&gt;prev_ != NULL) heap-&gt;prev_-&gt;next_ = heap-&gt;next_;
-  if (thread_heaps_ == heap) thread_heaps_ = heap-&gt;next_;
-  thread_heap_count_--;
+// Remove from linked list
+SpinLockHolder h(Static::pageheap_lock());
+if (heap-&gt;next_ != NULL) heap-&gt;next_-&gt;prev_ = heap-&gt;prev_;
+if (heap-&gt;prev_ != NULL) heap-&gt;prev_-&gt;next_ = heap-&gt;next_;
+if (thread_heaps_ == heap) thread_heaps_ = heap-&gt;next_;
+thread_heap_count_--;
 
-  if (next_memory_steal_ == heap) next_memory_steal_ = heap-&gt;next_;
-  if (next_memory_steal_ == NULL) next_memory_steal_ = thread_heaps_;
-  unclaimed_cache_space_ += heap-&gt;max_size_;
+if (next_memory_steal_ == heap) next_memory_steal_ = heap-&gt;next_;
+if (next_memory_steal_ == NULL) next_memory_steal_ = thread_heaps_;
+unclaimed_cache_space_ += heap-&gt;max_size_;
 
-  threadcache_allocator.Delete(heap);
+threadcache_allocator.Delete(heap);
 }
 </pre>
 
@@ -2200,12 +2200,12 @@ int main() {
 
 
 <pre class="src src-C++">void ThreadCache::Cleanup() {
-  // Put unused memory back into central cache
-  for (int cl = 0; cl &lt; kNumClasses; ++cl) {
-    if (list_[cl].length() &gt; 0) {
-      ReleaseToCentralCache(&amp;list_[cl], cl, list_[cl].length());
-    }
-  }
+// Put unused memory back into central cache
+for (int cl = 0; cl &lt; kNumClasses; ++cl) {
+if (list_[cl].length() &gt; 0) {
+ReleaseToCentralCache(&amp;list_[cl], cl, list_[cl].length());
+}
+}
 }
 </pre>
 
@@ -2224,23 +2224,23 @@ int main() {
 
 
 <pre class="src src-C++">void ThreadCache::ReleaseToCentralCache(FreeList* src, size_t cl, int N) {
-  ASSERT(src == &amp;list_[cl]);
-  if (N &gt; src-&gt;length()) N = src-&gt;length(); // &#36825;&#20010;&#22320;&#26041;&#24863;&#35273;&#19981;&#26159;&#24456;&#26377;&#24517;&#35201;.&#19981;&#36807;&#20854;&#20182;&#22320;&#26041;&#30340;&#35805;&#21487;&#33021;&#36825;&#20004;&#20010;&#21442;&#25968;&#19981;&#21516;
-  size_t delta_bytes = N * Static::sizemap()-&gt;ByteSizeForClass(cl); // &#20102;&#35299;&#26377;&#22810;&#23569;&#20010;&#23545;&#35937;&#21344;&#29992;&#20869;&#23384;&#22823;&#23567;&#37322;&#25918;.
+ASSERT(src == &amp;list_[cl]);
+if (N &gt; src-&gt;length()) N = src-&gt;length(); // &#36825;&#20010;&#22320;&#26041;&#24863;&#35273;&#19981;&#26159;&#24456;&#26377;&#24517;&#35201;.&#19981;&#36807;&#20854;&#20182;&#22320;&#26041;&#30340;&#35805;&#21487;&#33021;&#36825;&#20004;&#20010;&#21442;&#25968;&#19981;&#21516;
+size_t delta_bytes = N * Static::sizemap()-&gt;ByteSizeForClass(cl); // &#20102;&#35299;&#26377;&#22810;&#23569;&#20010;&#23545;&#35937;&#21344;&#29992;&#20869;&#23384;&#22823;&#23567;&#37322;&#25918;.
 
-  // We return prepackaged chains of the correct size to the central cache.
-  // TODO: Use the same format internally in the thread caches?
-  int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
-  while (N &gt; batch_size) { // &#27599;&#27425;&#24402;&#36824;batch_size&#20010;&#20869;&#23481;&#65292;&#36825;&#26679;central cache&#21487;&#20197;&#25918;&#22312;transfer cache&#37324;&#38754;
-    void *tail, *head;
-    src-&gt;PopRange(batch_size, &amp;head, &amp;tail);
-    Static::central_cache()[cl].InsertRange(head, tail, batch_size);
-    N -= batch_size;
-  }
-  void *tail, *head;
-  src-&gt;PopRange(N, &amp;head, &amp;tail);
-  Static::central_cache()[cl].InsertRange(head, tail, N);
-  size_ -= delta_bytes;
+// We return prepackaged chains of the correct size to the central cache.
+// TODO: Use the same format internally in the thread caches?
+int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
+while (N &gt; batch_size) { // &#27599;&#27425;&#24402;&#36824;batch_size&#20010;&#20869;&#23481;&#65292;&#36825;&#26679;central cache&#21487;&#20197;&#25918;&#22312;transfer cache&#37324;&#38754;
+void *tail, *head;
+src-&gt;PopRange(batch_size, &amp;head, &amp;tail);
+Static::central_cache()[cl].InsertRange(head, tail, batch_size);
+N -= batch_size;
+}
+void *tail, *head;
+src-&gt;PopRange(N, &amp;head, &amp;tail);
+Static::central_cache()[cl].InsertRange(head, tail, N);
+size_ -= delta_bytes;
 }
 </pre>
 
@@ -2250,10 +2250,10 @@ PopRange这个语义非常简单，但是我们稍微看看这个的实现，
 
 
 <pre class="src src-C++">void PopRange(int N, void **start, void **end) {
-  SLL_PopRange(&amp;list_, N, start, end);
-  ASSERT(length_ &gt;= N);
-  length_ -= N;
-  if (length_ &lt; lowater_) lowater_ = length_;
+SLL_PopRange(&amp;list_, N, start, end);
+ASSERT(length_ &gt;= N);
+length_ -= N;
+if (length_ &lt; lowater_) lowater_ = length_;
 }
 </pre>
 
@@ -2273,15 +2273,15 @@ PopRange这个语义非常简单，但是我们稍微看看这个的实现，
 
 
 <pre class="src src-C++">inline void* ThreadCache::Allocate(size_t size, size_t cl) {
-  ASSERT(size &lt;= kMaxSize);
-  ASSERT(size == Static::sizemap()-&gt;ByteSizeForClass(cl));
+ASSERT(size &lt;= kMaxSize);
+ASSERT(size == Static::sizemap()-&gt;ByteSizeForClass(cl));
 
-  FreeList* list = &amp;list_[cl];
-  if (list-&gt;empty()) {
-    return FetchFromCentralCache(cl, size); // &#22914;&#26524;list&#37324;&#38754;&#20026;&#31354;&#30340;&#35805;&#65292;&#37027;&#20040;&#23581;&#35797;&#20174;cc&#30340;cl&#37324;&#38754;&#20998;&#37197;size&#20986;&#26469;.
-  }
-  size_ -= size; // &#22914;&#26524;&#23384;&#22312;&#30340;&#35805;&#37027;&#20040;&#23601;&#30452;&#25509;-size&#24182;&#19988;&#24377;&#20986;&#19968;&#20010;&#20803;&#32032;
-  return list-&gt;Pop();
+FreeList* list = &amp;list_[cl];
+if (list-&gt;empty()) {
+return FetchFromCentralCache(cl, size); // &#22914;&#26524;list&#37324;&#38754;&#20026;&#31354;&#30340;&#35805;&#65292;&#37027;&#20040;&#23581;&#35797;&#20174;cc&#30340;cl&#37324;&#38754;&#20998;&#37197;size&#20986;&#26469;.
+}
+size_ -= size; // &#22914;&#26524;&#23384;&#22312;&#30340;&#35805;&#37027;&#20040;&#23601;&#30452;&#25509;-size&#24182;&#19988;&#24377;&#20986;&#19968;&#20010;&#20803;&#32032;
+return list-&gt;Pop();
 }
 </pre>
 
@@ -2299,37 +2299,37 @@ PopRange这个语义非常简单，但是我们稍微看看这个的实现，
 
 
 <pre class="src src-C++">void* ThreadCache::FetchFromCentralCache(size_t cl, size_t byte_size) {
-  FreeList* list = &amp;list_[cl];
-  ASSERT(list-&gt;empty());
-  const int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
+FreeList* list = &amp;list_[cl];
+ASSERT(list-&gt;empty());
+const int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
 
-  // &#30475;&#30475;&#27599;&#27425;&#20801;&#35768;&#30340;&#20998;&#37197;&#30340;&#20010;&#25968;&#26159;&#22810;&#23569;
-  const int num_to_move = min&lt;int&gt;(list-&gt;max_length(), batch_size);
-  void *start, *end;
-  int fetch_count = Static::central_cache()[cl].RemoveRange(
-      &amp;start, &amp;end, num_to_move);
+// &#30475;&#30475;&#27599;&#27425;&#20801;&#35768;&#30340;&#20998;&#37197;&#30340;&#20010;&#25968;&#26159;&#22810;&#23569;
+const int num_to_move = min&lt;int&gt;(list-&gt;max_length(), batch_size);
+void *start, *end;
+int fetch_count = Static::central_cache()[cl].RemoveRange(
+&amp;start, &amp;end, num_to_move);
 
-  ASSERT((start == NULL) == (fetch_count == 0));
-  // &#21462;&#20986;&#26469;&#24182;&#19988;&#35774;&#32622;&#19968;&#19979;&#24403;&#21069;&#32500;&#25252;&#30340;&#31354;&#38386;&#22823;&#23567;&#26159;&#22810;&#23569;
-  if (--fetch_count &gt;= 0) {
-    size_ += byte_size * fetch_count;
-    list-&gt;PushRange(fetch_count, SLL_Next(start), end);
-  }
-  // &#36825;&#37324;&#38656;&#35201;&#22686;&#38271;max_length.&#22914;&#26524;&lt;batch_size&#30340;&#35805;&#37027;&#20040;+1
-  // &#22914;&#26524;&gt;=batch_size&#30340;&#35805;&#65292;&#37027;&#20040;&#20250;&#35774;&#32622;&#25104;&#20026;&#26576;&#20010;&#19978;&#32447;
-  // static const int kMaxDynamicFreeListLength = 8192;
-  if (list-&gt;max_length() &lt; batch_size) {
-    list-&gt;set_max_length(list-&gt;max_length() + 1);
-  } else {
-    int new_length = min&lt;int&gt;(list-&gt;max_length() + batch_size,
-                              kMaxDynamicFreeListLength);
-        // &#36825;&#37324;&#20063;&#38750;&#24120;&#22909;&#29702;&#35299;&#65292;&#25353;&#29031;batch_size&#26469;&#20998;&#37197;&#30340;&#35805;&#65292;&#21487;&#20197;&#30452;&#25509;&#20174;tc&#37324;&#38754;&#24471;&#21040;
-    // &#20351;&#29992;&#36825;&#20010;&#20316;&#20026;max_kength&#30340;&#35805;&#36890;&#24120;&#24847;&#21619;&#30528;&#20998;&#37197;&#36895;&#24230;&#20250;&#26356;&#24555;.
-    new_length -= new_length % batch_size;
-    ASSERT(new_length % batch_size == 0);
-    list-&gt;set_max_length(new_length);
-  }
-  return start;
+ASSERT((start == NULL) == (fetch_count == 0));
+// &#21462;&#20986;&#26469;&#24182;&#19988;&#35774;&#32622;&#19968;&#19979;&#24403;&#21069;&#32500;&#25252;&#30340;&#31354;&#38386;&#22823;&#23567;&#26159;&#22810;&#23569;
+if (--fetch_count &gt;= 0) {
+size_ += byte_size * fetch_count;
+list-&gt;PushRange(fetch_count, SLL_Next(start), end);
+}
+// &#36825;&#37324;&#38656;&#35201;&#22686;&#38271;max_length.&#22914;&#26524;&lt;batch_size&#30340;&#35805;&#37027;&#20040;+1
+// &#22914;&#26524;&gt;=batch_size&#30340;&#35805;&#65292;&#37027;&#20040;&#20250;&#35774;&#32622;&#25104;&#20026;&#26576;&#20010;&#19978;&#32447;
+// static const int kMaxDynamicFreeListLength = 8192;
+if (list-&gt;max_length() &lt; batch_size) {
+list-&gt;set_max_length(list-&gt;max_length() + 1);
+} else {
+int new_length = min&lt;int&gt;(list-&gt;max_length() + batch_size,
+kMaxDynamicFreeListLength);
+// &#36825;&#37324;&#20063;&#38750;&#24120;&#22909;&#29702;&#35299;&#65292;&#25353;&#29031;batch_size&#26469;&#20998;&#37197;&#30340;&#35805;&#65292;&#21487;&#20197;&#30452;&#25509;&#20174;tc&#37324;&#38754;&#24471;&#21040;
+// &#20351;&#29992;&#36825;&#20010;&#20316;&#20026;max_kength&#30340;&#35805;&#36890;&#24120;&#24847;&#21619;&#30528;&#20998;&#37197;&#36895;&#24230;&#20250;&#26356;&#24555;.
+new_length -= new_length % batch_size;
+ASSERT(new_length % batch_size == 0);
+list-&gt;set_max_length(new_length);
+}
+return start;
 }
 </pre>
 
@@ -2347,25 +2347,25 @@ PopRange这个语义非常简单，但是我们稍微看看这个的实现，
 
 
 <pre class="src src-C++">inline void ThreadCache::Deallocate(void* ptr, size_t cl) {
-  FreeList* list = &amp;list_[cl];
-  size_ += Static::sizemap()-&gt;ByteSizeForClass(cl); // &#37322;&#25918;&#20102;&#36825;&#20010;&#20869;&#23384;&#25152;&#20197;&#31354;&#38386;&#22823;&#23567;&#22686;&#22823;
-  ssize_t size_headroom = max_size_ - size_ - 1;  // &#22312;size&#19978;&#38754;&#30340;&#35805;&#36824;&#26377;&#22810;&#23569;&#31354;&#38386;.
+FreeList* list = &amp;list_[cl];
+size_ += Static::sizemap()-&gt;ByteSizeForClass(cl); // &#37322;&#25918;&#20102;&#36825;&#20010;&#20869;&#23384;&#25152;&#20197;&#31354;&#38386;&#22823;&#23567;&#22686;&#22823;
+ssize_t size_headroom = max_size_ - size_ - 1;  // &#22312;size&#19978;&#38754;&#30340;&#35805;&#36824;&#26377;&#22810;&#23569;&#31354;&#38386;.
 
-  list-&gt;Push(ptr); // &#24402;&#36824;
-  ssize_t list_headroom =
-      static_cast&lt;ssize_t&gt;(list-&gt;max_length()) - list-&gt;length(); // &#22312;&#38271;&#24230;&#19978;&#36824;&#26377;&#22810;&#23569;&#31354;&#38386;
+list-&gt;Push(ptr); // &#24402;&#36824;
+ssize_t list_headroom =
+static_cast&lt;ssize_t&gt;(list-&gt;max_length()) - list-&gt;length(); // &#22312;&#38271;&#24230;&#19978;&#36824;&#26377;&#22810;&#23569;&#31354;&#38386;
 
-  // There are two relatively uncommon things that require further work.
-  // In the common case we're done, and in that case we need a single branch
-  // because of the bitwise-or trick that follows.
-  if ((list_headroom | size_headroom) &lt; 0) { // &#36825;&#20010;&#37096;&#20998;&#24212;&#35813;&#26159;&#26377;&#20219;&#24847;&#19968;&#20010;&lt;0&#30340;&#35805;&#65292;&#37027;&#20040;&#23601;&#24212;&#35813;&#36827;&#20837;&#12290;&#20248;&#21270;&#25163;&#27573;&#21543;.
-    if (list_headroom &lt; 0) { // &#22914;&#26524;&#24403;&#21069;&#38271;&#24230;&gt;max_length&#30340;&#35805;&#65292;&#37027;&#20040;&#38656;&#35201;&#37325;&#26032;&#35774;&#32622;max_length.
-      ListTooLong(list, cl);
-    }
-        // &#26465;&#20214;&#30456;&#24403; if(size_headroom &lt; 0)
-        // &#22240;&#20026;ListTooLog&#20250;&#23581;&#35797;&#20462;&#25913;size_&#25152;&#20197;&#36825;&#37324;&#37325;&#26032;&#21028;&#26029;..:(tricky:(.
-    if (size_ &gt;= max_size_) Scavenge(); // &#22914;&#26524;&#24403;&#21069;size&gt;max_size&#30340;&#35805;&#65292;&#37027;&#20040;&#38656;&#35201;&#36827;&#34892;GC.
-  }
+// There are two relatively uncommon things that require further work.
+// In the common case we're done, and in that case we need a single branch
+// because of the bitwise-or trick that follows.
+if ((list_headroom | size_headroom) &lt; 0) { // &#36825;&#20010;&#37096;&#20998;&#24212;&#35813;&#26159;&#26377;&#20219;&#24847;&#19968;&#20010;&lt;0&#30340;&#35805;&#65292;&#37027;&#20040;&#23601;&#24212;&#35813;&#36827;&#20837;&#12290;&#20248;&#21270;&#25163;&#27573;&#21543;.
+if (list_headroom &lt; 0) { // &#22914;&#26524;&#24403;&#21069;&#38271;&#24230;&gt;max_length&#30340;&#35805;&#65292;&#37027;&#20040;&#38656;&#35201;&#37325;&#26032;&#35774;&#32622;max_length.
+ListTooLong(list, cl);
+}
+// &#26465;&#20214;&#30456;&#24403; if(size_headroom &lt; 0)
+// &#22240;&#20026;ListTooLog&#20250;&#23581;&#35797;&#20462;&#25913;size_&#25152;&#20197;&#36825;&#37324;&#37325;&#26032;&#21028;&#26029;..:(tricky:(.
+if (size_ &gt;= max_size_) Scavenge(); // &#22914;&#26524;&#24403;&#21069;size&gt;max_size&#30340;&#35805;&#65292;&#37027;&#20040;&#38656;&#35201;&#36827;&#34892;GC.
+}
 }
 </pre>
 
@@ -2388,27 +2388,27 @@ PopRange这个语义非常简单，但是我们稍微看看这个的实现，
 
 
 <pre class="src src-C++">void ThreadCache::ListTooLong(FreeList* list, size_t cl) {
-  const int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
-  ReleaseToCentralCache(list, cl, batch_size); // &#39318;&#20808;&#23581;&#35797;&#23558;batch_size&#30340;&#20869;&#23481;&#24402;&#36824;&#21040;tc&#37324;&#38754;&#21462;
+const int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
+ReleaseToCentralCache(list, cl, batch_size); // &#39318;&#20808;&#23581;&#35797;&#23558;batch_size&#30340;&#20869;&#23481;&#24402;&#36824;&#21040;tc&#37324;&#38754;&#21462;
 
-  // If the list is too long, we need to transfer some number of
-  // objects to the central cache.  Ideally, we would transfer
-  // num_objects_to_move, so the code below tries to make max_length
-  // converge on num_objects_to_move.
+// If the list is too long, we need to transfer some number of
+// objects to the central cache.  Ideally, we would transfer
+// num_objects_to_move, so the code below tries to make max_length
+// converge on num_objects_to_move.
 
-  if (list-&gt;max_length() &lt; batch_size) {
-    // Slow start the max_length so we don't overreserve.
-    list-&gt;set_max_length(list-&gt;max_length() + 1);
-  } else if (list-&gt;max_length() &gt; batch_size) {
-    // If we consistently go over max_length, shrink max_length.  If we don't
-    // shrink it, some amount of memory will always stay in this freelist.
-    list-&gt;set_length_overages(list-&gt;length_overages() + 1); // &#35760;&#24405;&#19979;overage&#30340;&#27425;&#25968;
-    if (list-&gt;length_overages() &gt; kMaxOverages) { // &gt; kMaxOverages&#30340;&#35805;&#37027;&#20040;&#38656;&#35201;&#23545;max_length&#36827;&#34892;&#32553;&#20943;.
-      ASSERT(list-&gt;max_length() &gt; batch_size);
-      list-&gt;set_max_length(list-&gt;max_length() - batch_size); // &#32553;&#20943;batch_size.
-      list-&gt;set_length_overages(0);
-    }
-  }
+if (list-&gt;max_length() &lt; batch_size) {
+// Slow start the max_length so we don't overreserve.
+list-&gt;set_max_length(list-&gt;max_length() + 1);
+} else if (list-&gt;max_length() &gt; batch_size) {
+// If we consistently go over max_length, shrink max_length.  If we don't
+// shrink it, some amount of memory will always stay in this freelist.
+list-&gt;set_length_overages(list-&gt;length_overages() + 1); // &#35760;&#24405;&#19979;overage&#30340;&#27425;&#25968;
+if (list-&gt;length_overages() &gt; kMaxOverages) { // &gt; kMaxOverages&#30340;&#35805;&#37027;&#20040;&#38656;&#35201;&#23545;max_length&#36827;&#34892;&#32553;&#20943;.
+ASSERT(list-&gt;max_length() &gt; batch_size);
+list-&gt;set_max_length(list-&gt;max_length() - batch_size); // &#32553;&#20943;batch_size.
+list-&gt;set_length_overages(0);
+}
+}
 }
 </pre>
 
@@ -2430,38 +2430,38 @@ ListTooLong是第一个确保在tc里面不会持有太多内存的机制.虽然
 
 <pre class="src src-C++">// Release idle memory to the central cache
 void ThreadCache::Scavenge() {
-  // If the low-water mark for the free list is L, it means we would
-  // not have had to allocate anything from the central cache even if
-  // we had reduced the free list size by L.  We aim to get closer to
-  // that situation by dropping L/2 nodes from the free list.  This
-  // may not release much memory, but if so we will call scavenge again
-  // pretty soon and the low-water marks will be high on that call.
-  //int64 start = CycleClock::Now();
-  for (int cl = 0; cl &lt; kNumClasses; cl++) {
-    FreeList* list = &amp;list_[cl];
-    const int lowmark = list-&gt;lowwatermark(); // &#19978;&#19968;&#27425;&#26368;&#30701;&#30340;free list length&#26159;&#22810;&#23569;.&#22914;&#26524;free list length&#36234;&#38271;
-        // &#24847;&#21619;&#30528;&#22312;&#22823;&#22810;&#25968;&#26102;&#20505;&#26377;&#24456;&#22810;&#31354;&#38386;&#20869;&#23384;&#26159;&#27809;&#26377;&#20351;&#29992;&#65292;&#25152;&#20197;&#21487;&#20197;&#23558;&#20854;&#24402;&#36824;.
-    if (lowmark &gt; 0) {
-      const int drop = (lowmark &gt; 1) ? lowmark/2 : 1; // &#23558;&#26368;&#26368;&#30701;&#30340;&#37096;&#20998;&#30340;1/2&#24402;&#36824;&#32473;cc.
-      ReleaseToCentralCache(list, cl, drop);
+// If the low-water mark for the free list is L, it means we would
+// not have had to allocate anything from the central cache even if
+// we had reduced the free list size by L.  We aim to get closer to
+// that situation by dropping L/2 nodes from the free list.  This
+// may not release much memory, but if so we will call scavenge again
+// pretty soon and the low-water marks will be high on that call.
+//int64 start = CycleClock::Now();
+for (int cl = 0; cl &lt; kNumClasses; cl++) {
+FreeList* list = &amp;list_[cl];
+const int lowmark = list-&gt;lowwatermark(); // &#19978;&#19968;&#27425;&#26368;&#30701;&#30340;free list length&#26159;&#22810;&#23569;.&#22914;&#26524;free list length&#36234;&#38271;
+// &#24847;&#21619;&#30528;&#22312;&#22823;&#22810;&#25968;&#26102;&#20505;&#26377;&#24456;&#22810;&#31354;&#38386;&#20869;&#23384;&#26159;&#27809;&#26377;&#20351;&#29992;&#65292;&#25152;&#20197;&#21487;&#20197;&#23558;&#20854;&#24402;&#36824;.
+if (lowmark &gt; 0) {
+const int drop = (lowmark &gt; 1) ? lowmark/2 : 1; // &#23558;&#26368;&#26368;&#30701;&#30340;&#37096;&#20998;&#30340;1/2&#24402;&#36824;&#32473;cc.
+ReleaseToCentralCache(list, cl, drop);
 
-      // Shrink the max length if it isn't used.  Only shrink down to
-      // batch_size -- if the thread was active enough to get the max_length
-      // above batch_size, it will likely be that active again.  If
-      // max_length shinks below batch_size, the thread will have to
-      // go through the slow-start behavior again.  The slow-start is useful
-      // mainly for threads that stay relatively idle for their entire
-      // lifetime.
-      const int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
-      if (list-&gt;max_length() &gt; batch_size) { // &#35843;&#25972;max_length.
-        list-&gt;set_max_length(
-            max&lt;int&gt;(list-&gt;max_length() - batch_size, batch_size));
-      }
-    }
-    list-&gt;clear_lowwatermark();
-  }
+// Shrink the max length if it isn't used.  Only shrink down to
+// batch_size -- if the thread was active enough to get the max_length
+// above batch_size, it will likely be that active again.  If
+// max_length shinks below batch_size, the thread will have to
+// go through the slow-start behavior again.  The slow-start is useful
+// mainly for threads that stay relatively idle for their entire
+// lifetime.
+const int batch_size = Static::sizemap()-&gt;num_objects_to_move(cl);
+if (list-&gt;max_length() &gt; batch_size) { // &#35843;&#25972;max_length.
+list-&gt;set_max_length(
+max&lt;int&gt;(list-&gt;max_length() - batch_size, batch_size));
+}
+}
+list-&gt;clear_lowwatermark();
+}
 
-  IncreaseCacheLimit(); // &#35302;&#21457;&#36825;&#20010;Scavenge&#26412;&#36523;&#30340;&#21407;&#22240;&#23601;&#26159;&#22240;&#20026;size_&gt;max_size_&#25152;&#20197;&#26377;&#24517;&#35201;&#25552;&#39640;max_size_.
+IncreaseCacheLimit(); // &#35302;&#21457;&#36825;&#20010;Scavenge&#26412;&#36523;&#30340;&#21407;&#22240;&#23601;&#26159;&#22240;&#20026;size_&gt;max_size_&#25152;&#20197;&#26377;&#24517;&#35201;&#25552;&#39640;max_size_.
 }
 </pre>
 
@@ -2490,14 +2490,14 @@ void ThreadCache::Scavenge() {
 
 
 <pre class="src src-C++">extern <span style="color: #ffff00;">"C"</span> PERFTOOLS_DLL_DECL void* tc_malloc(size_t size) __THROW {
-  void* result = do_malloc_or_cpp_alloc(size);
-  MallocHook::InvokeNewHook(result, size);
-  return result;
+void* result = do_malloc_or_cpp_alloc(size);
+MallocHook::InvokeNewHook(result, size);
+return result;
 }
 
 extern <span style="color: #ffff00;">"C"</span> PERFTOOLS_DLL_DECL void tc_free(void* ptr) __THROW {
-  MallocHook::InvokeDeleteHook(ptr);
-  do_free(ptr);
+MallocHook::InvokeDeleteHook(ptr);
+do_free(ptr);
 }
 </pre>
 
@@ -2519,27 +2519,27 @@ extern <span style="color: #ffff00;">"C"</span> PERFTOOLS_DLL_DECL void tc_free(
 
 
 <pre class="src src-C++">inline void* do_malloc(size_t size) {
-  void* ret = NULL;
+void* ret = NULL;
 
-  // The following call forces module initialization
-  ThreadCache* heap = ThreadCache::GetCache(); // &#39318;&#20808;&#24471;&#21040;thread_cache
-  if (size &lt;= kMaxSize) { // kMaxSize = 256K
-    size_t cl = Static::sizemap()-&gt;SizeClass(size);
-    size = Static::sizemap()-&gt;class_to_size(cl);
-     // &#23581;&#35797;&#36827;&#34892;&#37319;&#26679;&#20998;&#37197;.
-         // &#36825;&#37324;&#25105;&#20204;&#26242;&#26102;&#24573;&#30053;&#37319;&#26679;&#37096;&#20998;&#30340;&#36923;&#36753;
-    if ((FLAGS_tcmalloc_sample_parameter &gt; 0) &amp;&amp; heap-&gt;SampleAllocation(size)) {
-      ret = DoSampledAllocation(size);
-    } else {
-      // The common case, and also the simplest.  This just pops the
-      // size-appropriate freelist, after replenishing it if it's empty.
-      ret = CheckedMallocResult(heap-&gt;Allocate(size, cl)); // &#36825;&#20010;&#37096;&#20998;&#30340;&#23601;&#26159;&#30452;&#25509;&#22312;tc&#19978;&#38754;&#35843;&#29992;Allocate&#36827;&#34892;&#20998;&#37197;
-    }
-  } else {
-    ret = do_malloc_pages(heap, size); // &#22914;&#26524;&#20998;&#37197;&#23545;&#35937;&#36807;&#22823;&#30340;&#35805;
-  }
-  if (ret == NULL) errno = ENOMEM;
-  return ret;
+// The following call forces module initialization
+ThreadCache* heap = ThreadCache::GetCache(); // &#39318;&#20808;&#24471;&#21040;thread_cache
+if (size &lt;= kMaxSize) { // kMaxSize = 256K
+size_t cl = Static::sizemap()-&gt;SizeClass(size);
+size = Static::sizemap()-&gt;class_to_size(cl);
+// &#23581;&#35797;&#36827;&#34892;&#37319;&#26679;&#20998;&#37197;.
+// &#36825;&#37324;&#25105;&#20204;&#26242;&#26102;&#24573;&#30053;&#37319;&#26679;&#37096;&#20998;&#30340;&#36923;&#36753;
+if ((FLAGS_tcmalloc_sample_parameter &gt; 0) &amp;&amp; heap-&gt;SampleAllocation(size)) {
+ret = DoSampledAllocation(size);
+} else {
+// The common case, and also the simplest.  This just pops the
+// size-appropriate freelist, after replenishing it if it's empty.
+ret = CheckedMallocResult(heap-&gt;Allocate(size, cl)); // &#36825;&#20010;&#37096;&#20998;&#30340;&#23601;&#26159;&#30452;&#25509;&#22312;tc&#19978;&#38754;&#35843;&#29992;Allocate&#36827;&#34892;&#20998;&#37197;
+}
+} else {
+ret = do_malloc_pages(heap, size); // &#22914;&#26524;&#20998;&#37197;&#23545;&#35937;&#36807;&#22823;&#30340;&#35805;
+}
+if (ret == NULL) errno = ENOMEM;
+return ret;
 }
 </pre>
 
@@ -2550,28 +2550,28 @@ extern <span style="color: #ffff00;">"C"</span> PERFTOOLS_DLL_DECL void tc_free(
 
 
 <pre class="src src-C++">inline void* do_malloc_pages(ThreadCache* heap, size_t size) {
-  void* result;
-  bool report_large;
+void* result;
+bool report_large;
 
-  Length num_pages = tcmalloc::pages(size); // &#36716;&#25442;&#38656;&#35201;&#20998;&#37197;&#22810;&#23569;&#20010;pages.
-  size = num_pages &lt;&lt; kPageShift;
+Length num_pages = tcmalloc::pages(size); // &#36716;&#25442;&#38656;&#35201;&#20998;&#37197;&#22810;&#23569;&#20010;pages.
+size = num_pages &lt;&lt; kPageShift;
 
-  if ((FLAGS_tcmalloc_sample_parameter &gt; 0) &amp;&amp; heap-&gt;SampleAllocation(size)) { // &#21516;&#26679;&#25105;&#20204;&#26242;&#26102;&#24573;&#30053;&#37319;&#26679;&#37096;&#20998;
-    result = DoSampledAllocation(size);
+if ((FLAGS_tcmalloc_sample_parameter &gt; 0) &amp;&amp; heap-&gt;SampleAllocation(size)) { // &#21516;&#26679;&#25105;&#20204;&#26242;&#26102;&#24573;&#30053;&#37319;&#26679;&#37096;&#20998;
+result = DoSampledAllocation(size);
 
-    SpinLockHolder h(Static::pageheap_lock());
-    report_large = should_report_large(num_pages);
-  } else {
-    SpinLockHolder h(Static::pageheap_lock());
-    Span* span = Static::pageheap()-&gt;New(num_pages);
-    result = (span == NULL ? NULL : SpanToMallocResult(span)); // &#36825;&#20010;&#37096;&#20998;&#23601;&#26159;&#26816;&#26597;&#19968;&#19979;span&#26159;&#21542;OK,&#24050;&#32463;&#23558;span&#30340;slab(0)cache&#20303;.
-    report_large = should_report_large(num_pages);  // &#21028;&#26029;&#36825;&#20010;pages&#26159;&#21542;&#24320;&#36767;&#36807;&#22823;
-  }
+SpinLockHolder h(Static::pageheap_lock());
+report_large = should_report_large(num_pages);
+} else {
+SpinLockHolder h(Static::pageheap_lock());
+Span* span = Static::pageheap()-&gt;New(num_pages);
+result = (span == NULL ? NULL : SpanToMallocResult(span)); // &#36825;&#20010;&#37096;&#20998;&#23601;&#26159;&#26816;&#26597;&#19968;&#19979;span&#26159;&#21542;OK,&#24050;&#32463;&#23558;span&#30340;slab(0)cache&#20303;.
+report_large = should_report_large(num_pages);  // &#21028;&#26029;&#36825;&#20010;pages&#26159;&#21542;&#24320;&#36767;&#36807;&#22823;
+}
 
-  if (report_large) {
-    ReportLargeAlloc(num_pages, result); // &#22914;&#26524;&#24320;&#36767;&#36807;&#22823;&#30340;&#35805;&#37027;&#20040;&#21487;&#20197;&#36873;&#25321;&#36827;&#34892;report.
-  }
-  return result;
+if (report_large) {
+ReportLargeAlloc(num_pages, result); // &#22914;&#26524;&#24320;&#36767;&#36807;&#22823;&#30340;&#35805;&#37027;&#20040;&#21487;&#20197;&#36873;&#25321;&#36827;&#34892;report.
+}
+return result;
 }
 </pre>
 
@@ -2584,35 +2584,35 @@ extern <span style="color: #ffff00;">"C"</span> PERFTOOLS_DLL_DECL void tc_free(
 <pre class="src src-C++">// &#36890;&#36807;&#33719;&#21462;&#29615;&#22659;&#21464;&#37327;&#21363;&#21487;&#24471;&#21040;
 const int64 kDefaultLargeAllocReportThreshold = static_cast&lt;int64&gt;(1) &lt;&lt; 30; // &#40664;&#35748;&#26159;1GB
 DEFINE_int64(tcmalloc_large_alloc_report_threshold,
-             EnvToInt64(<span style="color: #ffff00;">"TCMALLOC_LARGE_ALLOC_REPORT_THRESHOLD"</span>,
-                        kDefaultLargeAllocReportThreshold),
-             <span style="color: #ffff00;">"Allocations larger than this value cause a stack "</span>
-             <span style="color: #ffff00;">"trace to be dumped to stderr.  The threshold for "</span>
-             <span style="color: #ffff00;">"dumping stack traces is increased by a factor of 1.125 "</span>
-             <span style="color: #ffff00;">"every time we print a message so that the threshold "</span>
-             <span style="color: #ffff00;">"automatically goes up by a factor of ~1000 every 60 "</span>
-             <span style="color: #ffff00;">"messages.  This bounds the amount of extra logging "</span>
-             <span style="color: #ffff00;">"generated by this flag.  Default value of this flag "</span>
-             <span style="color: #ffff00;">"is very large and therefore you should see no extra "</span>
-             <span style="color: #ffff00;">"logging unless the flag is overridden.  Set to 0 to "</span>
-             <span style="color: #ffff00;">"disable reporting entirely."</span>);
+EnvToInt64(<span style="color: #ffff00;">"TCMALLOC_LARGE_ALLOC_REPORT_THRESHOLD"</span>,
+kDefaultLargeAllocReportThreshold),
+<span style="color: #ffff00;">"Allocations larger than this value cause a stack "</span>
+<span style="color: #ffff00;">"trace to be dumped to stderr.  The threshold for "</span>
+<span style="color: #ffff00;">"dumping stack traces is increased by a factor of 1.125 "</span>
+<span style="color: #ffff00;">"every time we print a message so that the threshold "</span>
+<span style="color: #ffff00;">"automatically goes up by a factor of ~1000 every 60 "</span>
+<span style="color: #ffff00;">"messages.  This bounds the amount of extra logging "</span>
+<span style="color: #ffff00;">"generated by this flag.  Default value of this flag "</span>
+<span style="color: #ffff00;">"is very large and therefore you should see no extra "</span>
+<span style="color: #ffff00;">"logging unless the flag is overridden.  Set to 0 to "</span>
+<span style="color: #ffff00;">"disable reporting entirely."</span>);
 
 // &#36825;&#20010;large_alloc_threshold&#32943;&#23450;&#35201;&#27604;kPageSize&#35201;&#25171;
 static int64_t large_alloc_threshold =
-  (kPageSize &gt; FLAGS_tcmalloc_large_alloc_report_threshold
-   ? kPageSize : FLAGS_tcmalloc_large_alloc_report_threshold);
+(kPageSize &gt; FLAGS_tcmalloc_large_alloc_report_threshold
+? kPageSize : FLAGS_tcmalloc_large_alloc_report_threshold);
 
 inline bool should_report_large(Length num_pages) {
-  const int64 threshold = large_alloc_threshold;
-  if (threshold &gt; 0 &amp;&amp; num_pages &gt;= (threshold &gt;&gt; kPageShift)) { // &#22914;&#26524;&#36229;&#36807;large_alloc_threshold&#30340;&#35805;
-    // Increase the threshold by 1/8 every time we generate a report.
-    // We cap the threshold at 8GiB to avoid overflow problems.
-        // &#37027;&#20040;&#36825;&#27425;&#30340;threshold&#21487;&#33021;&#38656;&#35201;&#36827;&#34892;&#35843;&#25972;
-    large_alloc_threshold = (threshold + threshold/8 &lt; 8ll&lt;&lt;30 // 8GB
-                             ? threshold + threshold/8 : 8ll&lt;&lt;30);
-    return true;
-  }
-  return false;
+const int64 threshold = large_alloc_threshold;
+if (threshold &gt; 0 &amp;&amp; num_pages &gt;= (threshold &gt;&gt; kPageShift)) { // &#22914;&#26524;&#36229;&#36807;large_alloc_threshold&#30340;&#35805;
+// Increase the threshold by 1/8 every time we generate a report.
+// We cap the threshold at 8GiB to avoid overflow problems.
+// &#37027;&#20040;&#36825;&#27425;&#30340;threshold&#21487;&#33021;&#38656;&#35201;&#36827;&#34892;&#35843;&#25972;
+large_alloc_threshold = (threshold + threshold/8 &lt; 8ll&lt;&lt;30 // 8GB
+? threshold + threshold/8 : 8ll&lt;&lt;30);
+return true;
+}
+return false;
 }
 </pre>
 
@@ -2622,20 +2622,20 @@ inline bool should_report_large(Length num_pages) {
 
 
 <pre class="src src-C++">static void ReportLargeAlloc(Length num_pages, void* result) {
-  StackTrace stack;
-  stack.depth = GetStackTrace(stack.stack, tcmalloc::kMaxStackDepth, 1);
+StackTrace stack;
+stack.depth = GetStackTrace(stack.stack, tcmalloc::kMaxStackDepth, 1);
 
-  static const int N = 1000;
-  char buffer[N];
-  TCMalloc_Printer printer(buffer, N);
-  printer.printf(<span style="color: #ffff00;">"tcmalloc: large alloc %"</span>PRIu64<span style="color: #ffff00;">" bytes == %p @ "</span>,
-                 static_cast&lt;uint64&gt;(num_pages) &lt;&lt; kPageShift,
-                 result);
-  for (int i = 0; i &lt; stack.depth; i++) {
-    printer.printf(<span style="color: #ffff00;">" %p"</span>, stack.stack[i]);
-  }
-  printer.printf(<span style="color: #ffff00;">"\n"</span>);
-  write(STDERR_FILENO, buffer, strlen(buffer));
+static const int N = 1000;
+char buffer[N];
+TCMalloc_Printer printer(buffer, N);
+printer.printf(<span style="color: #ffff00;">"tcmalloc: large alloc %"</span>PRIu64<span style="color: #ffff00;">" bytes == %p @ "</span>,
+static_cast&lt;uint64&gt;(num_pages) &lt;&lt; kPageShift,
+result);
+for (int i = 0; i &lt; stack.depth; i++) {
+printer.printf(<span style="color: #ffff00;">" %p"</span>, stack.stack[i]);
+}
+printer.printf(<span style="color: #ffff00;">"\n"</span>);
+write(STDERR_FILENO, buffer, strlen(buffer));
 }
 </pre>
 
@@ -2653,57 +2653,57 @@ inline bool should_report_large(Length num_pages) {
 
 
 <pre class="src src-C++">inline void do_free_with_callback(void* ptr, void (*invalid_free_fn)(void*)) {
-  if (ptr == NULL) return;
-  ASSERT(Static::pageheap() != NULL);  // Should not call free() before malloc()
-  const PageID p = reinterpret_cast&lt;uintptr_t&gt;(ptr) &gt;&gt; kPageShift;
-  Span* span = NULL;
-  size_t cl = Static::pageheap()-&gt;GetSizeClassIfCached(p); // &#39318;&#20808;&#26597;&#30475;cache&#37324;&#38754;&#26159;&#21542;&#26377;class&#30340;&#20449;&#24687;
+if (ptr == NULL) return;
+ASSERT(Static::pageheap() != NULL);  // Should not call free() before malloc()
+const PageID p = reinterpret_cast&lt;uintptr_t&gt;(ptr) &gt;&gt; kPageShift;
+Span* span = NULL;
+size_t cl = Static::pageheap()-&gt;GetSizeClassIfCached(p); // &#39318;&#20808;&#26597;&#30475;cache&#37324;&#38754;&#26159;&#21542;&#26377;class&#30340;&#20449;&#24687;
 
-  if (cl == 0) { // &#22914;&#26524;&#27809;&#26377;class&#30340;&#20449;&#24687;&#30340;&#35805;&#65292;&#37027;&#20040;&#38656;&#35201;&#21435;pagemap&#37324;&#38754;&#26597;&#35810;&#21040;span.
-    span = Static::pageheap()-&gt;GetDescriptor(p);
-    if (!span) { // &#22914;&#26524;&#26597;&#35810;&#19981;&#21040;span&#30340;&#35805;&#37027;&#20040;&#35748;&#20026;&#36825;&#20010;&#25351;&#38024;&#24335;&#38169;&#35823;&#30340;
-      // span can be NULL because the pointer passed in is invalid
-      // (not something returned by malloc or friends), or because the
-      // pointer was allocated with some other allocator besides
-      // tcmalloc.  The latter can happen if tcmalloc is linked in via
-      // a dynamic library, but is not listed last on the link line.
-      // In that case, libraries after it on the link line will
-      // allocate with libc malloc, but free with tcmalloc's free.
-      (*invalid_free_fn)(ptr);  // Decide how to handle the bad free request
-      return;
-    }
-        // &#28982;&#21518;&#21462;&#20986;slab class&#24182;&#19988;cache&#20303;.
-    cl = span-&gt;sizeclass;
-    Static::pageheap()-&gt;CacheSizeClass(p, cl);
-  }
-  if (cl != 0) { // &#22914;&#26524;&#26159;&#23567;&#23545;&#35937;&#37322;&#25918;&#30340;&#35805;
-    ASSERT(!Static::pageheap()-&gt;GetDescriptor(p)-&gt;sample);
-    ThreadCache* heap = GetCacheIfPresent(); // &#37027;&#20040;&#25105;&#24471;&#21040;&#24403;&#21069;&#32447;&#31243;&#30340;heap
-    if (heap != NULL) {
-      heap-&gt;Deallocate(ptr, cl); // &#28982;&#21518;&#20250;&#21463;&#21040;&#36825;&#20010;tc&#37324;&#38754;
-    } else { // &#19981;&#30693;&#36947;&#36825;&#20010;&#24773;&#20917;&#20160;&#20040;&#26102;&#20505;&#20986;&#29616;&#65292;&#22914;&#26524;&#20986;&#29616;&#30340;&#35805;&#65292;&#37027;&#20040;&#23601;&#25918;&#21040;cc&#37324;&#38754;,&#38750;&#24120;&#30452;&#25509;.
-      // Delete directly into central cache
-      tcmalloc::SLL_SetNext(ptr, NULL);
-      Static::central_cache()[cl].InsertRange(ptr, ptr, 1);
-    }
-  } else {
-    SpinLockHolder h(Static::pageheap_lock());
-    ASSERT(reinterpret_cast&lt;uintptr_t&gt;(ptr) % kPageSize == 0);
-    ASSERT(span != NULL &amp;&amp; span-&gt;start == p);
-    if (span-&gt;sample) { // &#26242;&#26102;&#19981;&#29702;&#20250;&#36825;&#20010;sample&#36923;&#36753;
-      StackTrace* st = reinterpret_cast&lt;StackTrace*&gt;(span-&gt;objects);
-      tcmalloc::DLL_Remove(span);
-      Static::stacktrace_allocator()-&gt;Delete(st);
-      span-&gt;objects = NULL;
-    }
-        // &#22914;&#26524;&#26159;&#22823;&#23545;&#35937;&#30340;&#35805;&#37027;&#20040;&#30452;&#25509;&#30001;pageheap&#37322;&#25918;.
-    Static::pageheap()-&gt;Delete(span);
-  }
+if (cl == 0) { // &#22914;&#26524;&#27809;&#26377;class&#30340;&#20449;&#24687;&#30340;&#35805;&#65292;&#37027;&#20040;&#38656;&#35201;&#21435;pagemap&#37324;&#38754;&#26597;&#35810;&#21040;span.
+span = Static::pageheap()-&gt;GetDescriptor(p);
+if (!span) { // &#22914;&#26524;&#26597;&#35810;&#19981;&#21040;span&#30340;&#35805;&#37027;&#20040;&#35748;&#20026;&#36825;&#20010;&#25351;&#38024;&#24335;&#38169;&#35823;&#30340;
+// span can be NULL because the pointer passed in is invalid
+// (not something returned by malloc or friends), or because the
+// pointer was allocated with some other allocator besides
+// tcmalloc.  The latter can happen if tcmalloc is linked in via
+// a dynamic library, but is not listed last on the link line.
+// In that case, libraries after it on the link line will
+// allocate with libc malloc, but free with tcmalloc's free.
+(*invalid_free_fn)(ptr);  // Decide how to handle the bad free request
+return;
+}
+// &#28982;&#21518;&#21462;&#20986;slab class&#24182;&#19988;cache&#20303;.
+cl = span-&gt;sizeclass;
+Static::pageheap()-&gt;CacheSizeClass(p, cl);
+}
+if (cl != 0) { // &#22914;&#26524;&#26159;&#23567;&#23545;&#35937;&#37322;&#25918;&#30340;&#35805;
+ASSERT(!Static::pageheap()-&gt;GetDescriptor(p)-&gt;sample);
+ThreadCache* heap = GetCacheIfPresent(); // &#37027;&#20040;&#25105;&#24471;&#21040;&#24403;&#21069;&#32447;&#31243;&#30340;heap
+if (heap != NULL) {
+heap-&gt;Deallocate(ptr, cl); // &#28982;&#21518;&#20250;&#21463;&#21040;&#36825;&#20010;tc&#37324;&#38754;
+} else { // &#19981;&#30693;&#36947;&#36825;&#20010;&#24773;&#20917;&#20160;&#20040;&#26102;&#20505;&#20986;&#29616;&#65292;&#22914;&#26524;&#20986;&#29616;&#30340;&#35805;&#65292;&#37027;&#20040;&#23601;&#25918;&#21040;cc&#37324;&#38754;,&#38750;&#24120;&#30452;&#25509;.
+// Delete directly into central cache
+tcmalloc::SLL_SetNext(ptr, NULL);
+Static::central_cache()[cl].InsertRange(ptr, ptr, 1);
+}
+} else {
+SpinLockHolder h(Static::pageheap_lock());
+ASSERT(reinterpret_cast&lt;uintptr_t&gt;(ptr) % kPageSize == 0);
+ASSERT(span != NULL &amp;&amp; span-&gt;start == p);
+if (span-&gt;sample) { // &#26242;&#26102;&#19981;&#29702;&#20250;&#36825;&#20010;sample&#36923;&#36753;
+StackTrace* st = reinterpret_cast&lt;StackTrace*&gt;(span-&gt;objects);
+tcmalloc::DLL_Remove(span);
+Static::stacktrace_allocator()-&gt;Delete(st);
+span-&gt;objects = NULL;
+}
+// &#22914;&#26524;&#26159;&#22823;&#23545;&#35937;&#30340;&#35805;&#37027;&#20040;&#30452;&#25509;&#30001;pageheap&#37322;&#25918;.
+Static::pageheap()-&gt;Delete(span);
+}
 }
 
 // The default <span style="color: #ffff00;">"do_free"</span> that uses the default callback.
 inline void do_free(void* ptr) {
-  return do_free_with_callback(ptr, &amp;InvalidFree); // &#40664;&#35748;&#24773;&#20917;&#23601;&#26159;&#25171;&#21360;&#19968;&#20010;log&#24182;&#19988;&#30452;&#25509;crash&#25481;.
+return do_free_with_callback(ptr, &amp;InvalidFree); // &#40664;&#35748;&#24773;&#20917;&#23601;&#26159;&#25171;&#21360;&#19968;&#20010;log&#24182;&#19988;&#30452;&#25509;crash&#25481;.
 }
 </pre>
 
@@ -2792,7 +2792,7 @@ inline void do_free(void* ptr) {
 <h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> tcmalloc中的 MmapSysAllocator::Alloc 疑问(nwlzee)</h4>
 <div class="outline-text-4" id="text-1-6-1">
 
-<p><b>Question</b> 
+<p><b>Question</b>
 </p>
 
 
@@ -2801,20 +2801,20 @@ inline void do_free(void* ptr) {
 在MmapSysAllocator::Alloc 中：
 
 // 。。。
-  if ((ptr &amp; (alignment - 1)) != 0) {
-    adjust = alignment - (ptr &amp; (alignment - 1));
-  }
+if ((ptr &amp; (alignment - 1)) != 0) {
+adjust = alignment - (ptr &amp; (alignment - 1));
+}
 
-  // Return the unused memory to the system
-  if (adjust &gt; 0) {
-    munmap(reinterpret_cast&lt;void*&gt;(ptr), adjust);
-  }
-  if (adjust &lt; extra) {
-    munmap(reinterpret_cast&lt;void*&gt;(ptr + adjust + size), extra - adjust);
-  }
+// Return the unused memory to the system
+if (adjust &gt; 0) {
+munmap(reinterpret_cast&lt;void*&gt;(ptr), adjust);
+}
+if (adjust &lt; extra) {
+munmap(reinterpret_cast&lt;void*&gt;(ptr + adjust + size), extra - adjust);
+}
 
-  ptr += adjust;
-  return reinterpret_cast&lt;void*&gt;(ptr);
+ptr += adjust;
+return reinterpret_cast&lt;void*&gt;(ptr);
 
 我从man 手册知道munmap 是以page 单位大小释放的内存的，
 当 munmap(reinterpret_cast&lt;void*&gt;(ptr), adjust); 释放adjust所

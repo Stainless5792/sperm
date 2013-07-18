@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Building Software Systems at Google and Lessons Learned</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -143,7 +143,7 @@
 <li>date: <b>从阐述的内容上看，这篇文章应该是在2010年左右写的</b>
 
 </li>
-<li>Evolution of various systems at Google 
+<li>Evolution of various systems at Google
 <ul>
 <li>computing hardware
 </li>
@@ -154,7 +154,7 @@
 </ul>
 
 </li>
-<li>Techniques for building large-scale systems 
+<li>Techniques for building large-scale systems
 <ul>
 <li>decomposition into services
 </li>
@@ -180,7 +180,7 @@
 </li>
 <li>per doc info in index: <b>~3X</b>
 </li>
-<li>update latency: months to tens of secs <b>~50000X</b> <b>这个似乎加快了不少，搜索实时性是一个很重要的问题</b> 
+<li>update latency: months to tens of secs <b>~50000X</b> <b>这个似乎加快了不少，搜索实时性是一个很重要的问题</b>
 </li>
 <li>avg. query latency: &lt;1s to &lt;0.2s <b>~5X</b>
 </li>
@@ -254,13 +254,13 @@
 <ul>
 <li>Simple batch indexing system
 <ul>
-<li>No real checkpointing, so machine failures painful 在做索引的时候没有checkpoint,所以机器故障会非常麻烦 
+<li>No real checkpointing, so machine failures painful 在做索引的时候没有checkpoint,所以机器故障会非常麻烦
 </li>
 <li>No checksumming of raw data, so hardware bit errors caused problems 对于大规模数据来说，checksum还是非常必须的。
 </li>
-<li>Exacerbated by early machines having no ECC, no parity 
+<li>Exacerbated by early machines having no ECC, no parity
 </li>
-<li>Sort 1 TB of data without parity: ends up "mostly sorted" 
+<li>Sort 1 TB of data without parity: ends up "mostly sorted"
 </li>
 <li>Sort it again: "mostly sorted" another way
 </li>
@@ -302,7 +302,7 @@
 </li>
 <li>Some issues:
 <ul>
-<li>Variance: query touches 1000s of machines, not dozens 
+<li>Variance: query touches 1000s of machines, not dozens
 <ul>
 <li><b>因为需要查询更多的机器，因此查询的变化也会非常大，不太容易控制差异</b>
 </li>
@@ -315,9 +315,9 @@
 <ul>
 <li>Availability of index data when machine failed (esp for important docs): replicate important docs
 </li>
-<li>Queries of death that kill all the backends at once: very bad 
+<li>Queries of death that kill all the backends at once: very bad
 </li>
-<li><b>存在一个问题就是，一个query可能会因为system bug造成crash. 如何解决这个问题，就是下面的canary request</b> 
+<li><b>存在一个问题就是，一个query可能会因为system bug造成crash. 如何解决这个问题，就是下面的canary request</b>
 </li>
 </ul>
 
@@ -341,9 +341,9 @@
 <div class="outline-text-4" id="text-1-1-4">
 
 <ul>
-<li>主要就是针对特定query会造成system crash.但是我们不希望所有的nodes都crash. 
+<li>主要就是针对特定query会造成system crash.但是我们不希望所有的nodes都crash.
 </li>
-<li>Problem: requests sometimes cause server process to crash 
+<li>Problem: requests sometimes cause server process to crash
 <ul>
 <li>testing can help reduce probability, but can’t eliminate
 </li>
@@ -359,7 +359,7 @@
 </ul>
 
 </li>
-<li>Solution: send canary request first to one machine 可以首先将request发送到一个节点上，如果正常的话那么发送到其他节点，否则重试几次失败就放弃。 
+<li>Solution: send canary request first to one machine 可以首先将request发送到一个节点上，如果正常的话那么发送到其他节点，否则重试几次失败就放弃。
 <ul>
 <li>if RPC finishes successfully, go ahead and send to all the rest
 </li>
@@ -383,7 +383,7 @@
 <h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Query Serving System, 2004 edition</h4>
 <div class="outline-text-4" id="text-1-1-5">
 
-<p>我觉得这个应该是google query serving system的最终模型了。leaf所有的数据都是全内存的，但是在GFS上面有on-disk数据做持久化，或者说leaf是一个简单的query system + bigtable吧。之所有使用这种multi-level tree结构在这篇文章后面的pattern部分会说到。 
+<p>我觉得这个应该是google query serving system的最终模型了。leaf所有的数据都是全内存的，但是在GFS上面有on-disk数据做持久化，或者说leaf是一个简单的query system + bigtable吧。之所有使用这种multi-level tree结构在这篇文章后面的pattern部分会说到。
 </p>
 <p>
 <img src="./images/google-serving-system-at-2004.png"  alt="./images/google-serving-system-at-2004.png" />
@@ -428,7 +428,7 @@
 <ul>
 <li>7-bit-per-byte varint: decode ~180M numbers/second
 </li>
-<li>30-bit Varint w/ 2-bit length: decode ~240M numbers/second 
+<li>30-bit Varint w/ 2-bit length: decode ~240M numbers/second
 </li>
 <li>Group varint: decode ~400M numbers/second
 </li>
@@ -451,9 +451,9 @@
 
 <p>从多个产品整合搜索结果，但是有下面这些问题：
 </p><ul>
-<li>Performance: most of the corpora weren’t designed to deal with high QPS level of web search 性能匹配 
+<li>Performance: most of the corpora weren’t designed to deal with high QPS level of web search 性能匹配
 </li>
-<li>Mixing: Which corpora are relevant to query? 相关性 
+<li>Mixing: Which corpora are relevant to query? 相关性
 </li>
 <li>UI: How to organize results from different corpora? UI布局
 </li>
@@ -481,7 +481,7 @@
 </li>
 <li>~5 racks go wonky (40-80 machines see 50% packetloss)
 </li>
-<li>~8 network maintenances (4 might cause ~30-minute random connectivity losses) 
+<li>~8 network maintenances (4 might cause ~30-minute random connectivity losses)
 </li>
 <li>~12 router reloads (takes out DNS and external vips for a couple minutes)
 </li>
@@ -495,7 +495,7 @@
 </li>
 <li>slow disks, bad memory, misconfigured machines, flaky machines, etc.
 </li>
-<li>Long distance links: wild dogs, sharks, dead horses, drunken hunters, etc. 
+<li>Long distance links: wild dogs, sharks, dead horses, drunken hunters, etc.
 </li>
 <li><b>Reliability/availability must come from software!</b>
 </li>
@@ -527,7 +527,7 @@
 <ul>
 <li>few dependencies, clearly specified
 </li>
-<li>easy to test and deploy new versions of individual services 
+<li>easy to test and deploy new versions of individual services
 </li>
 <li>ability to run lots of experiments
 </li>
@@ -613,16 +613,16 @@
 </ul>
 
 </li>
-<li>Don't build infrastructure just for its own sake: <b>设计通用组件的话，还需要去排除那些潜在的不需要的需求，抑制复杂性</b> 
+<li>Don't build infrastructure just for its own sake: <b>设计通用组件的话，还需要去排除那些潜在的不需要的需求，抑制复杂性</b>
 <ul>
-<li>Identify common needs and address them 
+<li>Identify common needs and address them
 </li>
 <li>Don't imagine unlikely potential needs that aren't really there
 </li>
 </ul>
 
 </li>
-<li>Best approach: use your own infrastructure (especially at first!) 
+<li>Best approach: use your own infrastructure (especially at first!)
 <ul>
 <li>(much more rapid feedback about what works, what doesn't)
 </li>
@@ -666,7 +666,7 @@
 <p>master主要完成全局性质的工作，其余工作交给worker完成。通常存在hot standby来做failover. 优点是可以很容易地进行全局控制，但是实现上必须小心，而缺点非常明显就是支撑worker不会很多，在1k级别上。如果涉及到更大规模集群的话，那么worker需要和master有更加频繁的交互，这对于master压力会非常大。
 </p>
 <ul>
-<li>Master orchestrates global operation of system 
+<li>Master orchestrates global operation of system
 <ul>
 <li>load balancing, assignment of work, reassignment when machines fail, etc.
 </li>
@@ -695,7 +695,7 @@
 </li>
 <li>Caveats:
 <ul>
-<li>careful design required to keep master out of common case ops 
+<li>careful design required to keep master out of common case ops
 </li>
 <li>scales to 1000s of workers, but not 100,000s of workers
 </li>
@@ -734,7 +734,7 @@
 </ul>
 
 </li>
-<li>Most effective when parent processing can trim/combine leaf data 
+<li>Most effective when parent processing can trim/combine leaf data
 <ul>
 <li>can also co-locate parents on same rack as leaves
 </li>
@@ -764,11 +764,11 @@
 </li>
 <li>Often, multiple replicas can handle same kind of request
 </li>
-<li>When few tasks remaining, send backup requests to other replicas 
+<li>When few tasks remaining, send backup requests to other replicas
 </li>
 <li>Whichever duplicate request finishes first wins
 <ul>
-<li>useful when variance is unrelated to specifics of request 
+<li>useful when variance is unrelated to specifics of request
 </li>
 <li>increases overall load by a tiny percentage
 </li>
@@ -802,7 +802,7 @@
 <ul>
 <li>Problems:
 <ul>
-<li>want to minimize recovery time when machine crashes 
+<li>want to minimize recovery time when machine crashes
 </li>
 <li>want to do fine-grained load balancing
 </li>
@@ -818,7 +818,7 @@
 </ul>
 
 </li>
-<li>Have each machine manage many smaller units of work/data 
+<li>Have each machine manage many smaller units of work/data
 <ul>
 <li>typical: ~10-100 units/machine
 </li>
@@ -847,12 +847,12 @@
 <h4 id="sec-1-3-9"><span class="section-number-4">1.3.9</span> Pattern: Elastic Systems</h4>
 <div class="outline-text-4" id="text-1-3-9">
 
-<p>可伸缩的系统，自动调节整个集群资源利用率。这个东西可以打个比方，如果整个集群资源空闲的话，那么可以减少线程数目，释放一些内存让其他程序可以有效运行。而当压力比较大的时候，可以保持在一个水平不至于崩溃。 <b>TODO(dirlt):感觉不是很理解</b> 
+<p>可伸缩的系统，自动调节整个集群资源利用率。这个东西可以打个比方，如果整个集群资源空闲的话，那么可以减少线程数目，释放一些内存让其他程序可以有效运行。而当压力比较大的时候，可以保持在一个水平不至于崩溃。 <b>TODO(dirlt):感觉不是很理解</b>
 </p>
 <ul>
 <li>Problem: Planning for exact peak load is hard
 <ul>
-<li>overcapacity: wasted resources 
+<li>overcapacity: wasted resources
 </li>
 <li>undercapacity: meltdown
 </li>
@@ -861,7 +861,7 @@
 </li>
 <li>Design system to adapt:
 <ul>
-<li>automatically shrink capacity during idle period 
+<li>automatically shrink capacity during idle period
 </li>
 <li>automatically grow capacity as load grows
 </li>
@@ -902,7 +902,7 @@
 </li>
 <li>massive capacity (10000s of requests per second)
 </li>
-<li>high quality retrieval (lots of information about each document) 
+<li>high quality retrieval (lots of information about each document)
 </li>
 <li>massive size (billions of documents)
 </li>
@@ -913,9 +913,9 @@
 </li>
 <li>Partition problem into several subproblems with different engineering tradeoffs. E.g.
 <ul>
-<li>realtime system: few docs, ok to pay lots of $$$/doc 
+<li>realtime system: few docs, ok to pay lots of $$$/doc
 </li>
-<li>base system: high # of docs, optimized for low $/doc 
+<li>base system: high # of docs, optimized for low $/doc
 </li>
 <li>realtime+base: high # of docs, fresh, low $/doc
 </li>
@@ -937,11 +937,11 @@
 <ul>
 <li>Today: exciting collection of trends: <b>未来趋势的一些思考</b>
 <ul>
-<li>large-scale datacenters + 大规模数据中心建设 
+<li>large-scale datacenters + 大规模数据中心建设
 </li>
-<li>increasing scale and diversity of available data sets +  大量数据需要分析和挖掘 
+<li>increasing scale and diversity of available data sets +  大量数据需要分析和挖掘
 </li>
-<li>proliferation of more powerful client devices 各种设备接入 <b>NOTE（dirlt）：是否可以理解为移动客户端</b> 
+<li>proliferation of more powerful client devices 各种设备接入 <b>NOTE（dirlt）：是否可以理解为移动客户端</b>
 
 </li>
 </ul>

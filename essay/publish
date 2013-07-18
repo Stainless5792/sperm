@@ -2,7 +2,7 @@
 
 # do publish
 emacs --batch --script publish.el
-./addstatcode
+./addcode
 cp site.css ../www/
 cp site-toc.css ../www/
 cd ../www/

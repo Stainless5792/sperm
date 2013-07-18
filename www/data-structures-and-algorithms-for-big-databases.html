@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Data Structures and Algorithms for Big Databases</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -124,7 +124,7 @@
 <div class="outline-text-2" id="text-1">
 
 <ul>
-<li>Michael A. Bender @ Stony Brook &amp; Tokutek 
+<li>Michael A. Bender @ Stony Brook &amp; Tokutek
 </li>
 <li>Bradley C. Kuszmaul @ MIT &amp; Tokutek
 </li>
@@ -146,7 +146,7 @@
 </li>
 <li>What we mean by Big Data
 <ul>
-<li>We don’t define Big Data in terms of TB, PB, EB. <b>不以数据量来定义大数据</b> 
+<li>We don’t define Big Data in terms of TB, PB, EB. <b>不以数据量来定义大数据</b>
 </li>
 <li>By Big Data, we mean
 <ul>
@@ -171,15 +171,15 @@
 </li>
 <li>Write-optimized data structures. 写优化数据结构
 </li>
-<li>How write-optimized data structures can help file systems. 写优化数据结构如何影响文件系统 
+<li>How write-optimized data structures can help file systems. 写优化数据结构如何影响文件系统
 </li>
-<li>Block-replacement algorithms. block替换算法/Cache替换算法 
+<li>Block-replacement algorithms. block替换算法/Cache替换算法
 </li>
 <li>Indexing strategies. 索引策略
 </li>
 <li>Log-structured merge trees. LSM
 </li>
-<li>Bloom filters. 
+<li>Bloom filters.
 </li>
 </ul>
 
@@ -206,12 +206,12 @@
 <ul>
 <li>Data is transferred in blocks between RAM and disk. 考虑数据在RAM和disk之间传输
 </li>
-<li>The # of block transfers dominates the running time. 传输的block数目决定了运行时间 
+<li>The # of block transfers dominates the running time. 传输的block数目决定了运行时间
 </li>
 </ul>
 
 </li>
-<li>Goal: Minimize # of block transfers 
+<li>Goal: Minimize # of block transfers
 <ul>
 <li>Performance bounds are parameterized by block size B, memory size M, data size N.
 </li>
@@ -230,9 +230,9 @@ merge-sort analysis非常精辟，每次merge run是M/B. 这点非常重要，�
 <ul>
 <li>The DAM Model is a Simplification
 <ul>
-<li>ignores CPU costs and 没有考虑到CPU开销，仅仅是考虑IO开销 
+<li>ignores CPU costs and 没有考虑到CPU开销，仅仅是考虑IO开销
 </li>
-<li>assumes that all block accesses have the same cost. 假设所有的block访问时间都是相同的 
+<li>assumes that all block accesses have the same cost. 假设所有的block访问时间都是相同的
 </li>
 </ul>
 
@@ -255,7 +255,7 @@ merge-sort analysis非常精辟，每次merge run是M/B. 这点非常重要，�
 <ul>
 <li>Cache-oblivious analysis:
 <ul>
-<li>Parameters B, M are unknown to the algorithm or coder. 
+<li>Parameters B, M are unknown to the algorithm or coder.
 </li>
 <li>Performance bounds are parameterized by block size B, memory size M, data size N.
 </li>
@@ -299,7 +299,7 @@ merge-sort analysis非常精辟，每次merge run是M/B. 这点非常重要，�
 <img src="./images/optiomal-search-insert-tradeoff.png"  alt="./images/optiomal-search-insert-tradeoff.png" />
 </p>
 <p>
-或许上面这个图不是很好理解，但是在性能上曲线如下： <b>可以看到查询最快的是btree, insert最快的是logging</b> 
+或许上面这个图不是很好理解，但是在性能上曲线如下： <b>可以看到查询最快的是btree, insert最快的是logging</b>
 </p>
 <p>
 <img src="./images/illustration-of-optimal-tradeoff.png"  alt="./images/illustration-of-optimal-tradeoff.png" />
@@ -314,7 +314,7 @@ merge-sort analysis非常精辟，每次merge run是M/B. 这点非常重要，�
 </li>
 <li>Write-optimized structures maintain indexes efficiently. 而写优化数据结构可以有效地维护索引
 </li>
-<li>Fast writing is a currency we use to accelerate queries. Better indexing means faster queries. 
+<li>Fast writing is a currency we use to accelerate queries. Better indexing means faster queries.
 </li>
 <li>Write-optimized structures can significantly mitigate the insert/query/freshness tradeoff. 写优化的数据结构可以在insert/query/freshness上达到平衡
 </li>
@@ -322,7 +322,7 @@ merge-sort analysis非常精辟，每次merge run是M/B. 这点非常重要，�
 
 
 <p>
-Optimal read-write tradeoff: Easy Full featured: Hard 实现需要考虑如下问题: 
+Optimal read-write tradeoff: Easy Full featured: Hard 实现需要考虑如下问题:
 </p><ul>
 <li>Variable-sized rows
 </li>
@@ -366,11 +366,11 @@ Optimal read-write tradeoff: Easy Full featured: Hard 实现需要考虑如下�
 <ul>
 <li>Paging Algorithms
 <ul>
-<li>LRU (least recently used) Discard block whose most recent access is earliest. 
+<li>LRU (least recently used) Discard block whose most recent access is earliest.
 </li>
-<li>FIFO (first in, first out) Discard the block brought in longest ago. 
+<li>FIFO (first in, first out) Discard the block brought in longest ago.
 </li>
-<li>LFU (least frequently used) Discard the least popular block. 
+<li>LFU (least frequently used) Discard the least popular block.
 </li>
 <li>Random Discard a random block.
 </li>

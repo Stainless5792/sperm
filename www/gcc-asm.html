@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>gcc-asm</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -156,28 +156,28 @@
 
 
 <pre class="src src-C++">__asm__ __volatile__(
-    <span style="color: #ffff00;">"xorps %%xmm0,%%xmm1\n\t"</span>
-    <span style="color: #ffff00;">"1:\n\t"</span>
-    <span style="color: #ffff00;">"movdqa %%xmm0,%%xmm1\n\t"</span>
-    <span style="color: #ffff00;">"pcmpgtd (%1),%%xmm1\n\t"</span>
-    <span style="color: #ffff00;">"andps %%xmm1,%%xmm0\n\t"</span>
-    <span style="color: #ffff00;">"andnps (%1),%%xmm1\n\t"</span>
-    <span style="color: #ffff00;">"orps %%xmm1,%%xmm0\n\t"</span>
-    <span style="color: #ffff00;">"addq $16,%1\n\t"</span>
-    <span style="color: #ffff00;">"subq $4,%2\n\t"</span>
-    <span style="color: #ffff00;">"jnz 1b\n\t"</span>
-    <span style="color: #ffff00;">"movdqu %%xmm0,(%3)\n\t"</span>
-    <span style="color: #ffff00;">"movl (%3),%%eax\n\t"</span>
-    <span style="color: #ffff00;">"cmpl 4(%3),%%eax\n\t"</span>
-    <span style="color: #ffff00;">"cmovll 4(%3),%%eax\n\t"</span>
-    <span style="color: #ffff00;">"cmpl 8(%3),%%eax\n\t"</span>
-    <span style="color: #ffff00;">"cmovll 8(%3),%%eax\n\t"</span>
-    <span style="color: #ffff00;">"cmpl 12(%3),%%eax\n\t"</span>
-    <span style="color: #ffff00;">"cmovll 12(%3),%%eax\n\t"</span>
-    <span style="color: #ffff00;">"movl %%eax,%0\n\t"</span>
-    :<span style="color: #ffff00;">"=m"</span>(mx)
-    :<span style="color: #ffff00;">"r"</span>(a),<span style="color: #ffff00;">"r"</span>((long long)N),<span style="color: #ffff00;">"r"</span>(tmp)
-    :<span style="color: #ffff00;">"eax"</span>);
+<span style="color: #ffff00;">"xorps %%xmm0,%%xmm1\n\t"</span>
+<span style="color: #ffff00;">"1:\n\t"</span>
+<span style="color: #ffff00;">"movdqa %%xmm0,%%xmm1\n\t"</span>
+<span style="color: #ffff00;">"pcmpgtd (%1),%%xmm1\n\t"</span>
+<span style="color: #ffff00;">"andps %%xmm1,%%xmm0\n\t"</span>
+<span style="color: #ffff00;">"andnps (%1),%%xmm1\n\t"</span>
+<span style="color: #ffff00;">"orps %%xmm1,%%xmm0\n\t"</span>
+<span style="color: #ffff00;">"addq $16,%1\n\t"</span>
+<span style="color: #ffff00;">"subq $4,%2\n\t"</span>
+<span style="color: #ffff00;">"jnz 1b\n\t"</span>
+<span style="color: #ffff00;">"movdqu %%xmm0,(%3)\n\t"</span>
+<span style="color: #ffff00;">"movl (%3),%%eax\n\t"</span>
+<span style="color: #ffff00;">"cmpl 4(%3),%%eax\n\t"</span>
+<span style="color: #ffff00;">"cmovll 4(%3),%%eax\n\t"</span>
+<span style="color: #ffff00;">"cmpl 8(%3),%%eax\n\t"</span>
+<span style="color: #ffff00;">"cmovll 8(%3),%%eax\n\t"</span>
+<span style="color: #ffff00;">"cmpl 12(%3),%%eax\n\t"</span>
+<span style="color: #ffff00;">"cmovll 12(%3),%%eax\n\t"</span>
+<span style="color: #ffff00;">"movl %%eax,%0\n\t"</span>
+:<span style="color: #ffff00;">"=m"</span>(mx)
+:<span style="color: #ffff00;">"r"</span>(a),<span style="color: #ffff00;">"r"</span>((long long)N),<span style="color: #ffff00;">"r"</span>(tmp)
+:<span style="color: #ffff00;">"eax"</span>);
 </pre>
 
 <p>
@@ -487,7 +487,7 @@ asm大小计算错误,影响产生的代码.
 发信站: 中国信息技术论坛──阿卡 (Sun Apr  4 19:53:36 1999), 转信
 
 NOTE: 原文是我在老铁的网站上看到的，原文是灵溪所作。
-        我直接给贴过来了，我也不太懂，希望大家都来研究。
+我直接给贴过来了，我也不太懂，希望大家都来研究。
 
 
 gcc中的内嵌汇编语言（Intel i386平台）
@@ -887,148 +887,148 @@ AT&amp;T格式的汇编语言中，寄存器名以“%”作为前缀，为了�
 
 
 
-                  对 《gcc中的内嵌汇编语言》一文的补充说明
+对 《gcc中的内嵌汇编语言》一文的补充说明
 
-                   欧阳光 ouyangguang@263.net 1999.10.13
+欧阳光 ouyangguang@263.net 1999.10.13
 
-      初次接触到AT&amp;T格式的汇编代码,看着那一堆莫名其妙的怪符号,真是有点痛不
-   欲生的感觉,只好慢慢地去啃gcc文档,在似懂非懂的状态下过了一段时间。后来又
-   在网上找到了灵溪写的《gcc中的内嵌汇编语言》一文,读后自感大有裨益。几个
-   月下来，接触的源代码多了以后,慢慢有了一些经验。为了使初次接触AT&amp;T格式的
-   汇编代码的同志不至于遭受我这样的痛苦,就整理出该文来和大家共享.如有错误
-   之处,欢迎大家指正,共同提高.
+初次接触到AT&amp;T格式的汇编代码,看着那一堆莫名其妙的怪符号,真是有点痛不
+欲生的感觉,只好慢慢地去啃gcc文档,在似懂非懂的状态下过了一段时间。后来又
+在网上找到了灵溪写的《gcc中的内嵌汇编语言》一文,读后自感大有裨益。几个
+月下来，接触的源代码多了以后,慢慢有了一些经验。为了使初次接触AT&amp;T格式的
+汇编代码的同志不至于遭受我这样的痛苦,就整理出该文来和大家共享.如有错误
+之处,欢迎大家指正,共同提高.
 
-   本文主要以举例的方式对gcc中的内嵌汇编语言进行进一步的解释。
+本文主要以举例的方式对gcc中的内嵌汇编语言进行进一步的解释。
 
-   一、gcc对内嵌汇编语言的处理方式
+一、gcc对内嵌汇编语言的处理方式
 
-       gcc在编译内嵌汇编语言时,采取的步骤如下
-    1. 变量输入:   根据限定符的内容将输入操作数放入合适的寄存器,如果限定符
-       指定为立即数("i")或内存变量("m"),则该步被省略,如果限定符没有具体指
-       定输入操作数的类型(如常用的"g"),gcc会视需要决定是否将该操作数输入到
-       某个寄存器.这样每个占位符都与某个寄存器,内存变量,或立即数形成了一一
-       对应的关系.这就是对第二个冒号后内容的解释.
-       如::"a"(foo),"i"(100),"m"(bar)表示%0对应eax寄存器,%1对应100,%2对应
-       内存变量bar.
-    2. 生成代码:  然后根据这种一一对应的关系(还应包括输出操作符),用这些寄
-       存器,内存变量,或立即数来取代汇编代码中的占位符(则有点像宏操作),注
-       意,则一步骤并不检查由这种取代操作所生成的汇编代码是否合法,例如,如果
-       有这样一条指令asm("movl %0,%1"::"m"(foo),"m"(bar));如果你用gcc -c
-       -S选项编译该源文件,那么在生成的汇编文件中,你将会看到生成了movl
-       foo,bar这样一条指令,这显然是错误的.这个错误在稍后的编译检查中会被发
-       现.
-    3. 变量输出:   按照输出限定符的指定将寄存器的内容输出到某个内存变量
-       中,如果输出操作数的限定符指定为内存变量("m"),则该步骤被省略.这就是
-       对第一个冒号后内容的解释,如:asm("mov %0,%1":"=m"(foo),"=a"(bar):);
-       编译后为
-                    #APP
-                        movl foo,eax
-                    #NO_APP
-                        movl eax,bar
-       该语句虽然有点怪怪的,但它很好的体现了gcc的运作方式.　　　　　　　　
-       　　
+gcc在编译内嵌汇编语言时,采取的步骤如下
+1. 变量输入:   根据限定符的内容将输入操作数放入合适的寄存器,如果限定符
+指定为立即数("i")或内存变量("m"),则该步被省略,如果限定符没有具体指
+定输入操作数的类型(如常用的"g"),gcc会视需要决定是否将该操作数输入到
+某个寄存器.这样每个占位符都与某个寄存器,内存变量,或立即数形成了一一
+对应的关系.这就是对第二个冒号后内容的解释.
+如::"a"(foo),"i"(100),"m"(bar)表示%0对应eax寄存器,%1对应100,%2对应
+内存变量bar.
+2. 生成代码:  然后根据这种一一对应的关系(还应包括输出操作符),用这些寄
+存器,内存变量,或立即数来取代汇编代码中的占位符(则有点像宏操作),注
+意,则一步骤并不检查由这种取代操作所生成的汇编代码是否合法,例如,如果
+有这样一条指令asm("movl %0,%1"::"m"(foo),"m"(bar));如果你用gcc -c
+-S选项编译该源文件,那么在生成的汇编文件中,你将会看到生成了movl
+foo,bar这样一条指令,这显然是错误的.这个错误在稍后的编译检查中会被发
+现.
+3. 变量输出:   按照输出限定符的指定将寄存器的内容输出到某个内存变量
+中,如果输出操作数的限定符指定为内存变量("m"),则该步骤被省略.这就是
+对第一个冒号后内容的解释,如:asm("mov %0,%1":"=m"(foo),"=a"(bar):);
+编译后为
+#APP
+movl foo,eax
+#NO_APP
+movl eax,bar
+该语句虽然有点怪怪的,但它很好的体现了gcc的运作方式.　　　　　　　　
+　　
 
-   再以arch/i386/kernel/apm.c中的一段代码为例，我们来比较一下它们编译前后
-   的情况
+再以arch/i386/kernel/apm.c中的一段代码为例，我们来比较一下它们编译前后
+的情况
 
-                                   源程序
-   编译后的汇编代码
-   __asm__ (
-   "pushl %%edi\n\t"
-   "pushl %%ebp\n\t"
-   "lcall %%cs:\n\t"
-   "setc %%al\n\t"
-   "addl %1,%2\n\t"
-   "popl %%ebp\n\t"
-   "popl %%edi\n\t"
-   :"=a"(ea),"=b"(eb),
-     "=c"(ec),"=d"(ed),"=S"(es)
-   :"a"(eax_in),"b"(ebx_in),"c"(ecx_in)
-   :"memory","cc");
+源程序
+编译后的汇编代码
+__asm__ (
+"pushl %%edi\n\t"
+"pushl %%ebp\n\t"
+"lcall %%cs:\n\t"
+"setc %%al\n\t"
+"addl %1,%2\n\t"
+"popl %%ebp\n\t"
+"popl %%edi\n\t"
+:"=a"(ea),"=b"(eb),
+"=c"(ec),"=d"(ed),"=S"(es)
+:"a"(eax_in),"b"(ebx_in),"c"(ecx_in)
+:"memory","cc");
 
-        movl eax_in,%eax
-        movl ebx_in,%ebx
-        movl ecx_in,%ecx
-   #APP
-        pushl %edi
-        pushl %ebp
-        lcall %cs:
-        setc %al
-        addl eb,ec
-        popl %ebp
-        popl %edi
-   #NO_APP
-        movl %eax,ea
-        movl %ebx,eb
-        movl %ecx,ec
-        movl %edx,ed
-        movl %esi,es
+movl eax_in,%eax
+movl ebx_in,%ebx
+movl ecx_in,%ecx
+#APP
+pushl %edi
+pushl %ebp
+lcall %cs:
+setc %al
+addl eb,ec
+popl %ebp
+popl %edi
+#NO_APP
+movl %eax,ea
+movl %ebx,eb
+movl %ecx,ec
+movl %edx,ed
+movl %esi,es
 
-   二.对第三个冒号后面内容的解释
+二.对第三个冒号后面内容的解释
 
-      第三个冒号后面内容主要针对gcc优化处理,它告诉gcc在本段汇编代码中对寄
-   存器和内存的使用情况,以免gcc在优化处理时产生错误.
-    1. 它可以是"eax","ebx","ecx"等寄存器名,表示本段汇编代码对该寄存器进行
-       了显式操作,如 asm ("mov %%eax,%0",:"=r"(foo)::"eax");这样gcc在优化
-       时会避免使用eax作临时变量,或者避免cache到eax的内存变量通过该段汇编
-       码.
-       下面的代码均用gcc的-O2级优化,它显示了嵌入汇编中第三个冒号后"eax"的
-       作用
+第三个冒号后面内容主要针对gcc优化处理,它告诉gcc在本段汇编代码中对寄
+存器和内存的使用情况,以免gcc在优化处理时产生错误.
+1. 它可以是"eax","ebx","ecx"等寄存器名,表示本段汇编代码对该寄存器进行
+了显式操作,如 asm ("mov %%eax,%0",:"=r"(foo)::"eax");这样gcc在优化
+时会避免使用eax作临时变量,或者避免cache到eax的内存变量通过该段汇编
+码.
+下面的代码均用gcc的-O2级优化,它显示了嵌入汇编中第三个冒号后"eax"的
+作用
 
-   　 源程序 编译后的汇编代码
-   正常情况下 int main()
-   {int bar=1;
-   bar=fun();
-   bar++;
-   return bar;
-   } pushl %ebp
-   movl %esp,%ebp
-   call fun
-   incl %eax #显然,bar缺省使用eax寄存器
-   leave
-   ret
-   加了汇编后 int main()
-   {int bar=1;
-   bar=fun();
-   asm volatile("" : : : "eax");
-   bar++;
-   return bar;
-   } pushl %ebp
-   movl %esp,%ebp #建立堆栈框架
-   call fun
-   #fun的返回值放入bar中,此时由于嵌入汇编
-   #指明改变了eax的值,为了避免冲突,
-   #bar改为使用edx寄存器
-   movl %eax,%edx
-   #APP
-   #NO_APP
-   incl %edx
-   movl %edx,%eax #放入main()的返回值
-   leave
-   ret
-    2. "merory"是一个常用的限定,它表示汇编代码以不可预知的方式改变了内存,
-       这样gcc在优化时就不会让cache到寄存器的内存变量使用该寄存器通过汇编
-       代码,否则可能会发生同步出错.有了上面的例子,这个问题就很好理解了
+　 源程序 编译后的汇编代码
+正常情况下 int main()
+{int bar=1;
+bar=fun();
+bar++;
+return bar;
+} pushl %ebp
+movl %esp,%ebp
+call fun
+incl %eax #显然,bar缺省使用eax寄存器
+leave
+ret
+加了汇编后 int main()
+{int bar=1;
+bar=fun();
+asm volatile("" : : : "eax");
+bar++;
+return bar;
+} pushl %ebp
+movl %esp,%ebp #建立堆栈框架
+call fun
+#fun的返回值放入bar中,此时由于嵌入汇编
+#指明改变了eax的值,为了避免冲突,
+#bar改为使用edx寄存器
+movl %eax,%edx
+#APP
+#NO_APP
+incl %edx
+movl %edx,%eax #放入main()的返回值
+leave
+ret
+2. "merory"是一个常用的限定,它表示汇编代码以不可预知的方式改变了内存,
+这样gcc在优化时就不会让cache到寄存器的内存变量使用该寄存器通过汇编
+代码,否则可能会发生同步出错.有了上面的例子,这个问题就很好理解了
 
-   三.对"&amp;"限定符的解释
+三.对"&amp;"限定符的解释
 
-      这是一个较常见用于输出的限定符.它告诉gcc输出操作数使用的寄存器不可再
-   让输入操作数使用.
-      对于"g","r"等限定符,为了有效利用为数不多的几个通用寄存器,gcc一般会让
-   输入操作数和输出操作数选用同一个寄存器.但如果代码没编好,会引起一些意想
-   不到的错误:如 asm("call fun;mov ebx,%1":"=a"(foo):"r"(bar));gcc编译的结
-   果是foo和bar同时使用eax寄存器:
-                  movl bar,eax
-           #APP
-                  call fun
-                  movl ebx,eax
-           #NO_APP
-                  movl eax,foo
-   本来这段代码的意图是将fun()函数的返回值放入foo变量,但半路杀出个程咬金,
-   用ebx的值冲掉了返回值,所以这是一段错误的代码,解决的方法是加上一个给输出
-   操作数加上一个"&amp;"限定符:asm("call fun;mov
-   ebx,%1":"=&amp;a"(foo):"r"(bar));这样gcc就会让输入操作数另寻高就,不再使
-   用eax寄存器了
+这是一个较常见用于输出的限定符.它告诉gcc输出操作数使用的寄存器不可再
+让输入操作数使用.
+对于"g","r"等限定符,为了有效利用为数不多的几个通用寄存器,gcc一般会让
+输入操作数和输出操作数选用同一个寄存器.但如果代码没编好,会引起一些意想
+不到的错误:如 asm("call fun;mov ebx,%1":"=a"(foo):"r"(bar));gcc编译的结
+果是foo和bar同时使用eax寄存器:
+movl bar,eax
+#APP
+call fun
+movl ebx,eax
+#NO_APP
+movl eax,foo
+本来这段代码的意图是将fun()函数的返回值放入foo变量,但半路杀出个程咬金,
+用ebx的值冲掉了返回值,所以这是一段错误的代码,解决的方法是加上一个给输出
+操作数加上一个"&amp;"限定符:asm("call fun;mov
+ebx,%1":"=&amp;a"(foo):"r"(bar));这样gcc就会让输入操作数另寻高就,不再使
+用eax寄存器了
 
 --
 ※ 来源: 中国科大BBS站 [bbs.ustc.edu.cn]
@@ -1066,7 +1066,7 @@ AT&amp;T格式的汇编语言中，寄存器名以“%”作为前缀，为了�
 
 gcc采用的是AT&amp;T的汇编格式,MS采用Intel的格式．
 
-        一　基本语法
+一　基本语法
 
 语法上主要有以下几个不同.
 
@@ -1140,7 +1140,7 @@ Intel:        [ebx + eax*8 + _array]
 ======================================================================
 
 
-                二　基本的行内汇编
+二　基本的行内汇编
 
 基本的行内汇编很简单，一般是按照下面的格式
 asm("statements");
@@ -1149,8 +1149,8 @@ asm　和　__asm__是完全一样的．
 如果有多行汇编，则每一行都要加上　"\n\t"
 例如：
 asm(        "pushl %eax\n\t"
-        "movl $0,%eax\n\t"
-        "popl %eax");
+"movl $0,%eax\n\t"
+"popl %eax");
 实际上gcc在处理汇编时，是要把asm(...)的内容"打印"到汇编
 文件中，所以格式控制字符是必要的．
 
@@ -1190,7 +1190,7 @@ asm("movl $0,_booga);
 原发信站： 中国科大BBS站(Fri, 20 Nov 1998 21:35:48)
 ======================================================================
 
-        三　扩展的行内汇编
+三　扩展的行内汇编
 
 扩展的行内汇编类似于Watcom.
 
@@ -1205,21 +1205,21 @@ int buf[10];
 void main()
 {
 asm(
-        "cld \n\t"
-        "rep \n\t"
-        "stosl"
-        :
-        : "c" (count), "a" (value) , "D" (buf[0])
-        : "%ecx","%edi" );
+"cld \n\t"
+"rep \n\t"
+"stosl"
+:
+: "c" (count), "a" (value) , "D" (buf[0])
+: "%ecx","%edi" );
 }
 得到的主要汇编代码为：
-        movl count,%ecx
-        movl value,%eax
-        movl buf,%edi
+movl count,%ecx
+movl value,%eax
+movl buf,%edi
 #APP
-        cld
-        rep
-        stosl
+cld
+rep
+stosl
 #NO_APP
 cld,rep,stos就不用多解释了．
 这几条语句的功能是向buf中写上count个value值．
@@ -1243,28 +1243,28 @@ A        把eax和edx合成一个64位的寄存器(use long longs)
 我们也可以让gcc自己选择合适的寄存器．
 如下面的例子：
 asm("leal (%1,%1,4),%0"
-    : "=r" (x)
-    : "0" (x) );
+: "=r" (x)
+: "0" (x) );
 这段代码实现5*x的快速乘法．
 得到的主要汇编代码为：
-        movl x,%eax
+movl x,%eax
 #APP
-        leal (%eax,%eax,4),%eax
+leal (%eax,%eax,4),%eax
 #NO_APP
-        movl %eax,x
+movl %eax,x
 几点说明：
 1.使用q指示编译器从eax,ebx,ecx,edx分配寄存器．
-  使用r指示编译器从eax,ebx,ecx,edx,esi,edi分配寄存器．
+使用r指示编译器从eax,ebx,ecx,edx,esi,edi分配寄存器．
 2.我们不必把编译器分配的寄存器放入改变的寄存器列表，因为寄存器
 已经记住了它们．
 3."="是标示输出寄存器，必须这样用．
 4.数字%n的用法：
-  数字表示的寄存器是按照出现和从左到右的顺序映射到用"r"或"q"请求
+数字表示的寄存器是按照出现和从左到右的顺序映射到用"r"或"q"请求
 的寄存器．如果我们要重用"r"或"q"请求的寄存器的话，就可以使用它们．
 5.如果强制使用固定的寄存器的话，如不用%1,而用ebx,则
 asm("leal (%%ebx,%%ebx,4),%0"
-    : "=r" (x)
-    : "0" (x) );
+: "=r" (x)
+: "0" (x) );
 注意要使用两个%,因为一个%的语法已经被%n用掉了．
 
 --
@@ -1293,7 +1293,7 @@ asm("leal (%%ebx,%%ebx,4),%0"
 下面可以来解释letter 4854-4855的问题：
 
 1、变量加下划线和双下划线有什么特殊含义吗？
- 加下划线是指全局变量，但我的gcc中加不加都无所谓．
+加下划线是指全局变量，但我的gcc中加不加都无所谓．
 
 2、以上定义用如下调用时展开会是什么意思？
 #define _syscall1(type,name,type1,arg1) \
@@ -1303,15 +1303,15 @@ long __res; \
 /* __res应该是一个全局变量　*/
 __asm__ volatile ("int $0x80" \
 /* volatile 的意思是不允许优化，使编译器严格按照你的汇编代码汇编*/
-        : "=a" (__res) \
+: "=a" (__res) \
 /* 产生代码　movl %eax, __res */
-        : "0" (__NR_##name),"b" ((long)(arg1))); \
+: "0" (__NR_##name),"b" ((long)(arg1))); \
 /* 如果我没记错的话，这里##指的是两次宏展开．
 　　即用实际的系统调用名字代替"name",然后再把__NR_...展开．
 　　接着把展开的常数放入eax，把arg1放入ebx */
 
 if (__res &gt;= 0) \
-        return (type) __res; \
+return (type) __res; \
 errno = -__res; \
 return -1; \
 }
@@ -1435,7 +1435,7 @@ return -1; \
 </li>
 <li>对于x87寄存器的的话，分配的位置是堆栈上面从 %st(0)~%st(7),对于long double使用这些寄存器
 </li>
-<li>对于剩下的参数都是通过堆栈传递的，剩下的参数从右向左进行压栈传入堆栈      
+<li>对于剩下的参数都是通过堆栈传递的，剩下的参数从右向左进行压栈传入堆栈
 </li>
 </ul>
 

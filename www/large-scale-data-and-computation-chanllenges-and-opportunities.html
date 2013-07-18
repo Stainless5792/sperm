@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Large-Scale Data and Computation: Challenges and Opportunities</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -126,7 +126,7 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> Replication</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>replication对于large-scale system的意义 
+<p>replication对于large-scale system的意义
 </p>
 <ul>
 <li>Data loss 数据备份
@@ -136,8 +136,8 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 </ul>
 
 </li>
-<li>Slow machines 慢速机器 
-     – replicate the computation (MapReduce)
+<li>Slow machines 慢速机器
+– replicate the computation (MapReduce)
 </li>
 <li>Too much load 负载过高
 <ul>
@@ -172,9 +172,9 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 <p>large-scale system都采用共享环境，有利也有弊
 </p>
 <ul>
-<li>Huge benefit: greatly increased utilization 优点是带来了比较高的集群利用率 
+<li>Huge benefit: greatly increased utilization 优点是带来了比较高的集群利用率
 </li>
-<li>&hellip; but hard to predict effects increase variability 但是变化比较大难以预测影响 
+<li>&hellip; but hard to predict effects increase variability 但是变化比较大难以预测影响
 <ul>
 <li>network congestion
 </li>
@@ -182,14 +182,14 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 </li>
 <li>bursts of foreground activity
 </li>
-<li>not just your jobs, but everyone else’s jobs, too 
+<li>not just your jobs, but everyone else’s jobs, too
 </li>
 <li>not static: change happening constantly
 </li>
 </ul>
 
 </li>
-<li>Exacerbated by large fanout systems 
+<li>Exacerbated by large fanout systems
 </li>
 </ul>
 
@@ -210,7 +210,7 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 <ul>
 <li>Tolerating faults:
 <ul>
-<li>rely on extra resources 
+<li>rely on extra resources
 <ul>
 <li>RAIDed disks, ECC memory, dist. system components, etc. – make a reliable whole out of unreliable parts
 </li>
@@ -231,7 +231,7 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 </li>
 <li>Times scales are very different:
 <ul>
-<li>variability: 1000s of disruptions/sec, scale of milliseconds 
+<li>variability: 1000s of disruptions/sec, scale of milliseconds
 </li>
 <li>faults: 10s of failures per day, scale of tens of seconds
 </li>
@@ -251,13 +251,13 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 
 <p>延迟容忍技术主要有下面两种,单位是request.
 </p><ul>
-<li>Cross request adaptation 一种方式是跨request的，检查最近request的行为，时间范围在10s到分钟级别 
+<li>Cross request adaptation 一种方式是跨request的，检查最近request的行为，时间范围在10s到分钟级别
 <ul>
 <li>examine recent behavior
 </li>
-<li>take action to improve latency of future requests 
+<li>take action to improve latency of future requests
 </li>
-<li>typically relate to balancing load across set of servers 
+<li>typically relate to balancing load across set of servers
 </li>
 <li>time scale: 10s of seconds to minutes
 </li>
@@ -266,7 +266,7 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 </li>
 <li>Within request adaptation 一种是在request内部的
 <ul>
-<li>cope with slow subsystems in context of higher level request 
+<li>cope with slow subsystems in context of higher level request
 </li>
 <li>time scale: right now, while user is waiting
 </li>
@@ -296,7 +296,7 @@ TODO（dirlt）：Deep Learning部分没有阅读，这个部分应该就是所�
 <p>提供cross-cluster的服务，比如spanner系统
 </p>
 <p>
-Our earliest systems made things easier within a cluster: 
+Our earliest systems made things easier within a cluster:
 </p><ul>
 <li>GFS/Colossus: reliable cluster-level file system
 </li>

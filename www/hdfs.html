@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>hdfs</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -360,7 +360,7 @@
 <ul>
 <li>The NameNode in HDFS, in addition to its primary role serving client requests, can alternatively execute either of two other roles, either a CheckpointNode or a BackupNode. The role is specified at the node startup.（checkpoint node和backup node是namenode一种，可以在启动的时候直接指定角色）
 </li>
-<li>The CheckpointNode periodically combines the existing checkpoint and journal to create a new checkpoint and an empty journal.（checkpoint node做的事情就是合并chkp以及journal） 
+<li>The CheckpointNode periodically combines the existing checkpoint and journal to create a new checkpoint and an empty journal.（checkpoint node做的事情就是合并chkp以及journal）
 </li>
 <li>The CheckpointNode usually runs on a different host from the NameNode since it has the same memory re-quirements as the NameNode. （对于checkpoint node来说通常也会host在另外一机器上面因为和namenode占用了相同内存大小。我理解这个checkpointnode并没有服务，而仅仅是为了做checkpoint。在合并chkp需要在内存里面进行merge以及update等操作，所以也是相当占用内存的）
 </li>
@@ -506,7 +506,7 @@
 <div class="outline-text-5" id="text-1-1-3-3">
 
 <ul>
-<li>The NameNode detects that a block has become under- or over-replicated when a block report from a DataNode arrives. 
+<li>The NameNode detects that a block has become under- or over-replicated when a block report from a DataNode arrives.
 </li>
 <li>When a block becomes over replicated, the NameNode chooses a replica to remove. The NameNode will prefer not to reduce the number of racks that host replicas, and secondly prefer to remove a replica from the DataNode with the least amount of available disk space. The goal is to balance storage utilization across DataNodes without reducing the block’s availability.（如果over-replicated的话，那么会选择一个replica移除。首先考虑不要减少rack数目，然后考虑从磁盘空间空闲最少的节点删除。）
 </li>
@@ -727,7 +727,7 @@ Whenever a read client or a block scanner detects a corrupt block, it notifies t
 <ul>
 <li>NameNode的自动恢复。现在BackupNode已经算是Warm NameNode了，但是缺少block reports，所以如果切换到BackupNode的话还需要block reports比较耗时。如果BackupNode能够同时接收block reports的话，那么可以作为Hot NameNode存在。
 </li>
-<li>NameNode的扩展性问题。NameNode现在瓶颈在于内存使用上，尤其是当内存块使用完的时候出现GC更加糟糕有时候需要restart。虽然我们鼓励用户创建大文件，并且增加了配额管理以及archive tool,但是依然没有解决本质问题。     
+<li>NameNode的扩展性问题。NameNode现在瓶颈在于内存使用上，尤其是当内存块使用完的时候出现GC更加糟糕有时候需要restart。虽然我们鼓励用户创建大文件，并且增加了配额管理以及archive tool,但是依然没有解决本质问题。
 </li>
 </ul>
 
@@ -816,16 +816,16 @@ If a data node fails while the block is being written, it is removed from the pi
 </li>
 <li>Generate the mapping between blocks and data nodes by waiting for enough of the data nodes to check in. 等待足够数量的dn checkin之后，重构block和node之间的映射关系。
 <ul>
-<li>If the name node didn't wait for the data nodes to check in, it would think that blocks were under-replicated and start re-replicating blocks across the cluster. 
+<li>If the name node didn't wait for the data nodes to check in, it would think that blocks were under-replicated and start re-replicating blocks across the cluster.
 </li>
-<li>Instead, the name node waits until enough data nodes check in to account for a configurable percentage of blocks (99.9% by default), which satisfy the minimum replication level (1 by default). （等待足够数量的block都出现并且满足一定的备份数目） 
+<li>Instead, the name node waits until enough data nodes check in to account for a configurable percentage of blocks (99.9% by default), which satisfy the minimum replication level (1 by default). （等待足够数量的block都出现并且满足一定的备份数目）
 </li>
 </ul>
 
 </li>
 </ol>
 
-<p>The name node then waits a further fixed amount of time (30 seconds by default) to allow the cluster to settle down before exiting safe mode.（然后等待30s离开safe mode) 
+<p>The name node then waits a further fixed amount of time (30 seconds by default) to allow the cluster to settle down before exiting safe mode.（然后等待30s离开safe mode)
 </p>
 </div>
 
@@ -874,13 +874,13 @@ If a data node fails while the block is being written, it is removed from the pi
 </p><ul>
 <li>The name node would notice that the data node is not sending heartbeats, then after a certain time period (10 minutes by default) it considers the node as dead, at which point it will re-replicate the blocks that were on the failed data node using replicas stored on other nodes of the cluster.(dn故障检测通过心跳完成）
 </li>
-<li>Detecting corrupt data requires a different approach. The principal technique is to use checksums to check for corruption.（通过校验来检测数据损坏） 
+<li>Detecting corrupt data requires a different approach. The principal technique is to use checksums to check for corruption.（通过校验来检测数据损坏）
 <ul>
 <li>Corruption may occur during transmission of the block over the network, or when it is written to or read from disk. In Hadoop, the data nodes verify checksums on receipt of the block. If any checksum is invalid the data node will complain and the block will be resent. A block's checksums are stored along with the block data, to allow further integrity checks.（传输出现损坏的话那么需要进行重传，然后checksum也会被保存下来用于后续检查）
 </li>
 <li>This is not sufficient to ensure that the data will be successfully read from disk in an uncorrupted state, so all reads from HDFS verify the block checksums too. Failures are reported to the name node, which organizes re-replication of the healthy replicas.（后续读取数据的时候也会进行检查）
 </li>
-<li>Because HDFS is often used to store data that isn't read very often, detecting corrupt data when it is read is undesirable: the failure may go undetected for a long period, during which other replicas may have failed. To remedy this, each data node runs a background thread to check block integrity. If it finds a corrupt block, it informs the name node which replicates the block from its uncorrupted replicas, and arranges for the corrupt block to be deleted. Blocks are re-verified every three weeks to protect against disk errors over time.（部分数据可能很少会被读取，因此在读取的时候检查坏块就不太现实。所以在每个dn上面都会存在一个后台线程定期检查所有的块看是否损坏。如果损坏的话那么需要重新做replication. 通常这个线程是每3周启动一次） 
+<li>Because HDFS is often used to store data that isn't read very often, detecting corrupt data when it is read is undesirable: the failure may go undetected for a long period, during which other replicas may have failed. To remedy this, each data node runs a background thread to check block integrity. If it finds a corrupt block, it informs the name node which replicates the block from its uncorrupted replicas, and arranges for the corrupt block to be deleted. Blocks are re-verified every three weeks to protect against disk errors over time.（部分数据可能很少会被读取，因此在读取的时候检查坏块就不太现实。所以在每个dn上面都会存在一个后台线程定期检查所有的块看是否损坏。如果损坏的话那么需要重新做replication. 通常这个线程是每3周启动一次）
 </li>
 </ul>
 
@@ -931,11 +931,11 @@ If a data node fails while the block is being written, it is removed from the pi
 
 <p>To avoid this catastrophic scenario the name node should have special treatment:
 </p><ol>
-<li>The name node should write its persistent metadata to multiple local disks. If one physical disk fails then there is a backup of the data on another disk. RAID can be used in this case too.(用RAID来提高可靠性） 
+<li>The name node should write its persistent metadata to multiple local disks. If one physical disk fails then there is a backup of the data on another disk. RAID can be used in this case too.(用RAID来提高可靠性）
 </li>
-<li>The name node should write its persistent metadata to a remote NFS mount. If the name node fails, then there is a backup of the data on NFS.（用NFS来做提高可靠性） 
+<li>The name node should write its persistent metadata to a remote NFS mount. If the name node fails, then there is a backup of the data on NFS.（用NFS来做提高可靠性）
 </li>
-<li>The secondary name node should run on a separate node to the primary. In the case of losing all of the primary's data (local disks and NFS), the secondary can provide a stale copy of the metadata. Since it is stale, there will be some data loss, but it will be a known amount of data loss, since the secondary makes periodic backups of the metadata on a configurable schedule（secondary nn和nn分开部署） 
+<li>The secondary name node should run on a separate node to the primary. In the case of losing all of the primary's data (local disks and NFS), the secondary can provide a stale copy of the metadata. Since it is stale, there will be some data loss, but it will be a known amount of data loss, since the secondary makes periodic backups of the metadata on a configurable schedule（secondary nn和nn分开部署）
 </li>
 <li>Make backups of the name node's persistent metadata. You should keep multiple copies of different ages (1 day, 1 week, 1 month) to allow recovery in the case of corruption. A convenient way to do this is to use the checkpoints on the secondary as the source of the backup. These backups should be verified; at present the only way to do this is to start a new name node (on a separate, unreachable network to the production cluster) to visually check that it can reconstruct the filesystem metadata.（定期备份并且进行校验，一个简单的校验方法就是用这个image去启动一个namenode）
 </li>
@@ -1112,14 +1112,14 @@ The question is now whether the goals are feasible with the current system archi
 <ul>
 <li>The first block report is sent immediately after the data-node registration.
 </li>
-<li>Subsequently, block reports are sent periodically every hour by default and serve as a sanity check（时间间隔1小时） 
+<li>Subsequently, block reports are sent periodically every hour by default and serve as a sanity check（时间间隔1小时）
 </li>
 </ul>
 
 </li>
 <li>During normal operation, data-nodes periodically send heartbeats to the name-node to indicate that the data-node is alive.
 <ul>
-<li>The default heartbeat interval is three seconds. （心跳间隔3s） 
+<li>The default heartbeat interval is three seconds. （心跳间隔3s）
 </li>
 <li>If the name-node does not receive a heartbeat from a data-node in 10 minutes, it pronounces the data-node dead and schedules its blocks for replication on other nodes.（10min没有接收到心跳那么认为死亡）
 </li>
@@ -1160,7 +1160,7 @@ The question is now whether the goals are feasible with the current system archi
 </ul>
 
 </li>
-<li>In order to measure the name-node performance, I implemented a bench- mark called <b>NNThroughputBenchmark</b>, which now is a standard part of the HDFS code base. 
+<li>In order to measure the name-node performance, I implemented a bench- mark called <b>NNThroughputBenchmark</b>, which now is a standard part of the HDFS code base.
 <ul>
 <li>NNThroughputBenchmark is a single-node benchmark, which starts a name-node and runs a series of client threads on the same node. Each client repetitively performs the same name-node operation by directly calling the name-node method implementing this operation. Then the benchmark mea- sures the number of operations performed by the name-node per second.
 </li>
@@ -1185,7 +1185,7 @@ The question is now whether the goals are feasible with the current system archi
 <ul>
 <li>Average read throughput == 66 MB/s
 </li>
-<li>Average write throughput == 40 MB/s 
+<li>Average write throughput == 40 MB/s
 </li>
 </ul>
 
@@ -1208,7 +1208,7 @@ The question is now whether the goals are feasible with the current system archi
 </ul>
 
 </li>
-<li>We have seen that a 10,000 node HDFS cluster with a single name-node is expected to handle well a workload of 100,000 readers, but even 10,000 writers can produce enough workload to saturate the name-node, making it a bottleneck for linear scaling. Such a large difference in performance is attributed to get block locations (read workload) being a memory-only operation, while creates (write work- load) require journaling, which is bounded by the local hard drive perfor- mance.（这个差距的根源还是在于，get操作是从memory里面完成的，而write操作需要journal） 
+<li>We have seen that a 10,000 node HDFS cluster with a single name-node is expected to handle well a workload of 100,000 readers, but even 10,000 writers can produce enough workload to saturate the name-node, making it a bottleneck for linear scaling. Such a large difference in performance is attributed to get block locations (read workload) being a memory-only operation, while creates (write work- load) require journaling, which is bounded by the local hard drive perfor- mance.（这个差距的根源还是在于，get操作是从memory里面完成的，而write操作需要journal）
 </li>
 </ul>
 
@@ -1317,9 +1317,9 @@ fb数据仓库故障有41%是源于HDFS，而如果有reliable namenode解决方
 <ul>
 <li>On RAID-0 Storage the disk accesses go at the rate of the slowest disk. RAID0带宽瓶颈限制在slowest disk上面
 </li>
-<li>The 2011 paper, <a href="http://static.usenix.org/event/hotos11/tech/final_files/Krevat.pdf">Disks Are Like Snowflakes: No Two Are Alike</a>, measured the performance of modern disk drives, and discovered that they can vary in data IO rates by 20%, even when they are all writing to same part of the hard disk. 
+<li>The 2011 paper, <a href="http://static.usenix.org/event/hotos11/tech/final_files/Krevat.pdf">Disks Are Like Snowflakes: No Two Are Alike</a>, measured the performance of modern disk drives, and discovered that they can vary in data IO rates by 20%, even when they are all writing to same part of the hard disk.
 </li>
-<li>if you have eight disks, some will be faster than the others, right from day one. And your RAID-0 storage will deliver the performance of the slowest disk right from the day you unpack it from its box and switch it on. 
+<li>if you have eight disks, some will be faster than the others, right from day one. And your RAID-0 storage will deliver the performance of the slowest disk right from the day you unpack it from its box and switch it on.
 </li>
 </ul>
 
@@ -1350,9 +1350,9 @@ fb数据仓库故障有41%是源于HDFS，而如果有reliable namenode解决方
 
 <pre class="example">2013-06-05 03:45:16,866 FATAL org.apache.hadoop.hbase.regionserver.wal.HLog: Could not append. Requesting close of hlog
 java.io.IOException: All datanodes 10.11.0.41:50010 are bad. Aborting...
-        at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.processDatanodeError(DFSClient.java:3088)
-        at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$1900(DFSClient.java:2627)
-        at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2799)
+at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.processDatanodeError(DFSClient.java:3088)
+at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$1900(DFSClient.java:2627)
+at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2799)
 </pre>
 
 
@@ -1443,30 +1443,30 @@ Missing blocks: 1
 
 <pre class="example">dp@dp2:~$ hadoop fsck /hbase/.corrupt/dp18.umeng.com%3A60020.1349065853563 -files -locations -blocks -racks
 FSCK started by dp (auth:SIMPLE) from /10.18.10.55 for path /hbase/.corrupt/dp18.umeng.com%3A60020.1349065853563 at Mon Oct 08 15:17:07 CST 2012
-/hbase/.corrupt/dp18.umeng.com%3A60020.1349065853563 66050 bytes, 1 block(s): 
+/hbase/.corrupt/dp18.umeng.com%3A60020.1349065853563 66050 bytes, 1 block(s):
 /hbase/.corrupt/dp18.umeng.com%3A60020.1349065853563: CORRUPT block blk_6229461233186357508
- Under replicated blk_6229461233186357508_18529950. Target Replicas is 3 but found 1 replica(s).
+Under replicated blk_6229461233186357508_18529950. Target Replicas is 3 but found 1 replica(s).
 0. blk_6229461233186357508_18529950 len=66050 repl=1 [/default-rack/10.18.10.71:50010]
 
 Status: CORRUPT
- Total size:    66050 B
- Total dirs:    0
- Total files:   1
- Total blocks (validated):      1 (avg. block size 66050 B)
-  ********************************
-  CORRUPT FILES:        1
-  CORRUPT BLOCKS:       1
-  ********************************
- Minimally replicated blocks:   1 (100.0 %)
- Over-replicated blocks:        0 (0.0 %)
- Under-replicated blocks:       1 (100.0 %)
- Mis-replicated blocks:         0 (0.0 %)
- Default replication factor:    3
- Average block replication:     1.0
- Corrupt blocks:                1
- Missing replicas:              2 (200.0 %)
- Number of data-nodes:          29
- Number of racks:               1
+Total size:    66050 B
+Total dirs:    0
+Total files:   1
+Total blocks (validated):      1 (avg. block size 66050 B)
+********************************
+CORRUPT FILES:        1
+CORRUPT BLOCKS:       1
+********************************
+Minimally replicated blocks:   1 (100.0 %)
+Over-replicated blocks:        0 (0.0 %)
+Under-replicated blocks:       1 (100.0 %)
+Mis-replicated blocks:         0 (0.0 %)
+Default replication factor:    3
+Average block replication:     1.0
+Corrupt blocks:                1
+Missing replicas:              2 (200.0 %)
+Number of data-nodes:          29
+Number of racks:               1
 FSCK ended at Mon Oct 08 15:17:07 CST 2012 in 1 milliseconds
 
 
@@ -1547,7 +1547,7 @@ uri = file:///
 
 
 <pre class="example">➜  hdfs git:(master) ✗ export HADOOP_CLASSPATH=./target/classes
-➜  hdfs git:(master) ✗ hadoop com.dirlt.java.hdfs.GetFS        
+➜  hdfs git:(master) ✗ hadoop com.dirlt.java.hdfs.GetFS
 fs.default.name = hdfs://localhost:9000
 uri = hdfs://localhost:9000
 uri = file:///
@@ -1595,7 +1595,7 @@ uri = file:///
 <div class="outline-text-4" id="text-1-6-5">
 
 <ul>
-<li>hdfs每次将64KB数据写入datanode pipeline的时候都会调用progress.     
+<li>hdfs每次将64KB数据写入datanode pipeline的时候都会调用progress.
 </li>
 <li>对于本地文件系统的话，可以跟进到RawLocalFileSystem.create发现progress这个方法并没有使用。
 </li>

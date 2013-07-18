@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>percolator</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -127,7 +127,7 @@
 <ul>
 <li>link: <a href="http://research.google.com/pubs/pub36726.html">http://research.google.com/pubs/pub36726.html</a>
 </li>
-<li>title: Large-scale Incremental Processing Using Distributed Transactions and Notifications 
+<li>title: Large-scale Incremental Processing Using Distributed Transactions and Notifications
 </li>
 <li>author: dpeng@google.com, fdabek@google.com
 </li>
@@ -180,7 +180,7 @@
 </li>
 <li>An ideal data processing system for the task of main-taining the web search index would be optimized for in-cremental processing; （我们需要的就是一个增量处理系统）
 <ul>
-<li>that is, it would allow us to main-tain a very large repository of documents and update it efficiently as each new document was crawled. 
+<li>that is, it would allow us to main-tain a very large repository of documents and update it efficiently as each new document was crawled.
 </li>
 <li>Given that the system will be processing many small updates concurrently, an ideal system would also provide mech- anisms for maintaining invariants despite concurrent up-dates and for keeping track of which updates have been processed.（对于这个增量系统需要提供的机制包括下面两个，这也是percolator主要关注的两个方面：1）提供机制来维护不变量 2）能够追踪那些updates已经被处理过）
 </li>
@@ -195,7 +195,7 @@
 <hr/>
 
 <p>
-The remainder of this paper describes a particular in-cremental processing system: Percolator. 
+The remainder of this paper describes a particular in-cremental processing system: Percolator.
 </p><ul>
 <li>Percolator pro-vides the user with random access to a multi-PB reposi-tory. Random access allows us to process documents in-dividually, avoiding the global scans of the repository that MapReduce requires. To achieve high throughput, many threads on many machines need to transform the repository concurrently, so Percolator provides ACID-compliant transactions to make it easier for programmers to reason about the state of the repository; we currently implement snapshot isolation semantics.（提供随即访问PB级别repo的能力，允许对数据进行随机访问。为了达到高并发在多个机器上面使用多个线程同时对repo进行更新，因此percolator也提供了ACID兼容的事务实现来满足维持不变量这个需求，事务实现是snapshot isolation的语义） <b>TODO（dirlt）：snapshot isolation wikipedia？</b>
 </li>
@@ -230,7 +230,7 @@ The remainder of this paper describes a particular in-cremental processing syste
 </ul>
 
 </li>
-<li>A Percolator system consists of three binaries that run on every machine in the cluster: a Percolator worker, a Bigtable tablet server, and a GFS chunkserver.（在每个计算机器上面都会运行percolator worker，worker是application但是底层使用了percolator library）   
+<li>A Percolator system consists of three binaries that run on every machine in the cluster: a Percolator worker, a Bigtable tablet server, and a GFS chunkserver.（在每个计算机器上面都会运行percolator worker，worker是application但是底层使用了percolator library）
 </li>
 </ul>
 
@@ -312,16 +312,16 @@ The remainder of this paper describes a particular in-cremental processing syste
 
 
 <pre class="src src-C++">bool UpdateDocument(Document doc) {
-  Transaction t(&amp;cluster);
-  t.Set(doc.url(), <span style="color: #ffff00;">"contents"</span>, <span style="color: #ffff00;">"document"</span>, doc.contents());
-  int hash = Hash(doc.contents());
-  // dups table maps hash &#8594; canonical URL
-  string canonical;
-  if (!t.Get(hash, <span style="color: #ffff00;">"canonical-url"</span>, <span style="color: #ffff00;">"dups"</span>, &amp;canonical)) {
-    // No canonical yet; write myself in
-    t.Set(hash, <span style="color: #ffff00;">"canonical-url"</span>, <span style="color: #ffff00;">"dups"</span>, doc.url());
-  } // else this document already exists, ignore new copy
-  return t.Commit();
+Transaction t(&amp;cluster);
+t.Set(doc.url(), <span style="color: #ffff00;">"contents"</span>, <span style="color: #ffff00;">"document"</span>, doc.contents());
+int hash = Hash(doc.contents());
+// dups table maps hash &#8594; canonical URL
+string canonical;
+if (!t.Get(hash, <span style="color: #ffff00;">"canonical-url"</span>, <span style="color: #ffff00;">"dups"</span>, &amp;canonical)) {
+// No canonical yet; write myself in
+t.Set(hash, <span style="color: #ffff00;">"canonical-url"</span>, <span style="color: #ffff00;">"dups"</span>, doc.url());
+} // else this document already exists, ignore new copy
+return t.Commit();
 }
 </pre>
 
@@ -402,7 +402,7 @@ Snapshot isolation does not provide serializability，这个问题以下面的ps
 </li>
 </ul>
 
-<p>整个过程，按照我们的理解：既然T1首先发起了，那么T2读取的数据应该是30才对。但是如果按照这种逻辑来说，整个读的延迟就非常大了，而"The main advantage of snapshot isolation over a serializable proto-col is more efficient reads.". 
+<p>整个过程，按照我们的理解：既然T1首先发起了，那么T2读取的数据应该是30才对。但是如果按照这种逻辑来说，整个读的延迟就非常大了，而"The main advantage of snapshot isolation over a serializable proto-col is more efficient reads.".
 其实"Snapshot isolation pro-tects against write-write conflicts: if transactions A and B, running concurrently, write to the same cell, at most one will commit. " 主要还是为了解决write-write conflicts。下图就是一个解决了ww conflict的例子：
 <img src="./images/percolator-write-write-conflicts.png"  alt="./images/percolator-write-write-conflicts.png" />
 </p>
@@ -418,69 +418,69 @@ Snapshot isolation does not provide serializability，这个问题以下面的ps
 
 
 <pre class="src src-C++">class Transaction {
-  struct Write { Row row; Column col; string value; };
-  vector&lt;Write&gt; writes ;
-  int start ts ;
-  Transaction() : start ts (oracle.GetTimestamp()) {} // &#21021;&#22987;&#21270;&#20250;&#20174;oracle&#33719;&#24471;&#19968;&#20010;timestamp&#65292;&#34920;&#26126;&#36825;&#20010;transaction&#23545;&#24212;&#30340;&#26102;&#38388;&#12290;
-  void Set(Write w) { writes .push back(w); } // &#25152;&#26377;&#30340;&#20889;&#37117;&#20250;&#32531;&#23384;&#19979;&#26469;&#65292;&#32780;&#19981;&#26159;&#31435;&#21051;&#20889;&#20837;table
-  bool Get(Row row, Column c, string* value) {
-    while (true) {
-      bigtable::Txn T = bigtable::StartRowTransaction(row); // TODO(dirlt):??
-      // Check for locks that signal concurrent writes.
-      if (T.Read(row, c+<span style="color: #ffff00;">"lock"</span>, [0, start ts ])) { // &#22914;&#26524;&#22312;&#36825;&#20010;timestamp&#20043;&#21069;&#23384;&#22312;lock,&#35828;&#26126;&#22312;&#36825;&#20010;ts&#20043;&#21069;&#32943;&#23450;&#23384;&#22312;commit&#20294;&#26159;&#36824;&#27809;&#26377;&#25552;&#20132;&#25104;&#21151;&#65288;&#21487;&#33021;&#22312;&#36816;&#34892;&#65292;&#20063;&#21487;&#33021;&#30452;&#25509;fail&#65289;
-        // There is a pending lock; try to clean it and wait
-        BackoffAndMaybeCleanupLock(row, c); // &#23545;&#20110;&#36825;&#20010;pending lock&#65292;&#25105;&#20204;&#20250;&#36873;&#25321;&#31561;&#24453;&#65292;&#25110;&#32773;&#21487;&#33021;&#26159;&#21024;&#38500;&#12290;
-        continue;
-      }
-      // Find the latest write below our start timestamp.
-      latest write = T.Read(row, c+<span style="color: #ffff00;">"write"</span>, [0, start ts ]); // &#35828;&#26126;&#20043;&#21069;&#30340;commit&#20197;&#21069;&#25552;&#20132;&#23436;&#25104;&#65292;&#37027;&#20040;&#30475;&#26368;&#36817;&#19968;&#27425;&#30340;write&#26159;&#22312;&#20160;&#20040;&#26102;&#20505;&#12290;&#25152;&#35859;&#26368;&#36817;&#26159;&#25351;&#20889;&#20837;&#30340;&#26102;&#38388;&#26159;&#21518;&#38754;&#30340;commit_ts.
-      if (!latest write.found()) return false; // no data
-      int data ts = latest write.start timestamp(); // &#28982;&#21518;&#26368;&#36817;&#20889;&#20837;write&#30340;&#21457;&#36215;&#26102;&#38388;&#65292;&#20063;&#23601;&#26159;start_ts.&#36825;&#20010;&#38656;&#35201;&#32467;&#21512;&#21518;&#38754;&#30340;prewrite&#21644;commit&#26469;&#29702;&#35299;&#12290;
-      *value = T.Read(row, c+<span style="color: #ffff00;">"data"</span>, [data ts, data ts]);
-      return true;
-    }
-  }
-  // Prewrite tries to lock cell w, returning false in case of conflict.
-  bool Prewrite(Write w, Write primary) { 
-    Column c = w.col;
-    bigtable::Txn T = bigtable::StartRowTransaction(w.row);
-    // Abort on writes after our start timestamp . . .
-    if (T.Read(w.row, c+<span style="color: #ffff00;">"write"</span>, [start ts , INFINITY])) return false; // start_ts&#20043;&#21518;&#26159;&#21542;&#26377;&#26032;&#30340;&#25552;&#20132;&#12290;&#22914;&#26524;&#23384;&#22312;&#26032;&#30340;&#25552;&#20132;&#30340;&#35805;&#65292;&#36825;&#23601;&#24847;&#21619;&#36825;&#26412;&#27425;T&#30340;&#22833;&#36133;&#12290;
-    // &#36825;&#20010;&#22320;&#26041;&#38750;&#24120;&#37325;&#35201;&#65292;&#22240;&#20026;&#25105;&#20204;&#35835;&#21462;&#30340;&#25968;&#25454;&#26159;start_ts&#20043;&#21069;&#30340;&#25968;&#25454;&#65292;&#22240;&#27492;&#22914;&#26524;start_ts&#20043;&#21518;&#23384;&#22312;&#25968;&#25454;&#20889;&#20837;&#30340;&#35805;&#65292;&#37027;&#20040;&#35828;&#26126;&#23384;&#22312;&#22810;&#20010;&#20107;&#29289;&#27491;&#22312;&#25552;&#20132;
-    // &#26159;write-write conflicts.
-    //. . . or locks at any timestamp.
-    if (T.Read(w.row, c+<span style="color: #ffff00;">"lock"</span>, [0, INFINITY])) return false; // &#22914;&#26524;&#36825;&#20010;cell&#34987;lock&#30340;&#35805;&#65292;&#37027;&#20040;&#24847;&#21619;&#30528;&#26412;&#22320;T&#20063;&#26159;&#22833;&#36133;&#30340;&#12290;&#27880;&#24847;&#36825;&#37324;&#23545;lock&#26102;&#38388;&#27809;&#26377;&#20219;&#20309;&#38480;&#21046;&#12290;
-    T.Write(w.row, c+<span style="color: #ffff00;">"data"</span>, start ts , w.value); // &#20889;&#20837;&#25968;&#25454;&#65292;&#27880;&#24847;&#36825;&#37324;&#30340;&#26102;&#38388;&#25139;&#26159;start_ts
-    T.Write(w.row, c+<span style="color: #ffff00;">"lock"</span>, start ts , // &#20889;&#20837;lock&#65292;&#20869;&#23481;&#26159;primary row&#21644;col
-            {primary.row, primary.col});
-    // The primary&#8217;s location.
-    return T.Commit(); 
-  }
-  bool Commit() {
-    Write primary = writes [0];
-    vector&lt;Write&gt; secondaries(writes .begin()+1, writes .end());
-    if (!Prewrite(primary, primary)) return false;
-    for (Write w : secondaries)
-      if (!Prewrite(w, primary)) return false;
-    int commit ts = oracle .GetTimestamp(); // &#39044;&#20808;&#20889;&#20837;&#20869;&#23481;&#20043;&#21518;&#20934;&#22791;&#36827;&#34892;&#25552;&#20132;&#65292;&#25552;&#20132;&#26102;&#38388;&#20026;commit_ts
-    // Commit primary first.
-    Write p = primary;
-    bigtable::Txn T = bigtable::StartRowTransaction(p.row);
-    if (!T.Read(p.row, p.col+<span style="color: #ffff00;">"lock"</span>, [start ts , start ts ])) // &#37325;&#26032;&#26816;&#26597;&#20043;&#21069;&#30340;&#38145;&#26159;&#21542;&#36824;&#22312;&#65311;&#22914;&#26524;&#36824;&#22312;&#30340;&#35805;&#37027;&#20040;&#20889;&#20837;&#25968;&#25454;&#24182;&#19988;&#21024;&#38500;&#25481;&#38145;&#12290;&#36825;&#20010;&#24517;&#39035;&#26159;&#19968;&#20010;&#20107;&#21153;&#25805;&#20316;&#65292;&#32780;&#36825;&#20010;&#28857;&#23601;&#26159;commit point
-      return false;     
-    // &#20043;&#21518;&#25552;&#20132;&#25968;&#25454;&#65292;&#20462;&#25913;write&#26102;&#38388;&#24182;&#19988;&#23558;lock&#28165;&#38500;&#25481;&#12290;
-    // aborted while working
-    T.Write(p.row, p.col+<span style="color: #ffff00;">"write"</span>, commit ts,
-            start ts ); // Pointer to data written at start ts .
-    T.Erase(p.row, p.col+<span style="color: #ffff00;">"lock"</span>, commit ts);
-    if (!T.Commit()) return false;  // commit point
-    // Second phase: write out write records for secondary cells.
-    for (Write w : secondaries) {
-      bigtable::Write(w.row, w.col+<span style="color: #ffff00;">"write"</span>, commit ts, start ts );
-      bigtable::Erase(w.row, w.col+<span style="color: #ffff00;">"lock"</span>, commit ts);
-    }
-    return true;
-  }
+struct Write { Row row; Column col; string value; };
+vector&lt;Write&gt; writes ;
+int start ts ;
+Transaction() : start ts (oracle.GetTimestamp()) {} // &#21021;&#22987;&#21270;&#20250;&#20174;oracle&#33719;&#24471;&#19968;&#20010;timestamp&#65292;&#34920;&#26126;&#36825;&#20010;transaction&#23545;&#24212;&#30340;&#26102;&#38388;&#12290;
+void Set(Write w) { writes .push back(w); } // &#25152;&#26377;&#30340;&#20889;&#37117;&#20250;&#32531;&#23384;&#19979;&#26469;&#65292;&#32780;&#19981;&#26159;&#31435;&#21051;&#20889;&#20837;table
+bool Get(Row row, Column c, string* value) {
+while (true) {
+bigtable::Txn T = bigtable::StartRowTransaction(row); // TODO(dirlt):??
+// Check for locks that signal concurrent writes.
+if (T.Read(row, c+<span style="color: #ffff00;">"lock"</span>, [0, start ts ])) { // &#22914;&#26524;&#22312;&#36825;&#20010;timestamp&#20043;&#21069;&#23384;&#22312;lock,&#35828;&#26126;&#22312;&#36825;&#20010;ts&#20043;&#21069;&#32943;&#23450;&#23384;&#22312;commit&#20294;&#26159;&#36824;&#27809;&#26377;&#25552;&#20132;&#25104;&#21151;&#65288;&#21487;&#33021;&#22312;&#36816;&#34892;&#65292;&#20063;&#21487;&#33021;&#30452;&#25509;fail&#65289;
+// There is a pending lock; try to clean it and wait
+BackoffAndMaybeCleanupLock(row, c); // &#23545;&#20110;&#36825;&#20010;pending lock&#65292;&#25105;&#20204;&#20250;&#36873;&#25321;&#31561;&#24453;&#65292;&#25110;&#32773;&#21487;&#33021;&#26159;&#21024;&#38500;&#12290;
+continue;
+}
+// Find the latest write below our start timestamp.
+latest write = T.Read(row, c+<span style="color: #ffff00;">"write"</span>, [0, start ts ]); // &#35828;&#26126;&#20043;&#21069;&#30340;commit&#20197;&#21069;&#25552;&#20132;&#23436;&#25104;&#65292;&#37027;&#20040;&#30475;&#26368;&#36817;&#19968;&#27425;&#30340;write&#26159;&#22312;&#20160;&#20040;&#26102;&#20505;&#12290;&#25152;&#35859;&#26368;&#36817;&#26159;&#25351;&#20889;&#20837;&#30340;&#26102;&#38388;&#26159;&#21518;&#38754;&#30340;commit_ts.
+if (!latest write.found()) return false; // no data
+int data ts = latest write.start timestamp(); // &#28982;&#21518;&#26368;&#36817;&#20889;&#20837;write&#30340;&#21457;&#36215;&#26102;&#38388;&#65292;&#20063;&#23601;&#26159;start_ts.&#36825;&#20010;&#38656;&#35201;&#32467;&#21512;&#21518;&#38754;&#30340;prewrite&#21644;commit&#26469;&#29702;&#35299;&#12290;
+*value = T.Read(row, c+<span style="color: #ffff00;">"data"</span>, [data ts, data ts]);
+return true;
+}
+}
+// Prewrite tries to lock cell w, returning false in case of conflict.
+bool Prewrite(Write w, Write primary) {
+Column c = w.col;
+bigtable::Txn T = bigtable::StartRowTransaction(w.row);
+// Abort on writes after our start timestamp . . .
+if (T.Read(w.row, c+<span style="color: #ffff00;">"write"</span>, [start ts , INFINITY])) return false; // start_ts&#20043;&#21518;&#26159;&#21542;&#26377;&#26032;&#30340;&#25552;&#20132;&#12290;&#22914;&#26524;&#23384;&#22312;&#26032;&#30340;&#25552;&#20132;&#30340;&#35805;&#65292;&#36825;&#23601;&#24847;&#21619;&#36825;&#26412;&#27425;T&#30340;&#22833;&#36133;&#12290;
+// &#36825;&#20010;&#22320;&#26041;&#38750;&#24120;&#37325;&#35201;&#65292;&#22240;&#20026;&#25105;&#20204;&#35835;&#21462;&#30340;&#25968;&#25454;&#26159;start_ts&#20043;&#21069;&#30340;&#25968;&#25454;&#65292;&#22240;&#27492;&#22914;&#26524;start_ts&#20043;&#21518;&#23384;&#22312;&#25968;&#25454;&#20889;&#20837;&#30340;&#35805;&#65292;&#37027;&#20040;&#35828;&#26126;&#23384;&#22312;&#22810;&#20010;&#20107;&#29289;&#27491;&#22312;&#25552;&#20132;
+// &#26159;write-write conflicts.
+//. . . or locks at any timestamp.
+if (T.Read(w.row, c+<span style="color: #ffff00;">"lock"</span>, [0, INFINITY])) return false; // &#22914;&#26524;&#36825;&#20010;cell&#34987;lock&#30340;&#35805;&#65292;&#37027;&#20040;&#24847;&#21619;&#30528;&#26412;&#22320;T&#20063;&#26159;&#22833;&#36133;&#30340;&#12290;&#27880;&#24847;&#36825;&#37324;&#23545;lock&#26102;&#38388;&#27809;&#26377;&#20219;&#20309;&#38480;&#21046;&#12290;
+T.Write(w.row, c+<span style="color: #ffff00;">"data"</span>, start ts , w.value); // &#20889;&#20837;&#25968;&#25454;&#65292;&#27880;&#24847;&#36825;&#37324;&#30340;&#26102;&#38388;&#25139;&#26159;start_ts
+T.Write(w.row, c+<span style="color: #ffff00;">"lock"</span>, start ts , // &#20889;&#20837;lock&#65292;&#20869;&#23481;&#26159;primary row&#21644;col
+{primary.row, primary.col});
+// The primary&#8217;s location.
+return T.Commit();
+}
+bool Commit() {
+Write primary = writes [0];
+vector&lt;Write&gt; secondaries(writes .begin()+1, writes .end());
+if (!Prewrite(primary, primary)) return false;
+for (Write w : secondaries)
+if (!Prewrite(w, primary)) return false;
+int commit ts = oracle .GetTimestamp(); // &#39044;&#20808;&#20889;&#20837;&#20869;&#23481;&#20043;&#21518;&#20934;&#22791;&#36827;&#34892;&#25552;&#20132;&#65292;&#25552;&#20132;&#26102;&#38388;&#20026;commit_ts
+// Commit primary first.
+Write p = primary;
+bigtable::Txn T = bigtable::StartRowTransaction(p.row);
+if (!T.Read(p.row, p.col+<span style="color: #ffff00;">"lock"</span>, [start ts , start ts ])) // &#37325;&#26032;&#26816;&#26597;&#20043;&#21069;&#30340;&#38145;&#26159;&#21542;&#36824;&#22312;&#65311;&#22914;&#26524;&#36824;&#22312;&#30340;&#35805;&#37027;&#20040;&#20889;&#20837;&#25968;&#25454;&#24182;&#19988;&#21024;&#38500;&#25481;&#38145;&#12290;&#36825;&#20010;&#24517;&#39035;&#26159;&#19968;&#20010;&#20107;&#21153;&#25805;&#20316;&#65292;&#32780;&#36825;&#20010;&#28857;&#23601;&#26159;commit point
+return false;
+// &#20043;&#21518;&#25552;&#20132;&#25968;&#25454;&#65292;&#20462;&#25913;write&#26102;&#38388;&#24182;&#19988;&#23558;lock&#28165;&#38500;&#25481;&#12290;
+// aborted while working
+T.Write(p.row, p.col+<span style="color: #ffff00;">"write"</span>, commit ts,
+start ts ); // Pointer to data written at start ts .
+T.Erase(p.row, p.col+<span style="color: #ffff00;">"lock"</span>, commit ts);
+if (!T.Commit()) return false;  // commit point
+// Second phase: write out write records for secondary cells.
+for (Write w : secondaries) {
+bigtable::Write(w.row, w.col+<span style="color: #ffff00;">"write"</span>, commit ts, start ts );
+bigtable::Erase(w.row, w.col+<span style="color: #ffff00;">"lock"</span>, commit ts);
+}
+return true;
+}
 } // class Transaction
 </pre>
 

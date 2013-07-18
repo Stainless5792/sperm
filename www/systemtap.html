@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>systemtap</title>
@@ -12,79 +12,79 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
-  .title  { text-align: center; }
-  .todo   { color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
-  pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
-  }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
-  dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
-    background: #ffffcc;
-  }
-  textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
-  /*]]>*/-->
+<!--/*--><![CDATA[/*><!--*/
+html { font-family: Times, serif; font-size: 12pt; }
+.title  { text-align: center; }
+.todo   { color: red; }
+.done   { color: green; }
+.tag    { background-color: #add8e6; font-weight:normal }
+.target { }
+.timestamp { color: #bebebe; }
+.timestamp-kwd { color: #5f9ea0; }
+.right  {margin-left:auto; margin-right:0px;  text-align:right;}
+.left   {margin-left:0px;  margin-right:auto; text-align:left;}
+.center {margin-left:auto; margin-right:auto; text-align:center;}
+p.verse { margin-left: 3% }
+pre {
+border: 1pt solid #AEBDCC;
+background-color: #F3F5F7;
+padding: 5pt;
+font-family: courier, monospace;
+font-size: 90%;
+overflow:auto;
+}
+table { border-collapse: collapse; }
+td, th { vertical-align: top;  }
+th.right  { text-align:center;  }
+th.left   { text-align:center;   }
+th.center { text-align:center; }
+td.right  { text-align:right;  }
+td.left   { text-align:left;   }
+td.center { text-align:center; }
+dt { font-weight: bold; }
+div.figure { padding: 0.5em; }
+div.figure p { text-align: center; }
+div.inlinetask {
+padding:10px;
+border:2px solid gray;
+margin:10px;
+background: #ffffcc;
+}
+textarea { overflow-x: auto; }
+.linenr { font-size:smaller }
+.code-highlighted {background-color:#ffff00;}
+.org-info-js_info-navigation { border-style:none; }
+#org-info-js_console-label { font-size:10px; font-weight:bold;
+white-space:nowrap; }
+.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+font-weight:bold; }
+/*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
+function CodeHighlightOn(elem, id)
+{
+var target = document.getElementById(id);
+if(null != target) {
+elem.cacheClassElem = elem.className;
+elem.cacheClassTarget = target.className;
+target.className = "code-highlighted";
+elem.className   = "code-highlighted";
+}
+}
+function CodeHighlightOff(elem, id)
+{
+var target = document.getElementById(id);
+if(elem.cacheClassElem)
+elem.className = elem.cacheClassElem;
+if(elem.cacheClassTarget)
+target.className = elem.cacheClassTarget;
+}
 /*]]>*///-->
 </script>
 
 </head>
-<body>
+<body><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));</script><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina"></a><span class="bds_more"></span><a class="shareCount"></a></div><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script><!-- Baidu Button END -->
 
 <div id="preamble">
 
@@ -155,7 +155,7 @@
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> Introduction</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>systemtap的工作原理是使用linux提供的kprobe接口 <b>TODO(dirlt):more about kprobe</b> ，将用户需要观测linux系统的行为转换成为c（使用kprobe)并且编译成为kernel object然后运行。 
+<p>systemtap的工作原理是使用linux提供的kprobe接口 <b>TODO(dirlt):more about kprobe</b> ，将用户需要观测linux系统的行为转换成为c（使用kprobe)并且编译成为kernel object然后运行。
 systemtap使用一种触发式的工作方式，通过安装探针（probe）来监控系统的行为，一旦探针事件出现的话就会触发对应的代码。代码使用自己定义的语言，和C语言非常类似。
 </p>
 <p>
@@ -193,10 +193,10 @@ systemtap使用一种触发式的工作方式，通过安装探针（probe）来
 
 <pre class="example">[dirlt@umeng-ubuntu-pc] &gt;  sudo stap -ve 'probe begin { log("hello world") exit() }'
 Pass 1: parsed user script and 76 library script(s) using 92476virt/22592res/2616shr kb, in 80usr/0sys/85real ms.
-Pass 2: analyzed script: 1 probe(s), 2 function(s), 0 embed(s), 0 global(s) using 93000virt/23472res/2816shr kb, in 0usr/0sys/4real 
-ms.                                                                                                                                
+Pass 2: analyzed script: 1 probe(s), 2 function(s), 0 embed(s), 0 global(s) using 93000virt/23472res/2816shr kb, in 0usr/0sys/4real
+ms.
 Pass 3: translated to C into "/tmp/stapbx8Gpk/stap_7703b9bd08bd359932cf8da12019f6d8_813.c" using 93000virt/23628res/2964shr kb, in 0
-usr/0sys/0real ms.                                                                                                                 
+usr/0sys/0real ms.
 Pass 4: compiled C into "stap_7703b9bd08bd359932cf8da12019f6d8_813.ko" in 3240usr/510sys/4048real ms.
 Pass 5: starting run.
 hello world
@@ -204,8 +204,8 @@ Pass 5: run completed in 10usr/10sys/600real ms.
 
 [dirlt@umeng-ubuntu-pc] &gt;  sudo stap -ve 'probe begin { log("hello world") exit() }'
 Pass 1: parsed user script and 76 library script(s) using 92476virt/22592res/2616shr kb, in 80usr/10sys/85real ms.
-Pass 2: analyzed script: 1 probe(s), 2 function(s), 0 embed(s), 0 global(s) using 93000virt/23472res/2816shr kb, in 0usr/0sys/4real 
-ms.                                                                                                                                
+Pass 2: analyzed script: 1 probe(s), 2 function(s), 0 embed(s), 0 global(s) using 93000virt/23472res/2816shr kb, in 0usr/0sys/4real
+ms.
 Pass 3: using cached /home/dirlt/.systemtap/cache/77/stap_7703b9bd08bd359932cf8da12019f6d8_813.c
 Pass 4: using cached /home/dirlt/.systemtap/cache/77/stap_7703b9bd08bd359932cf8da12019f6d8_813.ko
 Pass 5: starting run.
@@ -344,11 +344,11 @@ Pass 5: run completed in 0usr/10sys/586real ms.
 <div class="outline-text-4" id="text-1-2-3">
 
 <ul>
-<li>A systemtap script file has the suffix “.stp” 
+<li>A systemtap script file has the suffix “.stp”
 </li>
 <li>A script file is a sequence of top-level constructs, of which there are three types: 下面这些元素组成
 <ul>
-<li>probe definitions, 
+<li>probe definitions,
 </li>
 <li>auxiliary function definitions, 辅助函数定义
 </li>
@@ -394,7 +394,7 @@ Pass 5: run completed in 0usr/10sys/586real ms.
 </li>
 <li>function("fn@filename")
 </li>
-<li>function("fn@filename:lineno") 
+<li>function("fn@filename:lineno")
 </li>
 <li>function(0x1f) PC address located.
 </li>
@@ -439,19 +439,19 @@ Pass 5: run completed in 0usr/10sys/586real ms.
 
 
 <pre class="example">kernel.function("sys_read").return
-  a return probe on the named function.
+a return probe on the named function.
 
 module("ext3").function("*@fs/ext3/inode.c")
-  every function in the named source file, a part of ext3fs
+every function in the named source file, a part of ext3fs
 
 kernel.function("kmalloc").callees
-  every function known statically to be callable from kmalloc
+every function known statically to be callable from kmalloc
 
 module("usb-storage").statement(0x0233)
-  the given address, which must be at an instruction boundary
+the given address, which must be at an instruction boundary
 
 kernel.function(0xffffffff802202dc).return
-  a return probe on whichever function that contains the given address
+a return probe on whichever function that contains the given address
 </pre>
 
 
@@ -559,13 +559,13 @@ kernel.function(0xffffffff802202dc).return
 <pre class="example">global tgid_history # always contains the last few tgids scheduled
 global _histsize
 probe begin {
-  _histsize = 10
+_histsize = 10
 }
 probe kernel.function("context_switch") {
-  # rotate array
-  for (i=_histsize-1; i&gt;1; i--)
-  tgid_history [i] = tgid_history [i-1];
-  tgid_history [0] = $prev-&gt;tgid;
+# rotate array
+for (i=_histsize-1; i&gt;1; i--)
+tgid_history [i] = tgid_history [i-1];
+tgid_history [0] = $prev-&gt;tgid;
 }
 </pre>
 
@@ -588,11 +588,11 @@ probe kernel.function("context_switch") {
 
 <pre class="example">probe kernel.resource.oom.nonroot =
 kernel.statement("do_page_fault").label("out_of_memory") {
-  if ($tsk-&gt;uid == 0) next;
-  victim_tgid = $tsk-&gt;tgid;
-  victim_pid = $tsk-&gt;pid;
-  victim_uid = $tsk-&gt;uid;
-  victim_fault_addr = $address
+if ($tsk-&gt;uid == 0) next;
+victim_tgid = $tsk-&gt;tgid;
+victim_pid = $tsk-&gt;pid;
+victim_uid = $tsk-&gt;uid;
+victim_fault_addr = $address
 
 }
 
