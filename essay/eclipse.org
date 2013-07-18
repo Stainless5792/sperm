@@ -1,0 +1,21 @@
+* eclipse
+** FAQ
+*** 如何从maven项目导入eclipse
+   - mvn eclipse:eclipse 建立eclipse工程文件
+     - mvn eclipse:clean 清除eclipse工程文件
+   - 在eclipse导入工程
+   - 在preferences=》Java=》Build Path=》Classpath Variables里面添加M2_REPO，通常为/home/${USER}/.m2/repository
+
+*** 常用快捷键
+   - 格式化 C+S+F
+   - 注释 C+S+C
+   - 切换声明 F3
+   - 跳回 Alt+(<-) 跳前Alt+(->)   
+   - 切换编辑Tab Ctrl+PageUp/Down
+   - 跳行 Ctrl+L
+   - 大纲 Ctrl+O
+   - 跳转编辑Tab Ctrl+E
+   - 定位错误 Ctrl+.
+   - 上个编辑位置 Ctrl+Q
+   - 类型浏览器 Ctrl+Shift+T
+   - 资源浏览器 Ctrl+Shift+R

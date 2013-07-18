@@ -1,0 +1,5 @@
+package sample;
+message Session {
+  optional string user=1;
+  optional string passwd=2;
+};

@@ -1,0 +1,4 @@
+#!/bin/bash
+git commit -a -m "[gc]commit"
+git push origin master
+

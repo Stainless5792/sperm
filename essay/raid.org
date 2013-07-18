@@ -1,0 +1,97 @@
+* raid
+   - The skinny on RAID http://arstechnica.com/features/2000/05/raid/
+
+RAID全称Redundant Array of Inexpensive Disk.
+
+** RAID0
+
+http://arstechnica.com/features/2000/05/raid/
+
+file:./images/raid0.gif
+
+可以看到RAID0有下面特点：
+   - 磁盘控制器配置合理通过并行读那么可以提高读写性能。
+   - 没有实现redudant.如果一块磁盘损坏的话那么数据就损坏。
+   - 可以按照block方式在每个disk上面存储。
+
+** RAID1
+http://arstechnica.com/features/2000/05/raid/2/
+
+file:./images/raid1.gif
+
+可以看到RAID1有下面特点：
+   - 简单地说RAID1就是Mirror.Mirror就是一定程度上的Redudant.
+   - 磁盘控制器配置合理通过读取不同的disk来提到读性能。
+   - 如果写mirror是由disk controller完成的话，那么写性能和单磁盘效果一样。但是如果不是的话，那么相当于写mirror是需要由CPU控制的，这样写性能就会更差。
+
+** RAID2
+http://arstechnica.com/features/2000/05/raid/3/
+
+从RAID2开始就实现了ECC(Error Checking/Correction)。但是检查(check)和correct(纠正)之间在实现上还是存在很大差异的：对于检查我们只需要判断数据是否正确即可，如果数据错误那么直接报错，而纠正的话在数据出现错误的时候还需要尝试恢复。
+
+我们以RAID1为例，如果两个disk数据不一致的话那么即检查到错误，但是我们却没有办法纠正数据。对于RAID1来说即使我们有3个或者是更多disk的话，依然没有办法纠正数据(如果AB一致，和C不同的话，我们也不能说AB就是正确的)(dirlt:但是实际上是可以在磁盘上做checksum来校验来判断数据是否正确)。
+
+后面会提到两种ECC实现:1)Hamming Code.2)XOR ECC. (其实自己对Hamming Code也不是很了解，但是hamming code是可以用来纠正数据错误的)下面是4bit数据的hamming code.
+
+file:./images/hamming-code.gif
+
+似乎有点开窍了.对于简单的奇偶校验位的话，我们其实是没有对新产生的奇偶校验位来做奇偶校验的，因为导致我们只能够对数据出现1bit flip进行检测而不能够恢复。而hamming code需要完成的就是这个工作，通过对奇偶校验位也做奇偶校验，就可以完成1bit flip的恢复。不知道是否可以检测和恢复2bit flip，直觉上应该是可以的但是需要更长的hamming code
+
+file:./images/raid2.gif
+
+可以看到RAID2有下面特点：
+   - redudant是通过hamming code来完成的.并且hamming code带来的开销还是比较大的.
+   - 相对于RAID1 duplicate更小但是本质上RAID1是可以用来提高读速度的。
+   - hamming code开销相对较大还不是最主要的问题，而是本质上hamming code是在bit中穿插的，因为必须每一个disk保存1个bit.对于最小单位是64-bit data的话，那么我们需要64 disks.并且parity占用8bit,因此需要多余8 disks.主要问题还是，hamming code这种redudant方式不合适(奇偶校验位一样也有这个问题)
+
+** RAID3
+http://arstechnica.com/features/2000/05/raid/4/
+
+file:./images/raid3.gif
+
+可以看到RAID3有下面特点：
+   - 使用了XOR方式来做check/correction.相对RAID3 hamming code开销更大.
+   - 但是相比RAID3而言的话，不管是存储方式还是check/correct逻辑更加简单.对于存储方式而言的话可以按照block来存储，通常一个block占用32-512bytes.
+   - 对于parity disk会有很大的压力。另外读写时候会造成多余的读写因为需要读写parity.但是如果block划分合理并且disk controller支持的话，一次写可能可以写到多个磁盘上面，同时计算parity写到disk上面，速度可能并不会比RAID0差很多。
+
+** RAID4
+http://arstechnica.com/features/2000/05/raid/4/
+
+RAID4和RAID3非常像。只不过RAID4不是按照block划分而是按照file来划分的(这个应该就需要OS的支持了).如果在磁盘上同时读取多个文件的话那么是可以并行的。但是我觉得并不是一个好方法，
+   - 1)需要OS支持这就使得RAID4本身设计会很复杂.
+   - 2)相对于RAID3来说的话，block划分并不比file划分差，因为一个文件可能会划分成为多个block,对于单个文件读取的话完全是可以并行的.
+   - 3)因为不是连续写block的，这就意味着在写parity的时候可能需要将其他文件读出重新计算写parity.
+
+** RAID5
+http://arstechnica.com/features/2000/05/raid/5/
+
+RAID3的parity disk的大压力可能会限制其performance.RAID5就是要来解决这个问题的。
+
+file:./images/raid5.gif
+
+通过将parity分摊到各个disk上面的话可以避免parity操作出现bottleneck,速度上的话基本可以达到RAID0水平.RAID6相比RAID5而言的话多加了一个parity disk(就是RAID3的单独parity disk)
+
+** RAID7
+http://arstechnica.com/features/2000/05/raid/6/
+
+RAID7是在RAID3上面做的改进，主要是规范一些数据存取方式以及硬件规格等。a package deal or to say it’s proprietary solution.
+
+** RAID10
+http://arstechnica.com/features/2000/05/raid/6/
+
+RAID10就是RAID1+0.数据是strip方式存储的并且有mirror.
+
+file:./images/raid10.gif
+
+可以看到并不容易扩展
+
+** RAID53
+http://arstechnica.com/features/2000/05/raid/7/
+
+RAID53从名字上看更加适合叫做RAID03.总体来看是RAID0的解决方案，而每个disk而言内部按照RAID3来配置.(dirlt:but how to? I don’t know)
+
+** RAIDxy
+http://arstechnica.com/features/2000/05/raid/7/
+
+对于RAIDxy这样而言的话，基本上都是使用了RAIDx方案，内部也有RAIDy方案影子。但是无论如何，RAID基本思想就是：data striping, mirror, parity
+

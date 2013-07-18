@@ -1,0 +1,25 @@
+#!/bin/bash
+if [ $# != 2 ]
+then
+    echo "usage:$0 package(tar.gz or tar.bz2) configure-parameter"
+else
+    NAME=$1
+    PARAM=$2
+    case $NAME in 
+        *.tar.gz)
+            SRC=`basename $NAME .tar.gz`
+            rm -rf $SRC
+            tar xzf $NAME
+            ;;
+        *.tar.bz2)
+            SRC=`basename $NAME .tar.bz2`
+            rm -rf $SRC
+            tar xjf $NAME
+            ;;
+    esac
+    cd $SRC
+    CONFIG="./configure $PARAM --enable-shared=no --enable-static=yes"
+    CFLAGS="-fPIC" CXXFLAGS="-fPIC" $CONFIG   
+    make -j 8;make install
+    cd ..
+fi

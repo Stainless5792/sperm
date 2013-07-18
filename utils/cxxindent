@@ -1,0 +1,25 @@
+#!/bin/bash
+dos2unix $@
+#http://astyle.sourceforge.net/astyle.html
+#不要使用的选项[看上去我们会很想使用]
+#1.--indent-cases //case后面内容多一次缩进,但是会让case部分{}存在问题.
+#2.--indent-namespaces //会让namespace下面内容多一个层缩进.
+#3.--indent-classes //虽然能够让public:,private:产生所缩进,但是造成函数出现两次缩进.
+#8.--break-blocks 在{}之后断开一行.看上去很好,但是不太合适.
+#9.--delete-empty-lines 删除函数内不必要空行.看上去很好,但是不太合适.
+
+#1.--suffix=none 不进行任何备份.
+#2.--style=java 基本风格使用java style.
+#3.--brackets=attach 括号附着在函数和条件表达式之后.
+#4.--indent-switches switch里面case进行缩进.
+#5.--indent-labels label进行缩进.
+#6.--indent-preprocessor 预处理换行使用缩进.
+#7.--indent-col1-comments //注释进行缩进.
+#10.--add-brackets 条件表达语句都加上{}
+#11.--convert-tabs 转换tabs
+#12.--lineend=linux 换行转换成为\n
+#13.--align-pointer=type *和&都偏向类型.
+#14.--pad-oper 在运算符附近加上空格
+astyle --suffix=none --style=java --indent=spaces=2 --brackets=attach \
+--indent-switches --indent-labels --indent-preprocessor --indent-col1-comments \
+--convert-tabs --verbose --lineend=linux --align-pointer=type --pad-oper $@

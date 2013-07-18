@@ -1,0 +1,4 @@
+* continuation
+   - Continuations Made Simple and Illustrated http://www.ps.uni-saarland.de/~duchier/python/continuations.html 
+   - Continuations and Continuation Passing Style http://library.readscheme.org/page6.html
+

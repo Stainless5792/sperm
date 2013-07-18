@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+#coding:utf-8
+#Copyright (C) dirlt
+
+import sys
+import syslog
+
+def do_syslog(ident,message):
+    syslog.openlog(ident,0,syslog.LOG_EMERG)
+    syslog.syslog(0,message)
+    syslog.closelog()
+
+def main():
+    if(len(sys.argv)<3):
+        print "usage:%s ident message"%(sys.argv[0])
+        exit(0)
+    do_syslog(sys.argv[1],sys.argv[2])
+
+if __name__=="__main__":
+    main()

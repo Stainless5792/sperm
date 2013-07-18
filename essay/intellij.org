@@ -1,0 +1,22 @@
+* intellij
+** FAQ
+*** 常用快捷键
+   - 查找方法 Ctrl+F12
+   - 查找类 Ctrl+N
+   - 页面跳转 Ctrl+E
+   - 查看声明 Ctrl+B
+   - 察看实现 Ctrl+Alt+B
+   - 跳回 Alt+(<-) 跳前Alt+(->)   
+   - 格式化 Ctrl+Alt+L （这个键和ubuntu的锁屏键冲突了，我修改到了Ctrl+Alt+\)
+   - 导入某个类（光标在这个类上） Alt+Enter
+   - 优化类的导入 Ctrl+Alt+O
+
+*** maven配置
+   - 编辑区域右键"maven"这个选项
+     - Reimport 可以重新导入maven配置
+     - Generate Sources and Update Folders 重新生成sources并且更新文件夹
+
+*** 标记源码目录
+   - 目录右键"Mark Directory As" -> "Source Root" 
+
+

@@ -1,0 +1,58 @@
+访问网络权限 android.permission.INTERNET
+android:layout_weight可以用来控制权重
+Activity本身就是Context,可以得到自己私有文件目录
+对于这些目录的话本身是操作SD卡，然后Android可以使用DDMS来查看SD卡上面的内容，push/pull文件
+多行显示TextView可以更好地进行调试，view.setMovementMethod(ScrollingMovementMethod.getInstance()); 然后layout部分的话
+<TextView android:id="@+id/view_download_url"
+     android:layout_width="fill_parent"    
+     android:layout_height="fill_parent"
+     android:singleLine="false"
+     android:scrollbars="vertical" />
+
+对于赋予view id的话可以通过android:id="@+id/xx"来设置，这样的话id会反应在R.java里面，字符串引用的话可以使用"@string/xxx"
+创建好Activity之后必须在AndoirdManifest.xml里面声明
+Activity进行overdie方法时候必须调用父类对应函数
+eclipse字符编码问题 http://developer.51cto.com/art/200906/127654.htm
+AdsListener这个部分的话动态添加AdWhirl对象这个值得学习一下，如何往你的App里面添加广告。
+操作数据库SQLite以及文件，SQLiteOpenOHelper
+AsyncTask可以提交异步任务请求
+很多人觉得Android的模拟器启动慢，其实可以做到稍微快点的，就是在Eclipse的Run Configerations中钩中Disable Boot Animation
+adb打印中文乱码解决方案，chcp 65001(UTF8 code page)，然后修改窗口属性字体为Lucida Console
+adb -s <device> command(shell,install,uninstall)
+adb devices(查询设备），start-server(启动服务器），kill-server(杀掉服务器）
+关于创建菜单 http://www.cnblogs.com/codingmyworld/archive/2011/08/21/2147829.html
+
+this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); 可以创建Inflater然后使用
+convertView=inflater.inflate(R.layout.content, null); // 将layout XML文件转换成为一个对应的View实体交给上层进行展现。
+对于ListActivity的每一个View里面如果存在Button或者是Checkbox的话那么会自动获得焦点，导致OnListItemClick失效，我们可以调用btn的setFocusable(false)主动放弃焦点来使得ListItem可以被聚焦。
+
+android:launchMode
+http://www.eoeandroid.com/thread-75683-1-1.html
+对于View显示更改的话，只允许在一个线程里面完成。也就是说如果我们线程里面只允许进行数据修改，但是如果需要反映到View上面的话，可以通过Handler+Message来完成。
+
+android ellipsize http://www.cnblogs.com/nicklezhang/archive/2011/01/22/1941884.html
+一定要看的 Android 资源目录的相关知识 raw drwable values http://apps.hi.baidu.com/share/detail/38422397
+conversion to dalvik format failed with error 1的解决办法 http://apps.hi.baidu.com/share/detail/12702583
+geiView原理 http://www.cnblogs.com/xiaowenji/archive/2010/12/08/1900579.html
+下载最好使用DefaultHttpClient,似乎使用AndroidHttpClient抓取信息不是很完整。???
+
+=====================================================
+appkey:  5493446877226234
+
+测试地址：
+http://api.shupeng.com/customsearch/v1?q=%CE%F7%D3%CE%BC%C7&key=5493446877226234&format=txt&start=0&num=5
+OPEN API（搜索）：使用需要key，
+OPDS（浏览）: http://opds.shupeng.com
+OPDS的相关资料
+http://code.google.com/p/openpub/wiki/OPDS
+http://opds-spec.org/
+http://opds-spec.org/specs/opds-catalog-1-1-20110627/
+
+http://code.google.com/p/6d23f3/
+http://code.google.com/p/6d23f3/wiki/DesignDoc
+http://multicore.zju.edu.cn/android/
+http://wiki.vpon.com/w/index.php?title=AdWhirl_Android_SDK_Manual
+http://flyvenus.net/
+http://android.yaohuiji.com/about
+http://code.google.com/intl/zh-CN/edu/
+https://github.com/kaeppler/droid-fu/tree/da83c647ab008339c5e010c47dc431703609ab74/src/main/java/com/github/droidfu/imageloader

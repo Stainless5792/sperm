@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ ! -f /usr/lib/jvm/java-6-sun/jre/bin/.java ]
+then
+  echo "backup java binary"
+  cp /usr/lib/jvm/java-6-sun/jre/bin/java /usr/lib/jvm/java-6-sun/jre/bin/.java
+fi
+echo "install strace-java"
+cp strace-java.py strace-java /usr/lib/jvm/java-6-sun/jre/bin
+chmod a+x strace-java.py strace-java
+

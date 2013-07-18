@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+#coding:utf-8
+#Copyright (C) dirlt
+
+# install .emacs dependencies.
+import os
+import string
+import sys
+emacs=os.path.join(os.environ['HOME'],'.emacs')
+xs=map(lambda x:string.strip(x),open(emacs).readlines())
+pkgs=[]
+prefix=';; sudo apt-get install '
+for x in xs:    
+    if(x.startswith(prefix)):
+        pkgs.append(x[len(prefix):])
+
+print pkgs
+cmd='sudo apt-get install %s'%(' '.join(pkgs))
+print cmd
+os.system(cmd)
+
+

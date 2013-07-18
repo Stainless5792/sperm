@@ -1,0 +1,19 @@
+* system-programming-at-twitter
+#+TITLE: Systems Programming at Twitter
+http://monkey.org/~marius/talks/twittersystems/
+
+主要围绕下面几个方面：
+   - Clean concurrent programming model: simple, safe, and modular programs; uniform programming model. *something about scala*
+   - Message passing architecture: High concurrency, fault tolerant, performant. *something about rpc in finagle and scala*
+   - Protocol support: largely agnostic, support HTTP, thrift, memcache, redis, MySQL... *???*
+   - Observability: for diagnostics, profiling, optimization 个人感觉在这方面做得不错值得借鉴和学习：
+     - 统计数据可以通过http接口访问到(ostrich)，并且由viz展现出来。
+     - rpc交互追踪可以通过dapper的开源实现zipkin完成。
+     - profile数据同样可以通过http接口访问到，使用pprof来做分析。
+     - Tracing, cancellation, thread-biasing pools, etc. with zero user code change 并且这些功能不需要用户修改代码
+
+*TODO（dirlt）：其实我很想知道scala语言本身对于他们的系统架构的影响有多大？不过从作者花这么长的篇幅来讨论scala语言，我觉得今后可以在实践中好好体会*
+
+
+
+

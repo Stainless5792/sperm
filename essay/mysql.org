@@ -1,0 +1,131 @@
+* mysql
+http://www.mysql.com/
+
+** 基本命令
+   - mysql_install_db --usrer=mysql --datadir=/var/lib/mysql/ # 创建MySQL基本表
+   - source <FILE> # 导入SQL文件
+
+** 层级估算
+*NOTE（dirlt）：多谢caole讲解*
+
+以innodb为例，每个page(注意这里是innodb的page,不是linux page)是16K. B+Tree的话那么每层都会存放key. 假设key为16个字节的话，包括overhead 16个字节，那么一个page里面就能够存放512个节点。如果记录界级别在billion级别的话，那么深度在3-4层左右。
+
+估算出层级数目是非常有好处的，可以对query做envelope calculation. 假设不考虑page cache的话，那么查询一条记录通常需要读取3-4次。假设存在cache命中50%的话，那么读取次数在1.5-2次。如果使用MySQL没有缓存层并且都是简单查询的话，要求查询性能在2w/s. 那么要求disk IOPS必须在3w-4w/s上。
+
+*TODO（dirlt）：如何估算disk IOPS?*
+
+** 主从同步
+*** binlog和relaylog
+mysql实现上是所有操作都会写到binlog里面，然后slave有一个专门的io线程不断地从master binlog里面取出增量数据，写到本地的relay-log.同时slave本地有一个执行线程，将这些realy-log执行修改自己的数据库，达到同步的目的。relay-log里面的内容和master binlog内容每条记录都是完全相同的，最后进入slave binlog记录和master binlog对应记录也是一样的。执行id是master id,执行时间是master binlog记录的时间，本地slave是不会进行任何修改的。
+
+常用选项：
+   - relay_log_purge=1. # 默认relay-log是不删除的，这个选项可以删除不必要的relaylog
+   - log-slave-updates  # 这个选项的含义是binlog里面也会保存relay-log（默认是不保存的，这样slave的binlog里面是没有同步的log的，只有直接在slave上面操作留下的log)
+   - log_bin # binlog的存放位置
+   - max_binlog_size # 单个binlog文件最大大小
+   - max_relay_log_size # 单个relaylog文件最大大小
+
+基本命令：
+   - show binary logs; # 所有binlog
+   - show master logs; # 所有binlog
+   - show binlog events; # 察看binlog内容
+   - show master status; # 当前master进度
+   - reset master; # 清除所有binlog
+   - purge binary logs to 'log-bin.000012'; # 将log-bin.000012之前的binlog都删除
+   - expire_logs_days = 7 # binlog的rotate时间
+   - reset slave; # 清除所有relaylog
+
+*** 半同步
+   - http://www.db110.com/?p=3364
+   - http://code.google.com/p/google-mysql-tools/wiki/SemiSyncReplication
+   - http://code.google.com/p/google-mysql-tools/wiki/SemiSyncReplicationDesign
+   - http://dev.mysql.com/doc/refman/5.5/en/replication-semisync.html
+
+很早之前做了一个mysql集群主从切换模块，里面就涉及到了半同步。按照半同步的定义（全同步的语义应该就是等待所有的slave都同步完成，强一致性），半同步还是会存在丢数据的可能，半同步的语义仅仅是认为一个slave同步到数据之后的话同步就完成。但是如果master挂掉同时slave也挂掉（或者是没有等其他slave补齐数据的话），那么就会存在数据丢失的可能（仅仅是提供最终一致性可能）。
+
+** 超时重连
+JDBC连接数据库出现如下问题
+#+BEGIN_VERSE
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: The last packet successfully received from the server was 99,184,284 milliseconds ago.  The last packet sent successfully to the server was 99,184,284 milliseconds
+ ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts,
+ or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+#+END_VERSE
+
+出现这个问题原因是因为，mysql服务对于长时间不活跃的连接会直接关闭掉，这样client的连接下次操作的时候会出现连接错误。按照上面给出的提示，一个方法是修改wait_timeout，另外一个方法是在JDBC uri里面指定autoReconnect=true这个选项支持自动重连。但是autoReconnect只是对MySQL4以及更老的版本适用，对于MySQL5不适用。接下来看看timeout这个参数。MySQL5手册中对两个变量有如下的说明：
+   - interactive_timeout：服务器关闭交互式连接前等待活动的秒数。交互式客户端定义为在mysql_real_connect()中使用CLIENT_INTERACTIVE选项的客户端。又见wait_timeout
+   - wait_timeout:服务器关闭非交互连接之前等待活动的秒数。在线程启动时，根据全局wait_timeout值或全局interactive_timeout值初始化会话wait_timeout值，取决于客户端类型(由mysql_real_connect()的连接选项CLIENT_INTERACTIVE定义)，又见interactive_timeout 
+可见wait_timeout只要是用于非交互下面的connection超时时间。可以通过增大这个值然后重启服务来缓解这个问题。
+
+但是很明显这个问题治标不治本，最好设想出一个办法可以自动重连。实现自动重连大致无非三种实现：
+   - 每次操作之前检查连接是否OK。这样比较简单，但是有overhead.
+   - 存在单独线程检查连接是否OK。这样overhead比较小，但是实现有点麻烦。
+   - 每次直接执行SQL。如果出现连接错误的话，那么重新连接再次执行SQL。这个方法overhead比较小，同时相对来说也比较简单。
+
+** 连接数量
+mysql最大连接数目可以通过参数max_connections进行配置，默认的连接数目是比较低的，对于需要处理大量请求的web服务来说需要增大。 *修改之后需要重启*
+
+#+BEGIN_EXAMPLE
+mysql> show variables like 'max_connections';
++-----------------+-------+
+| Variable_name   | Value |
++-----------------+-------+
+| max_connections | 8192  |
++-----------------+-------+
+1 row in set (0.00 sec)
+
+mysql> show status like '%connect%'; 
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| Aborted_connects         | 1     |
+| Connections              | 6152  |
+| Max_used_connections     | 4098  |
+| Ssl_client_connects      | 0     |
+| Ssl_connect_renegotiates | 0     |
+| Ssl_finished_connects    | 0     |
+| Threads_connected        | 2050  |
++--------------------------+-------+
+
+7 rows in set (0.00 sec)
+#+END_EXAMPLE
+
+对于status状态来说有下面几个和connection相关的数值
+   - Aborted_connects 尝试已经失败的MySQL服务器的连接的次数。  
+   - Connections 试图连接MySQL服务器的次数。
+   - Max_used_connections 同时使用的连接的最大数目。 
+   - Threads_connected 当前打开的连接的数量。
+
+修改最大连接数目之后，连接端可能会出现如下错误
+#+BEGIN_EXAMPLE
+2013-04-16 19:55:29,772 FATAL com.umeng.dp.umid.UmidHandler: Connection to database failed.
+java.sql.SQLException: null,  message from server: "Can't create a new thread (errno 11); if you are not out of available memory, you can consult the manual for a possible OS-dependent bug"
+    at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1074)
+    at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:988)
+    at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:974)
+    at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1104)
+    at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2412)
+    at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2445)
+    at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2230)
+    at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:813)
+    at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+    at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+    at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+    at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+    at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+    at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:334)
+    at java.sql.DriverManager.getConnection(DriverManager.java:582)
+    at java.sql.DriverManager.getConnection(DriverManager.java:185)
+    at com.umeng.dp.umid.MysqlConnectionPool.getConnection(MysqlConnectionPool.java:50)
+    at com.umeng.dp.umid.DcdiAuthority.getDCDI(DcdiAuthority.java:156)
+    at com.umeng.dp.umid.UmidHandler.run(UmidHandler.java:115)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+    at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+    at java.lang.Thread.run(Thread.java:662)
+#+END_EXAMPLE
+
+问题还是出在资源限制上面，可以通过修改开辟最大的进程数目来解决。可以参考链接 http://www.mysqlperformanceblog.com/2013/02/04/cant_create_thread_errno_11/ 
+

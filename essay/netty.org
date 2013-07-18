@@ -1,0 +1,112 @@
+* netty
+   - Netty: Home (Main.WebHome) https://netty.io/
+   - The Netty Project 3.x User Guide http://static.netty.io/3.5/guide/
+
+** concept
+*** Channel 
+可以认为是一个connection，这个connection上面有socket fd可以所以进行读写。
+
+*** ChannelHandler
+在这个connection上面的处理逻辑对象。总的来说有下面两种类型的handler
+   - ChannelUpstreamHandler 从net layer到app layer的数据流动处理逻辑
+   - ChannelDownstreamHandler 从app layer到net layer的数据流动处理逻辑
+
+然后在这两种类型的handler上面派生很多其他的handler，比如
+   - SimpleChannelHandler 可以同时处理upstream和downstream
+   - Encoder/Decoder 协议的编码和解码
+
+*** ChannelPipeline
+1 Channel  + N ChannelHandler，连接和这个连接上所有的处理逻辑对象。
+所有的Handler组成为了链表，不管是upstream还是downstream都会流过所有的handler.netty框架会判断这个handler是否需要处理某个事件
+
+*** ChannelEvent
+连接上所有触发的事件，可以是但是不仅限于下面几种类型
+   - ChannelStateEvent 连接状态的变化事件
+   - MessageEvent 消息可读（可以是ChannelBuffer读取字节流，也可以是已经成帧的消息）
+   - WriteCompletionEvent 数据写完
+   - ExceptionEvent 异常事件，可能是IO线程问题也可能是ChannelHandler处理异常
+
+*** ChannelBuffer
+这个和Channel倒是没有太大关系，比较偏向buffer的管理，主要针对网络通信这种read/write交互场景进行优化。
+
+** 使用问题
+*** boss/worker executor
+NioServerSocketChannelFactory构造函数需要指定boss/worker两个executor，有必要解释一下这两个对象的含义。
+
+首先了解一下netty的网络模型
+   - boss创建accept fd之后阻塞调用accept. 一旦accept一个connection之后，将这个connection fd交给worker.
+     - *NOTE（dirlt）：猜测分摊到哪个worker上的算法应该是round robin*
+     - *NOTE（dirlt）：早期netty版本只是支持一个boss线程做accept，但是一个现成做accept限制了性能，所以在后续版本支持多个现成做accept*
+     - 允许绑定到多个端口，因为在boss线程里面也是使用epoll来做IO复用的。 
+   - worker将这个connection fd加入到自己的epoll/selector里面，检测可读可写事件的发生
+   - boss/worker都是runnable对象，需要外部提供线程池来执行
+
+worker的数量如果没有指定的话，with 2 * the number of available processors in the machine. The number of available processors is obtained by Runtime.availableProcessors()
+也可以用这个构造函数可以指定 public NioServerSocketChannelFactory(Executor bossExecutor,  Executor workerExecutor, int workerCount)
+
+所以如果传入的worker executor使用newFixedThreadPool并且线程数目比较小的话，那么就会出现这个问题 "netty的固定个数的worker线程阻塞大量的并发连接" http://www.oschina.net/question/241182_40955
+现象就是如果你的CPU core为4，那么就会创建8个worker对象，而如果线程数目使用5,那么浏览器创建第6个连接之后没有办法正常都写，原因就是因为boss创建第6个连接的时候，给第6个worker处理，而这个worker没有线程池可以run起来。
+
+这个问题解决办法也非常简单，要不就使用newCachedThreadPool()，要不就自己指定worker IO thread数目，但是 *必须确保创建的线程数目>=2*CPU core.*
+
+*** accept connection exception
+#+BEGIN_EXAMPLE
+Exception in thread "pool-2-thread-1" java.lang.InternalError
+        at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:755)
+        at sun.misc.URLClassPath.getResource(URLClassPath.java:169)
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:194)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+        at sun.misc.Launcher$ExtClassLoader.findClass(Launcher.java:229)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:295)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+        at java.util.ResourceBundle$RBClassLoader.loadClass(ResourceBundle.java:435)
+        at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2289)
+        at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1364)
+        at java.util.ResourceBundle.findBundle(ResourceBundle.java:1328)
+        at java.util.ResourceBundle.findBundle(ResourceBundle.java:1282)
+        at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1224)
+        at java.util.ResourceBundle.getBundle(ResourceBundle.java:705)
+        at java.util.logging.Level.getLocalizedName(Level.java:223)
+        at java.util.logging.SimpleFormatter.format(SimpleFormatter.java:64)
+        at java.util.logging.StreamHandler.publish(StreamHandler.java:177)
+        at java.util.logging.ConsoleHandler.publish(ConsoleHandler.java:88)
+        at java.util.logging.Logger.log(Logger.java:478)
+        at java.util.logging.Logger.doLog(Logger.java:500)
+        at java.util.logging.Logger.logp(Logger.java:700)
+        at org.jboss.netty.logging.JdkLogger.warn(JdkLogger.java:80)
+        at org.jboss.netty.logging.InternalLoggerFactory$1.warn(InternalLoggerFactory.java:128)
+        at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:316)
+        at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+        at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+        at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: java.util.zip.ZipException: error in opening zip file
+        at java.util.zip.ZipFile.open(Native Method)
+        at java.util.zip.ZipFile.<init>(ZipFile.java:127)
+        at java.util.jar.JarFile.<init>(JarFile.java:135)
+        at java.util.jar.JarFile.<init>(JarFile.java:72)
+        at sun.misc.URLClassPath$JarLoader.getJarFile(URLClassPath.java:646)
+        at sun.misc.URLClassPath$JarLoader.access$600(URLClassPath.java:540)
+        at sun.misc.URLClassPath$JarLoader$1.run(URLClassPath.java:607)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at sun.misc.URLClassPath$JarLoader.ensureOpen(URLClassPath.java:599)
+        at sun.misc.URLClassPath$JarLoader.getResource(URLClassPath.java:753)
+        ... 32 more
+#+END_EXAMPLE
+从这个excetion backtrace上看，似乎是log找不到出现的问题。 
+
+Bug 745866 – Possible netty logging config problem
+   - https://bugzilla.redhat.com/show_bug.cgi?id=745866
+这个同学在压力测试下面也出现了这个问题，主要原因还是netty没有办法accept connection. 这个可能还是和我们的资源配置有关，有可能是某个内核参数。
+
+Got this error - Syahreza Pahlevi Ginting
+   - http://www.mentby.com/syahreza-pahlevi-ginting/got-this-error.html
+   - http://gleamynode.net/articles/1557/
+这个同学的建议还是说和file-max/file limits有关。
+
+*NOTE（dirlt）：之后我调整了file limits之后便没有遇到这个问题了，所以可能确实和文件句柄数目限制有关*

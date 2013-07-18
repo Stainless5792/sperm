@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+#coding:utf-8
+#Copyright (C) dirlt
+
+import string
+import sys
+
+def main(argv):
+    lns = map(lambda x:string.strip(x),open('/proc/net/netstat').readlines())
+    (tcp,tdata,ip,idata)=map(lambda x:x.split()[1:],lns)
+    print '--------------------tcp--------------------'
+    for i in range(len(tcp)):
+        print '%25s => %10d'%(tcp[i],int(tdata[i]))
+    print '--------------------ip--------------------'
+    for i in range(len(ip)):
+        print '%25s => %10d'%(ip[i],int(idata[i]))
+
+if __name__=='__main__':
+    main(sys.argv)
+    
+        
+    

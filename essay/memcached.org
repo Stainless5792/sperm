@@ -1,0 +1,3 @@
+* memcached
+   - memcached - a distributed memory object caching system http://memcached.org/
+   - dustin/java-memcached-client https://github.com/dustin/java-memcached-client Java Client（支持异步调用）

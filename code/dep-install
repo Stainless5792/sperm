@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+#coding:utf-8
+#Copyright (C) dirlt
+
+import os
+import string
+import sys
+curdir=os.path.dirname(__file__)
+readme=os.path.join(curdir,'README.org')
+xs=map(lambda x:string.strip(x),open(readme).readlines())
+deps=['scons','g++','python']
+prefix='- sudo apt-get install '
+for x in xs:
+    if(x.startswith(prefix)):
+        x=x[len(prefix):]
+        deps.append(x)
+
+print deps
+cmd='sudo apt-get install %s'%(' '.join(deps))
+print cmd
+os.system(cmd)

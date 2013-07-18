@@ -1,0 +1,2 @@
+#!/bin/bash
+rm /usr/lib/jvm/java-6-sun/jre/bin/java && cp /usr/lib/jvm/java-6-sun/jre/bin/.java /usr/lib/jvm/java-6-sun/jre/bin/java

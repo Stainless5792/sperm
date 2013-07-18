@@ -1,0 +1,6 @@
+* power-drill
+   - link: http://vldb.org/pvldb/vol5/p1436_alexanderhall_vldb2012.pdf
+   - title: Processing a Trillion Cells per Mouse Click
+   - date: 2012
+
+TODO(dirlt):

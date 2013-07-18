@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+#coding:gbk
+#Copyright (C) dirlt
+
+import glob
+import os
+env=Environment(CPPPATH=['../../'],
+                CXXFLAGS='-W -Wall -g -Werror -O2 -UDEBUG -fPIC',
+                LIBPATH=['../',
+                         '../../common'],
+                LIBS=['itachi',
+                      'common', 
+                      'ev', # libev
+                      'rt',
+                      'pthread'])
+
+excepts=[]
+for x in glob.glob('*.cc'):
+    if x in excepts:
+        continue
+    env.Program(os.path.splitext(x)[0]+'.exe',[x])

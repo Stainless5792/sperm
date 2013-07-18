@@ -1,0 +1,4 @@
+#!/bin/bash
+/sbin/iptables -A OUTPUT -p tcp -s 127.0.0.1 --sport 19870 -j DROP
+sleep 30 # block for 30 seconds.
+/sbin/iptables -F

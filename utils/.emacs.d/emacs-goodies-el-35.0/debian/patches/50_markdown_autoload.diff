@@ -1,0 +1,17 @@
+#!/bin/sh /usr/share/dpatch/dpatch-run
+## 50_markdown_autoload.dpatch by Cyril Brulebois <cyril.brulebois@enst-bretagne.fr>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Add autoload.
+
+@DPATCH@
+--- a/elisp/emacs-goodies-el/markdown-mode.el
++++ b/elisp/emacs-goodies-el/markdown-mode.el
+@@ -1432,6 +1432,7 @@
+   (interactive)
+   (message "markdown-mode, version %s" markdown-mode-version))
+ 
++;;;###autoload
+ (define-derived-mode markdown-mode text-mode "Markdown"
+   "Major mode for editing Markdown files."
+   ;; Comments

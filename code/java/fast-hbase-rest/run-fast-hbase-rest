@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#Copyright (C) dirlt
+
+java -cp FastHBaseRest.jar \
+    -Dcom.sun.management.jmxremote.port=12346 \
+    -Dcom.sun.management.jmxremote.ssl=false \
+    -Dcom.sun.management.jmxremote.authenticate=false \
+    com.dirlt.java.FastHBaseRest.RestServer \
+    --port=12345 \
+    --hbase-quorum-spec=dp30:2181,dp20:2181,dp10:2181,dp5:2181,dp40:2181 \
+    --cache-expire-time=1200 \
+    --cache-max-capacity=2097152 \
+    --cpu-thread-number=128 \
+    --cpu-queue-size=4096 \
+    --io-thread-number=32 \
+    --io-queue-size=4096 \
+    --no-debug

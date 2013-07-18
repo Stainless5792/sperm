@@ -1,0 +1,170 @@
+#!/usr/bin/env bash
+#Copyright (C) dirlt
+
+# whether it's mac otherwise it's ubuntu.
+MAC=0
+kernel=`uname -s`
+if [ $kernel = "Darwin" ]
+then
+    MAC=1
+fi
+
+# basic paths.
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:$PATH
+
+CDH3=1
+CDH4=0
+
+if [ $MAC = 1 ]
+then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_43-b01-447.jdk/Contents/Home/
+    export HADOOP_LZO=/Users/dirlt/github/hadoop-lzo/
+    export HADOOP_CLASSPATH=.:$HADOOP_LZO/build/hadoop-lzo-0.4.17-SNAPSHOT.jar
+    export JAVA_LIBRARY_PATH=$HADOOP_LZO/build/native/Mac_OS_X-x86_64-64/lib/
+else
+    export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64/
+   
+    if [ $CDH3 = 1 ]
+    then
+	export HADOOP_HOME=$HOME/utils/hadoop-0.20.2-cdh3u3/
+	export HADOOP_CONF_DIR=$HADOOP_HOME/conf   
+	export HBASE_HOME=$HOME/utils/hbase-0.90.4-cdh3u3/
+	export HBASE_CONF_DIR=$HBASE_HOME/conf
+	export OOZIE_HOME=$HOME/utils/oozie-2.3.2-cdh3u3/
+	export OOZIE_URL="http://localhost:11000/oozie" # default url
+	export HIVE_HOME=$HOME/utils/hive-0.7.1-cdh3u3/
+    fi
+
+    if [ $CDH4 = 1 ]
+    then	
+	export HADOOP_HOME=$HOME/utils/hadoop-2.0.0-cdh4.2.0
+	export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop/
+	export HBASE_HOME=$HOME/utils/hbase-0.94.2-cdh4.2.0/
+	export HBASE_CONF_DIR=$HBASE_HOME/conf	
+	export HIVE_HOME=$HOME/utils/hive-0.10.0-cdh4.2.0/	
+    fi
+
+    # java native library.    
+    export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native/Linux-amd64-64:$HADOOP_HOME/lib/native
+    # hadoop classpath.
+    export HADOOP_CLASSPATH=.:$HADOOP_HOME/lib/hadoop-lzo-0.4.15.jar
+
+    PATH=$HADOOP_HOME/bin:$PATH
+    PATH=$HADOOP_HOME/sbin:$PATH
+    PATH=$HBASE_HOME/bin:$PATH
+    PATH=$OOZIE_HOME/bin:$PATH
+    PATH=$HIVE_HOME/bin:$PATH 
+fi
+
+# add to system.
+LD_LIBRARY_PATH=$JAVA_LIBRARY_PATH:$LD_LIBRARY_PATH
+CLASSPATH=$HADOOP_CLASSPATH:$CLASSPATH
+
+# add jdk classpath.
+export M2_REPO=$HOME/.m2/repository/
+export CLASSPATH=.:./target/classes:./target/dependency:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$CLASSPATH
+export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
+# basic settings.
+PATH=$HOME/utils/bin:$JAVA_HOME/bin:$PATH
+MANPATH=/usr/local/share/man:/usr/share/man:$MANPATH
+
+# most items are useless since I get apt-get install :)
+PATH=$HOME/utils/graphviz/bin:$PATH
+MANPATH=$HOME/utils/graphviz/share/man:$MANPATH
+PATH=$HOME/utils/ant/bin:$PATH
+PATH=$HOME/utils/python/bin:$PATH
+MANPATH=$HOME/utils/python/share/man:$MANPATH
+PATH=$HOME/utils/valgrind/bin:$PATH
+PATH=$HOME/utils/protobuf/bin:$PATH
+PATH=$HOME/utils/astyle/build/gcc/bin/:$PATH
+PATH=$HOME/utils/flex/bin:$PATH
+PATH=$HOME/utils/php/bin:$PATH
+PATH=$HOME/utils/thrift/bin:$PATH
+PATH=$HOME/utils/sqlite/bin:$PATH
+MANPATH=$HOME/utils/sqlite/shared/man:$MANPATH
+PATH=$HOME/utils/bochs/bin:$PATH
+PATH=$HOME/utils/mysql/bin:$PATH
+PATH=$HOME/utils/emacs/bin:$PATH
+MANPATH=$HOME/utils/emacs/share/man:$MANPATH
+PATH=$HOME/utils/git/bin:$PATH
+PATH=$HOME/utils/git/libexec/git-core:$PATH
+MANPATH=$HOME/utils/git/share/man:$MANPATH
+PATH=$HOME/utils/lynx/bin:$PATH
+MANPATH=$HOME/utils/lynx/man:$MANPATH
+PATH=$HOME/utils/ccache/bin:$PATH
+MANPATH=$HOME/utils/ccache/share/man/:$MANPATH
+PATH=$HOME/utils/rar/bin:$PATH
+PATH=$HOME/utils/oprofile/bin:$PATH
+MANPATH=$HOME/utils/oprofile/share/man:$MANPATH
+PATH=$HOME/utils/subversion/bin:$PATH
+MANPATH=$HOME/utils/subversion/share/man:$MANPATH
+PATH=$HOME/utils/distcc/bin:$PATH
+MANPATH=$HOME/utils/distcc/shared/man:$MANPATH
+PATH=$HOME/utils/tree/bin:$PATH
+MANPATH=$HOME/utils/tree/man:$MANPATH
+PATH=$HOME/utils/cmake/bin:$PATH
+PATH=$HOME/utils/asciidoc/bin:$PATH
+MANPATH=$HOME/utils/asciidoc/share/man:$MANPATH
+PATH=$HOME/utils/xmlto/bin:$PATH
+MANPATH=$HOME/utils/xmlto/share/man:$MANPATH
+PATH=$HOME/utils/swig/bin:$PATH
+MANPATH=$HOME/utils/swig/shared/man:$MANPATH
+PATH=$HOME/utils/tcpdump/sbin:$PATH
+MANPATH=$HOME/utils/tcpdump/share/man:$MANPATH
+MANPATH=$HOME/utils/zeromq/share/man:$MANPATH
+PATH=$HOME/utils/m4/bin:$PATH
+PATH=$HOME/utils/autoconf/bin:$PATH
+PATH=$HOME/utils/automake/bin:$PATH
+MANPATH=$HOME/utils/m4/share/man:$MANPATH
+MANPATH=$HOME/utils/autoconf/share/man:$MANPATH
+MANPATH=$HOME/utils/automake/share/man:$MANPATH
+PATH=$HOME/utils/clisp/bin:$PATH
+MANPATH=$HOME/utils/clisp/share/man:$MANPATH
+PATH=$HOME/github/depot_tools:$PATH
+PATH=$HOME/utils/nginx/sbin:$PATH
+PATH=$HOME/utils/uwsgi-1.4.4:$PATH
+PATH=$HOME/utils/TeXmacs-1.0.7-static-gnu-linux/bin:$PATH
+PATH=$HOME/utils/apache-maven-3.0.4/bin:$PATH
+
+# golang-go.
+export GOROOT=$HOME/utils/go
+export GOPATH=$HOME/go/
+PATH=$GOROOT/bin:$PATH
+
+# export path and manpath.
+export PATH
+export MANPATH
+
+# lanuage.
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+# export LANG="zh_CN.UTF-8"
+# export LC_ALL="zh_CN.UTF-8"
+
+# git related.
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+git config --global color.ui true
+git config --global user.name "dirtysalt"
+git config --global user.email "dirtysalt1987@gmail.com"
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset'
+git config --global alias.last 'log -1 HEAD'
+
+# some useful alias.
+alias ed="emacs" # for typo.
+alias dstat='dstat -cdlmnpsy' # easy use.
+alias dp0="ssh -p 16021 -l dp dp0" # authorized.
+alias dp1="ssh -p 16021 -l dp dp1" # authorized.
+alias hadoop1="ssh -p 16021 -l yunbg hadoop1" # authorized.
+alias nexus="ssh -p 16021 -l yunbg nexus" # authorized.
+alias hudson="ssh -l ceshi hudson" # authorized.
+
+# private key.
+ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/github
+
+

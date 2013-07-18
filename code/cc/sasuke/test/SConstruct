@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+#coding:gbk
+#Copyright (C) dirlt
+
+import os
+env=Environment(CPPPATH=['../../'],
+                CXXFLAGS='-W -Wall -g -Werror -O2 -DDEBUG -fPIC',
+                LIBPATH=['../',
+                         '../../common'],
+                LIBS=['sasuke',
+                      'common',
+                      'zmq', # zeromq
+                      'protobuf', # protobuf
+                      'uuid',
+                      'pthread'])
+
+env.Program('rpc_client.exe',
+            ['rpc_client.cc',
+             'echo.pb.cc'])
+
+env.Program('rpc_server.exe',
+            ['rpc_server.cc',
+             'echo.pb.cc'])
+
+env.Program('test_zmq.exe',
+            ['test_zmq.cc'])
+

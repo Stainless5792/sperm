@@ -1,0 +1,22 @@
+* cipher
+cipher解谜游戏是可以说是专门为程序员设计的游戏，里面用到很多知识都可计算机相关。点击[[http://www.gamemastertips.com/cipher/cipher.htm][这里]]
+   - level 2是level3.htm 修改URL
+   - level 3是braggart.htm html source
+   - level 4是trojan.htm ASCII http://home2.paulschou.net/tools/xlate/
+   - level 5是hollow.htm iframe dark side in hahahahaha.htm
+   - level 6是abolished.htm 请求screen6a.jpg,screen6b.jpg拼接出字符串
+   - level 7是concealed.htm 图片右下角的黑字
+   - level 8是agility.htm 查看screen8.gif，然后转换称为ASCII字符(a,g,i,l,t,y)，只要字母都包含即可，顺序和完整无所谓。
+   - level 9是cabbage.htm 查看picture9ofdoom.jpg，然后对应五线谱可以参考 http://hiphotos.baidu.com/zhidao/pic/item/55e736d103a6e6179b5027d3.jpg
+   - level 10是decade.htm 查看图片取每个字符的RGB，每个RBG分量是一样的，分别是221 238 204 170 221 238 -> dd ee cc aa dd ee
+   - level 11是mix.htm 注意图片背景是1009,然后罗马数字表示是mix http://zhidao.baidu.com/question/198335199.html
+   - level 12是invention.htm 键盘上i->o,x->c是相邻的来解码ubcwbruib
+   - level 13是madman.htm 大致意思是1949 1st第一个13号并且是星期五的月份。分别为5 4 12 5 8 11,然后英文月份的首字母。
+   - level 14跳过，听不到声音似乎文件格式不支持。
+   - level 15是monkey/wrench.htm 对于图片链接base64解码然后按照.jpg格式输出
+   - level 16是decaf.htm 这几个K都是mozart曲子的编号，可以查看 http://baike.baidu.com/view/4431.htm ，分别是DECAF大调
+   - level 17是caged.htm 字母顺序无关。搜索关键字S244/2,RV552,TWV41:D6,D566,以及WoO10/2的曲调
+   - level 18是repair.htm 注意他说ODD顺序图片才有效，我们请求first,thrid,fifth,seventh然后白色部分拼接其他就是repair
+   - level 19是signs.htm 按照给出的方向可以写出这个字母signs
+   - level 20是lonely.htm word F7是检查单词拼写错误 rapidy -> rapidly peple -> people thiking -> thinking Ther -> There al -> all fundamentall -> fundamentally
+   - http://www.gamemastertips.com/cipher/monkey/lonely.htm 

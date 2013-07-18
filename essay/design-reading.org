@@ -1,0 +1,33 @@
+* design-reading
+** T11的文艺模型
+当年12306订票系统在春运时候挂掉，引起了IT界的广泛讨论。当时T11就针对这个问题提出了文艺模型。当时自己没有太多感悟，后来同学和我解释一下之后，才感慨颇多。
+
+T11的文艺模型主要关心的就是极限吞吐。极限吞吐(sustained throughput)就是为了能够在存在很大压力的时候依然能够保持很高的吞吐。之所谓在很多大压力的时候很多模型会垮掉原因是有多方面的。比如大量连接不活跃但是占用了很多内存，或者如果是多线程模型线程切换耗CPU等。垮掉原因的本质就是因为大压力的时候系统耗费了很多资源在没有必要的地方了。解决办法就是能够提早发现这种情况，然后尽快地将一部分压力去除掉(比如拒绝连接等)，以保证整体系统的可用性。这个就是T11的最主要思想。
+
+后来云风一篇关于 [[http://blog.codingnow.com/2012/02/ring_buffer.html][RingBuffer博文]] 重新让我思考了这个问题。我重新阅读了一下T11的Kylin代码，主要也是关于内存管理的部分。虽然内存管理部分非常简单，但是也是存在部分策略在里面的。之后T11在微博上也和我提到了这点，就是对于一个复杂点的系统来说，比如存储系统等，如果要实现得好，至少一半以上的工作是在做OS。。无独有偶，就在前几天tencent的一个后台开发总监也提到了这个问题，关于[[http://djt.qq.com/article-156-1.html][过载保护]] 。思想和T11文艺模型是一样的。
+
+T11确实是一个看过同时做过很多的人。这是他空间的一篇文章[[http://hi.baidu.com/linsd99/blog/item/dbdaef3ce804f3e054e72392.html][列举了架构相关的学习材料]]。
+
+** T11的浅谈架构
+http://qing.weibo.com/2244218960/85c4105033000bwp.html
+
+具体到领域上，我觉得主要有三类架构问题（不包括硬件）：
+   1. 软件架构，其典型用例是企业级软件，通过合理的功能抽象，提取出公共组件和通用流程，进行最大化的功能复用 (reuse)。我称其为软件的可维护性问题。
+   2. 系统架构，其巅峰是OS，重点是解决资源的分配与复用 (multiplexing)。
+   3. 大规模分布式架构，主要应用在Cloud中，重点是大规模系统的资源整合、快速交付和运维问题。
+1有《Design Patterns》一书，2有很多OS、并行程序设计的书可供参考 (或者应该写本《Parallel Patterns》？)，3目前我还不知道有什么书可参考。
+
+** 如何定义软件稳定
+@2012-8-30 redis作者在自己的文章里面提到了如何定义软件到达了production-ready（我理解就是stable）状态 http://antirez.com/post/redis-26-sentinel-update.html
+
+There are probably much more software engineering books than there should be ;) So despite of the general title of this section my goal here is to state what stable means for me and for the Redis project. After all there are a number of possible metrics, but mine is very simple and in the latest three years worked very reliably.
+#+BEGIN_VERSE
+A Redis branch without active development (major changes to the source code that are not just additions without impacts to what we already have) is stable when the number of critical bugs discovered in the latest 8 weeks is near to zero.
+
+In this context a critical bug is a bug that corrupts data, that crashes the server, that creates an inconsistency between master and slave, and that, at the same time, is not triggered by a crazy edge-case, so edge that it is unlikely to run into it involuntarily. 
+#+END_VERSE
+
+在作者看来，一个稳定的版本意味着：
+   - 没有必要增加新feature
+   - 在过去8周内没有严重的bug（比如宕机或者是数据损坏等，但是不考虑一些非常极端的case）
+

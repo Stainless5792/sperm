@@ -1,0 +1,38 @@
+* prerequisite
+   - ./dep-install to install all following packages.
+   - sudo apt-get install libprotobuf-dev
+   - sudo apt-get install libprotoc-dev
+   - sudo apt-get install libev-dev
+   - sudo apt-get install libzmq-dev
+   - sudo apt-get install libzookeeper-mt-dev
+   - sudo apt-get install libgoogle-perftools-dev
+   - sudo apt-get install google-perftools   
+   - sudo apt-get install python-imaging
+   - sudo apt-get install flex
+   - sudo apt-get install bison
+* cc
+   - common // some common code.
+   - sasuke // a half-async-half-sync rpc implementation based on zeromq.(http://www.zeromq.org/)
+   - itachi // a asynchronous programming framework based on libev.(http://software.schmorp.de/pkg/libev.html)
+   - bench // benchmark for system call performance.
+   - astyle // C/C++/Java language code formatter.(http://astyle.sourceforge.net/astyle.html)
+   - nasty // lisp-like language frontend used flex + bison.
+   - playboard // test code on c++ and library.
+
+* java
+   - fast-hbase-rest // fast hbase access layer based on netty using asynchbase and protobuf using HTTP.
+
+* sh
+   - jstrace // hook java and do strace to it.
+
+* reserved project name
+   - madara //
+   - uchiha // 
+   - orochi //
+   - yagami //
+   - kyo //
+   - yamazaki //
+   - izanagi //
+   - chidori //
+   - hokage //
+   - kakashi // 

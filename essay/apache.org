@@ -1,0 +1,141 @@
+* apache
+   - http://httpd.apache.org/
+
+** FAQ
+*** 上传文件
+   1. 编译apache时候带上dav这个模块，最简单的方法就是将所有模块全部安装上./configure –enable-modules=all
+   2. 在apache的配置conf/httpd.conf里面，开启dav这个功能。Include conf/extra/httpd-dav.conf。
+   3. 修改文件conf/extra/httpd-dav.conf来配置dav。如果dav不需要进行什么验证简单配置的的话可以如下：然后我们就可以上传到uploads目录了。
+#+BEGIN_EXAMPLE
+    13  DavLockDB "/home/dirlt/apache//var/DavLock"
+    14  Alias /uploads "/home/dirlt/apache//uploads"
+    15  <Directory "/home/dirlt/apache//uploads">
+    16     Dav On
+    17     Order Allow,Deny
+    18     Allow from all
+    19     <LimitExcept GET OPTIONS>
+    20     </LimitExcept>
+    21  </Directory>
+#+END_EXAMPLE
+
+写了一个限速上传下载文件程序(python)，封装HTTPConnection但是修改了发送的逻辑，允许在发送一部分unit之后做一个回调来修改限制的速度，下载的封装也是一样通过读取unit部分数据之后调用回调来限制速度。
+#+BEGIN_SRC Python
+#!/usr/bin/env python
+#coding:gbk 
+       
+import httplib
+import os
+import stat
+import time
+       
+class HTTPUploadFileLimitSpeed(object):
+    def __init__(self,host,port,timeout,max_speed,send_unit):
+        self._conn=httplib.HTTPConnection(host,port)
+        self._max_speed=max_speed
+        self._already_sent_bytes=0
+        self._elapsed_seconds=0.001
+        self._unit=send_unit
+       
+    def set_upload_file_params(self,uri,local_file):
+        self._conn.putrequest(method='PUT',url=uri)
+        self._conn.putheader('Content-Type','application/octet-stream')
+        self._data=open(local_file,'rb').read()
+        self._data_len=os.stat(local_file)[stat.ST_SIZE]
+        self._conn.putheader('Content-Length',str(self._data_len))
+       
+    def perform(self,callback):
+        self._conn.endheaders()
+        while(True):
+            if((self._already_sent_bytes+self._unit)>self._data_len):
+                self._conn.send(self._data[self._already_sent_bytes:])
+                self._already_sent_bytes=self._data_len
+                res=self._conn.getresponse()
+                return res
+            else:
+                before=os.times()[4]
+                self._conn.send(self._data[self._already_sent_bytes:self._already_sent_bytes+self._unit])
+                self._already_sent_bytes+=self._unit
+                after=os.times()[4]
+                self._elapsed_seconds+=after-before
+                should_seconds=1.0*self._already_sent_bytes/self._max_speed
+                if(should_seconds>self._elapsed_seconds):
+                    time.sleep(should_seconds-self._elapsed_seconds)
+                self._elapsed_seconds=should_seconds
+                callback(self)
+    def close(self):
+        self._conn.close()
+
+class HTTPDownloadFileLimitSpeed(object):
+    def __init__(self,host,port,timeout,max_speed,recv_unit):
+        self._conn=httplib.HTTPConnection(host,port)
+        self._max_speed=max_speed
+        self._already_recv_bytes=0
+        self._elapsed_seconds=0.001
+        self._unit=recv_unit
+       
+    def set_download_file_params(self,uri,local_file):
+        self._uri=uri
+        self._local_file=local_file
+       
+    def perform(self,callback):
+        self._conn.request(method='GET',url=self._uri)
+        res=self._conn.getresponse()
+        fp=open(self._local_file,'wb')
+        while(True):
+            before=os.times()[4]
+            read_data=res.read(self._unit)
+            fp.write(read_data)
+            read_size=len(read_data)
+            after=os.times()[4]
+            if(read_size==0):
+                return res
+            else:
+                self._already_recv_bytes+=read_size
+                self._elapsed_seconds+=after-before
+                should_seconds=1.0*self._already_recv_bytes/self._max_speed
+                if(should_seconds>self._elapsed_seconds):
+                    time.sleep(should_seconds-self._elapsed_seconds)
+                self._elapsed_seconds=should_seconds
+                callback(self)
+    def close(self):
+        self._conn.close()
+        
+def callback_upload(self):
+    print("max_speed:%lf,sent_bytes:%lf,seconds:%lf,unit:%d"%(self._max_speed,
+                                                              self._already_sent_bytes,
+                                                              self._elapsed_seconds,
+                                                              self._unit))
+    if(self._already_sent_bytes>1024):
+        if(self._max_speed==128):
+            self._max_speed*=8
+       
+def callback_download(self):
+    print("max_speed:%lf,recv_bytes:%lf,seconds:%lf,unit:%d"%(self._max_speed,
+                                                              self._already_recv_bytes,
+                                                              self._elapsed_seconds,
+                                                              self._unit))
+    if(self._already_recv_bytes>1024):
+        if(self._max_speed==128):
+            self._max_speed*=8
+       
+client=HTTPUploadFileLimitSpeed('localhost',8080,timeout=10,max_speed=128,send_unit=128)
+client.set_upload_file_params("/uploads/test.py",'./test.py')
+res=client.perform(callback_upload)
+data=res.read()
+print(res.getheaders())
+print(res.version)
+print(res.status)
+print(res.reason)
+print(data)
+client.close()
+       
+client=HTTPDownloadFileLimitSpeed('localhost',8080,timeout=10,max_speed=128,recv_unit=128)
+client.set_download_file_params("/uploads/test.py",'./test.py')
+res=client.perform(callback_download)
+print(res.getheaders())
+print(res.version)
+print(res.status)
+print(res.reason)
+client.close()
+#+END_SRC
+

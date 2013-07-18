@@ -1,0 +1,3 @@
+* lcov
+    - homepage http://ltp.sourceforge.net/coverage/lcov.php
+    - redis test coverage http://ci.redis.io/coverage26/redis/src/index.html

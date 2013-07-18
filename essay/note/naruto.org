@@ -1,0 +1,92 @@
+* naruto
+#+TITLE: 火影忍者
+
+http://xiangce.baidu.com/picture/album/list/16899831199527f2bae8842d9c63dc1dcb40b602
+
+** 名字中英对照
+   - Konoha 木叶
+   - Uzumaki Naruto 漩涡鸣人
+   - Namikaze Minato 波风皆人
+   - Uzumaki Kushina 漩涡奇奈
+   - Uchiha Sasuke 宇智波佐助
+   - Uchiha Shisui 宇智波止水
+   - Uchiha Fugaku 宇智波富岳
+   - Uchiha Mikoto 宇智波美琴
+   - Uchiha Obito 宇智波带土
+   - Hyuga Neji 日向宁次
+   - Hyuga Hinata 日向雏田
+   - Hyuga Hiashi 日向日足
+   - Umino Iruka 伊鲁卡
+   - Hatake Kakashi 旗木卡卡西
+   - Morino Ibiki 森乃伊比喜
+   - Maito Gai 铁血凯
+   - Sarutobi Asuma 猿飞阿斯玛
+   - Yuuhi Kurenai 夕阳红
+   - Haruno Sakura 春野樱
+   - Rock Lee 李洛克
+   - Tenten 天天
+   - Nara shikamaru 奈良鹿丸
+   - Akimichi Choji 秋道丁次
+   - Yamanaka Ino 山中井野
+   - Inuzuka Kiba 犬冢牙
+   - Akamaru 赤丸
+   - Aburame Shino 油女志乃
+   - Jiraiya 自来也
+   - Gama Bunta 蛤蟆文太
+   - Tsunade 纲手
+   - Sarutobi 猿飞
+   - Yahiko 弥彦
+   - Gaara 我爱罗
+   - Temari 手鞠
+   - Kankuro 勘九郎
+   - Momochi Zabuza 桃地再不斩
+   - Haku 白
+   - Kimimaro 君麻吕
+   - Yakushi Kabuto 药师兜
+   - Sakon 左近[音忍五人众]
+   - Jirobo 次郎坊[音忍五人众]
+   - Kidomaru 鬼童丸[音忍五人众]
+   - Tayuya 多由也[音忍五人众]
+   - Akato Yoroi 赤铜铠[音忍五人众]
+   - Shuukaku 守鹤
+   - Nekomata 猫又
+   - Isonade 矶抚
+   - Sokou 鼠蛟
+   - Houkou 彭侯
+   - Raijuu 雷兽
+   - Kaku 貉
+   - Hachimata 八俣大蛇
+   - Kyuubi Kitsune 九尾狐
+   - Akatsuki 晓
+   - Hidan 飞段 戒指の三
+   - Kakuzu 角都 戒指の北
+   - Payne 佩恩 戒指の零
+   - Uchiha Itachi 宇智波鼬 戒指の朱
+   - Konan 小南 戒指の白
+   - Kisame Hoshigaki 干柿鬼躏 戒指の南
+   - Akasuna no Sasori 赤砂之蝎 戒指の玉
+   - Daidara 迪达拉 戒指の青
+   - Orochimaru 大蛇丸 戒指の空
+   - Zetsu 绝 戒指の玄
+   - Uchiha Madara 宇智波斑 戒指の玉[蝎死后]
+   - Jyuken 柔拳
+   - Raikiri 雷切/千鸟
+   - Rasengan 螺旋丸
+   - Sharingan 写轮眼
+   - Byakugan 白眼
+   - Mangekyou Sharingan 万花筒写轮眼
+   - Katon 火遁
+   - Suiton 水遁
+   - Raiton 雷遁
+   - Fuuton 风遁
+   - Toton 土遁
+   - Omotekaren 表华莲
+   - Urakarenn 里华莲
+   - Rashomon 罗生门
+   - Tsukuyomi 月读
+   - Amaterasu 天照
+   - Hokage 火影
+   - MizuKage 水影
+   - KazeKage 风影
+   - RaiKage 雷影
+   - TsuchiKage 土影

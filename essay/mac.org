@@ -1,0 +1,52 @@
+* mac
+相对ubuntu来说，mac还是非常容易上手的。我相信同学的说法:"你拿到的是世界上最好的笔记本"
+
+*NOTE（dirlt@2013-01-22）：但是从买来到现在，我主要用它阅读一些文档浏览一些网页而没有在上面做开发。开发还是觉得linux好点*
+
+** 软件
+mac软件还是非常齐全的，我大致安装了下面这些东西:
+
+下面软件是通过手动下载dmg安装的: 
+   - evernote
+   - auqamacs # emacs for mac
+     - 但是一些功能似乎存在问题，可能是因为基于emacs22开发
+     - 现在自己使用的还是brew安装的emacs24，还算良好。
+   - firefox
+   - thunderbird
+   - adium # gtalk
+   - brew # apt-get for mac
+   - xcode # prerequisite for brew，这个通过app store安装的。
+   - xcode-command-lines # 这个通过xcode内部插件安装的。 
+   - qq
+   - 有道词典
+   - tunnelblick # openvpn似乎在mac下面似乎有bug
+     - 但是感觉没有openvpn好用，而且非常容易断开。
+
+下面软件是通过homebrew自动安装的: 
+   - brew install openvpn
+   - brew install emacs --cocoa --srgb
+   - brew install svn --unicode-path
+
+brew的常用选项有下面这些：
+   - brew search <package> # 搜索package 
+   - brew install <package> # 安装package
+   - brew options <package> # 查看package安装选项 
+
+** FAQ
+*** 截屏
+使用Command+Shift+4可以进行截屏，ESC可以退出，截图会保存在桌面上。
+
+*** 触控板和键盘
+系统偏好设置下面:
+   - 触控板 设置"轻拍来点按"，不然每次左键都要用力按下
+   - 键盘
+     - 键盘快捷键 关闭spotlight的快捷键，键盘与文本输入将"选择上一个输入源"绑定
+       到Ctrl+Space。这样比较容易适合windows用户，因为windows下面输入法使用这个快
+       捷键进行切换的。 
+     - 键盘修饰键 暂时没有什么修改。不过感觉command和option有点串!这点有点不太习
+       惯，需要一段时间适应一下。
+
+*** 控制休眠
+   - 系统偏好设置=》节能器
+   - 电池模式下面使用默认配置
+   - 电源适配器下面使用默认配置，然后修改”电脑进入睡眠“为”永不“

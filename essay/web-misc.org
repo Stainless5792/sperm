@@ -1,0 +1,376 @@
+* web-misc
+** Wordpress Related
+*** 解决WordPress半角引号变成全角引号问题的方法
+
+http://www.imzhang.com/archives/756.html
+
+WordPress会自动将单引号转换成全角单引号。这样就导致浏览者在复制博主的代码执行时，出现了出错提示。那为了方便浏览者使用代码，我们必须要将这一“智能”的功能去掉才行。
+
+第一种：通过修改主题的函数functions.php文件
+
+修改主题theme下的主题函数functions.php文件，在里面的头部加入下面的代码：
+#+BEGIN_SRC PHP
+<?php remove_filter('the_content', 'wptexturize'); ?>
+#+END_SRC
+
+第二种：通过修改formatting.php来实现
+
+修改wp-includes目录下的formatting.php，打开formatting.php这个文件找到
+
+#+BEGIN_SRC PHP
+// 在curl前面加上两条//将其注释掉，如下：
+// static strings
+//$curl = str_replace($static_characters, $static_replacements, $curl);
+// regular expressions
+//$curl = preg_replace($dynamic_characters, $dynamic_replacements, $curl);
+#+END_SRC
+
+第二种方法有个弊端就是一旦WordPress升级更新后会自动覆盖恢复成原来的，所以推荐用第一种方法修改functions.php文件，这样就不会受到WordPress升级后代码变为原来的影响！
+
+*** 在wordpress添加百度统计代码
+
+http://zhidao.baidu.com/question/394838856.html
+
+修改主题下面的footer.php里面，在之前加上即可。下面是我修改之后footer.php
+
+#+BEGIN_SRC PHP
+<?php
+        /* Always have wp_footer() just before the closing </body>
+         * tag of your theme, or you will break many plugins, which
+         * generally use this hook to reference JavaScript files.
+         */
+
+        wp_footer();
+?>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
+#+END_SRC
+
+** OAuth2 & Basic Auth
+突然想看看sina weibo的API接口，首先遇到的问题就是登陆问题。weibo提供了几种认证方式：
+   - OAuth2.[[http://oauth.net/2/][主页]]
+   - OAuth1.
+   - Basic Auth.
+
+*** Basic Auth
+Basic Auth就是简单地在http上面传输username+password.如何使用Basic Auth推荐的文章就是http://www.cnblogs.com/QLeelulu/archive/2009/11/22/1607898.html.weibo 使用Basic Auth方式链接在[[http://open.weibo.com/wiki/%25E6%258E%25A5%25E5%258F%25A3%25E9%2597%25AE%25E9%25A2%2598][这里(接口使用.AppKey怎么用)]]
+#+BEGIN_VERSE
+要在发送请求的时候添加HTTP Basic Authentication认证信息到请求中，有两种方法：
+
+1.在请求头中添加Authorization：
+
+Authorization: “Basic 用户名和密码的base64加密字符串”
+
+2.在url中添加用户名和密码：
+
+http://userName:password@api.minicloud.com.cn/statuses/friends_timeline.xml
+#+END_VERSE
+
+#+BEGIN_SRC Python
+import os
+import base64
+username='username'
+password='password'
+#os.system('curl -u %s:%s http://api.weibo.com/2/statuses/public_timeline.json?source=1144364821'%(username,password))
+os.system('curl -H Authorization:"Basic %s" http://api.weibo.com/2/statuses/public_timeline.json?source=1144364821'%(
+        base64.b64encode(username+':'+password)))
+#+END_SRC
+
+*** OAuth2
+没有仔细阅读OAuth2的Specification，只是就weibo API看了一下OAuth2大致是如何工作的。weibo的两个授权接口分别是:
+   1. authorize GET/POST
+   2. access_token POST
+比较诡异的就是不管是GET/POST的话，request params都是放在URL而不是放在header里面的。这就有一个问题就是access_token似乎支持也支持提交username+password.所以weibo API在OAuth2里面如果通过username+password提交的话（app通过客户端方式的话），那么需要提交申请。
+
+下面是OAuth2.0的授权工作流程图
+file:./images/oAuth2.gif
+
+结合weibo API大致描述一下工作方式：
+   1. App提供一个uri.用户访问这个uri的话就会触发授权。uri内部有redirect_uri(这个必须和app配置的redirect_uri匹配).如果授权成功的话，那么就会访问这个redirect_uri，同时后面带上一下code.比如https://api.weibo.com/oauth2/authorize?redirect_uri=http%3A//dirlt.com&response_type=code&client_id=1144364821&display=default. 允许访问的话，那么就会访问到http://dirlt.com?code=CODE.那么App得到了CODE.(似乎每次得到这个CODE都是不同的，猜测这个CODE是存在一定超时失效的）
+   2. 然后App按照这个CODE去请求一下access_token.得到这个access_token也是有一定失效时间的。 *weibo API做了简化，可以让1,2合成一步完成，似乎这个是一个更好的方式，后台也不用在维护CODE这个概念了。* redirect_uri部分直接就带上了access_token以及失效时间返回。
+   3. 得到这个access_token之后，就可以在失效时间之内访问这个用户的资源了。而这个时候每次只需要带上access_token而不是password.
+
+*** 修改weibo.py支持Basic Auth
+看了一下weibo Python SDK似乎没有支持Basic Auth. 修改weibo.py支持Basic Auth似乎并不是很困难的事情，只要不使用HTTP_GET请求的话应该安全性上面没有什么太大的问题。下面是使用Basic Auth weibo.py的例子，后面是修改之后的weibo.py代码。
+
+可以看到在APIClient构造部分的话需要传入username,password,然后有三种方式可以调用
+   1. get（不推荐使用）
+   2. post
+   3. upload
+如果需要调用post的话那么调用client.post.(arguments).其中method就是url地址但是/部分转换称为__.
+
+#+BEGIN_SRC Python
+#!/usr/bin/env python
+#coding:utf-8
+#Copyright (C) dirlt
+
+import weibo
+client=weibo.APIClient('1144364821',
+                       '4285144b8dd7ef36fc37fdcae25db3fa', 
+                       # modify it.
+                       'username',
+                       'password')
+# see more http://open.weibo.com/wiki/API%E6%96%87%E6%A1%A3_V2
+# '/' in url replaced with '__'
+r=client.post.statuses__update(source='1144364821',
+                               status='test@@@!!!')
+
+print(r)
+#+END_SRC
+
+--------------------
+
+下面是支持Basic Auth之后的weibo.py. 在修改的地方增加了NOTICE.这个是在weibo-pysdk-1.05版本上面修改的。
+
+#+BEGIN_SRC Python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__version__ = '1.04'
+__author__ = 'Liao Xuefeng (askxuefeng@gmail.com)'
+
+'''
+Python client SDK for sina weibo API using OAuth 2.
+'''
+
+try:
+    import json
+except ImportError:
+    import simplejson as json
+import time
+import urllib
+import urllib2
+import logging
+
+def _obj_hook(pairs):
+    '''
+    convert json object to python object.
+    '''
+    o = JsonObject()
+    for k, v in pairs.iteritems():
+        o[str(k)] = v
+    return o
+
+class APIError(StandardError):
+    '''
+    raise APIError if got failed json message.
+    '''
+    def __init__(self, error_code, error, request):
+        self.error_code = error_code
+        self.error = error
+        self.request = request
+        StandardError.__init__(self, error)
+
+    def __str__(self):
+        return 'APIError: %s: %s, request: %s' % (self.error_code, self.error, self.request)
+
+class JsonObject(dict):
+    '''
+    general json object that can bind any fields but also act as a dict.
+    '''
+    def __getattr__(self, attr):
+        return self[attr]
+
+    def __setattr__(self, attr, value):
+        self[attr] = value
+
+def _encode_params(**kw):
+    '''
+    Encode parameters.
+    '''
+    args = []
+    for k, v in kw.iteritems():
+        qv = v.encode('utf-8') if isinstance(v, unicode) else str(v)
+        args.append('%s=%s' % (k, urllib.quote(qv)))
+    return '&'.join(args)
+
+def _encode_multipart(**kw):
+    '''
+    Build a multipart/form-data body with generated random boundary.
+    '''
+    boundary = '----------%s' % hex(int(time.time() * 1000))
+    data = []
+    for k, v in kw.iteritems():
+        data.append('--%s' % boundary)
+        if hasattr(v, 'read'):
+            # file-like object:
+            ext = ''
+            filename = getattr(v, 'name', '')
+            n = filename.rfind('.')
+            if n != (-1):
+                ext = filename[n:].lower()
+            content = v.read()
+            data.append('Content-Disposition: form-data; name="%s"; filename="hidden"' % k)
+            data.append('Content-Length: %d' % len(content))
+            data.append('Content-Type: %s\r\n' % _guess_content_type(ext))
+            data.append(content)
+        else:
+            data.append('Content-Disposition: form-data; name="%s"\r\n' % k)
+            data.append(v.encode('utf-8') if isinstance(v, unicode) else v)
+    data.append('--%s--\r\n' % boundary)
+    return '\r\n'.join(data), boundary
+
+_CONTENT_TYPES = { '.png': 'image/png', '.gif': 'image/gif', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.jpe': 'image/jpeg' }
+
+def _guess_content_type(ext):
+    return _CONTENT_TYPES.get(ext, 'application/octet-stream')
+
+_HTTP_GET = 0
+_HTTP_POST = 1
+_HTTP_UPLOAD = 2
+
+def _http_get(url, authorization=None, **kw):
+    logging.info('GET %s' % url)
+    return _http_call(url, _HTTP_GET, authorization, **kw)
+
+def _http_post(url, authorization=None, **kw):
+    logging.info('POST %s' % url)
+    return _http_call(url, _HTTP_POST, authorization, **kw)
+
+def _http_upload(url, authorization=None, **kw):
+    logging.info('MULTIPART POST %s' % url)
+    return _http_call(url, _HTTP_UPLOAD, authorization, **kw)
+
+def _http_call(url, method, authorization, **kw):
+    '''
+    send an http request and expect to return a json object if no error.
+    '''
+    params = None
+    boundary = None
+    if method==_HTTP_UPLOAD:
+        params, boundary = _encode_multipart(**kw)
+    else:
+        params = _encode_params(**kw)
+    http_url = '%s?%s' % (url, params) if method==_HTTP_GET else url
+    http_body = None if method==_HTTP_GET else params
+    req = urllib2.Request(http_url, data=http_body)
+    if authorization:
+        req.add_header('Authorization', 'OAuth2 %s' % authorization)
+    if boundary:
+        req.add_header('Content-Type', 'multipart/form-data; boundary=%s' % boundary)
+    # NOTICE(dirlt):use Basic Auth mode.
+    import base64
+    username=kw['username']
+    password=kw['password']
+    req.add_header('Authorization','Basic %s'%(base64.b64encode(username+':'+password)))
+    resp = urllib2.urlopen(req)
+    body = resp.read()
+    r = json.loads(body, object_hook=_obj_hook)
+    if hasattr(r, 'error_code'):
+        raise APIError(r.error_code, getattr(r, 'error', ''), getattr(r, 'request', ''))
+    return r
+
+class HttpObject(object):
+
+    def __init__(self, client, method):
+        self.client = client
+        self.method = method
+
+    def __getattr__(self, attr):
+        def wrap(**kw):
+            if self.client.is_expires():
+                raise APIError('21327', 'expired_token', attr)
+            kw['username']=self.client.username
+            kw['password']=self.client.password
+            return _http_call('%s%s.json' % (self.client.api_url, attr.replace('__', '/')), self.method, self.client.access_token, **kw)
+        return wrap
+
+class APIClient(object):
+    '''
+    API client using synchronized invocation.
+    NOTICE(dirlt):add 'username' and 'password' for Basic Auth.
+    '''
+    def __init__(self, app_key, app_secret, username, password, redirect_uri=None, response_type='code', domain='api.weibo.com', version='2'):
+        self.client_id = app_key
+        self.client_secret = app_secret
+        self.username=username
+        self.password=password
+        self.redirect_uri = redirect_uri
+        self.response_type = response_type        
+        self.auth_url = 'https://%s/oauth2/' % domain
+        self.api_url = 'https://%s/%s/' % (domain, version)
+        self.access_token = None
+        self.expires = 0.0
+        self.get = HttpObject(self, _HTTP_GET)
+        self.post = HttpObject(self, _HTTP_POST)
+        self.upload = HttpObject(self, _HTTP_UPLOAD)
+        # NOTICE(dirlt):never expires.
+        self.access_token='random'
+        self.expires=2**63
+
+    def set_access_token(self, access_token, expires_in):
+        self.access_token = str(access_token)
+        self.expires = float(expires_in)
+
+    def get_authorize_url(self, redirect_uri=None, display='default'):
+        '''
+        return the authroize url that should be redirect.
+        '''
+        redirect = redirect_uri if redirect_uri else self.redirect_uri
+        if not redirect:
+            raise APIError('21305', 'Parameter absent: redirect_uri', 'OAuth2 request')
+        return '%s%s?%s' % (self.auth_url, 'authorize', \
+                _encode_params(client_id = self.client_id, \
+                        response_type = 'code', \
+                        display = display, \
+                        redirect_uri = redirect))
+
+    def request_access_token(self, code, redirect_uri=None):
+        '''
+        return access token as object: {"access_token":"your-access-token","expires_in":12345678}, expires_in is standard unix-epoch-time
+        '''
+        redirect = redirect_uri if redirect_uri else self.redirect_uri
+        if not redirect:
+            raise APIError('21305', 'Parameter absent: redirect_uri', 'OAuth2 request')
+        r = _http_post('%s%s' % (self.auth_url, 'access_token'), \
+                client_id = self.client_id, \
+                client_secret = self.client_secret, \
+                redirect_uri = redirect, \
+                code = code, grant_type = 'authorization_code')
+        r.expires_in += int(time.time())
+        return r
+
+    def is_expires(self):
+        return not self.access_token or time.time() > self.expires
+#+END_SRC
+
+** WSGI in Python
+python运行web大约有下面三种方式：
+   1. 程序自己启动http server直接对外服务
+   2. 用WSGI编写然后使用gunicorn这样的container启动对外服务
+   3. nginx在前端做反向代理，uwsgi做WSGI Container和nginx通信
+
+实践证明1这个方案因为python GIL缘故只能使用单线程处理，并且http server扩展性也不好。而方案2相对来说比较灵活，可以使用不同的container启动，并且也可以很容易地切换成为方案3，但是却不能够很好地处理子域名问题，同时部署上没有方案3灵活。
+自己搭建fantuan.dirlt.com里面就涉及到了子域名这个问题，最后还是使用方案3解决的，使用的就是nginx + uwsgi + web.py这个解决方案。所以这里简单地记录一下如何配置。
+
+在nginx/site-enables里面从default产生一份新的配置文件，修改内容
+#+BEGIN_EXAMPLE
+server {
+        server_name fantuan.dirlt.com;
+        location / {
+                include uwsgi_params;
+                uwsgi_pass  127.0.0.1:8001;
+        }
+}
+#+END_EXAMPLE
+也就是说对于fantuan.dirlt.com这个请求包含uwsgi_params里面的参数全部转发到127.0.0.1:8001这个端口。
+
+然后在本地启动uwsgi绑定在127.0.0.1:8001这个端口上面，同时考虑到uwsgi支持配置文件的方式，我们首先编写配置文件
+#+BEGIN_EXAMPLE
+[uwsgi]
+chdir = .
+module = server:application
+master = True
+processes = 4
+socket = 127.0.0.1:8001
+vacuum = True
+max-requests = 128
+#+END_EXAMPLE
+
+*TODO（dirlt）：里面的字段的意思还不是清楚* 最重要的就是两个参数
+   - module x:y 说明x.py里面的y对象是WSGI function对象
+   - socket 必须指定是127.0.0.1:8001

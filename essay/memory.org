@@ -1,0 +1,116 @@
+* memory
+** 内存屏障(memory barrier)
+   - [[http://groups.google.com/group/linux.kernel/browse_thread/thread/18a59e3c9d8f6310/cdfbcb70e9c48cd0#cdfbcb70e9c48cd0][Document Linux’s memory barriers]]
+   - http://www.linuxforum.net/forum/printthread.php?Cat=&Board=linuxK&main=653778&type=thread
+   - [[http://www.linuxjournal.com/article/8211][Memory Ordering in Modern Microprocessors, Part I（推荐阅读）]]
+   - [[http://www.linuxjournal.com/article/8212][Memory Ordering in Modern Microprocessors, Part II（推荐阅读）]]
+
+很早之前一直不理解内存屏障到底要解决什么问题，直到第一次编写lockfree queue的时候才稍微意识到，内存屏障这个问题在编写多线程和编写设备驱动时候需要考虑的。内存屏障有两种，一种是关于和编译器相关的内存屏障，一种是和CPU相关的内存屏障。
+
+*** 编译器内存屏障
+#+BEGIN_SRC C++
+// #define mfence_c() __asm__ __volatile__("": : :"memory") 
+#define barrier() __asm__ __volatile__("": : :"memory") 
+
+#+END_SRC
+
+这个内存屏障的意思是:在这个操作之后，所有的原来分配在寄存器里面的变量全部失效，需要重新进行一次寄存器的分配（相当于变量需要全部重新载入）。之所以需要有这个操作，可以考虑这么一个情况。假设有两个值a,分配的内存地址分别是0×12345.我们有下面这样的代码，
+
+#+BEGIN_SRC C++
+#include <cstdio>
+int a=0;
+int main() {
+  printf("%p,%d\n",&a,a);
+  *(int*)(0x5009ac)=1; // 我们知道&a的地址就是0x5009ac
+  printf("%p,%d\n",&a,a);
+  return 0;
+}
+
+#+END_SRC
+
+如果使用-O2编译的话，那么可能会发现a没有修改。问题就在这里了，编译器在生成代码的时候，将a存放在寄存器里面。而在进行赋值操作的时候，gcc并没有认为修改了a而只是写了一个随机的地址，下次再读取的时候依然是读寄存器的内容，而不是我们填写的内容。所以我们必须显式地告诉gcc，我这个操作可能会修改变量内容，之后你需要重新从内存读取。这条语句实际上不生成任何代码，但可使gcc在barrier()之后刷新寄存器对变量的分配。这个和关键字volatile是存在差别的，volatile只是告诉编译器说：我的状态不要存放在寄存器，所有对于我的读写都是直接操作内存。
+
+事实上上面这种情况是可以通过volatile来解决的。volatile意思就是易挥发，也就是说这个变量可能以某种compiler未知的方式被修改掉，虽然编译器可以进行alias分析。比如编译器编译模块A,A使用了IO Controller标志寄存器映射到了某个固定内存上面的话，可能system其他模块B修改了这个内存。而编译器仅仅是为这个模块生成代码，是没有办法预知这件事情会发生的，很可能就将这个内存映射到了寄存器里面，这样每次从寄存器内部读取就没有办法检测到发生变化。另外一种更加简单的情形就是多线程）。个人感觉volatile这个关键字纯粹是为了编译器优化而存在的，编译器优化将内存操作映射到寄存器操作为了加快速度，但是某些情况下面我们就是希望真切地读取内存而非寄存器。正是因为存在优化编译器，所以我们需要volatile.
+
+barrier除了上面功能（强迫编译器刷新寄存器分配）之外，wyz还告诉我可能会阻止gcc进行instruction reorder.指令重排会出现很多问题。曾经在编写infpack遇到过这个问题，现在这段代码在compress.h这里，compress_uint64里面使用了mfence_c.加这个内存障碍是jjp告诉我的，当时这段代码除了问题加了这个barrier就好了，但是凭的是直觉也不太清楚为什么。
+
+*** CPU内存屏障
+#+BEGIN_SRC C++
+// #define mfence_x86() __asm__ __volatile__("mfence":::"memory")
+#define rmb() __asm__ __volatile__("lfence":::"memory")
+#define wmb() __asm__ __volatile__("sfence":::"memory")
+#define mb() __asm__ __volatile__("mfence":::"memory")
+
+#+END_SRC
+
+（首先声明我对于CPU内存屏障还不是很了解，只是有一个感性认识。）x86是有乱序写OOS(Out of Order Store)的。假设我们有两个操作A=1,B=1.对于单核情况下面一切都很好，因为所有线程都是在一个核上面这个核可以保证一个线程的写顺序和另外一个线程所看到的顺序是一致的。但是在多核下面就会存在问题。我们会假设如果执行到了B=1的话，那么这个时候必然A=1.但是因为存在OOS，所以可能这个核执行顺序是B=1,A=1所以B=1的时候，不一定A=1.（但是我也不知道A=1,B=1中间是应该加上rmb还是wmb.所以理解还不是特备深入。）另外需要注意的是，这个层面上没有必要考虑多核Cache一致性问题，因为多核Cache一致性是由MESI协议来保证的。
+
+引用链接里面Document Linux’s memory barriers的文章，来解释rmb和wmb的语义是这样的。需要注意的是这个仅仅是定义发生的顺序而不是完成的顺序
+#+BEGIN_VERSE
+    +General memory barriers make a guarantee that all memory accesses specified
+    +before the barrier will happen before all memory accesses specified after the
+    +barrier.
+    +
+    +Read memory barriers make a guarantee that all memory reads specified before
+    +the barrier will happen before all memory reads specified after the barrier.
+    +
+    +Write memory barriers make a guarantee that all memory writes specified before
+    +the barrier will happen before all memory writes specified after the barrier.
+    +
+    +There is no guarantee that any of the memory accesses specified before a memory
+    +barrier will be complete by the completion of a memory barrier; the barrier can
+    +be considered to draw a line in the access queue that accesses of the
+    +appropriate type may not cross. 
+#+END_VERSE
+
+关于多核Cache一致性问题的话对于programmer这一层似乎没有必要考虑。好比线程A,B（分摊在两个core和两个cpu cache上）共同操作同一个volatile bool flag.如果A将flag置为true的话，如果CPU底层不做好一致性协议的话，那么线程B可能就永远没有办法感知到这个值了（因为线程B每次都是从所在的CPU Cache来读取的，而从线程B所在CPU Cache每次读取的都是旧值）。而且如果是这样的话，对programmer负担很大，就是写完一次多核变量的话必须显示地调用Cache一致性函数（太麻烦了）。但是为了高效的话，搞不好会存在这样的CPU要求programmer显示地来控制CPU Cache以便提高效率。但是现在所接触到的Intel CPU底层都是会保证这点的。
+
+*** 再谈内存屏障
+最近又有同事(wangyuanzheng)问起这个问题，提出了一些不同的看法。所以我重新看了一下以前文章里面留下的链接，并且大致地阅读了一下链接里面给出的文章，叫做《Memory Barriers a Hardware View for Software Hackers》。
+
+ps:内存模型是在是一个非常深的坑。
+   1.《Memory Consistency Models For Shared-Memory Multiprocessors》368pages
+   2.《What Every Programmer Should Know About Memory》 114pages
+身边同学对于这个问题的理解，就好像对Paxos算法的理解一样（好像现在改善了很多），大家各执一词理解不同。
+
+这篇文章从CPU Cache开始说起，然后谈到了SMP Cache一致性问题使用MESI协议来解决。然后为了提高MESI效率的话减少不必要的停顿，添加了两个设施store buffer和invalidate queue（看个一知半解吧），但是却让我明白了一个问题。 *所谓CPU上面的内存屏障，并不是为了解决CPU乱序执行出现的问题，而是因为SMP Cache一致性问题不完善的解决方案而导致每个CPU对于memory perspective/visibility不同* 。对于代码来说，会出现三种order:
+   1. program order.这个就是我们programmer认为代码应该执行的顺序。
+   2. executive order.这个是在compiler进行instruction reorder之后，代码应该执行的顺序。在这里CPU乱序执行是无关的，对我们来说是透明的。
+   3. perspective order.这个是以user来说所看到的执行顺序。
+
+对于perspective order这里想说一个哲学问题。其实对于user也不知道最终执行顺序是什么，而是根据内存的状态来推测最终执行顺序是什么。就好比下面这段代码，假设a=b=0
+#+BEGIN_EXAMPLE
+CPU0 a=1
+CPU1 b=a+1
+#+END_EXAMPLE
+如果结果a=1,b=2的话，那我们会想当然地认为CPU0先执行而CPU1后执行。如果a=1,b=1的话，那么我们会想当然地认为CPU1先执行而CPU0后执行。对于user来说不关注CPU是怎么来执行的，而是通过外部状态的表现（File,Disk,Memory,Log）等来判断程序是否按照我所认为的program order执行。
+
+这里引用《Memory Barriers a Hardware View for Software Hackers》的一段话作为结尾：
+#+BEGIN_VERSE
+Many CPU architectures therefore provide weaker memory-barrier instructions that do only one or the other of these two. Roughly speaking, a “read mem-ory barrier” marks only the invalidate queue and a “write memory barrier” marks only the store buffer. while a full-fledged memory barrier does both.
+
+The effect of this is that a read memory barrier orders only loads on the CPU that executes it, so that all loads preceding the read memory barrier will appear to have completed before any load following the read memory barrier. Similarly, a write memory barrier orders only stores, again on the CPU that executes it, and again so that all stores preceding the write memory barrier will appear to have com-pleted before any store following the write memory barrier. A full-fledged memory barrier orders both loads and stores, but again only on the CPU execut-ing the memory barrier. 
+#+END_VERSE
+
+** Page Cache and Buffer Cache
+http://www.penglixun.com/tech/system/the_diffrents_of_page_cache_and_buffer_cache.html
+
+磁盘的操作有逻辑级（文件系统）和物理级（磁盘块），这两种Cache就是分别缓存逻辑和物理级数据的。假设我们通过文件系统操作文件，那么文件将被缓存到Page Cache，如果需要刷新文件的时候，Page Cache将交给Buffer Cache去完成，因为Buffer Cache就是缓存磁盘块的。也就是说，直接去操作文件，那就是Page Cache区缓存，用dd等命令直接操作磁盘块，就是Buffer Cache缓存的东西。
+
+** Page Fault
+Wikipedia http://en.wikipedia.org/wiki/Page_fault
+
+Page Fault分为两种，minor fault和major fault，触发时机都是在进程访问虚拟页面的时候。如果访问虚拟页面时候，这个页出现在物理内存但是没有被MMU(Memory Management Unit)标记为载入的话，那么称为minor fault. 这个时候MMU只需要标记载入并且做一些操作即可。这种情况可以考虑共享内存比如glibc动态链接库。全局维护一份glibc.so的动态链接库在物理内存，可能被很多进程所映射。但是如果访问虚拟页面时候，这个页面没有出现在物理内存的话，那么可能有两种可能 a.没有从程序读入 b.之前存在但是被换出到swap. 但是无论如何都需要从磁盘读取页面，并且替换当前物理内存中的页面，这个过程就是major fault. *很明显major fault比minor fault要更耗时，因为major fault需要读取磁盘。*
+
+如果按照磁盘读寻道延迟10ms,传输1page(4KB)耗时/60MB/s=0.05ms/page([[file:sysperf.org][参考]])，相当载入页面需要耗时10ms . 而如果是minor fault的话仅仅是内存操作读写1个字节约为250ns(注意和page大小无关). *这就意味着耗时major fault是minor fault 40000=40K倍* 。改善这个情况手可以压缩内存使用，改善内存访问，然后关掉swap分区等。
+
+** Linux Used Memory
+Linux Used内存到底哪里去了？ | 非业余研究 http://blog.yufeng.info/archives/2456
+   - slab 为系统快速分配大量常用对象准备的对象池 *常驻内存*
+   - page tables 系统实现虚拟内存使用的页表内存块 *常驻内存*
+各种命令用来关注使用内存
+   - nmon
+   - /proc/meminfo
+   - /proc/<pid>/status
+   - /proc/<pid>/statm
+   - slabtop

@@ -1,0 +1,11 @@
+#!/bin/bash
+# root http server.
+function start() {
+    echo "cd ~ && sudo python -m SimpleHTTPServer 80"
+    cd ~ && sudo python -m SimpleHTTPServer 80
+}
+
+start
+
+
+

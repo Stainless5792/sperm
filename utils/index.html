@@ -1,0 +1,56 @@
+<html>
+  <head><title>dirtysalt index</title></head>
+  <body>
+    <h1>document index</h1><hr/>
+    <ul>
+      <li>umeng dashboard</li>
+      <input type="txt" id="app_key"/>
+      <input type="submit" value="go" onclick="redirect()"/>
+      <script>
+	function redirect() {
+	var app_id = document.getElementById("app_key").value.split('').reverse().join('');
+	var app_url = 'http://www.umeng.com/apps/' + app_id + '/reports';
+	window.open(app_url);
+	}
+      </script>      
+      
+      <li><a href="github/umeng/umeng.html">internal doc</a>
+      <li><a href="utils/Python-2.7.3/Doc/build/html/index.html">Python</a></li>
+      <li><a href="doc/openjdk-6-jre-headless/api/index.html">Java6 API</a></li>
+      <li><a href="http://localhost:6060">Go</a></li>
+     
+      <li>Local <a href="http://localhost:50030/">JobTracker</a> <a href="http://localhost:8088">YARN</a> <a href="http://localhost:50070/">NameNode</a> <a href="http://localhost:60010">HMaster</a></li>
+      <li>DP Online <a href="http://dp2:50030">JobTracker</a> <a href="http://dp2:50070">NameNode</a> <a href="http://dp2:60010">HMaster</a> <a href="http://211.151.139.253/ganglia">Ganglia</a></li>
+      <li>DP Test <a href="http://hadoop1:50030/">JobTracker</a> <a href="http://hadoop1:50070/">NaneNode</a> <a href="http://hadoop1:60010/">HMaster</a></li>
+      
+      <li>Hadoop cdh3u3 <a href="utils/hadoop-0.20.2-cdh3u3/docs/index.html">Doc</a>  <a href="utils/hadoop-0.20.2-cdh3u3/docs/api/index.html">API</a></li>
+      <li>Hadoop chd4.2.0 <a href="utils/hadoop-2.0.0-cdh4.2.0/share/doc/index.html">Doc</a> <a href="utils/hadoop-2.0.0-cdh4.2.0/share/doc/index.html">API</a></li>      
+      <li>HBase cdh3u3 <a href="utils/hbase-0.90.4-cdh3u3/docs/index.html">Doc</a> <a href="utils/hbase-0.90.4-cdh3u3/docs/apidocs/index.html">API</a></li>
+      <li>HBase cdh4.2.0 <a href="utils/hbase-0.94.2-cdh4.2.0/docs/index.html">Doc</a> <a href="utils/hbase-0.94.2-cdh4.2.0/docs/apidocs/index.html">API</a></li>      
+      <li>ZooKeeper cdh3u3 <a href="utils/zookeeper-3.3.4-cdh3u3/docs/index.html">Doc</a> <a href="utils/zookeeper-3.3.4-cdh3u3/docs/api/index.html">API</a></li>
+      <li>ZooKeeper chd4.2.0 <a href="utils/zookeeper-3.4.5-cdh4.2.0/docs/index.html">Doc</a> <a href="utils/zookeeper-3.4.5-cdh4.2.0/docs/api/index.html">API</a></li>
+      <li>Hive cdh3u3 <a href="utils/hive-0.7.1-cdh3u3/docs/index.html">Doc</a> <a href="utils/hive-0.7.1-cdh3u3/docs/api/index.html">API</a></li>
+      <li>Hive cdh4.2.0 <a href="utils/hive-0.10.0-cdh4.2.0/docs/index.html">Doc</a> <a href="utils/hive-0.10.0-cdh4.2.0/docs/api/index.html">API</a></li>
+      
+      <li><a href="utils/oozie-2.3.2-cdh3u3/docs/index.html">Oozie</a> <a href="http://localhost:11000/oozie/">WebConsole</a></li>
+      <li><a href="github/asynchbase/build/api/index.html">asynchbase API</a></li>
+      <li><a href="github/jedis/target/apidocs/index.html">jedis API</a></li>      
+      <li><a href="github/jredis/core/ri/target/apidocs/index.html">jredis-RI</a> <a href="github/jredis/core/api/target/apidocs/index.html">API</a</li>
+      <li><a href="github/java-memcached-client/build/docs/index.html">spymemcached API</a></li>
+      <li><a href="github/mrunit/target/site/apidocs/index.html">MRUnit API</a></li>
+      <li><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/index.html">guava</a></li>
+      <li><a href="http://javasourcecode.org/html/open-source/hbase/hbase-0.90.3/index.html">HBase-Test API</a></li>
+      <li><a href="http://www.junit.org/apidocs/index.html">JUnit</a></li>
+      <li><a href="http://api.mongodb.org/python/current/">Python Mongo</a></li>
+      <li><a href="http://api.mongodb.org/java/current/">Java Mongo</a></li>
+      <li>Netty3.5.10 <a href="utils/netty-3.5.10.Final/doc/api">API</a> <a href="utils/netty-3.5.10.Final/doc/xref">Code</a></li>
+      <li>Netty3.6.2 <a href="utils/netty-3.6.2.Final/doc/api">API</a> <a href="utils/netty-3.6.2.Final/doc/api">Code</a></li>      
+    </ul>
+    <h1>site index</h1><hr/>
+    <ul>
+      <li><a href="github/sperm/www/index.html">dirlt.com</a> <a href="http://www.dirlt.com">@aws</a></li>
+      <li><a href="https://lwn.net/">lwn.net</a></li>
+      <li><a href="http://nexus:8088/nexus/">Nexus</a></li>
+    </ul>
+  </body>
+</html>

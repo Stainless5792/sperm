@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+#coding:utf-8
+#Copyright (C) dirlt
+
+import sys
+import urllib
+import shutil
+import string
+import re
+
+HOSTS_URL='https://smarthosts.googlecode.com/svn/trunk/hosts'
+
+HOSTS = './hosts'
+
+def main():
+    nls = map(lambda x:string.strip(x),urllib.urlopen(HOSTS_URL).readlines())
+    ols = map(lambda x:string.strip(x),open(HOSTS).readlines())
+    bls = []
+    smart = False
+    for x in ols:        
+        if x.startswith('#SmartHosts START') or re.match(r'#UPDATE:\d{4}-\d{2}-\d{2} \d{2}:\d{2}',x):
+            smart = True
+        elif x.startswith('#SmartHosts END'):
+            smart = False
+            bls.extend(nls)
+        elif not smart:
+            bls.append(x)
+    open('/tmp/hosts','w').write('\n'.join(bls))
+    shutil.move('/tmp/hosts',HOSTS)
+    print "update '%s' success"%(HOSTS)
+    
+if __name__ == '__main__':
+    if len(sys.argv)>1:
+        HOSTS_URL = sys.argv[1]
+    main()

@@ -1,0 +1,7 @@
+#!/bin/bash
+function start() {
+    echo "ssh -vN -D 7070 dirlt@dirlt-aws"
+    ssh -vN -D 7070 dirlt@54.241.35.194
+}
+
+start

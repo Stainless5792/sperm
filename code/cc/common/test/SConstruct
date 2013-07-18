@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+#coding:gbk
+#Copyright (C) dirlt
+
+import os
+import glob
+env=Environment(CPPPATH=['../../'],
+                CXXFLAGS='-W -Wall -g -Wno-unused-parameter -Werror -DDEBUG -fPIC',
+                LIBPATH=['../'],
+                LIBS=['common',
+                      'protobuf', # protobuf
+                      'zookeeper_mt', # zookeeper
+                      'rt',                
+                      'pthread'])
+
+excepts=['test_proto_serializer.cc',
+         'test_proto_dynamic.cc',
+         'sample.pb.cc']
+env.Program('test_proto_serializer.exe',
+            ['test_proto_serializer.cc',
+             'sample.pb.cc'])
+env.Program('test_proto_dynamic.exe',            
+            ['test_proto_dynamic.cc',
+             'sample.pb.cc'])
+
+for x in glob.glob('*.cc'):
+    if x in excepts:
+        continue
+    env.Program(os.path.splitext(x)[0]+'.exe',[x])

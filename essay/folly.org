@@ -1,0 +1,19 @@
+* folly
+   - folly in github https://github.com/facebook/folly
+
+** 编译folly
+   - autoconf,autmake使用详解 http://www.laruence.com/2009/11/18/1154.html
+
+关于一些dependencies在README里面写得非常清楚了(注意看看如何编译double-conversion).
+   - aclocal
+   - autoreconf # 我不知道为什么执行autoreconf就OK而执行autoconf就失败报告下面错误
+#+BEGIN_EXAMPLE
+    configure.ac:24: error: possibly undefined macro: AC_CXX_COMPILE_STDCXX_0X
+    If this token and others are legitimate, please use m4_pattern_allow.
+    See the Autoconf documentation. 
+
+#+END_EXAMPLE
+   - mkdir -p build-aux
+   - automake –add-missing
+   - LDFLAGS=”-L/home/dirlt/github/double-conversion -L/home/dirlt/utils/glog/lib -L/home/dirlt/utils/gflags/lib” CPPFLAGS=”-I/home/dirlt/github/double-conversion/src -I/home/dirlt/utils/glog/include -I/home/dirlt/utils/gflags/include” ./configure –prefix=pwd/../install –enable-static –disable-shared # 其中有自己安装的double-conversion,gflags和glog的路径。boost是通过apt-get安装到系统下面的。
+   - make && make install # DONE!!!

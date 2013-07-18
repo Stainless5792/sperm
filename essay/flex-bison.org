@@ -1,0 +1,10 @@
+* flex-bison
+我们可以通过设计一个小型语言来说明如何使用flex+bison。当然为了简化问题，这个小型语言使用lisp结构进行表示，所以词法和文法都非常简单。
+具体代码可以看 https://github.com/dirtysalt/sperm/tree/master/code/cc/nasty 
+
+相对于简单地使用flex+bison而言，这个例子使用了一些选项来获得额外的功能，包括：
+   - 可重入分析器
+   - 追踪位置信息
+   - 指定输出文件
+
+*NOTE（dirlt）：自己搞了编译器前端也比较久了，觉得前端的语法应该尽可能地简单，比如scheme*

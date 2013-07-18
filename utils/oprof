@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+#coding:utf-8
+#Copyright (C) dirlt
+
+import string
+import re
+import os
+import sys
+
+class Profiler:
+    def __init__(self,
+                 image,
+                 report,
+                 srcdir,
+                 asmfile,
+                 cmd):
+        self._image=os.path.realpath(image)
+        self._cmd=cmd
+        self._report=report
+        self._srcdir=srcdir
+        self._asmfile=asmfile
+        
+    def run(self):
+        content=[]
+        content.append("sudo opcontrol --reset")
+        content.append("sudo opcontrol --no-vmlinux --separate=lib --start --image=%s"%(self._image))
+        content.append(self._cmd)
+        content.append("sudo opcontrol --dump")
+        content.append("sudo opcontrol --shutdown")
+        content.append("sudo opreport -l image:%s -o %s"%(self._image,self._report))
+        content.append("sudo opannotate -s --output-dir=%s %s"%(self._srcdir,self._image))
+        content.append("sudo opannotate -a %s > %s"%(self._image,self._asmfile))
+
+        for x in content:
+            print x
+            os.system(x)
+        return True
+    
+def main():    
+    if(len(sys.argv)<6):
+        print "usage:%s image[elf-file] report srcdir asmfile command"%sys.argv[0]
+        exit(0)
+    p=Profiler(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],string.join(sys.argv[5:]))
+    p.run()
+    
+if __name__=="__main__":
+    main()

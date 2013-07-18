@@ -1,0 +1,10 @@
+* brave-heart
+#+TITLE: 勇敢的心(Brave Heart)
+W(william wallace):I am William Wallace. And I see a whole army of my country men here and fight the tyranny. You come to fight as free men, and free men you are. What will you do without freedom. Will you fight?
+
+O(other):No~~~!Fight aganist that? No, we will run, and we will live.
+
+W(william wallace):All right. Fight you may die, and run you will live at least for a while. And die in your beds many years from now, woule you be will to trade all those days from this day to that for a one chance, just one chance, to come back here, tell our enemies that they may take our lives, but they will never take our freedom
+
+战斗可能会死去，逃跑还以苟活一阵子。日复一日，当你寿终正寝的时候，你是否愿意，用那些苟活的日子来交换一个机会，就今天这么一个机会，回到这里告诉我们的敌人，他们可能会夺取我们的生命，但是永远夺不走我们的自由。
+
