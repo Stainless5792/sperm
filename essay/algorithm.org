@@ -269,6 +269,8 @@ for ( p=list; p!=NULL; p=p->next ){
    - Fast, Cheap, and 98% Right: Cardinality Estimation for Big Data | Metamarkets http://metamarkets.com/2012/fast-cheap-and-98-right-cardinality-estimation-for-big-data/
    - Damn Cool Algorithms: Cardinality Estimation - Nick's Blog http://blog.notdot.net/2012/09/Dam-Cool-Algorithms-Cardinality-Estimation
    - Sketch of the Day: HyperLogLog — Cornerstone of a Big Data Infrastructure – AK Tech Blog http://blog.aggregateknowledge.com/2012/10/25/sketch-of-the-day-hyperloglog-cornerstone-of-a-big-data-infrastructure/
+   - http://stackoverflow.com/questions/12327004/how-does-the-hyperloglog-algorithm-work
+   - HyperLogLog in Practice: Algorithmic Engineering of a State of The Art Cardinality Estimation Algorithm : http://research.google.com/pubs/pub40671.html
 
 --------------------
 这个算法主要是来进行去重的，前提是在big data下面并且内存存在限制。 *算法的假设和原理如下* ：
