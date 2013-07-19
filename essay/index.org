@@ -186,7 +186,7 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
      - [[file:note/virgin-foot-massage.org][初次足疗]]
      - [[file:note/ms-interview.org][微软面试]]
      - [[file:note/ymy-travel.org][圆明园游]]
-
+     - [[file:./note/my-amoi-n821.org][我的夏新N821]]
    - 记录
      - [[file:./note/todo.org][todo]] 记录自己日常需要完成的事情。
      - [[file:note/fun.org][挺搞笑的]]
