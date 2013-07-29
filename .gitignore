@@ -33,7 +33,7 @@ essay/note/*.html
 essay/note/private
 www/images
 sae/
-www/kylin.html
+#www/kylin.html
 
 code/java/*/target
 
