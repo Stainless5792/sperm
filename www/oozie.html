@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="oozie"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:23:10 CST"/>
+<meta name="generated" content="2013-07-29 21:51:04 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -147,6 +147,9 @@ target.className = elem.cacheClassTarget;
 
 
 <p>
+<b>NOTE(dirlt):我只是粗略地使用了一下，直觉上觉得这个东西很烂。推荐大家可以考虑一下azkaban</b>
+</p>
+<p>
 oozie工作方式也是启动一个mapper任务（这个任务启动真正任务）放在cluster上面运行。大致上来看的话需要几个文件：
 </p><ul>
 <li>workflow.xml ozzie读取它来知道每个任务DAG如何并且失败以及成功之后如何处理。需要提交到hdfs上面。
@@ -175,6 +178,18 @@ oozie执行分为三种模式：
 <p>触发条件非常巧妙，提供一个叫做synchronous dataset的数据集。这个数据集其实就是一个url（文件系统url），不过这个url通过时间来进行区分。比如hdfs://foo:9000/usr/logs/2009/04/15/23/30.
 </p><ul>
 <li>bundle. bundle的作用就是将多个coordinator管理起来。这样我们只需要提供一个bundle提交即可。然后可以start/stop/suspend/resume任何coordinator.
+</li>
+</ul>
+
+
+<p>
+下面是在使用时候总结的一些问题：
+</p><ul>
+<li>时区似乎只是支持UTC。对于我来说处在Asia/Shanghai这个timezone，时间是提前8个小时的。这个在使用的时候需要转换一下。
+</li>
+<li>oozie调度时间似乎比较怪异（不像是分钟级别，也不像是小时级别，而且现在也没有找到参数配置）。即使对于上面这个小时任务，可以看到create time间隔是5min左右。<img src="./images/oozie-coord-create-interval.png"  alt="./images/oozie-coord-create-interval.png" />
+</li>
+<li>oozie支持故障恢复。直接restart之后启动oozie，之前提交的coord job还能够正常执行。
 </li>
 </ul>
 
@@ -634,21 +649,6 @@ NOTE（dirlt）：不过后来测试了一下之后，发现其实是可以观�
 <p>
 <img src="./images/oozie-coord-job-action-info.png"  alt="./images/oozie-coord-job-action-info.png" />
 </p>
-
-<hr/>
-
-<p>
-下面是在使用时候总结的一些问题：
-</p><ul>
-<li>时区似乎只是支持UTC。对于我来说处在Asia/Shanghai这个timezone，时间是提前8个小时的。这个在使用的时候需要转换一下。
-</li>
-<li>oozie调度时间似乎比较怪异（不像是分钟级别，也不像是小时级别，而且现在也没有找到参数配置）。即使对于上面这个小时任务，可以看到create time间隔是5min左右。<img src="./images/oozie-coord-create-interval.png"  alt="./images/oozie-coord-create-interval.png" />
-</li>
-<li>oozie支持故障恢复。我直接restart之后启动oozie，之前提交的coord job还能够正常执行。
-</li>
-</ul>
-
-
 </div>
 
 </div>
@@ -685,7 +685,7 @@ NOTE（dirlt）：不过后来测试了一下之后，发现其实是可以观�
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:23:10 CST</p>
+<p class="date">Date: 2013-07-29 21:51:04 CST</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
