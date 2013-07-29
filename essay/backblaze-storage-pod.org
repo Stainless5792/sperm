@@ -8,6 +8,8 @@ backblaze storage pod 构造大容量廉价存储服务器
    - 2.0 # 4U, 135TB, 7394$
    - 3.0 # 4U, 180TB, ？？？
 
+*TODO（dirlt）：具体硬件方面的细节没有看也看不懂*
+
 ** Pod 1.0
 *** No One Sells Cheap Storage, so We Designed It
 Before realizing that we had to solve this storage problem ourselves, we considered Amazon S3, Dell or Sun Servers, NetApp Filers, EMC SAN, etc. As we investigated these traditional off-the-shelf solutions, we became increasingly disillusioned by the expense. When you strip away the marketing terms and fancy logos from any storage solution, data ends up on a hard drive. But when we priced various off-the-shelf solutions, the cost was 10 times as much (or more) than the raw hard drives. Here’s a comparison chart of the price for one petabyte from various venders:（其他厂商服务器除去存储之外附加费用非常高，甚至超过存储本身10倍以上）
