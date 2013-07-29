@@ -82,6 +82,7 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
 
 ** Storage System
    - [[file:storage-system-reading.org][storage-system-reading]] 关于存储系统方面的一些文章以及阅读心得。
+     - [[file:backblaze-storage-pod.org][Backblaze Storage Pod]] 构建廉价存储服务器的厂商。将其设计以及使用公开并且做了比较深入的说明。
    - [[file:dbms.org][dbms]] DBMS(database management system)现在正在研究。打算首先阅读一下数据库系统基础教程(A First Course in Database Systems by Jeffrey D. Ullman),然后看看另外一本也是Jeffrey D. Ullman写的数据库系统实现(Database System Implementation).主要是了解DBMS方面的理论和大致实现，之后会稍微结合现有数据库实现阅读代码(MySQL/PostgreSQL).
    - [[file:leveldb.org][leveldb]] google的开源kv存储系统。支持billion级别的数据量，适合于写少读多的情况。当时阅读的时候是从github上面clone下来的，可能还存相当多的bug.TODO(dirlt):更深入的阅读.
    - [[file:mongodb.org][mongodb]] 面向文档的分布式存储系统，但是却可以针对文档字段索引来加快查询。功能上比通常我们认为的NoSQL强但是弱于RDBMS.
