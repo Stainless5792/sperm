@@ -1,5 +1,5 @@
 * mapred
-#+OPTIONS： H：5
+#+OPTIONS: H:5
 ** Topic
 *** YARN
 **** Introducing Apache Hadoop YARN | Hortonworks

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="mapred"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-30 18:16:48 CST"/>
+<meta name="generated" content="2013-07-30 18:17:54 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -102,7 +102,16 @@ target.className = elem.cacheClassTarget;
 <ul>
 <li><a href="#sec-1-1">1.1 Topic</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1 YARN</a></li>
+<li><a href="#sec-1-1-1">1.1.1 YARN</a>
+<ul>
+<li><a href="#sec-1-1-1-1">1.1.1.1 Introducing Apache Hadoop YARN | Hortonworks</a></li>
+<li><a href="#sec-1-1-1-2">1.1.1.2 Apache Hadoop YARN – Background and an Overview | Hortonworks</a></li>
+<li><a href="#sec-1-1-1-3">1.1.1.3 Apache Hadoop YARN – Concepts and Applications | Hortonworks</a></li>
+<li><a href="#sec-1-1-1-4">1.1.1.4 Apache Mesos (Twitter Open Source Open House)</a></li>
+<li><a href="#sec-1-1-1-5">1.1.1.5 Apache Hadoop YARN – NodeManager | Hortonworks</a></li>
+<li><a href="#sec-1-1-1-6">1.1.1.6 Apache Hadoop YARN – ResourceManager | Hortonworks</a></li>
+</ul>
+</li>
 <li><a href="#sec-1-1-2">1.1.2 HowManyMapsAndReduces - Hadoop Wiki</a></li>
 <li><a href="#sec-1-1-3">1.1.3 7 Tips for Improving MapReduce Performance | Apache Hadoop for the Enterprise | Cloudera</a></li>
 <li><a href="#sec-1-1-4">1.1.4 Under the Hood: Scheduling MapReduce jobs more efficiently with Corona | Facebook</a></li>
@@ -114,21 +123,50 @@ target.className = elem.cacheClassTarget;
 <li><a href="#sec-1-3-1">1.3.1 task heartbeat</a></li>
 <li><a href="#sec-1-3-2">1.3.2 Partitioner</a></li>
 <li><a href="#sec-1-3-3">1.3.3 shuffle in memory</a></li>
-<li><a href="#sec-1-3-4">1.3.4 lzo index format</a></li>
+<li><a href="#sec-1-3-4">1.3.4 lzo index format</a>
+<ul>
+<li><a href="#sec-1-3-4-1">1.3.4.1 DistributedLzoIndexer</a></li>
+<li><a href="#sec-1-3-4-2">1.3.4.2 LzoTextInputFormat</a></li>
+</ul></li>
 </ul>
 </li>
 <li><a href="#sec-1-4">1.4 日志分析</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1 getMapOutput failed</a></li>
-<li><a href="#sec-1-4-2">1.4.2 Error initializing</a></li>
+<li><a href="#sec-1-4-1">1.4.1 getMapOutput failed</a>
+<ul>
+<li><a href="#sec-1-4-1-1">1.4.1.1 normal case</a></li>
+<li><a href="#sec-1-4-1-2">1.4.1.2 bas case</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4-2">1.4.2 Error initializing</a>
+<ul>
+<li><a href="#sec-1-4-2-1">1.4.2.1 No such file or directory</a></li>
+</ul>
+</li>
 <li><a href="#sec-1-4-3">1.4.3 shuffleInMemory OutOfMemoryError</a></li>
 </ul>
 </li>
 <li><a href="#sec-1-5">1.5 使用问题</a>
 <ul>
-<li><a href="#sec-1-5-1">1.5.1 hadoop-lzo</a></li>
-<li><a href="#sec-1-5-2">1.5.2 多路输入</a></li>
-<li><a href="#sec-1-5-3">1.5.3 多路输出</a></li>
+<li><a href="#sec-1-5-1">1.5.1 hadoop-lzo</a>
+<ul>
+<li><a href="#sec-1-5-1-1">1.5.1.1 安装配置</a></li>
+<li><a href="#sec-1-5-1-2">1.5.1.2 使用lzo</a></li>
+<li><a href="#sec-1-5-1-3">1.5.1.3 配合protobuf</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5-2">1.5.2 多路输入</a>
+<ul>
+<li><a href="#sec-1-5-2-1">1.5.2.1 MultipleInputs</a></li>
+<li><a href="#sec-1-5-2-2">1.5.2.2 MultipleTableInputFormat</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5-3">1.5.3 多路输出</a>
+<ul>
+<li><a href="#sec-1-5-3-1">1.5.3.1 MultipleOutputs</a></li>
+<li><a href="#sec-1-5-3-2">1.5.3.2 MultipleTableOutputFormat</a></li>
+</ul>
+</li>
 <li><a href="#sec-1-5-4">1.5.4 获取集群运行状况</a></li>
 <li><a href="#sec-1-5-5">1.5.5 OutOfMemoryError</a></li>
 <li><a href="#sec-1-5-6">1.5.6 topology rack awareness</a></li>
@@ -162,20 +200,29 @@ target.className = elem.cacheClassTarget;
 <h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> YARN</h4>
 <div class="outline-text-4" id="text-1-1-1">
 
-<ul>
-<li id="sec-1-1-1-1">Introducing Apache Hadoop YARN | Hortonworks<br/>
-<a href="http://hortonworks.com/blog/introducing-apache-hadoop-yarn/">http://hortonworks.com/blog/introducing-apache-hadoop-yarn/</a>
 
+</div>
+
+<div id="outline-container-1-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1-1"><span class="section-number-5">1.1.1.1</span> Introducing Apache Hadoop YARN | Hortonworks</h5>
+<div class="outline-text-5" id="text-1-1-1-1">
+
+<p><a href="http://hortonworks.com/blog/introducing-apache-hadoop-yarn/">http://hortonworks.com/blog/introducing-apache-hadoop-yarn/</a>
+</p>
 <p>
 看起来YARN的主要目的是将Hadoop不仅仅用于map-reduce的计算方式，还包括MPI，graph-processing，simple services等，
 而MR仅仅是作为其中一种计算方式。底层依然是使用HDFS。发布方式的话还是将HDFS，YARN，MR，以及Common一起统一发布。
 </p>
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-1-2">Apache Hadoop YARN – Background and an Overview | Hortonworks<br/>
-<a href="http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/">http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/</a>
+</div>
 
+</div>
+
+<div id="outline-container-1-1-1-2" class="outline-5">
+<h5 id="sec-1-1-1-2"><span class="section-number-5">1.1.1.2</span> Apache Hadoop YARN – Background and an Overview | Hortonworks</h5>
+<div class="outline-text-5" id="text-1-1-1-2">
+
+<p><a href="http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/">http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/</a>
+</p>
 <p>
 对于MR来说，最关键的一点就是lack of data motion。通过将任务放在数据所在的机器上面，而不是将数据移动到任务所在的机器上面，可以节省带宽提高计算效率。现在来说MR分为下面三个部分：
 </p><ul>
@@ -230,12 +277,16 @@ YARN主要做的工作就是在资源利用的改进上面，将资源利用已�
 <p>
 <img src="./images/YARNArch.png"  alt="./images/YARNArch.png" />
 </p>
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-1-3">Apache Hadoop YARN – Concepts and Applications | Hortonworks<br/>
-<a href="http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/">http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/</a>
+</div>
 
+</div>
+
+<div id="outline-container-1-1-1-3" class="outline-5">
+<h5 id="sec-1-1-1-3"><span class="section-number-5">1.1.1.3</span> Apache Hadoop YARN – Concepts and Applications | Hortonworks</h5>
+<div class="outline-text-5" id="text-1-1-1-3">
+
+<p><a href="http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/">http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/</a>
+</p>
 <p>
 将AM和RM分离的好处在于：一方面减轻RM的压力这样可以让RM管理更多的集群，另外一方面可以让AM支持更多类型的计算而不仅仅是MR
 </p>
@@ -318,18 +369,26 @@ Let’s walk through an application execution sequence (steps are illustrated in
 <p>
 <img src="./images/yarnflow.png"  alt="./images/yarnflow.png" />
 </p>
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-1-4">Apache Mesos (Twitter Open Source Open House)<br/>
-<a href="https://speakerdeck.com/u/benh/p/apache-mesos-twitter-open-source-open-house">https://speakerdeck.com/u/benh/p/apache-mesos-twitter-open-source-open-house</a>
+</div>
 
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-1-5">Apache Hadoop YARN – NodeManager | Hortonworks<br/>
-<a href="http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/">http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/</a>
+</div>
 
+<div id="outline-container-1-1-1-4" class="outline-5">
+<h5 id="sec-1-1-1-4"><span class="section-number-5">1.1.1.4</span> Apache Mesos (Twitter Open Source Open House)</h5>
+<div class="outline-text-5" id="text-1-1-1-4">
+
+<p><a href="https://speakerdeck.com/u/benh/p/apache-mesos-twitter-open-source-open-house">https://speakerdeck.com/u/benh/p/apache-mesos-twitter-open-source-open-house</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-1-5" class="outline-5">
+<h5 id="sec-1-1-1-5"><span class="section-number-5">1.1.1.5</span> Apache Hadoop YARN – NodeManager | Hortonworks</h5>
+<div class="outline-text-5" id="text-1-1-1-5">
+
+<p><a href="http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/">http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/</a>
+</p>
 <p>
 <img src="./images/yarn-nodemanager-arch.png"  alt="./images/yarn-nodemanager-arch.png" />
 </p>
@@ -371,12 +430,16 @@ Let’s walk through an application execution sequence (steps are illustrated in
 </ul>
 
 
-</li>
-</ul>
-<ul>
-<li id="sec-1-1-1-6">Apache Hadoop YARN – ResourceManager | Hortonworks<br/>
-<a href="http://hortonworks.com/blog/apache-hadoop-yarn-resourcemanager/">http://hortonworks.com/blog/apache-hadoop-yarn-resourcemanager/</a>
+</div>
 
+</div>
+
+<div id="outline-container-1-1-1-6" class="outline-5">
+<h5 id="sec-1-1-1-6"><span class="section-number-5">1.1.1.6</span> Apache Hadoop YARN – ResourceManager | Hortonworks</h5>
+<div class="outline-text-5" id="text-1-1-1-6">
+
+<p><a href="http://hortonworks.com/blog/apache-hadoop-yarn-resourcemanager/">http://hortonworks.com/blog/apache-hadoop-yarn-resourcemanager/</a>
+</p>
 <p>
 <img src="./images/yarn-resourcemanager-arch.png"  alt="./images/yarn-resourcemanager-arch.png" />
 </p>
@@ -446,8 +509,7 @@ Let’s walk through an application execution sequence (steps are illustrated in
 </ul>
 
 
-</li>
-</ul>
+</div>
 </div>
 
 </div>
@@ -792,8 +854,13 @@ LOG.info(<span style="color: #ffff00;">"ShuffleRamManager: MemoryLimit="</span> 
 </ul>
 
 
-<ul>
-<li id="sec-1-3-4-1">DistributedLzoIndexer<br/>
+
+</div>
+
+<div id="outline-container-1-3-4-1" class="outline-5">
+<h5 id="sec-1-3-4-1"><span class="section-number-5">1.3.4.1</span> DistributedLzoIndexer</h5>
+<div class="outline-text-5" id="text-1-3-4-1">
+
 <ul>
 <li>调用walkPath尝试得到所有的输入文件，使用nonTemporaryFilter来过滤临时文件，然后添加到job输入路径里面。
 </li>
@@ -1012,12 +1079,16 @@ return curValue;
 </pre>
 
 
-</li>
-</ul>
-<ul>
-<li id="sec-1-3-4-2">LzoTextInputFormat<br/>
-首先说明一下大致逻辑
-<ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-4-2" class="outline-5">
+<h5 id="sec-1-3-4-2"><span class="section-number-5">1.3.4.2</span> LzoTextInputFormat</h5>
+<div class="outline-text-5" id="text-1-3-4-2">
+
+<p>首先说明一下大致逻辑
+</p><ul>
 <li>初始化的时候会尝试读取输入lzo文件对应的index,保存在map里面。key是Path,value是LzoIndex对象。
 </li>
 <li>尝试判断文件是否可分割的时候，判断Path是否有对应的LzoIndex对象。如果有的话说明有对应的index文件，那么就是可切割的，否则就不可切割。
@@ -1192,8 +1263,7 @@ return result;
 <p>
 整个过程就非常清晰了。fileSplit.getStart()和fileSplit.getLength()是原始分片，如果按照这个信息是不能够解压缩的。但是在LzoIndex的帮助下面定位到了lzoStart和lzoEnd, 这个区间内的数据是可以自解压缩的。
 </p>
-</li>
-</ul>
+</div>
 </div>
 </div>
 
@@ -1218,10 +1288,15 @@ return result;
 </ul>
 
 
-<ul>
-<li id="sec-1-4-1-1">normal case<br/>
-dp41上面出现如下错误日志，可以看到dp41在作为map output server时候，dp16从这些取数据但是失败，并且可以分析
-<ul>
+
+</div>
+
+<div id="outline-container-1-4-1-1" class="outline-5">
+<h5 id="sec-1-4-1-1"><span class="section-number-5">1.4.1.1</span> normal case</h5>
+<div class="outline-text-5" id="text-1-4-1-1">
+
+<p>dp41上面出现如下错误日志，可以看到dp41在作为map output server时候，dp16从这些取数据但是失败，并且可以分析
+</p><ul>
 <li>map task attempt_201301231102_33841_m_000331_0
 </li>
 <li>reduce task id = 15
@@ -1424,12 +1499,15 @@ Reduce input records    321,140,243
 </pre>
 
 
-</li>
-</ul>
-<ul>
-<li id="sec-1-4-1-2">bas case<br/>
-</li>
-</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-4-1-2" class="outline-5">
+<h5 id="sec-1-4-1-2"><span class="section-number-5">1.4.1.2</span> bas case</h5>
+<div class="outline-text-5" id="text-1-4-1-2">
+
+</div>
 </div>
 
 </div>
@@ -1438,10 +1516,15 @@ Reduce input records    321,140,243
 <h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Error initializing</h4>
 <div class="outline-text-4" id="text-1-4-2">
 
-<ul>
-<li id="sec-1-4-2-1">No such file or directory<br/>
-dp31出现如下日志，这个过程是非常诡异的。从stacktrace上面可以看到过程是在创建job directory时候正要修改权限，但是文件找不到了。从dp31的df -h可以看到剩余磁盘空间如下
 
+</div>
+
+<div id="outline-container-1-4-2-1" class="outline-5">
+<h5 id="sec-1-4-2-1"><span class="section-number-5">1.4.2.1</span> No such file or directory</h5>
+<div class="outline-text-5" id="text-1-4-2-1">
+
+<p>dp31出现如下日志，这个过程是非常诡异的。从stacktrace上面可以看到过程是在创建job directory时候正要修改权限，但是文件找不到了。从dp31的df -h可以看到剩余磁盘空间如下
+</p>
 
 
 <pre class="example">/dev/sdf1       1.8T  1.7T  904M 100% /data/data5
@@ -1504,8 +1587,7 @@ at org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run(TaskTracker.java:2527)
 </pre>
 
 
-</li>
-</ul>
+</div>
 </div>
 
 </div>
@@ -1549,8 +1631,13 @@ at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTa
 <h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> hadoop-lzo</h4>
 <div class="outline-text-4" id="text-1-5-1">
 
-<ul>
-<li id="sec-1-5-1-1">安装配置<br/>
+
+</div>
+
+<div id="outline-container-1-5-1-1" class="outline-5">
+<h5 id="sec-1-5-1-1"><span class="section-number-5">1.5.1.1</span> 安装配置</h5>
+<div class="outline-text-5" id="text-1-5-1-1">
+
 <ul>
 <li>安装liblzo2库，sudo apt-get install liblzo2-2(liblzo2-dev)
 </li>
@@ -1603,12 +1690,16 @@ at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTa
 </pre>
 
 
-</li>
-</ul>
-<ul>
-<li id="sec-1-5-1-2">使用lzo<br/>
-关于如何使用lzo可以参看代码示例， com.dirlt.java.mr.ReadLzoInput . 下面几点需要说明：
-<ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-1-2" class="outline-5">
+<h5 id="sec-1-5-1-2"><span class="section-number-5">1.5.1.2</span> 使用lzo</h5>
+<div class="outline-text-5" id="text-1-5-1-2">
+
+<p>关于如何使用lzo可以参看代码示例， com.dirlt.java.mr.ReadLzoInput . 下面几点需要说明：
+</p><ul>
 <li>LzoTextInputFormat用来处理lzo压缩的文本文件，
 <ul>
 <li>hadoop-lzo本身没有自带LzoTextOutputFormat，这样的话之能够输出TextOutputFormat然后通过lzop压缩
@@ -1653,12 +1744,16 @@ at org.apache.hadoop.mapred.ReduceTask$ReduceCopier$MapOutputCopier.run(ReduceTa
 <p>
 如果需要单独使用lzo而不是使用mapreduce来做压缩和解压缩的话，可以参考com.dirlt.java.mr.UseLzoStandadlone.
 </p>
-</li>
-</ul>
-<ul>
-<li id="sec-1-5-1-3">配合protobuf<br/>
-elephant-bird实现了protobuf+lzo组合使用方式。
+</div>
 
+</div>
+
+<div id="outline-container-1-5-1-3" class="outline-5">
+<h5 id="sec-1-5-1-3"><span class="section-number-5">1.5.1.3</span> 配合protobuf</h5>
+<div class="outline-text-5" id="text-1-5-1-3">
+
+<p>elephant-bird实现了protobuf+lzo组合使用方式。
+</p>
 <p>
 首先创建proto文件，比如message.proto
 </p>
@@ -1747,8 +1842,7 @@ super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
 <p>
 关于如何使用lzo+protobuf可以参看代码示例， com.dirlt.java.mr.UseLzoProtobuf . 值得注意的是如果输入为lzo文件的话，那么类型是ProtobufWritable&lt;M&gt;（泛型），如果需要取值的话必须通过setConverter提供类信息。
 </p>
-</li>
-</ul>
+</div>
 </div>
 
 </div>
@@ -1757,8 +1851,13 @@ super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
 <h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> 多路输入</h4>
 <div class="outline-text-4" id="text-1-5-2">
 
-<ul>
-<li id="sec-1-5-2-1">MultipleInputs<br/>
+
+</div>
+
+<div id="outline-container-1-5-2-1" class="outline-5">
+<h5 id="sec-1-5-2-1"><span class="section-number-5">1.5.2.1</span> MultipleInputs</h5>
+<div class="outline-text-5" id="text-1-5-2-1">
+
 <ul>
 <li>参考代码 com.dirlt.java.mr.RunMultipleInputs1
 </li>
@@ -1791,10 +1890,14 @@ super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
 </ul>
 
 
-</li>
-</ul>
-<ul>
-<li id="sec-1-5-2-2">MultipleTableInputFormat<br/>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2-2" class="outline-5">
+<h5 id="sec-1-5-2-2"><span class="section-number-5">1.5.2.2</span> MultipleTableInputFormat</h5>
+<div class="outline-text-5" id="text-1-5-2-2">
+
 <ul>
 <li>参考代码 com.dirlt.java.mr.RunMultipleInputs2
 <ul>
@@ -1840,8 +1943,7 @@ super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
 </ul>
 
 
-</li>
-</ul>
+</div>
 </div>
 
 </div>
@@ -1850,8 +1952,13 @@ super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
 <h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> 多路输出</h4>
 <div class="outline-text-4" id="text-1-5-3">
 
-<ul>
-<li id="sec-1-5-3-1">MultipleOutputs<br/>
+
+</div>
+
+<div id="outline-container-1-5-3-1" class="outline-5">
+<h5 id="sec-1-5-3-1"><span class="section-number-5">1.5.3.1</span> MultipleOutputs</h5>
+<div class="outline-text-5" id="text-1-5-3-1">
+
 <ul>
 <li>参考代码 com.dirlt.java.mr.RunMultipleOutputs
 </li>
@@ -1880,10 +1987,14 @@ super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
 </ul>
 
 
-</li>
-</ul>
-<ul>
-<li id="sec-1-5-3-2">MultipleTableOutputFormat<br/>
+</div>
+
+</div>
+
+<div id="outline-container-1-5-3-2" class="outline-5">
+<h5 id="sec-1-5-3-2"><span class="section-number-5">1.5.3.2</span> MultipleTableOutputFormat</h5>
+<div class="outline-text-5" id="text-1-5-3-2">
+
 <ul>
 <li>参考代码 com.dirlt.java.mr.RunMultipleTableOutput
 </li>
@@ -1901,8 +2012,7 @@ super(message, new TypeRef&lt;MessageProtos1.Message&gt;() {
 </ul>
 
 
-</li>
-</ul>
+</div>
 </div>
 
 </div>
@@ -2474,7 +2584,7 @@ none             24G     0   24G   0% /run/shm
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-30 18:16:48 CST</p>
+<p class="date">Date: 2013-07-30 18:17:54 CST</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
