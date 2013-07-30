@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="mapred"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:23:17 CST"/>
+<meta name="generated" content="2013-07-30 18:14:22 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -114,6 +114,7 @@ target.className = elem.cacheClassTarget;
 <li><a href="#sec-1-3-1">1.3.1 task heartbeat</a></li>
 <li><a href="#sec-1-3-2">1.3.2 Partitioner</a></li>
 <li><a href="#sec-1-3-3">1.3.3 shuffle in memory</a></li>
+<li><a href="#sec-1-3-4">1.3.4 lzo index format</a></li>
 </ul>
 </li>
 <li><a href="#sec-1-4">1.4 日志分析</a>
@@ -774,6 +775,425 @@ LOG.info(<span style="color: #ffff00;">"ShuffleRamManager: MemoryLimit="</span> 
 </ul>
 
 
+</div>
+
+</div>
+
+<div id="outline-container-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> lzo index format</h4>
+<div class="outline-text-4" id="text-1-3-4">
+
+<p>主要分析elephant-bird的lzo index方面的代码，了解原理之后就可以做一些简单的扩展或者以此为参考做一些索引工作。分析包含几个实现文件
+</p><ul>
+<li>DistributedLzoIndexer // 在lzo文件上建立索引index文件，是一个MapReduce任务。因为lzo本身是不可切割的，建立索引文件之后就可以切分开了。
+</li>
+<li>LzoTextInputFormat // 如何配合index文件来读取lzo文件。相对LzoProtobufBlockInputFormat这些实现来说，LzoTextInputFormat比较简单，但是原理是类似的，差别就是判断使用什么类型来进一步做反序列化。
+</li>
+</ul>
+
+
+<ul>
+<li id="sec-1-3-4-1">DistributedLzoIndexer<br/>
+<ul>
+<li>调用walkPath尝试得到所有的输入文件，使用nonTemporaryFilter来过滤临时文件，然后添加到job输入路径里面。
+</li>
+<li>mapred.map.tasks.speculative.execution = false 关闭预测执行。
+</li>
+<li>mapper没有做任何事情就是直接输出输入，没有reducer. 工作主要集中在LzoSplitInputFormat和LzoIndexOutputFormat这两个类上。
+</li>
+<li>output key = Path, output value = LongWritable，key表示输入的文件，value表示每个lzo可以decompress的起始offset.
+</li>
+</ul>
+
+
+
+<hr/>
+<p>
+先说说LzoIndexOutputFormat这个类，writer是LzoIndexRecordWriter。这个writer没有做什么特别的事情.在开始的时候建立临时的index文件，
+</p>
+
+
+<pre class="src src-Java">private FSDataOutputStream setupOutputFile(Path path) throws IOException {
+fs = path.getFileSystem(context.getConfiguration());
+inputPath = path;
+
+// For /a/b/c.lzo, tmpIndexPath = /a/b/c.lzo.index.tmp,
+// and it is moved to realIndexPath = /a/b/c.lzo.index upon completion.
+tmpIndexPath = path.suffix(LzoIndex.LZO_TMP_INDEX_SUFFIX);
+realIndexPath = path.suffix(LzoIndex.LZO_INDEX_SUFFIX);
+
+// Delete the old index files if they exist.
+fs.delete(tmpIndexPath, false);
+fs.delete(realIndexPath, false);
+
+return fs.create(tmpIndexPath, false);
+}
+</pre>
+
+
+<p>
+然后不断地写入offset
+</p>
+
+
+<pre class="src src-Java">@Override
+public void write(Path path, LongWritable offset) throws IOException, InterruptedException {
+if (outputStream == null) {
+// Set up the output file on the first record.
+LOG.info(<span style="color: #ffff00;">"Setting up output stream to write index file for "</span> + path);
+outputStream = setupOutputFile(path);
+}
+offset.write(outputStream);
+}
+
+</pre>
+
+
+<p>
+销毁的时候rename成为index文件
+</p>
+
+
+<pre class="src src-Java">@Override
+public void close(TaskAttemptContext taskAttemptContext) throws IOException, InterruptedException {
+if (outputStream != null) {
+// Close the output stream so that the tmp file is synced, then move it.
+outputStream.close();
+
+LOG.info(<span style="color: #ffff00;">"In close, now renaming "</span> + tmpIndexPath + <span style="color: #ffff00;">" to final location "</span> + realIndexPath);
+// Rename, indexing completed.
+fs.rename(tmpIndexPath, realIndexPath);
+}
+}
+</pre>
+
+
+
+<hr/>
+<p>
+主要工作还是在LzoSplitInputFormat上面。记住这个input format给出的key是Path，value是offset. 主要工作也是LzoSplitRecordReader完成的。从代码上来看，主要的两个函数分别是
+</p><ul>
+<li>initialize. 这个函数会初始化lzo decompressor input stream用来准备读数据，并且首先读取一些元信息。
+</li>
+<li>nextKeyValue. 这个函数则用input stream来读数据。但是注意实际上它只是在寻找split point，也就是block boundary. 这个算法和lzo压缩格式本身相关。
+</li>
+</ul>
+
+<p><b>NOTE(dirlt):注意这个input format是unsplitable的！</b>
+</p>
+
+
+<pre class="src src-Java">@Override
+protected boolean isSplitable(JobContext context, Path filename) {
+// Force the files to be unsplittable, because indexing requires seeing all the
+// compressed blocks in succession.
+return false;
+}
+</pre>
+
+
+<p>
+先看initialize代码
+</p>
+
+
+<pre class="src src-Java">@Override
+public void initialize(InputSplit genericSplit, TaskAttemptContext taskAttemptContext) throws IOException {
+context = taskAttemptContext;
+FileSplit fileSplit = (FileSplit)genericSplit;
+lzoFile = fileSplit.getPath();
+// The LzoSplitInputFormat is not splittable, so the split length is the whole file.
+totalFileSize = fileSplit.getLength();
+
+// Jump through some hoops to create the lzo codec.
+Configuration conf = context.getConfiguration();
+CompressionCodecFactory factory = new CompressionCodecFactory(conf);
+CompressionCodec codec = factory.getCodec(lzoFile);
+((Configurable)codec).setConf(conf);
+
+LzopDecompressor lzopDecompressor = (LzopDecompressor)codec.createDecompressor();
+FileSystem fs = lzoFile.getFileSystem(conf);
+rawInputStream = fs.open(lzoFile);
+
+// Creating the LzopInputStream here just reads the lzo header for us, nothing more.
+// We do the rest of our input off of the raw stream is.
+codec.createInputStream(rawInputStream, lzopDecompressor);
+
+// This must be called AFTER createInputStream is called, because createInputStream
+// is what reads the header, which has the checksum information.  Otherwise getChecksumsCount
+// erroneously returns zero, and all block offsets will be wrong.
+numCompressedChecksums = lzopDecompressor.getCompressedChecksumsCount();
+numDecompressedChecksums = lzopDecompressor.getDecompressedChecksumsCount();
+}
+</pre>
+
+<p>
+最后面的checksum是指，对于compressed block有几个checksum, 对于decompressed block有几个checksum.
+</p>
+<p>
+然后是nextKeyValue代码
+</p>
+
+
+<pre class="src src-Java">@Override
+public boolean nextKeyValue() throws IOException {
+int uncompressedBlockSize = rawInputStream.readInt();
+if (uncompressedBlockSize == 0) {
+// An uncompressed block size of zero means end of file.
+return false;
+} else if (uncompressedBlockSize &lt; 0) {
+throw new EOFException(<span style="color: #ffff00;">"Could not read uncompressed block size at position "</span> +
+rawInputStream.getPos() + <span style="color: #ffff00;">" in file "</span> + lzoFile);
+}
+
+int compressedBlockSize = rawInputStream.readInt();
+if (compressedBlockSize &lt;= 0) {
+throw new EOFException(<span style="color: #ffff00;">"Could not read compressed block size at position "</span> +
+rawInputStream.getPos() + <span style="color: #ffff00;">" in file "</span> + lzoFile);
+}
+
+// See LzopInputStream.getCompressedData
+boolean isUncompressedBlock = (uncompressedBlockSize == compressedBlockSize);
+int numChecksumsToSkip = isUncompressedBlock ?
+numDecompressedChecksums : numDecompressedChecksums + numCompressedChecksums;
+
+// Get the current position.  Since we've read two ints, the current block started 8 bytes ago.
+long pos = rawInputStream.getPos();
+curValue.set(pos - 8);
+// Seek beyond the checksums and beyond the block data to the beginning of the next block.
+rawInputStream.seek(pos + compressedBlockSize + (4 * numChecksumsToSkip));
+++numBlocksRead;
+
+// Log some progress every so often.
+if (numBlocksRead % LOG_EVERY_N_BLOCKS == 0) {
+LOG.info(<span style="color: #ffff00;">"Reading block "</span> + numBlocksRead + <span style="color: #ffff00;">" at pos "</span> + pos + <span style="color: #ffff00;">" of "</span> + totalFileSize + <span style="color: #ffff00;">". Read is "</span> +
+(100.0 * getProgress()) + <span style="color: #ffff00;">"% done. "</span>);
+}
+
+return true;
+}
+</pre>
+
+<p>
+从代码里面可以推测格式了
+</p><ul>
+<li>未压缩大小（4字节）
+</li>
+<li>压缩大小（4字节）
+</li>
+<li>数据 + checksum count
+<ul>
+<li>如果未压缩大小 == 压缩大小，那么checksum count == numDecompressedChecksums
+</li>
+<li>如果未压缩大小 != 压缩大小，那么checksum count == numDecompressedChecksums + numCompressedChecksums
+</li>
+<li>每个checksum是4字节
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+<p>
+提供key和value函数就是
+</p>
+
+
+<pre class="src src-Java">@Override
+public Path getCurrentKey() {
+return lzoFile;
+}
+
+@Override
+public LongWritable getCurrentValue() {
+return curValue;
+}
+</pre>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-3-4-2">LzoTextInputFormat<br/>
+首先说明一下大致逻辑
+<ul>
+<li>初始化的时候会尝试读取输入lzo文件对应的index,保存在map里面。key是Path,value是LzoIndex对象。
+</li>
+<li>尝试判断文件是否可分割的时候，判断Path是否有对应的LzoIndex对象。如果有的话说明有对应的index文件，那么就是可切割的，否则就不可切割。
+</li>
+<li>getSplits阶段首先调用TextInputFormat根据splitsize来对文件切分。很明显就这个切分来说不一定能够完全解压缩。得到这个切分之后查询LzoIndex对象，round到可以切割的offset.
+</li>
+<li>得到可以自解压缩的block之后，使用LzoLineRecordReader创建decompressor input stream就可以输入了。
+</li>
+</ul>
+
+
+<p>
+后面结合代码看看。首先初始化阶段调用listStatus预处理所有的输入文件
+</p>
+
+
+<pre class="src src-Java">private final Map&lt;Path, LzoIndex&gt; indexes = new HashMap&lt;Path, LzoIndex&gt;();
+
+@Override
+protected List&lt;FileStatus&gt; listStatus(JobContext job) throws IOException {
+List&lt;FileStatus&gt; files = super.listStatus(job);
+
+Configuration conf = job.getConfiguration();
+boolean ignoreNonLzo = LzoInputFormatCommon.getIgnoreNonLzoProperty(conf);
+
+for (Iterator&lt;FileStatus&gt; iterator = files.iterator(); iterator.hasNext();) {
+FileStatus fileStatus = iterator.next();
+Path file = fileStatus.getPath();
+FileSystem fs = file.getFileSystem(conf);
+
+if (!LzoInputFormatCommon.isLzoFile(file.toString())) {
+// Get rid of non-LZO files, unless the conf explicitly tells us to
+// keep them.
+// However, always skip over files that end with <span style="color: #ffff00;">".lzo.index"</span>, since
+// they are not part of the input.
+if (ignoreNonLzo || LzoInputFormatCommon.isLzoIndexFile(file.toString())) {
+iterator.remove();
+}
+} else {
+//read the index file
+LzoIndex index = LzoIndex.readIndex(fs, file);
+indexes.put(file, index);
+}
+}
+
+return files;
+}
+</pre>
+
+<p>
+可以看到LzoIndex.readIndex会读取对应的index文件。具体LzoIndex里面存储是什么东西呢？其实里面存储的就是顺序排列的offset. 这个类里面最重要的两个方法是下面两个，可以用来round到可切割的offset.
+</p>
+
+
+<pre class="src src-Java">/**
+* Nudge a given file slice start to the nearest LZO block start no earlier than
+* the current slice start.
+*
+* @param start The current slice start
+* @param end The current slice end
+* @return The smallest block offset in the index between [start, end), or
+*         NOT_FOUND if there is none such.
+*/
+public long alignSliceStartToIndex(long start, long end) {
+if (start != 0) {
+// find the next block position from
+// the start of the split
+long newStart = findNextPosition(start);
+if (newStart == NOT_FOUND || newStart &gt;= end) {
+return NOT_FOUND;
+}
+start = newStart;
+}
+return start;
+}
+
+/**
+* Nudge a given file slice end to the nearest LZO block end no earlier than
+* the current slice end.
+*
+* @param end The current slice end
+* @param fileSize The size of the file, i.e. the max end position.
+* @return The smallest block offset in the index between [end, fileSize].
+*/
+public long alignSliceEndToIndex(long end, long fileSize) {
+long newEnd = findNextPosition(end);
+if (newEnd != NOT_FOUND) {
+end = newEnd;
+} else {
+// didn't find the next position
+// we have hit the end of the file
+end = fileSize;
+}
+return end;
+}
+
+/**
+* Find the next lzo block start from the given position.
+*
+* @param pos The position to start looking from.
+* @return Either the start position of the block or -1 if it couldn't be found.
+*/
+public long findNextPosition(long pos) {
+int block = Arrays.binarySearch(blockPositions_, pos);
+
+if (block &gt;= 0) {
+// direct hit on a block start position
+return blockPositions_[block];
+} else {
+block = Math.abs(block) - 1;
+if (block &gt; blockPositions_.length - 1) {
+return NOT_FOUND;
+}
+return blockPositions_[block];
+}
+}
+</pre>
+
+
+<p>
+然后看看getSplits代码
+</p>
+
+
+<pre class="src src-Java">@Override
+public List&lt;InputSplit&gt; getSplits(JobContext job) throws IOException {
+List&lt;InputSplit&gt; splits = super.getSplits(job);
+Configuration conf = job.getConfiguration();
+// find new start/ends of the filesplit that aligns
+// with the lzo blocks
+
+List&lt;InputSplit&gt; result = new ArrayList&lt;InputSplit&gt;();
+
+for (InputSplit genericSplit : splits) {
+FileSplit fileSplit = (FileSplit) genericSplit;
+Path file = fileSplit.getPath();
+FileSystem fs = file.getFileSystem(conf);
+
+if (!LzoInputFormatCommon.isLzoFile(file.toString())) {
+// non-LZO file, keep the input split as is.
+result.add(fileSplit);
+continue;
+}
+
+// LZO file, try to split if the .index file was found
+LzoIndex index = indexes.get(file);
+if (index == null) {
+throw new IOException(<span style="color: #ffff00;">"Index not found for "</span> + file);
+}
+
+if (index.isEmpty()) {
+// empty index, keep as is
+result.add(fileSplit);
+continue;
+}
+
+long start = fileSplit.getStart();
+long end = start + fileSplit.getLength();
+
+long lzoStart = index.alignSliceStartToIndex(start, end);
+long lzoEnd = index.alignSliceEndToIndex(end, fs.getFileStatus(file).getLen());
+
+if (lzoStart != LzoIndex.NOT_FOUND  &amp;&amp; lzoEnd != LzoIndex.NOT_FOUND) {
+result.add(new FileSplit(file, lzoStart, lzoEnd - lzoStart, fileSplit.getLocations()));
+}
+}
+
+return result;
+}
+</pre>
+
+<p>
+整个过程就非常清晰了。fileSplit.getStart()和fileSplit.getLength()是原始分片，如果按照这个信息是不能够解压缩的。但是在LzoIndex的帮助下面定位到了lzoStart和lzoEnd, 这个区间内的数据是可以自解压缩的。
+</p>
+</li>
+</ul>
 </div>
 </div>
 
@@ -2054,8 +2474,8 @@ none             24G     0   24G   0% /run/shm
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:23:17 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-07-30 18:14:22 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>
