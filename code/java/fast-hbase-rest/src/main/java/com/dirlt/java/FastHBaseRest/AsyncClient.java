@@ -229,7 +229,14 @@ public class AsyncClient implements Runnable {
             StatStore.getInstance().addCounter("rpc.read.count", 1);
         }
         // proxy.
-        rdReq = RequestProxy.getInstance().handleReadRequest(rdReq);
+        try {
+            rdReq = RequestProxy.getInstance().handleReadRequest(rdReq);
+        } catch (Exception e) {
+            // just close channle.
+            RestServer.logger.debug("request proxy exception");
+            StatStore.getInstance().addCounter("request.proxy.exception", 1);
+            channel.close();
+        }
 
         readStartTimestamp = System.currentTimeMillis();
 
@@ -311,7 +318,14 @@ public class AsyncClient implements Runnable {
             StatStore.getInstance().addCounter("rpc.write.count", 1);
         }
         // proxy.
-        wrReq = RequestProxy.getInstance().handleWriteRequest(wrReq);
+        try {
+            wrReq = RequestProxy.getInstance().handleWriteRequest(wrReq);
+        } catch (Exception e) {
+            // just close channel.
+            RestServer.logger.debug("request proxy exception");
+            StatStore.getInstance().addCounter("request.proxy.exception", 1);
+            channel.close();
+        }
 
         tableName = wrReq.getTableName();
         rowKey = wrReq.getRowKey();

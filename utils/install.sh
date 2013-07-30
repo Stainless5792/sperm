@@ -43,7 +43,8 @@ TARGETS="2utf8 cxxindent \
 oprof mysqldb syslog \
 local-install org2twiki \
  gc pom-create vpn-umeng-dp \
-vpn-dirlt-aws proc-netstat rhs go-doc-server pcrypt einstall uinstall clj lein"
+vpn-dirlt-aws proc-netstat rhs go-doc-server pcrypt einstall uinstall clj lein
+patch-code"
 
 INSTALLDIR=$HOME/utils/bin
 if [ ! -d $INSTALLDIR ]

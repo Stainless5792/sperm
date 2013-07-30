@@ -25,14 +25,21 @@ public class RequestProxy {
         return instance;
     }
 
-    public MessageProtos1.ReadRequest handleReadRequest(MessageProtos1.ReadRequest readRequest) {
+    public MessageProtos1.ReadRequest handleReadRequest(MessageProtos1.ReadRequest readRequest) throws Exception {
         RestServer.logger.debug("proxy handle read request");
-//        MessageProtos1.ReadRequest.Builder builder = MessageProtos1.ReadRequest.newBuilder(readRequest);
-//        return builder.build();
+        if (readRequest.getTableName().equals("appuserstat")) {
+            String rowKey = readRequest.getRowKey();
+            String date = rowKey.split("_")[0];
+            if (date.matches("^\\d{4}-\\d{2}-\\d{2}$") && date.compareTo(configuration.getKv().get("appuserstat.date.addHashCodeAsRowKeyPrefix")) >= 0) {
+                MessageProtos1.ReadRequest.Builder builder = MessageProtos1.ReadRequest.newBuilder(readRequest);
+                builder.setRowKey(Utility.addHashCodeAsPrefix(rowKey));
+                return builder.build();
+            }
+        }
         return readRequest;
     }
 
-    public MessageProtos1.WriteRequest handleWriteRequest(MessageProtos1.WriteRequest writeRequest) {
+    public MessageProtos1.WriteRequest handleWriteRequest(MessageProtos1.WriteRequest writeRequest) throws Exception {
         RestServer.logger.debug("proxy handle write request");
         return writeRequest;
     }
