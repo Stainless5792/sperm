@@ -117,6 +117,7 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
      - [[file:./apache-hadoop-goes-realtime-at-facebook.org][Apache Hadoop Goes Realtime at Facebook]]
      - [[file:./designs-lessons-and-advice-from-building-large-distributed-systems.org][Designs, Lessons and Advice from Building Large Distributed Systems]] @ladis-2009 jeff dean
      - [[file:./tail-at-scale.org][The Tail at Scale]] @2013 CACM jeff dean
+     - [[file:./realtime-big-data-analytics-emerging-architecture.org][Real-Time Big Data Analytics: Emerging Architecture]] 
    - [[file:streambase.org][streambase]] 在实现baidu in-house的分布式实时流式计算系统之前，调研的商用流式计算系统。没有办法获得源代码只能够从文档中猜测其内部实现以及参考其提供的功能与接口。
    - [[file:chubby.org][chubby]] google为松耦合分布式系统开发的锁服务，但是在现实中还可以作为名字服务来使用。
    - [[file:gfs.org][gfs]] google分布式基础架构的分布式文件系统。
