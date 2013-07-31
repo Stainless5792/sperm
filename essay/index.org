@@ -57,6 +57,7 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
    - [[file:./eclipse.org][eclipse]] 虽然我喜欢emacs，但是似乎java方面开发似乎还是离不开它。
    - [[file:intellij.org][intellij]] eclipse太慢了，看看intellij怎么样。
    - [[file:./algorithm.org][algorithm]] 算法还是非常重要的。记录的都是现实中使用到的算法或者是比较有趣的数学问题吧。
+     - [[file:./probabilistic-data-structures-for-web-analytics-and-data-mining.org][Probabilistic Data Structures for Web Analytics and Data Mining]]
    - [[file:./data-mining.org][data-mining]] 了解一些数据挖掘方面的知识还是比较有帮助的。其实我们每天都在不知不觉地进行数据挖掘。
    - [[file:lcov.org][lcov]] the LTP(Linux Testing Project) GCOV extension.用来完成C/C++测试覆盖。
    - [[file:web-misc.org][web-misc]] web开发遇到的一些问题。因为自己对于web开发不太了解，所以内容上的话可能显得有点弱智。
