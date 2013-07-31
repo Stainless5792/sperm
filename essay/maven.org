@@ -348,6 +348,7 @@ nexus有下面几种repo：
      - mvn dependency:unpack-dependencies 和上面一样但是会unpack这些jar
        - 有时候上面这个命令可能不work因为可能会将一些pom引入，这样的话可以通过下面命令来解决
        - mvn dependency:copy-dependencies ; cd ./target/dependency ; for x in *.jar ; do echo "jar xf $$x ..." ; jar xf $$x ; done
+   - mvn <command> -P # 激活使用某个profile. profile能够区分不同的构建环境。
 
 *** 常用插件
    - Maven Surefire Plugin http://maven.apache.org/surefire/maven-surefire-plugin/ 单元测试
