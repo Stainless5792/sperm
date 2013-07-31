@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Probabilistic Data Structures for Web Analytics and Data Mining"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-31 11:29:58 CST"/>
+<meta name="generated" content="2013-07-31 11:35:35 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -401,7 +401,7 @@ The estimation procedure for most frequent elements and corresponding frequencie
 Nevertheless, it is possible to overcome these problems using multiple Count-Min sketches. The basic idea is to maintain a number of sketches with the different “resolution”, i.e. one sketch that counts frequencies for each value separately, one sketch that counts frequencies for pairs of values (to do this one can simply truncate a one bit of a value on the sketch’s input), one sketch with 4-items buckets and so on. The number of levels equals to logarithm of the maximum possible value. This schema is shown in the right part of the following picture:（可以使用都个count-min sketch来解决这个问题，这个也可以使用count-mean-min sketch来做）
 </p>
 <p>
-这个地方非常巧妙。以第二个sketch为例，最后v和(v+1)会放到一个cell下面，而以第三个sketch为例，最后v,v+1,v+2,v+3会放到一个cell下面。然后再取[c1,c2]的时候，假设有32个sketch的话，那么最下面取的部分就是[(c1 + 31) / 32, c2 / 32]，排除这个部分之后剩余的部分在16-sketch取，有点类似二分法，整个查询是一个树状结构。
+这个地方非常巧妙。以第二个sketch为例，最后v和(v+1)会放到一个cell下面，而以第三个sketch为例，最后v,v+1,v+2,v+3会放到一个cell下面。然后再取的时候，假设range是[c1,c2]并且有5个sketch的话，从上而下我们分别称为1-sketch,2-sketch,4-sketch,8-sketch,16-sketch.那么最下面取的部分就是[(c1 + 15) / 16, c2 / 16]，排除这个部分之后剩余的部分在8-sketch取，有点类似二分法，整个查询是一个树状结构。
 </p>
 <p>
 <img src="./images/array-of-count-min-sketch.png"  alt="./images/array-of-count-min-sketch.png" />
@@ -440,7 +440,7 @@ Any range query can be reduced to a number of queries to the sketches of differe
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-31 11:29:58 CST</p>
+<p class="date">Date: 2013-07-31 11:35:35 CST</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
