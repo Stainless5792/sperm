@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Probabilistic Data Structures for Web Analytics and Data Mining"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-31 11:35:35 CST"/>
+<meta name="generated" content="2013-07-31 11:36:39 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -315,7 +315,7 @@ One can see that result is more accurate, at least for the most frequent items. 
 <p>对于low or moderately skewed dataset来说，hash冲突比较严重所以会导致结果偏差比较大。我们可以通过去除相互影响的噪音来解决这个问题。
 </p>
 <p>
-As an alternative, more careful correction can be done to compensate the noise caused by collisions. One possible correction algorithm was suggested in <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>. It estimates noise for each hash function as the average value of all counters in the row that correspond to this function (except counter that corresponds to the query itself), deduces it from the estimation for this hash function, and, finally, computes the median of the estimations for all hash functions. Having that the sum of all counters in the sketch row equals to the total number of the added elements, we obtain the following implementation:
+As an alternative, more careful correction can be done to compensate the noise caused by collisions. One possible correction algorithm was suggested in (5). It estimates noise for each hash function as the average value of all counters in the row that correspond to this function (except counter that corresponds to the query itself), deduces it from the estimation for this hash function, and, finally, computes the median of the estimations for all hash functions. Having that the sum of all counters in the sketch row equals to the total number of the added elements, we obtain the following implementation:
 </p>
 
 
@@ -385,7 +385,7 @@ In general, the top-k problem makes sense only for skewed data, so usage of Coun
 Basically, Stream-Summary traces a fixed number (a number of slots) of elements that presumably are most frequent ones. If one of these elements occurs in the stream, the corresponding counter is increased. If a new, non-traced element appears, it replaces the least frequent traced element and this kicked out element become non-traced.
 </p>
 <p>
-The estimation procedure for most frequent elements and corresponding frequencies is quite obvious because of simple internal design of the Stream-Summary structure. Indeed, one just need to scan elements in the buckets that correspond to the highest frequencies. Nevertheless, Stream-Summary is able not only to provide estimates, but to answer are these estimates exact (guaranteed) or not. Computation of these guarantees is not trivial, corresponding algorithms are described in <sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup> （可以在上面做改进判断这个estimates是否准确，但是这个改进似乎并不直接）
+The estimation procedure for most frequent elements and corresponding frequencies is quite obvious because of simple internal design of the Stream-Summary structure. Indeed, one just need to scan elements in the buckets that correspond to the highest frequencies. Nevertheless, Stream-Summary is able not only to provide estimates, but to answer are these estimates exact (guaranteed) or not. Computation of these guarantees is not trivial, corresponding algorithms are described in (8) （可以在上面做改进判断这个estimates是否准确，但是这个改进似乎并不直接）
 </p>
 </div>
 
@@ -423,24 +423,13 @@ Any range query can be reduced to a number of queries to the sketches of differe
 <img src="./images/bloom-filter-analysis.png"  alt="./images/bloom-filter-analysis.png" />
 </p>
 
-
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> DEFINITION NOT FOUND: 5
-</p>
-
-<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> DEFINITION NOT FOUND: 8
-</p></div>
 </div>
-</div>
-
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-31 11:35:35 CST</p>
+<p class="date">Date: 2013-07-31 11:36:39 CST</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
