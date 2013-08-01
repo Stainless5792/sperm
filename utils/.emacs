@@ -390,6 +390,8 @@
 (setq org-export-have-math nil)
 (setq org-use-sub-superscripts (quote {}))
 (setq org-export-author-info nil)
+(setq org-html-preamble nil)
+(setq org-html-postamble nil)
 (setq org-publish-project-alist
       '(("essay"
          :base-directory "~/github/sperm/essay"
@@ -397,9 +399,11 @@
          :section-numbers 't
 	 :recursive nil
 	 :publishing-function org-publish-org-to-html
+	 :html-preamble nil
+	 :html-postamble nil	 
 	 :author "dirtysalt"
          :email "dirtysalt at gmail dot com"
-	 :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"./site.css\" />"
+	 :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/site-plain.css\" />"
          :table-of-contents 't)
         ("note"
          :base-directory "~/github/sperm/essay/note"
@@ -407,9 +411,11 @@
          :section-numbers 't
 	 :recursive nil
 	 :publishing-function org-publish-org-to-html
+	 :html-preamble nil
+	 :html-postamble nil
 	 :author "dirtysalt"
 	 :email "dirtysalt at gmail dot com"
-	 :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"../site.css\" />"
+	 :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/site-plain.css\" />"
          :table-of-contents 't)
 	("blog" :components ("essay" "note"))))
 
