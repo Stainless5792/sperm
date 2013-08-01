@@ -32,6 +32,7 @@ essay/*.html
 essay/note/*.html
 essay/note/private
 www/images
+www/css
 sae/
 #www/kylin.html
 
