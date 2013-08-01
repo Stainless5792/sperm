@@ -53,17 +53,18 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 import glob
 import string
 for f in glob.glob('../www/*.html')+glob.glob('../www/note/*.html'):
-    xs=map(lambda s:string.strip(s),open(f, 'r').readlines())
+    xs = open(f,'r').readlines()
     id = f[len('../www/'):]
     ds=[]
     for x in xs:
-        if x.find('<head>') != -1 and not x == '<head>' + HEAD:
+        x = x[:-1] # strip trailing \n
+        if x.find('<head>') != -1 and not x == '<head>' + HEAD + '\n':
             ds.append('<head>' + HEAD)
-        elif x.find('<body>') != -1 and not x == '<body>' + BODY:
+        elif x.find('<body>') != -1 and not x == '<body>' + BODY + '\n':
             ds.append('<body>' + BODY)            
-        elif x.find('</head>') != -1 and not x == HEAD_END + '</head>':
+        elif x.find('</head>') != -1 and not x == HEAD_END + '</head>' + '\n':
             ds.append(HEAD_END + '</head>')
-        elif x.find('</body>') != -1 and not x == BODY_END%(locals()) + '</body>':
+        elif x.find('</body>') != -1 and not x == BODY_END%(locals()) + '</body>' + '\n':
             ds.append(BODY_END%(locals()) + '</body>')            
         else:
             ds.append(x)

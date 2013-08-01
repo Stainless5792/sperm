@@ -370,12 +370,15 @@
 ;; *text* bold mode.
 ;; /text/ italic mode.
 ;; _text_ underline mode.
+;; +text+ delete mode.
 ;; #<<anchor>>
 ;; #+STYLE: <link rel="stylesheet" type="text/css" href="./site.css" />
-(setq load-path (cons "~/.emacs.d/org-7.9.2/" load-path))
+
+;; (setq load-path (cons "~/.emacs.d/org-7.9.2/" load-path))
+(setq load-path (cons "~/.emacs.d/org-8.0.6/" load-path))
 (require 'org-install)
 (require 'org-publish)
-(define-key global-map "\C-ca" 'org-agenda)
+;; (define-key global-map "\C-ca" 'org-agenda)
 ;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock)
@@ -392,14 +395,23 @@
          :base-directory "~/github/sperm/essay"
          :publishing-directory "~/github/sperm/www/"
          :section-numbers 't
+	 :recursive nil
+	 :publishing-function org-publish-org-to-html
+	 :author "dirtysalt"
+         :email "dirtysalt at gmail dot com"
 	 :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"./site.css\" />"
          :table-of-contents 't)
         ("note"
          :base-directory "~/github/sperm/essay/note"
          :publishing-directory "~/github/sperm/www/note"
          :section-numbers 't
+	 :recursive nil
+	 :publishing-function org-publish-org-to-html
+	 :author "dirtysalt"
+	 :email "dirtysalt at gmail dot com"
 	 :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"../site.css\" />"
-         :table-of-contents 't)))
+         :table-of-contents 't)
+	("blog" :components ("essay" "note"))))
 
 ;; auto indent
 ;;(setq org-startup-indented t)

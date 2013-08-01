@@ -127,7 +127,7 @@ public class AsyncClient implements Runnable {
         multiReadRequest = null;
         multiWriteRequest = null;
         subRequestStatus = SubRequestStatus.kOK;
-        requestTimestamp = kDefaultTimeout;
+        requestTimeout = kDefaultTimeout;
     }
 
     // for debug internal.

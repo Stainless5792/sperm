@@ -39,9 +39,8 @@ def queryColumn():
     request.table_name='t1'
     request.row_key='r1'
     request.column_family='cf'
-    request.qualifiers.append('c2')
+    #request.qualifiers.append('c2')
     request.qualifiers.append('c1')
-    request.timeout = 2
 
     data = request.SerializeToString()
     data2 = raiseHTTPRequest('http://localhost:8000/read',data,timeout=20)
@@ -222,14 +221,14 @@ def multiWriteNone():
         pass
 
 if __name__=='__main__':
-    # queryColumn()
+    queryColumn()
     # queryColumnSameConnection()
     # queryColumn()
     # queryEmptyColumn()
     # queryColumnNone()
     # queryColumnFamily()
     # write()
-    multiQuery()
+    # multiQuery()
     # multiQueryNone()
     # multiWrite()
     # multiWriteNone()

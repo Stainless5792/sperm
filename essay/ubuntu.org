@@ -76,6 +76,7 @@
    - sudo apt-get install xbmc
    - sudo apt-get install latex-cjk-all
    - sudo apt-get install texlive-fonts-recommended
+   - sudo apt-get install texinfo
 
 ** 察看ubuntu内部版本
 lsb_release -a

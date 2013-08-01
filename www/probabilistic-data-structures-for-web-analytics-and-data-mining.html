@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>Probabilistic Data Structures for Web Analytics and Data Mining</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Probabilistic Data Structures for Web Analytics and Data Mining"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-01 08:03:38 CST"/>
+<meta name="generated" content="2013-08-02 00:39:57 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -147,7 +147,7 @@ target.className = elem.cacheClassTarget;
 </li>
 <li>What are the most frequent elements (the terms “heavy hitters” and “top-k elements” are also used)?（频率TopK 查询）
 </li>
-<li>What are the frequencies of the most frequent elements?（具体频率查询）
+<li>What are the frequencies of the most frequent elements?（具体频率查询）     
 </li>
 <li>How many elements belong to the specified range (range query, in SQL it looks like  SELECT count(v) WHERE v &gt;= c1 AND v &lt; c2)?（符合范围元素个数查询）
 </li>
@@ -248,32 +248,32 @@ It is clear that if sketch is large in comparison with the cardinality of the da
 
 
 <pre class="src src-C++">class CountMinSketch {
-long estimators[][] = new long[d][w]    // d and w are design parameters
-long a[] = new long[d]
-long b[] = new long[d]
-long p      // hashing parameter, a prime number. For example 2^31-1
-void initializeHashes() {
-for(i = 0; i &lt; d; i++) {
-a[i] = random(p)    // random in range 1..p
-b[i] = random(p)
-}
-}
-void add(value) {
-for(i = 0; i &lt; d; i++)
-estimators[i][ hash(value, i) ]++
-}
-long estimateFrequency(value) {
-long minimum = MAX_VALUE
-for(i = 0; i &lt; d; i++)
-minimum = min(
-minimum,
-estimators[i][ hash(value, i) ]
-)
-return minimum
-}
-hash(value, i) {
-return ((a[i] * value + b[i]) mod p) mod w
-}
+    long estimators[][] = new long[d][w]    // d and w are design parameters
+    long a[] = new long[d]
+    long b[] = new long[d]
+    long p      // hashing parameter, a prime number. For example 2^31-1
+    void initializeHashes() {
+        for(i = 0; i &lt; d; i++) {
+            a[i] = random(p)    // random in range 1..p
+            b[i] = random(p)
+        }
+    }
+    void add(value) {
+        for(i = 0; i &lt; d; i++)
+            estimators[i][ hash(value, i) ]++
+    }
+    long estimateFrequency(value) {
+        long minimum = MAX_VALUE
+        for(i = 0; i &lt; d; i++)
+            minimum = min(
+                minimum,
+                estimators[i][ hash(value, i) ]
+            )
+        return minimum
+    }
+    hash(value, i) {
+        return ((a[i] * value + b[i]) mod p) mod w
+    }
 }
 </pre>
 
@@ -321,17 +321,17 @@ As an alternative, more careful correction can be done to compensate the noise c
 
 
 <pre class="src src-C++">class CountMeanMinSketch {
-// initialization and addition procedures as in CountMinSketch
-// n is total number of added elements
-long estimateFrequency(value) {
-long e[] = new long[d]
-for(i = 0; i &lt; d; i++) {
-sketchCounter = estimators[i][ hash(value, i) ]
-noiseEstimation = (n - sketchCounter) / (w - 1)
-e[i] = sketchCounter &#8211; noiseEstimator
-}
-return median(e)
-}
+    // initialization and addition procedures as in CountMinSketch
+    // n is total number of added elements
+    long estimateFrequency(value) {
+        long e[] = new long[d]
+        for(i = 0; i &lt; d; i++) {
+            sketchCounter = estimators[i][ hash(value, i) ]
+            noiseEstimation = (n - sketchCounter) / (w - 1)
+            e[i] = sketchCounter &#8211; noiseEstimator
+        }
+        return median(e)
+    }
 }
 </pre>
 
@@ -398,7 +398,7 @@ The estimation procedure for most frequent elements and corresponding frequencie
 <p>In theory, one can process a range query (something like SELECT count(v) WHERE v &gt;= c1 AND v &lt; c2) using a Count-Min sketch  enumerating all points within a range and summing estimates for corresponding frequencies. However, this approach is impractical because the number of points within a range can be very high and accuracy also tends to be inacceptable because of cumulative error of the sum.（对于范围查询可以枚举[c1,c2)所有的value，然后使用count-min sketch来得到count. 但是这个算法并不实际因为这个range可能非常大并且误差也很大，因为全部存放在一个sketch上面）
 </p>
 <p>
-Nevertheless, it is possible to overcome these problems using multiple Count-Min sketches. The basic idea is to maintain a number of sketches with the different “resolution”, i.e. one sketch that counts frequencies for each value separately, one sketch that counts frequencies for pairs of values (to do this one can simply truncate a one bit of a value on the sketch’s input), one sketch with 4-items buckets and so on. The number of levels equals to logarithm of the maximum possible value. This schema is shown in the right part of the following picture:（可以使用都个count-min sketch来解决这个问题，这个也可以使用count-mean-min sketch来做）
+Nevertheless, it is possible to overcome these problems using multiple Count-Min sketches. The basic idea is to maintain a number of sketches with the different “resolution”, i.e. one sketch that counts frequencies for each value separately, one sketch that counts frequencies for pairs of values (to do this one can simply truncate a one bit of a value on the sketch’s input), one sketch with 4-items buckets and so on. The number of levels equals to logarithm of the maximum possible value. This schema is shown in the right part of the following picture:（可以使用都个count-min sketch来解决这个问题，这个也可以使用count-mean-min sketch来做） 
 </p>
 <p>
 这个地方非常巧妙。以第二个sketch为例，最后v和(v+1)会放到一个cell下面，而以第三个sketch为例，最后v,v+1,v+2,v+3会放到一个cell下面。然后再取的时候，假设range是[c1,c2]并且有5个sketch的话，从上而下我们分别称为1-sketch,2-sketch,4-sketch,8-sketch,16-sketch.那么最下面取的部分就是[(c1 + 15) / 16, c2 / 16]，排除这个部分之后剩余的部分在8-sketch取，有点类似二分法，整个查询是一个树状结构。
@@ -429,8 +429,8 @@ Any range query can be reduced to a number of queries to the sketches of differe
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-08-01 08:03:38 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:39:57 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

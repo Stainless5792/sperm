@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>pregel</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="pregel"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:23:06 CST"/>
+<meta name="generated" content="2013-08-02 00:39:58 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -142,7 +142,7 @@ target.className = elem.cacheClassTarget;
 <ul>
 <li><a href="http://kowshik.github.com/JPregel/pregel_paper.pdf">http://kowshik.github.com/JPregel/pregel_paper.pdf</a>
 </li>
-<li>JPregel @ GitHub <a href="http://kowshik.github.com/JPregel/">http://kowshik.github.com/JPregel/</a>
+<li>JPregel @ GitHub <a href="http://kowshik.github.com/JPregel/">http://kowshik.github.com/JPregel/</a> 
 </li>
 <li>Welcome To Apache Incubator Giraph <a href="http://incubator.apache.org/giraph/">http://incubator.apache.org/giraph/</a>
 </li>
@@ -280,19 +280,19 @@ target.className = elem.cacheClassTarget;
 
 
 <pre class="src src-C++">template &lt;typename VertexValue,
-typename EdgeValue,
-typename MessageValue&gt;
+          typename EdgeValue,
+          typename MessageValue&gt;
 class Vertex {
-public:
-virtual void Compute(MessageIterator* msgs) = 0; // &#21487;&#20197;&#36845;&#20195;&#21457;&#36865;&#32473;&#36825;&#20010;&#33410;&#28857;&#30340;&#28040;&#24687;
-const string&amp; vertex_id() const; // &#33258;&#36523;
-int64 superstep() const; // &#36845;&#20195;&#27425;&#25968;
-const VertexValue&amp; GetValue(); // &#33258;&#36523;hold value&#65292;custom&#12290;
-VertexValue* MutableValue();
-OutEdgeIterator GetOutEdgeIterator(); // out going vertices&#12290;&#36825;&#20010;&#20063;&#31639;&#26159;vertex hold value&#65292;builtin&#12290;
-void SendMessageTo(const string&amp; dest_vertex, // &#32473;&#26576;&#20010;&#33410;&#28857;&#21457;&#36865;&#28040;&#24687;
-const MessageValue&amp; message);
-void VoteToHalt(); // vote to halt
+ public:
+  virtual void Compute(MessageIterator* msgs) = 0; // &#21487;&#20197;&#36845;&#20195;&#21457;&#36865;&#32473;&#36825;&#20010;&#33410;&#28857;&#30340;&#28040;&#24687;
+  const string&amp; vertex_id() const; // &#33258;&#36523;
+  int64 superstep() const; // &#36845;&#20195;&#27425;&#25968;
+  const VertexValue&amp; GetValue(); // &#33258;&#36523;hold value&#65292;custom&#12290;
+  VertexValue* MutableValue();
+  OutEdgeIterator GetOutEdgeIterator(); // out going vertices&#12290;&#36825;&#20010;&#20063;&#31639;&#26159;vertex hold value&#65292;builtin&#12290;
+  void SendMessageTo(const string&amp; dest_vertex, // &#32473;&#26576;&#20010;&#33410;&#28857;&#21457;&#36865;&#28040;&#24687;
+                     const MessageValue&amp; message);
+  void VoteToHalt(); // vote to halt
 };
 </pre>
 
@@ -310,7 +310,7 @@ void VoteToHalt(); // vote to halt
 <div class="outline-text-4" id="text-1-4-1">
 
 <ul>
-<li>When the destination vertex of any message does not ex-ist, we execute user-defined handlers. A handler could, for example, create the missing vertex or remove the dangling edge from its source vertex. <b>TODO（dirlt）：这点很重要，但是似乎做得不是很好。首先vertex应该是知道哪些节点是存在还是不存在的，不过这还是有一个问题，就是如何保证原子操作。因为可能有多个vertex会创建相同节点。另外就是这handler仅仅是在dest vertex不存在的时候才调用的，不能够主动地出发删除edge的操作</b>
+<li>When the destination vertex of any message does not ex-ist, we execute user-defined handlers. A handler could, for example, create the missing vertex or remove the dangling edge from its source vertex. <b>TODO（dirlt）：这点很重要，但是似乎做得不是很好。首先vertex应该是知道哪些节点是存在还是不存在的，不过这还是有一个问题，就是如何保证原子操作。因为可能有多个vertex会创建相同节点。另外就是这handler仅仅是在dest vertex不存在的时候才调用的，不能够主动地出发删除edge的操作</b> 
 <ul>
 <li>我的理解是直接提供添加和删除vertex的接口，但是需要考虑到有多个节点共同操作的问题。 <b>NOTE（dirlt）：不过我看论文后面也讨论了这个问题</b>
 </li>
@@ -389,7 +389,7 @@ void VoteToHalt(); // vote to halt
 </ul>
 
 </li>
-<li>The remaining conflicts are resolved by user-defined han-dlers. If there are multiple requests to create the same vertex in the same superstep, then by default the system just picks one arbitrarily, but users with special needs may specify a better conflict resolution policy by defining an appropriate handler method in their Vertex subclass. The same handler mechanism is used to resolve conflicts caused by multiple vertex removal requests, or by multiple edge addition or re-moval requests. We delegate the resolution to handlers to keep the code of Compute() simple, which limits the inter-action between a handler and Compute(), but has not been an issue in practice.（如果依然出现冲突的话，那么系统会选择任意节点处理。但是如果用户指定了handler的话，那么可以由用户自己选择一个节点来处理这个冲突问题。）
+<li>The remaining conflicts are resolved by user-defined han-dlers. If there are multiple requests to create the same vertex in the same superstep, then by default the system just picks one arbitrarily, but users with special needs may specify a better conflict resolution policy by defining an appropriate handler method in their Vertex subclass. The same handler mechanism is used to resolve conflicts caused by multiple vertex removal requests, or by multiple edge addition or re-moval requests. We delegate the resolution to handlers to keep the code of Compute() simple, which limits the inter-action between a handler and Compute(), but has not been an issue in practice.（如果依然出现冲突的话，那么系统会选择任意节点处理。但是如果用户指定了handler的话，那么可以由用户自己选择一个节点来处理这个冲突问题。） 
 </li>
 <li>Our coordination mechanism is lazy: global mutations do not require coordination until the point when they are ap-plied. This design choice facilitates stream processing. The intuition is that conflicts involving modification of a vertex V are handled by V itself. （使用懒协调机制，大部分全局修改不需要协调机制只有当交集的时候。这样适合流处理。直觉上面告诉我们，如果对于V修改出现冲突的话，那么应该是V自身进行处理）
 </li>
@@ -466,7 +466,7 @@ void VoteToHalt(); // vote to halt
 </li>
 <li>Worker failures are detected using regular “ping” messages that the master issues to workers. If a worker does not receive a ping message after a specified interval, the worker process terminates. If the master does not hear back from a worker, the master marks that worker process as failed.（master通过和worker发送ping心跳来检测worker是否正在正常工作。如果没有检测到的话，那么就认为这个worker失败）
 </li>
-<li>When one or more workers fail, the current state of the partitions assigned to these workers is lost. The master reas-signs graph partitions to the currently available set of work-ers, and they all reload their partition state from the most recent available checkpoint at the beginning of a superstep S. That checkpoint may be several supersteps earlier than the latest superstep S completed by any partition before the failure, requiring that recovery repeat the missing su-persteps. We select checkpoint frequency based on a mean time to failure model [13, ], balancing checkpoint cost against expected recovery cost. （一旦检测到worker失败的话，那么master会将整个集群回滚。重新对graph进行partition，然后每个节点重新读取chkp，然后从那个superstep开始计算。可能这个superstep早于出现鼓掌时候的superstep）  <b>NOTE（dirlt）：这点似乎是个比较大的问题，因为只要有单个worker出现问题的话，那么整个集群就要进行回滚）</b>
+<li>When one or more workers fail, the current state of the partitions assigned to these workers is lost. The master reas-signs graph partitions to the currently available set of work-ers, and they all reload their partition state from the most recent available checkpoint at the beginning of a superstep S. That checkpoint may be several supersteps earlier than the latest superstep S completed by any partition before the failure, requiring that recovery repeat the missing su-persteps. We select checkpoint frequency based on a mean time to failure model [13, ], balancing checkpoint cost against expected recovery cost. （一旦检测到worker失败的话，那么master会将整个集群回滚。重新对graph进行partition，然后每个节点重新读取chkp，然后从那个superstep开始计算。可能这个superstep早于出现鼓掌时候的superstep）  <b>NOTE（dirlt）：这点似乎是个比较大的问题，因为只要有单个worker出现问题的话，那么整个集群就要进行回滚）</b> 
 </li>
 <li>Confined recovery is under development to improve the cost and latency of recovery. In addition to the basic check-points, the workers also log outgoing messages from their as-signed partitions during graph loading and supersteps. Re-covery is then confined to the lost partitions, which are re-covered from checkpoints. （限制性恢复则是对于上面情况的一个改善，能够改善恢复代价和延迟。在这个情况下面，worker会记录在graph load以及每个superstep出去的信息。这样故障恢复可以仅仅限于挂掉的部分，减少恢复的代价）
 <ul>
@@ -474,7 +474,7 @@ void VoteToHalt(); // vote to halt
 </li>
 <li>This approach saves compute resources during recovery by only recomputing lost partitions, and can improve the la-tency of recovery since each worker may be recovering fewer partitions. （只是针对挂掉的部分的错误恢复，并且因为恢复区域面积减少所以故障恢复有更小的延迟）
 </li>
-<li>Saving the outgoing messages adds overhead, but a typical machine has adequate disk bandwidth to ensure that I/O does not become the bottleneck.（尽管保存输出消息会带来额外的开销，但是只要disk有相对可以的带宽那么IO不是问题）
+<li>Saving the outgoing messages adds overhead, but a typical machine has adequate disk bandwidth to ensure that I/O does not become the bottleneck.（尽管保存输出消息会带来额外的开销，但是只要disk有相对可以的带宽那么IO不是问题）   
 </li>
 <li>Confined recovery requires the user algorithm to be deter-ministic, to avoid inconsistencies due to mixing saved mes-sages from the original execution with new messages from the recovery. Randomized algorithms can be made deter-ministic by seeding a pseudorandom number generator de-terministically based on the superstep and the partition. Nondeterministic algorithms can disable confined recovery and fall back to the basic recovery mechanism.（对于限制恢复的话仅仅适用于确定性的算法，对于随机算法的话可以保存其seed来获得确定性。而对于非确定性算法的话那么只能够使用基本的故障恢复方法）
 </li>
@@ -574,23 +574,23 @@ void VoteToHalt(); // vote to halt
 
 
 <pre class="src src-C++">class PageRankVertex
-: public Vertex&lt;double, void, double&gt; {
-public:
-virtual void Compute(MessageIterator* msgs) {
-if (superstep() &gt;= 1) {
-double sum = 0;
-for (; !msgs-&gt;Done(); msgs-&gt;Next())
-sum += msgs-&gt;Value();
-*MutableValue() =
-0.15 / NumVertices() + 0.85 * sum;
-}
-if (superstep() &lt; 30) {
-const int64 n = GetOutEdgeIterator().size();
-SendMessageToAllNeighbors(GetValue() / n);
-} else {
-VoteToHalt();
-}
-}
+    : public Vertex&lt;double, void, double&gt; {
+ public:
+  virtual void Compute(MessageIterator* msgs) {
+    if (superstep() &gt;= 1) {
+      double sum = 0;
+      for (; !msgs-&gt;Done(); msgs-&gt;Next())
+        sum += msgs-&gt;Value();
+      *MutableValue() =
+          0.15 / NumVertices() + 0.85 * sum;
+    }
+    if (superstep() &lt; 30) {
+      const int64 n = GetOutEdgeIterator().size();
+      SendMessageToAllNeighbors(GetValue() / n);
+    } else {
+      VoteToHalt();
+    }
+  }
 };
 </pre>
 
@@ -655,8 +655,8 @@ VoteToHalt();
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:23:06 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:39:58 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

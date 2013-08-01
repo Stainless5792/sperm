@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>MapReduce: A Flexible Data Processing Tool（MapRedcue: 一个灵活的数据库处理工具）</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="MapReduce: A Flexible Data Processing Tool（MapRedcue: 一个灵活的数据库处理工具）"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:23:16 CST"/>
+<meta name="generated" content="2013-08-02 00:40:06 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -169,15 +169,15 @@ target.className = elem.cacheClassTarget;
 <div class="outline-text-3" id="text-1-1">
 
 <ul>
-<li>Many production environments contain a mix of storage systems. 现实的生产环境中都是各种系统混合在一起的。
+<li>Many production environments contain a mix of storage systems. 现实的生产环境中都是各种系统混合在一起的。 
 </li>
-<li>A single MapReduce operation easily processes and combines data from a variety of storage systems. 而MapReduce很容易接入多个系统
+<li>A single MapReduce operation easily processes and combines data from a variety of storage systems. 而MapReduce很容易接入多个系统 
 </li>
 <li>Now consider a system in which a parallel DBMS is used to perform all data analysis. 而对于DBMS来说就没有那么方便了。
 <ul>
-<li>The input to such analysis must first be copied into the parallel DBMS. This loading phase is inconvenient. It may also be unacceptably slow, especially if the data will be analyzed only once or twice after being loaded. 首先需要将data load到DBMS内部，这个过程非常不方便并且可能非常慢
+<li>The input to such analysis must first be copied into the parallel DBMS. This loading phase is inconvenient. It may also be unacceptably slow, especially if the data will be analyzed only once or twice after being loaded. 首先需要将data load到DBMS内部，这个过程非常不方便并且可能非常慢 
 </li>
-<li>Even if the cost of loading the input into a parallel DBMS is acceptable, we still need an appropriate loading tool. Here is another place MapReduce can be used; instead of writing a custom loader with its own ad hoc parallelization and fault-tolerance support, a simple MapReduce program can be written to load the data into the parallel DBMS. 并且即使如果很快的话依然需要合适的工具，而MapReduce可以很方便地完成这个工作。
+<li>Even if the cost of loading the input into a parallel DBMS is acceptable, we still need an appropriate loading tool. Here is another place MapReduce can be used; instead of writing a custom loader with its own ad hoc parallelization and fault-tolerance support, a simple MapReduce program can be written to load the data into the parallel DBMS. 并且即使如果很快的话依然需要合适的工具，而MapReduce可以很方便地完成这个工作。 
 </li>
 </ul>
 
@@ -203,7 +203,7 @@ target.className = elem.cacheClassTarget;
 <h3 id="sec-1-3"><span class="section-number-3">1.3</span> Complex Functions</h3>
 <div class="outline-text-3" id="text-1-3">
 
-<p><b>在SQL难以编写复杂的过程</b>
+<p><b>在SQL难以编写复杂的过程</b> 
 </p>
 </div>
 
@@ -225,7 +225,7 @@ target.className = elem.cacheClassTarget;
 
 <p>这里正面回答了为什么MapReduce没有使用push模型而是使用pull模型
 </p><ul>
-<li>The MapReduce implementation uses a pull model for moving data between mappers and reducers, as opposed to a push model where mappers write directly to reducers.
+<li>The MapReduce implementation uses a pull model for moving data between mappers and reducers, as opposed to a push model where mappers write directly to reducers. 
 <ul>
 <li>Pavlo et al. correctly pointed out that the pull model can result in the creation of many small files and many disk seeks to move data between mappers and reducers. pull模型会产生很多小文件并且产生大量的随机访问
 </li>
@@ -261,7 +261,7 @@ target.className = elem.cacheClassTarget;
 <ul>
 <li>Engineering considerations
 <ul>
-<li>Startup overhead and sequential scanning speed are indicators of maturity of implementation and engineering tradeoffs, not fundamental differences in programming models.
+<li>Startup overhead and sequential scanning speed are indicators of maturity of implementation and engineering tradeoffs, not fundamental differences in programming models. 
 </li>
 <li>startup overhead 可以通过daemon解决
 </li>
@@ -274,7 +274,7 @@ target.className = elem.cacheClassTarget;
 </li>
 <li>Merging results. 完全没有必要merge result
 </li>
-<li>Data loading.
+<li>Data loading. 
 </li>
 </ul>
 
@@ -293,8 +293,8 @@ target.className = elem.cacheClassTarget;
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:23:16 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:40:06 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

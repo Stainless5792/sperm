@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>The Tail at Scale</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="The Tail at Scale"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:22:52 CST"/>
+<meta name="generated" content="2013-08-02 00:39:45 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -197,7 +197,7 @@ Increased variability is also due to several hardware trends:
 </li>
 <li>Garbage collection. Solid-state storage devices provide very fast random read access, but the need to periodically garbage collect a large number of data blocks can increase read latency by a factor of 100 with even a modest level of write activity; and（ssd需要定义做垃圾回收腾出空间）
 </li>
-<li>Energy management. Power-saving modes in many types of devices save considerable energy but add additional latency when moving from inactive to active modes.（一些设备考虑功耗问题导致从inactive到active状态会有比较长的延迟）
+<li>Energy management. Power-saving modes in many types of devices save considerable energy but add additional latency when moving from inactive to active modes.（一些设备考虑功耗问题导致从inactive到active状态会有比较长的延迟） 
 </li>
 </ul>
 
@@ -211,7 +211,7 @@ Increased variability is also due to several hardware trends:
 <div class="outline-text-3" id="text-1-4">
 
 <ul>
-<li>A common technique for reducing latency in large-scale online services is to parallelize sub-operations across many different machines, where each sub-operation is co-located with its portion of a large dataset. Parallelization happens by fanning out a request from a root to a large number of leaf servers and merging responses via a request-distribution tree. These sub-operations must all complete within a strict deadline for the service to feel responsive.（通常通过将请求并行化来减少总体延迟。整个请求的图状结构是tree，一级一级fanout出去。对于root来说需要控制好每个sub request的deadline来确保最终的响应及时）
+<li>A common technique for reducing latency in large-scale online services is to parallelize sub-operations across many different machines, where each sub-operation is co-located with its portion of a large dataset. Parallelization happens by fanning out a request from a root to a large number of leaf servers and merging responses via a request-distribution tree. These sub-operations must all complete within a strict deadline for the service to feel responsive.（通常通过将请求并行化来减少总体延迟。整个请求的图状结构是tree，一级一级fanout出去。对于root来说需要控制好每个sub request的deadline来确保最终的响应及时） 
 </li>
 <li>Variability in the latency distribution of individual components is magnified at the service level（单个组件上的延迟变差范围容易在服务级别放大）
 <ul>
@@ -238,11 +238,11 @@ Increased variability is also due to several hardware trends:
 <img src="./images/tail-at-scale-latency-amplified-at-service-level.png"  alt="./images/tail-at-scale-latency-amplified-at-service-level.png" />
 </p>
 <ul>
-<li>Table 1 lists measurements from a real Google service that is logically similar to this idealized scenario;
+<li>Table 1 lists measurements from a real Google service that is logically similar to this idealized scenario; 
 <ul>
-<li>root servers distribute a request through intermediate servers to a very large number of leaf servers. The table shows the effect of large fan-out on latency distributions.
+<li>root servers distribute a request through intermediate servers to a very large number of leaf servers. The table shows the effect of large fan-out on latency distributions. 
 </li>
-<li>The 99th-percentile latency for a single random request to finish, measured at the root, is 10ms. However, the 99th-percentile latency for all requests to finish is 140ms, and the 99th-percentile latency for 95% of the requests finishing is 70ms, meaning that waiting for the slowest 5% of the requests to complete is responsible for half of the total 99%-percentile latency.
+<li>The 99th-percentile latency for a single random request to finish, measured at the root, is 10ms. However, the 99th-percentile latency for all requests to finish is 140ms, and the 99th-percentile latency for 95% of the requests finishing is 70ms, meaning that waiting for the slowest 5% of the requests to complete is responsible for half of the total 99%-percentile latency. 
 </li>
 <li>Techniques that concentrate on these slow outliers can yield dramatic reductions in overall service performance.
 </li>
@@ -256,7 +256,7 @@ Increased variability is also due to several hardware trends:
 <img src="./images/tail-at-scale-fanout-latency.png"  alt="./images/tail-at-scale-fanout-latency.png" />
 </p>
 <ul>
-<li>Overprovisioning of resources, careful real-time engineering of software, and improved reliability can all be used at all levels and in all components to reduce the base causes of variability.
+<li>Overprovisioning of resources, careful real-time engineering of software, and improved reliability can all be used at all levels and in all components to reduce the base causes of variability. 
 </li>
 </ul>
 
@@ -393,11 +393,11 @@ Increased variability is also due to several hardware trends:
 <p><img src="./images/tail-at-scale-read-latency-comparision.png"  alt="./images/tail-at-scale-read-latency-comparision.png" />
 </p>
 <ul>
-<li>Google's implementation of this technique in the context of its cluster-level distributed file system is effective at reducing both median and tail latencies.
+<li>Google's implementation of this technique in the context of its cluster-level distributed file system is effective at reducing both median and tail latencies. 
 </li>
-<li>Table 2 lists the times for servicing a small read request from a BigTable where the data is not cached in memory but must be read from the underlying file system; each file chunk has three replicas on distinct machines.
+<li>Table 2 lists the times for servicing a small read request from a BigTable where the data is not cached in memory but must be read from the underlying file system; each file chunk has three replicas on distinct machines. 
 </li>
-<li>The table includes read latencies observed with and without tied requests for two scenarios:
+<li>The table includes read latencies observed with and without tied requests for two scenarios: 
 <ul>
 <li>The first is a cluster in which the benchmark is running in isolation, in which case latency variability is mostly from self-interference and regular cluster-management activities. In it, sending a tied request that does cross-server cancellation to another file system replica following 1ms reduces median latency by 16% and is increasingly effective along the tail of the latency distribution, achieving nearly 40% reduction at the 99.9th-percentile latency.
 </li>
@@ -406,7 +406,7 @@ Increased variability is also due to several hardware trends:
 </ul>
 
 </li>
-<li>In both Table 2 scenarios, the overhead of tied requests in disk utilization is less than 1%, indicating the cancellation strategy is effective at eliminating redundant reads.( 事实上在两种情况下面对于磁盘额外开销小于1%）
+<li>In both Table 2 scenarios, the overhead of tied requests in disk utilization is less than 1%, indicating the cancellation strategy is effective at eliminating redundant reads.( 事实上在两种情况下面对于磁盘额外开销小于1%） 
 </li>
 </ul>
 
@@ -479,7 +479,7 @@ Increased variability is also due to several hardware trends:
 </li>
 <li>The source of the slowness is frequently temporary phenomena like interference from unrelated networking traffic or a spike in CPU activity for another job on the machine, and the slowness tends to be noticed when the system is under greater load.（通常slowness原因都是非常类似的，所以可以根据一些现象推断出来）
 </li>
-<li>However, the system continues to issue shadow requests to these excluded servers, collecting statistics on their latency so they can be reincorporated into the service when the problem abates. This situation is somewhat peculiar, as removal of serving capacity from a live system during periods of high load actually improves latency.（系统能够不断地检测slow machine, 一旦恢复正常的话那么又可以进行服务） <b>NOTE（dirlt）：非常类似hadoop的blacklist tasktracer机制</b>
+<li>However, the system continues to issue shadow requests to these excluded servers, collecting statistics on their latency so they can be reincorporated into the service when the problem abates. This situation is somewhat peculiar, as removal of serving capacity from a live system during periods of high load actually improves latency.（系统能够不断地检测slow machine, 一旦恢复正常的话那么又可以进行服务） <b>NOTE（dirlt）：非常类似hadoop的blacklist tasktracer机制</b> 
 </li>
 </ul>
 
@@ -515,7 +515,7 @@ Increased variability is also due to several hardware trends:
 </li>
 <li>Canary requests provide a measure of robustness to back-ends in the face of difficult-to-predict programming errors, as well as malicious denial-of-service attacks.（能够作为加强健壮性的一种手段）
 </li>
-<li>The canary-request phase adds only a small amount of overall latency because the system must wait for only a single server to respond, producing much less variability than if it had to wait for all servers to respond for large fan-out requests;
+<li>The canary-request phase adds only a small amount of overall latency because the system must wait for only a single server to respond, producing much less variability than if it had to wait for all servers to respond for large fan-out requests; 
 </li>
 <li>Despite the slight increase in latency caused by canary requests, such requests tend to be used for every request in all of Google's large fan-out search systems due to the additional safety they provide.
 </li>
@@ -544,7 +544,7 @@ Increased variability is also due to several hardware trends:
 </li>
 <li>Third, many services can be structured to tolerate inconsistent update models for (inherently more latency-tolerant) mutations.（服务也可以忍受不一致）
 </li>
-<li>And, finally, for those services that require consistent updates, the most commonly used techniques are quorum-based algorithms (such as Lamport's Paxos); since these algorithms must commit to only three to five replicas, they are inherently tail-tolerant.（如果需要一致性的话可以使用quorum-based算法，而这些算法通常只是会提交到3-5 replicas，同样规模不是很大）
+<li>And, finally, for those services that require consistent updates, the most commonly used techniques are quorum-based algorithms (such as Lamport's Paxos); since these algorithms must commit to only three to five replicas, they are inherently tail-tolerant.（如果需要一致性的话可以使用quorum-based算法，而这些算法通常只是会提交到3-5 replicas，同样规模不是很大） 
 </li>
 </ul>
 
@@ -558,9 +558,9 @@ Increased variability is also due to several hardware trends:
 <div class="outline-text-3" id="text-1-11">
 
 <ul>
-<li>Variability at the hardware level is likely to be higher in the future due to more aggressive power optimizations becoming available and fabrication challenges at deep submicron levels resulting in device-level heterogeneity. Device heterogeneity combined with ever-increasing system scale will make tolerating variability through software techniques even more important over time. （设备级别本身出现延迟偏差的几率是越来越高）
+<li>Variability at the hardware level is likely to be higher in the future due to more aggressive power optimizations becoming available and fabrication challenges at deep submicron levels resulting in device-level heterogeneity. Device heterogeneity combined with ever-increasing system scale will make tolerating variability through software techniques even more important over time. （设备级别本身出现延迟偏差的几率是越来越高） 
 </li>
-<li>Fortunately, several emerging hardware trends will increase the effectiveness of latency-tolerating techniques.
+<li>Fortunately, several emerging hardware trends will increase the effectiveness of latency-tolerating techniques. 
 <ul>
 <li>higher bisection bandwidth in data-center networks and network-interface optimizations that reduce per-message overheads (such as remote direct-memory access) will reduce the cost of tied requests, making it more likely that cancellation messages are received in time to avoid redundant work.
 </li>
@@ -586,8 +586,8 @@ Increased variability is also due to several hardware trends:
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:22:52 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:39:45 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

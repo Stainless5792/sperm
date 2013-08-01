@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>backblaze-storage-pod</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="backblaze-storage-pod"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-30 18:14:25 CST"/>
+<meta name="generated" content="2013-08-02 00:40:50 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -236,7 +236,7 @@ We are constantly looking at new hard drives, evaluating them for reliability an
 <h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Twice as Fast</h4>
 <div class="outline-text-4" id="text-1-2-2">
 
-<p>We’ve made several improvements to the design that have doubled the performance of the storage pod. Most of the improvements were straightforward and helped by Moore’s Law. We bumped the CPU up from the Intel dual core CPU to the Intel i3 540 and upgraded the motherboard from one Gigabit Ethernet port to a Supermicro motherboard with two Gigabit Ethernet ports. RAM dropped in price, so we doubled it to 8 GB in the new pod. More RAM enables our custom Backblaze software layer to create larger disk caches that can really speed up certain types of disk I/O.（CPU，RAM以及网卡都进行了升级。更大的RAM能够更好地用作disk cache来提高disk IO使用效率）
+<p>We’ve made several improvements to the design that have doubled the performance of the storage pod. Most of the improvements were straightforward and helped by Moore’s Law. We bumped the CPU up from the Intel dual core CPU to the Intel i3 540 and upgraded the motherboard from one Gigabit Ethernet port to a Supermicro motherboard with two Gigabit Ethernet ports. RAM dropped in price, so we doubled it to 8 GB in the new pod. More RAM enables our custom Backblaze software layer to create larger disk caches that can really speed up certain types of disk I/O.（CPU，RAM以及网卡都进行了升级。更大的RAM能够更好地用作disk cache来提高disk IO使用效率） 
 </p>
 <p>
 We upgraded the Linux 64-bit OS from Debian 4 to Debian 5, but we no longer use JFS as the file system. We selected JFS years ago for its ability to accommodate large volumes and low CPU usage, and it worked well. However, ext4 has since matured in both reliability and performance, and we realized that with a little additional effort we could get all the benefits and live within the unfortunate 16 terabyte volume limitation of ext4. One of the required changes to work around ext4’s constraints was to add LVM (Logical Volume Manager) above the RAID 6 but below the file system. In our particular application (which features more writes than reads), ext4’s performance was a clear winner over ext3, JFS, and XFS.（Debian从4.0到了5.0，没有继续使用JFS而改用ext4)
@@ -263,7 +263,7 @@ With these performance improvements, we see the new storage pods in our datacent
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-30 18:14:25 CST</p>
+<p class="date">Date: 2013-08-02 00:40:50 CST</p>
 <p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 

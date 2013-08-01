@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>libev</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="libev"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:23:21 CST"/>
+<meta name="generated" content="2013-08-02 00:40:10 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -184,24 +184,24 @@ libev所实现的功能就是一个强大的reactor,可能notify事件主要包�
 <pre class="src src-C++">void noinline
 ev_io_start (EV_P_ ev_io *w)
 {
-int fd = w-&gt;fd;
+  int fd = w-&gt;fd;
 
-if (expect_false (ev_is_active (w)))
-return;
+  if (expect_false (ev_is_active (w)))
+    return;
 
-assert ((<span style="color: #ffff00;">"libev: ev_io_start called with negative fd"</span>, fd &gt;= 0));
-assert ((<span style="color: #ffff00;">"libev: ev_io_start called with illegal event mask"</span>, !(w-&gt;events &amp; ~(EV__IOFDSET | EV_READ | EV_WRITE))));
+  assert ((<span style="color: #ffff00;">"libev: ev_io_start called with negative fd"</span>, fd &gt;= 0));
+  assert ((<span style="color: #ffff00;">"libev: ev_io_start called with illegal event mask"</span>, !(w-&gt;events &amp; ~(EV__IOFDSET | EV_READ | EV_WRITE))));
 
-EV_FREQUENT_CHECK;
+  EV_FREQUENT_CHECK;
 
-ev_start (EV_A_ (W)w, 1);
-array_needsize (ANFD, anfds, anfdmax, fd + 1, array_init_zero);
-wlist_add (&amp;anfds[fd].head, (WL)w);
+  ev_start (EV_A_ (W)w, 1);
+  array_needsize (ANFD, anfds, anfdmax, fd + 1, array_init_zero);
+  wlist_add (&amp;anfds[fd].head, (WL)w);
 
-fd_change (EV_A_ fd, w-&gt;events &amp; EV__IOFDSET | EV_ANFD_REIFY);
-w-&gt;events &amp;= ~EV__IOFDSET;
+  fd_change (EV_A_ fd, w-&gt;events &amp; EV__IOFDSET | EV_ANFD_REIFY);
+  w-&gt;events &amp;= ~EV__IOFDSET;
 
-EV_FREQUENT_CHECK;
+  EV_FREQUENT_CHECK;
 }
 </pre>
 
@@ -312,12 +312,12 @@ void ev_break (EV_P_ int how);
 static void
 epoll_poll (EV_P_ ev_tstamp timeout)
 {
-/* epoll wait times cannot be larger than (LONG_MAX - 999UL) / HZ msecs, which is below */
-/* the default libev max wait time, however. */
-EV_RELEASE_CB;
-eventcnt = epoll_wait (backend_fd, epoll_events, epoll_eventmax,
-epoll_epermcnt ? 0 : ev_timeout_to_ms (timeout));
-EV_ACQUIRE_CB;
+  /* epoll wait times cannot be larger than (LONG_MAX - 999UL) / HZ msecs, which is below */
+  /* the default libev max wait time, however. */
+  EV_RELEASE_CB;
+  eventcnt = epoll_wait (backend_fd, epoll_events, epoll_eventmax,
+                         epoll_epermcnt ? 0 : ev_timeout_to_ms (timeout));
+  EV_ACQUIRE_CB;
 }
 </pre>
 
@@ -400,82 +400,82 @@ wacther的状态有下面这么几种：
 <pre class="src src-C++">void
 ev_run (EV_P_ int flags)
 {
-assert ((<span style="color: #ffff00;">"libev: ev_loop recursion during release detected"</span>, loop_done != EVBREAK_RECURSE));
+  assert ((<span style="color: #ffff00;">"libev: ev_loop recursion during release detected"</span>, loop_done != EVBREAK_RECURSE));
 
-loop_done = EVBREAK_CANCEL;
+  loop_done = EVBREAK_CANCEL;
 
-EV_INVOKE_PENDING; /* in case we recurse, ensure ordering stays nice and clean */
+  EV_INVOKE_PENDING; /* in case we recurse, ensure ordering stays nice and clean */
 
-do
-{
-if (expect_false (loop_done))
-break;
+  do
+    {
+      if (expect_false (loop_done))
+        break;
 
-/* update fd-related kernel structures */
-fd_reify (EV_A);
+      /* update fd-related kernel structures */
+      fd_reify (EV_A);
 
-/* calculate blocking time */
-{
-ev_tstamp waittime  = 0.;
-ev_tstamp sleeptime = 0.;
+      /* calculate blocking time */
+      {
+        ev_tstamp waittime  = 0.;
+        ev_tstamp sleeptime = 0.;
 
-/* remember old timestamp for io_blocktime calculation */
-ev_tstamp prev_mn_now = mn_now;
+        /* remember old timestamp for io_blocktime calculation */
+        ev_tstamp prev_mn_now = mn_now;
 
-/* update time to cancel out callback processing overhead */
-time_update (EV_A_ 1e100);
+        /* update time to cancel out callback processing overhead */
+        time_update (EV_A_ 1e100);
 
-if (expect_true (!(flags &amp; EVRUN_NOWAIT || idleall || !activecnt)))
-{
-waittime = MAX_BLOCKTIME;
+        if (expect_true (!(flags &amp; EVRUN_NOWAIT || idleall || !activecnt)))
+          {
+            waittime = MAX_BLOCKTIME;
 
-if (timercnt)
-{
-ev_tstamp to = ANHE_at (timers [HEAP0]) - mn_now + backend_fudge;
-if (waittime &gt; to) waittime = to;
-}
+            if (timercnt)
+              {
+                ev_tstamp to = ANHE_at (timers [HEAP0]) - mn_now + backend_fudge;
+                if (waittime &gt; to) waittime = to;
+              }
 
-/* don't let timeouts decrease the waittime below timeout_blocktime */
-if (expect_false (waittime &lt; timeout_blocktime))
-waittime = timeout_blocktime;
+            /* don't let timeouts decrease the waittime below timeout_blocktime */
+            if (expect_false (waittime &lt; timeout_blocktime))
+              waittime = timeout_blocktime;
 
-/* extra check because io_blocktime is commonly 0 */
-if (expect_false (io_blocktime))
-{
-sleeptime = io_blocktime - (mn_now - prev_mn_now);
+            /* extra check because io_blocktime is commonly 0 */
+            if (expect_false (io_blocktime))
+              {
+                sleeptime = io_blocktime - (mn_now - prev_mn_now);
 
-if (sleeptime &gt; waittime - backend_fudge)
-sleeptime = waittime - backend_fudge;
+                if (sleeptime &gt; waittime - backend_fudge)
+                  sleeptime = waittime - backend_fudge;
 
-if (expect_true (sleeptime &gt; 0.))
-{
-ev_sleep (sleeptime);
-waittime -= sleeptime;
-}
-}
-}
+                if (expect_true (sleeptime &gt; 0.))
+                  {
+                    ev_sleep (sleeptime);
+                    waittime -= sleeptime;
+                  }
+              }
+          }
 
-assert ((loop_done = EVBREAK_RECURSE, 1)); /* assert for side effect */
-backend_poll (EV_A_ waittime);
-assert ((loop_done = EVBREAK_CANCEL, 1)); /* assert for side effect */
+        assert ((loop_done = EVBREAK_RECURSE, 1)); /* assert for side effect */
+        backend_poll (EV_A_ waittime);
+        assert ((loop_done = EVBREAK_CANCEL, 1)); /* assert for side effect */
 
-/* update ev_rt_now, do magic */
-time_update (EV_A_ waittime + sleeptime);
-}
+        /* update ev_rt_now, do magic */
+        time_update (EV_A_ waittime + sleeptime);
+      }
 
-/* queue pending timers and reschedule them */
-timers_reify (EV_A); /* relative timers called last */
+      /* queue pending timers and reschedule them */
+      timers_reify (EV_A); /* relative timers called last */
 
-EV_INVOKE_PENDING;
-}
-while (expect_true (
-activecnt
-&amp;&amp; !loop_done
-&amp;&amp; !(flags &amp; (EVRUN_ONCE | EVRUN_NOWAIT))
-));
+      EV_INVOKE_PENDING;
+    }
+  while (expect_true (
+    activecnt
+    &amp;&amp; !loop_done
+    &amp;&amp; !(flags &amp; (EVRUN_ONCE | EVRUN_NOWAIT))
+  ));
 
-if (loop_done == EVBREAK_ONE)
-loop_done = EVBREAK_CANCEL;
+  if (loop_done == EVBREAK_ONE)
+    loop_done = EVBREAK_CANCEL;
 }
 </pre>
 
@@ -515,34 +515,34 @@ loop_done = EVBREAK_CANCEL;
 <pre class="src src-C++">inline_size void
 fd_reify (EV_P)
 {
-int i;
-for (i = 0; i &lt; fdchangecnt; ++i)
-{
-int fd = fdchanges [i];
-ANFD *anfd = anfds + fd;
-ev_io *w;
+  int i;
+  for (i = 0; i &lt; fdchangecnt; ++i)
+    {
+      int fd = fdchanges [i];
+      ANFD *anfd = anfds + fd;
+      ev_io *w;
 
-unsigned char o_events = anfd-&gt;events;
-unsigned char o_reify  = anfd-&gt;reify;
+      unsigned char o_events = anfd-&gt;events;
+      unsigned char o_reify  = anfd-&gt;reify;
 
-anfd-&gt;reify  = 0;
+      anfd-&gt;reify  = 0;
 
-/*if (expect_true (o_reify &amp; EV_ANFD_REIFY)) probably a deoptimisation */
-{
-anfd-&gt;events = 0;
+      /*if (expect_true (o_reify &amp; EV_ANFD_REIFY)) probably a deoptimisation */
+        {
+          anfd-&gt;events = 0;
 
-for (w = (ev_io *)anfd-&gt;head; w; w = (ev_io *)((WL)w)-&gt;next)
-anfd-&gt;events |= (unsigned char)w-&gt;events;
+          for (w = (ev_io *)anfd-&gt;head; w; w = (ev_io *)((WL)w)-&gt;next)
+            anfd-&gt;events |= (unsigned char)w-&gt;events;
 
-if (o_events != anfd-&gt;events)
-o_reify = EV__IOFDSET; /* actually |= */
-}
+          if (o_events != anfd-&gt;events)
+            o_reify = EV__IOFDSET; /* actually |= */
+        }
 
-if (o_reify &amp; EV__IOFDSET)
-backend_modify (EV_A_ fd, o_events, anfd-&gt;events);
-}
+      if (o_reify &amp; EV__IOFDSET)
+        backend_modify (EV_A_ fd, o_events, anfd-&gt;events);
+    }
 
-fdchangecnt = 0;
+  fdchangecnt = 0;
 }
 </pre>
 
@@ -556,38 +556,38 @@ fd关注事件的话，我们必须显示地ev_io_stop掉然后修正之后重�
 <pre class="src src-C++">void noinline
 ev_io_start (EV_P_ ev_io *w)
 {
-int fd = w-&gt;fd;
+  int fd = w-&gt;fd;
 
-if (expect_false (ev_is_active (w)))
-return;
+  if (expect_false (ev_is_active (w)))
+    return;
 
-assert ((<span style="color: #ffff00;">"libev: ev_io_start called with negative fd"</span>, fd &gt;= 0));
-assert ((<span style="color: #ffff00;">"libev: ev_io_start called with illegal event mask"</span>, !(w-&gt;events &amp; ~(EV__IOFDSET | EV_READ | EV_WRITE))));
+  assert ((<span style="color: #ffff00;">"libev: ev_io_start called with negative fd"</span>, fd &gt;= 0));
+  assert ((<span style="color: #ffff00;">"libev: ev_io_start called with illegal event mask"</span>, !(w-&gt;events &amp; ~(EV__IOFDSET | EV_READ | EV_WRITE))));
 
-EV_FREQUENT_CHECK;
+  EV_FREQUENT_CHECK;
 
-ev_start (EV_A_ (W)w, 1);
-array_needsize (ANFD, anfds, anfdmax, fd + 1, array_init_zero);
-wlist_add (&amp;anfds[fd].head, (WL)w);
+  ev_start (EV_A_ (W)w, 1);
+  array_needsize (ANFD, anfds, anfdmax, fd + 1, array_init_zero);
+  wlist_add (&amp;anfds[fd].head, (WL)w);
 
-fd_change (EV_A_ fd, w-&gt;events &amp; EV__IOFDSET | EV_ANFD_REIFY);
-w-&gt;events &amp;= ~EV__IOFDSET;
+  fd_change (EV_A_ fd, w-&gt;events &amp; EV__IOFDSET | EV_ANFD_REIFY);
+  w-&gt;events &amp;= ~EV__IOFDSET;
 
-EV_FREQUENT_CHECK;
+  EV_FREQUENT_CHECK;
 }
 
 inline_size void
 fd_change (EV_P_ int fd, int flags)
 {
-unsigned char reify = anfds [fd].reify;
-anfds [fd].reify |= flags;
+  unsigned char reify = anfds [fd].reify;
+  anfds [fd].reify |= flags;
 
-if (expect_true (!reify))
-{
-++fdchangecnt;
-array_needsize (int, fdchanges, fdchangemax, fdchangecnt, EMPTY2);
-fdchanges [fdchangecnt - 1] = fd;
-}
+  if (expect_true (!reify))
+    {
+      ++fdchangecnt;
+      array_needsize (int, fdchanges, fdchangemax, fdchangecnt, EMPTY2);
+      fdchanges [fdchangecnt - 1] = fd;
+    }
 }
 </pre>
 
@@ -608,33 +608,33 @@ fdchanges [fdchangecnt - 1] = fd;
 <pre class="src src-C++">inline_speed void
 fd_event_nocheck (EV_P_ int fd, int revents)
 {
-ANFD *anfd = anfds + fd;
-ev_io *w;
+  ANFD *anfd = anfds + fd;
+  ev_io *w;
 
-for (w = (ev_io *)anfd-&gt;head; w; w = (ev_io *)((WL)w)-&gt;next)
-{
-int ev = w-&gt;events &amp; revents;
+  for (w = (ev_io *)anfd-&gt;head; w; w = (ev_io *)((WL)w)-&gt;next)
+    {
+      int ev = w-&gt;events &amp; revents;
 
-if (ev)
-ev_feed_event (EV_A_ (W)w, ev);
-}
+      if (ev)
+        ev_feed_event (EV_A_ (W)w, ev);
+    }
 }
 void noinline
 ev_feed_event (EV_P_ void *w, int revents)
 {
-W w_ = (W)w;
-int pri = ABSPRI (w_);
+  W w_ = (W)w;
+  int pri = ABSPRI (w_);
 
-if (expect_false (w_-&gt;pending))
-pendings [pri][w_-&gt;pending - 1].events |= revents;
-else
-{
-w_-&gt;pending = ++pendingcnt [pri];
-array_needsize (ANPENDING, pendings [pri], pendingmax [pri], w_-&gt;pending, EMPTY2);
-// set the watcher and revents.
-pendings [pri][w_-&gt;pending - 1].w      = w_;
-pendings [pri][w_-&gt;pending - 1].events = revents;
-}
+  if (expect_false (w_-&gt;pending))
+    pendings [pri][w_-&gt;pending - 1].events |= revents;
+  else
+    {
+      w_-&gt;pending = ++pendingcnt [pri];
+      array_needsize (ANPENDING, pendings [pri], pendingmax [pri], w_-&gt;pending, EMPTY2);
+      // set the watcher and revents.
+      pendings [pri][w_-&gt;pending - 1].w      = w_;
+      pendings [pri][w_-&gt;pending - 1].events = revents;
+    }
 }
 </pre>
 
@@ -659,38 +659,38 @@ pendings [pri][w_-&gt;pending - 1].events = revents;
 <pre class="src src-C++">inline_size void
 timers_reify (EV_P)
 {
-EV_FREQUENT_CHECK;
+  EV_FREQUENT_CHECK;
 
-if (timercnt &amp;&amp; ANHE_at (timers [HEAP0]) &lt; mn_now)
-{
-do
-{
-ev_timer *w = (ev_timer *)ANHE_w (timers [HEAP0]);
+  if (timercnt &amp;&amp; ANHE_at (timers [HEAP0]) &lt; mn_now)
+    {
+      do
+        {
+          ev_timer *w = (ev_timer *)ANHE_w (timers [HEAP0]);
 
-/*assert ((<span style="color: #ffff00;">"libev: inactive timer on timer heap detected"</span>, ev_is_active (w)));*/
+          /*assert ((<span style="color: #ffff00;">"libev: inactive timer on timer heap detected"</span>, ev_is_active (w)));*/
 
-/* first reschedule or stop timer */
-if (w-&gt;repeat)
-{
-ev_at (w) += w-&gt;repeat;
-if (ev_at (w) &lt; mn_now)
-ev_at (w) = mn_now;
+          /* first reschedule or stop timer */
+          if (w-&gt;repeat)
+            {
+              ev_at (w) += w-&gt;repeat;
+              if (ev_at (w) &lt; mn_now)
+                ev_at (w) = mn_now;
 
-assert ((<span style="color: #ffff00;">"libev: negative ev_timer repeat value found while processing timers"</span>, w-&gt;repeat &gt; 0.));
+              assert ((<span style="color: #ffff00;">"libev: negative ev_timer repeat value found while processing timers"</span>, w-&gt;repeat &gt; 0.));
 
-ANHE_at_cache (timers [HEAP0]);
-downheap (timers, timercnt, HEAP0);
-}
-else
-ev_timer_stop (EV_A_ w); /* nonrepeating: stop timer */
+              ANHE_at_cache (timers [HEAP0]);
+              downheap (timers, timercnt, HEAP0);
+            }
+          else
+            ev_timer_stop (EV_A_ w); /* nonrepeating: stop timer */
 
-EV_FREQUENT_CHECK;
-feed_reverse (EV_A_ (W)w);
-}
-while (timercnt &amp;&amp; ANHE_at (timers [HEAP0]) &lt; mn_now);
+          EV_FREQUENT_CHECK;
+          feed_reverse (EV_A_ (W)w);
+        }
+      while (timercnt &amp;&amp; ANHE_at (timers [HEAP0]) &lt; mn_now);
 
-feed_reverse_done (EV_A_ EV_TIMER);
-}
+      feed_reverse_done (EV_A_ EV_TIMER);
+    }
 }
 </pre>
 
@@ -710,17 +710,17 @@ feed_reverse_done (EV_A_ EV_TIMER);
 <pre class="src src-C++">void noinline
 ev_invoke_pending (EV_P)
 {
-int pri;
+  int pri;
 
-for (pri = NUMPRI; pri--; )
-while (pendingcnt [pri])
-{
-ANPENDING *p = pendings [pri] + --pendingcnt [pri];
+  for (pri = NUMPRI; pri--; )
+    while (pendingcnt [pri])
+      {
+        ANPENDING *p = pendings [pri] + --pendingcnt [pri];
 
-p-&gt;w-&gt;pending = 0;
-EV_CB_INVOKE (p-&gt;w, p-&gt;events);
-EV_FREQUENT_CHECK;
-}
+        p-&gt;w-&gt;pending = 0;
+        EV_CB_INVOKE (p-&gt;w, p-&gt;events);
+        EV_FREQUENT_CHECK;
+      }
 }
 </pre>
 
@@ -763,56 +763,56 @@ EV_FREQUENT_CHECK;
 namespace common{
 
 #define D(exp,fmt,...) do {                     \
-if(!(exp)){                             \
-fprintf(stderr,fmt,##__VA_ARGS__);  \
-abort();                            \
-}                                       \
-}while(0)
+        if(!(exp)){                             \
+            fprintf(stderr,fmt,##__VA_ARGS__);  \
+            abort();                            \
+        }                                       \
+    }while(0)
 
 static void setnonblock(int fd){
-fcntl(fd,F_SETFL,fcntl(fd,F_GETFL) | O_NONBLOCK);
+    fcntl(fd,F_SETFL,fcntl(fd,F_GETFL) | O_NONBLOCK);
 }
 static void setreuseaddr(int fd){
-int ok=1;
-setsockopt(fd,SOL_SOCKET,SO_REUSEADDR,&amp;ok,sizeof(ok));
+    int ok=1;
+    setsockopt(fd,SOL_SOCKET,SO_REUSEADDR,&amp;ok,sizeof(ok));
 }
 
 static void setaddress(const char* ip,int port,struct sockaddr_in* addr){
-bzero(addr,sizeof(*addr));
-addr-&gt;sin_family=AF_INET;
-inet_pton(AF_INET,ip,&amp;(addr-&gt;sin_addr));
-addr-&gt;sin_port=htons(port);
+    bzero(addr,sizeof(*addr));
+    addr-&gt;sin_family=AF_INET;
+    inet_pton(AF_INET,ip,&amp;(addr-&gt;sin_addr));
+    addr-&gt;sin_port=htons(port);
 }
 
 static std::string address_to_string(struct sockaddr_in* addr){
-char ip[128];
-inet_ntop(AF_INET,&amp;(addr-&gt;sin_addr),ip,sizeof(ip));
-char port[32];
-snprintf(port,sizeof(port),<span style="color: #ffff00;">"%d"</span>,ntohs(addr-&gt;sin_port));
-std::string r;
-r=r+<span style="color: #ffff00;">"("</span>+ip+<span style="color: #ffff00;">":"</span>+port+<span style="color: #ffff00;">")"</span>;
-return r;
+    char ip[128];
+    inet_ntop(AF_INET,&amp;(addr-&gt;sin_addr),ip,sizeof(ip));
+    char port[32];
+    snprintf(port,sizeof(port),<span style="color: #ffff00;">"%d"</span>,ntohs(addr-&gt;sin_port));
+    std::string r;
+    r=r+<span style="color: #ffff00;">"("</span>+ip+<span style="color: #ffff00;">":"</span>+port+<span style="color: #ffff00;">")"</span>;
+    return r;
 }
 
 static int new_tcp_server(int port){
-int fd=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
-D(fd&gt;0,<span style="color: #ffff00;">"socket failed(%m)\n"</span>);
-setnonblock(fd);
-setreuseaddr(fd);
-sockaddr_in addr;
-setaddress(<span style="color: #ffff00;">"0.0.0.0"</span>,port,&amp;addr);
-bind(fd,(struct sockaddr*)&amp;addr,sizeof(addr));
-listen(fd,64); // backlog = 64
-return fd;
+    int fd=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+    D(fd&gt;0,<span style="color: #ffff00;">"socket failed(%m)\n"</span>);
+    setnonblock(fd);
+    setreuseaddr(fd);
+    sockaddr_in addr;
+    setaddress(<span style="color: #ffff00;">"0.0.0.0"</span>,port,&amp;addr);
+    bind(fd,(struct sockaddr*)&amp;addr,sizeof(addr));
+    listen(fd,64); // backlog = 64
+    return fd;
 }
 
 static int new_tcp_client(const char* ip,int port){
-int fd=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
-setnonblock(fd);
-sockaddr_in addr;
-setaddress(ip,port,&amp;addr);
-connect(fd,(struct sockaddr*)(&amp;addr),sizeof(addr));
-return fd;
+    int fd=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+    setnonblock(fd);
+    sockaddr_in addr;
+    setaddress(ip,port,&amp;addr);
+    connect(fd,(struct sockaddr*)(&amp;addr),sizeof(addr));
+    return fd;
 }
 
 }; // namespace common
@@ -836,20 +836,20 @@ return fd;
 #include <span style="color: #ffff00;">"common.h"</span>
 
 static void do_connected(struct ev_loop* reactor,ev_io* w,int events){
-close(w-&gt;fd);
-ev_break(reactor,EVBREAK_ALL);
+    close(w-&gt;fd);
+    ev_break(reactor,EVBREAK_ALL);
 }
 
 int main(){
-struct ev_loop* reactor=ev_loop_new(EVFLAG_AUTO);
-int fd=common::new_tcp_client(<span style="color: #ffff00;">"127.0.0.1"</span>,34567);
-ev_io io;
-ev_io_init(&amp;io,&amp;do_connected,fd,EV_WRITE);
-ev_io_start(reactor,&amp;io);
-ev_run(reactor,0);
-close(fd);
-ev_loop_destroy(reactor);
-return 0;
+    struct ev_loop* reactor=ev_loop_new(EVFLAG_AUTO);
+    int fd=common::new_tcp_client(<span style="color: #ffff00;">"127.0.0.1"</span>,34567);
+    ev_io io;
+    ev_io_init(&amp;io,&amp;do_connected,fd,EV_WRITE);
+    ev_io_start(reactor,&amp;io);
+    ev_run(reactor,0);
+    close(fd);
+    ev_loop_destroy(reactor);
+    return 0;
 }
 
 </pre>
@@ -870,23 +870,23 @@ return 0;
 #include <span style="color: #ffff00;">"common.h"</span>
 
 static void do_accept(struct ev_loop* reactor,ev_io* w,int events){
-struct sockaddr_in addr;
-socklen_t addr_size=sizeof(addr);
-int conn=accept(w-&gt;fd,(struct sockaddr*)&amp;addr,&amp;addr_size);
-std::string r=common::address_to_string(&amp;addr);
-fprintf(stderr,<span style="color: #ffff00;">"accept %s\n"</span>,r.c_str());
-close(conn);
+    struct sockaddr_in addr;
+    socklen_t addr_size=sizeof(addr);
+    int conn=accept(w-&gt;fd,(struct sockaddr*)&amp;addr,&amp;addr_size);
+    std::string r=common::address_to_string(&amp;addr);
+    fprintf(stderr,<span style="color: #ffff00;">"accept %s\n"</span>,r.c_str());
+    close(conn);
 }
 
 int main(){
-struct ev_loop* reactor=ev_loop_new(EVFLAG_AUTO);
-int fd=common::new_tcp_server(34567);
-ev_io w;
-ev_io_init(&amp;w,do_accept,fd,EV_READ);
-ev_io_start(reactor,&amp;w);
-ev_run(reactor,0);
-close(fd);
-ev_loop_destroy(reactor);
+    struct ev_loop* reactor=ev_loop_new(EVFLAG_AUTO);
+    int fd=common::new_tcp_server(34567);
+    ev_io w;
+    ev_io_init(&amp;w,do_accept,fd,EV_READ);
+    ev_io_start(reactor,&amp;w);
+    ev_run(reactor,0);
+    close(fd);
+    ev_loop_destroy(reactor);
 }
 
 </pre>
@@ -898,8 +898,8 @@ ev_loop_destroy(reactor);
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:23:21 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:40:10 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

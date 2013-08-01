@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>The Anatomy Of The Google Architecture</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="The Anatomy Of The Google Architecture"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:22:49 CST"/>
+<meta name="generated" content="2013-08-02 00:39:42 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -211,7 +211,7 @@ The Google Philosophy
 </ul>
 
 </li>
-<li>If not in Cache forwarded to GWS (Custom C++ Web Server) - now not using Custom apache?
+<li>If not in Cache forwarded to GWS (Custom C++ Web Server) - now not using Custom apache?     
 </li>
 <li>GWS sends the Request to appropriate internal (Cell) servers
 </li>
@@ -269,7 +269,7 @@ The Google Philosophy
 </ul>
 
 </li>
-<li>40U/80U Custom Racks (50% each side)
+<li>40U/80U Custom Racks (50% each side) 
 <ul>
 <li>Huge Heating and Power Issues（冷却系统）
 </li>
@@ -302,9 +302,9 @@ The Google Philosophy
 
 <p><b>NOTE（dirlt）：配置都非常普通</b>
 </p><ul>
-<li>2U Low-Cost (but not slow) Commodity Servers
+<li>2U Low-Cost (but not slow) Commodity Servers 
 <ul>
-<li>2009 Currently 2-Way, Dual Core/16GB/1-2TB +- Standard
+<li>2009 Currently 2-Way, Dual Core/16GB/1-2TB +- Standard 
 </li>
 <li>Both Intel/AMD Chipsets - 1 NIC - 2 USB
 </li>
@@ -370,7 +370,7 @@ The Google Philosophy
 </li>
 <li>Custom CUPS
 </li>
-<li>Custom gPXE bootloader
+<li>Custom gPXE bootloader 
 <ul>
 <li><b>NOTE（dirlt）：open-source network booting software</b>
 </li>
@@ -455,7 +455,7 @@ Software:
 <p><img src="./images/the-anatomy-of-google-architecture-major-glue.png"  alt="./images/the-anatomy-of-google-architecture-major-glue.png" />
 </p>
 <ul>
-<li>Google File System Architecture - GFS II
+<li>Google File System Architecture - GFS II     
 </li>
 <li>Google Database - Bigtable
 </li>
@@ -494,7 +494,7 @@ Software:
 <div class="outline-text-4" id="text-1-2-2">
 
 <ul>
-<li>Increased Scalability (across Namespace/Datacenters)
+<li>Increased Scalability (across Namespace/Datacenters) 
 <ul>
 <li>Tablets spread over DC s for a table but expensive (both computationally and financially!) <b>NOTE（dirlt）：对于tablet跨数据中心的话代价非常大</b>
 </li>
@@ -528,7 +528,7 @@ Software:
 <ul>
 <li>STATISTICS
 <ul>
-<li>In September 2009 Google ran 3,467,000 MR Jobs with an average 475 sec completion time averaging 488 machines per MR and utilising 25.5K Machine years
+<li>In September 2009 Google ran 3,467,000 MR Jobs with an average 475 sec completion time averaging 488 machines per MR and utilising 25.5K Machine years 
 </li>
 <li>Technique extensively used by Yahoo with Hadoop (similar architecture to Google) and Facebook (since 06 multiple Hadoop clusters, one being 2500CPU/1PB with HBase).
 </li>
@@ -583,7 +583,7 @@ Software:
 <p><img src="./images/the-open-source-google-stack.png"  alt="./images/the-open-source-google-stack.png" />
 </p>
 <ul>
-<li>Google PROFITS US $16M A DAY
+<li>Google PROFITS US $16M A DAY 
 </li>
 <li>“Libraries are the predominant way of building programs”
 </li>
@@ -599,8 +599,8 @@ Software:
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:22:49 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:39:42 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

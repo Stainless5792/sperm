@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>MapReduce Online</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="MapReduce Online"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:23:15 CST"/>
+<meta name="generated" content="2013-08-02 00:40:05 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -162,17 +162,17 @@ target.className = elem.cacheClassTarget;
 <ul>
 <li>In this pa- per, we propose a modified MapReduce architecture that allows data to be <b>pipelined between operators</b>. This ex- tends the MapReduce programming model beyond batch processing, and can reduce completion times and im- prove system utilization for batch jobs as well.
 </li>
-<li>We present a modified version of the Hadoop MapReduce framework that supports <b>online aggregation</b> , which al- lows users to see “early returns” from a job as it is being computed.
+<li>We present a modified version of the Hadoop MapReduce framework that supports <b>online aggregation</b> , which al- lows users to see “early returns” from a job as it is being computed. 
 </li>
-<li>Our Hadoop Online Prototype (HOP) also supports <b>continuous queries</b>, which enable MapReduce programs to be written for applications such as event monitoring and stream processing.
+<li>Our Hadoop Online Prototype (HOP) also supports <b>continuous queries</b>, which enable MapReduce programs to be written for applications such as event monitoring and stream processing. 
 </li>
-<li>HOP retains the fault tolerance properties of Hadoop, and can run unmodified user-defined MapReduce programs. 不需要修改MapReduce代码完全在framework层面上完成。
+<li>HOP retains the fault tolerance properties of Hadoop, and can run unmodified user-defined MapReduce programs. 不需要修改MapReduce代码完全在framework层面上完成。 
 </li>
 </ul>
 
 
 <p>
-<b>NOTE（dirlt）：文章后面会讲到这三个特性分别是用来做什么的，以及如何做到的</b>
+<b>NOTE（dirlt）：文章后面会讲到这三个特性分别是用来做什么的，以及如何做到的</b> 
 </p>
 </div>
 
@@ -274,7 +274,7 @@ Pipelining raises several design challenges.
 </li>
 <li>As each map output record is produced, the mapper determines which partition (reduce task) the record should be sent to, and immediately sends it via the appropriate socket. （mapper产生输出立刻就进行发送，注意这个地方没有做排序什么工作，所以对reduce压力可能回比较大）
 </li>
-<li>A reduce task accepts the pipelined data it receives from each map task and stores it an in-memory buffer, spilling sorted runs of the buffer to disk as needed.（reducer接收之后进行排序必要的话spill到磁盘上面）
+<li>A reduce task accepts the pipelined data it receives from each map task and stores it an in-memory buffer, spilling sorted runs of the buffer to disk as needed.（reducer接收之后进行排序必要的话spill到磁盘上面） 
 </li>
 <li>Once the reduce task learns that every map task has completed, it performs a final merge of all its sorted runs and applies the user-defined reduce function as normal, writing the output to HDFS.
 </li>
@@ -294,14 +294,14 @@ While the algorithm described above is straightforward, it suffers from several 
 </ul>
 
 </li>
-<li>Opening a socket be- tween every map and reduce task also requires a large number of TCP connections.
+<li>Opening a socket be- tween every map and reduce task also requires a large number of TCP connections. 
 <ul>
 <li>To reduce the num- ber of concurrent TCP connections, each reducer can be configured to pipeline data from a bounded number of mappers at once; the reducer will pull data from the re- maining map tasks in the traditional Hadoop manner.（对于大量连接数目的解决办法也是一样的，限定使用pipelining的mapper数量）
 </li>
 </ul>
 
 </li>
-<li>the user-defined map function was invoked by the same thread that wrote output records to the pipeline sockets. This meant that if a network I/O blocked (e.g. because the reducer was over-utilized), the mapper was prevented from doing useful work.
+<li>the user-defined map function was invoked by the same thread that wrote output records to the pipeline sockets. This meant that if a network I/O blocked (e.g. because the reducer was over-utilized), the mapper was prevented from doing useful work. 
 <ul>
 <li>We solved this problem by running the map function in a separate thread that stores its output in an in-memory buffer, and then having another thread pe- riodically send the contents of the buffer to the pipelining reducers.（这个问题的解决就是将输出数据存放在一个in-memory buffer里面，单独开辟发送线程将buffer data异步地发送出去）
 </li>
@@ -320,7 +320,7 @@ While the algorithm described above is straightforward, it suffers from several 
 </li>
 <li>A related problem is that eager pipelining moves some of the sorting work from the mapper to the reducer. （reducer现在需要完全地进行sort和group）
 </li>
-<li>We addressed these issues by modifying the in- memory buffer
+<li>We addressed these issues by modifying the in- memory buffer 
 <ul>
 <li>In- stead of sending the buffer contents to reducers directly, we instead wait for the buffer to grow to a threshold size. （in-memory buffer本地会先缓存然后发送）
 </li>
@@ -425,9 +425,9 @@ We show that online aggregation has a minimal impact on job completion times, an
 </li>
 <li>Snapshots are computed periodically, as new data ar- rives at each reducer. The user specifies how often snap- shots should be computed, using the progress metric as the unit of measure. The user may also specify whether to include data from tentative (unfinished) map tasks.（用户自己来决定到progress都什么地方可以做一次online aggregation，并且可以选择tentative mapper输出）
 </li>
-<li>Note that if there are not enough free slots to allow all the reduce tasks in a job to be scheduled, snapshots will not be available for reduce tasks that are still waiting to be executed. The user can detect this situation (e.g. by checking for the expected number of files in the HDFS snapshot directory), so there is no risk of incorrect data, but the usefulness of online aggregation will be compro- mised. （这是一个非常实际的情况，就是说如果progress已经到了25%，但是实际上只有部分reduce执行完成，部分reducer因为slot原因没有调度上，也就是说整个snapshot结果是具有偏袒性的，不能够作为全量数据的approximation。这样的话结果虽然是正确的，但是snapshot意义就不是很大）。
+<li>Note that if there are not enough free slots to allow all the reduce tasks in a job to be scheduled, snapshots will not be available for reduce tasks that are still waiting to be executed. The user can detect this situation (e.g. by checking for the expected number of files in the HDFS snapshot directory), so there is no risk of incorrect data, but the usefulness of online aggregation will be compro- mised. （这是一个非常实际的情况，就是说如果progress已经到了25%，但是实际上只有部分reduce执行完成，部分reducer因为slot原因没有调度上，也就是说整个snapshot结果是具有偏袒性的，不能够作为全量数据的approximation。这样的话结果虽然是正确的，但是snapshot意义就不是很大）。 
 <ul>
-<li><b>NOTE（dirlt）：其实我在想，即使不是槽位问题，也有可能一些reduce执行过快一些执行过慢，实际上也还是不均匀的</b>
+<li><b>NOTE（dirlt）：其实我在想，即使不是槽位问题，也有可能一些reduce执行过快一些执行过慢，实际上也还是不均匀的</b>  
 </li>
 <li><b>NOTE(dirlt):可能是我理解错这里的意思了，应该是对于每个reduce来计算progress score. 如果单个reduce到达了progress score的话那么就可是计算。但是用户如果想要得到有意义的值的话，那么必须等到snaphsot中每个reduce都计算完成才有意义。</b>
 </li>
@@ -492,9 +492,9 @@ We show that online aggregation has a minimal impact on job completion times, an
 </li>
 <li>To support continuous reduce tasks, the user-defined reduce function must be periodically invoked on the map output available at that reducer. Applications will have different requirements for how frequently the re- duce function should be invoked: possible choices in- clude periods based on （framework定期调用reduce函数来进行处理，对于这个周期可以使用下面三个指标进行指定）：
 <ul>
-<li>wall-clock time,
+<li>wall-clock time, 
 </li>
-<li>logical time (e.g. the value of a field in the map task output),
+<li>logical time (e.g. the value of a field in the map task output), 
 </li>
 <li>and the num- ber of input rows delivered to the reducer.
 </li>
@@ -515,7 +515,7 @@ We show that online aggregation has a minimal impact on job completion times, an
 <p><b>NOTE（dirlt）：这里只需要考虑reduce挂掉的情况。注意方式1重跑是会带有副作用的，而方式2重跑是没有副作用的</b>
 </p>
 <ul>
-<li>However, many continu- ous reduce functions (e.g., 30-second moving average) only depend on a suffix of the history of the map stream. This common case can be supported easily, by extending the JobTracker interface to capture a rolling notion of re- ducer consumption. Map-side spill files are maintained in a ring buffer with unique IDs for spill files over time. When a reducer commits an output to HDFS, it informs the JobTracker about the run of map output records it no longer needs, identifying the run by spill file IDs and offsets within those files. The JobTracker then can tell mappers to delete the appropriate data. （对于reducer只需要过去少量时间输入就可以恢复的，那么mapper spill file可以存储为ring buffer格式，定期删除一些已经没有用的）
+<li>However, many continu- ous reduce functions (e.g., 30-second moving average) only depend on a suffix of the history of the map stream. This common case can be supported easily, by extending the JobTracker interface to capture a rolling notion of re- ducer consumption. Map-side spill files are maintained in a ring buffer with unique IDs for spill files over time. When a reducer commits an output to HDFS, it informs the JobTracker about the run of map output records it no longer needs, identifying the run by spill file IDs and offsets within those files. The JobTracker then can tell mappers to delete the appropriate data. （对于reducer只需要过去少量时间输入就可以恢复的，那么mapper spill file可以存储为ring buffer格式，定期删除一些已经没有用的） 
 
 </li>
 <li>In principle, complex reducers may depend on very long (or infinite) histories of map records to accurately reconstruct their internal state. In that case, deleting spill files from the map-side ring buffer will result in poten- tially inaccurate recovery after faults. Such scenarios can be handled by having reducers checkpoint internal state to HDFS, along with markers for the mapper off- sets at which the internal state was checkpointed. The MapReduce framework can be extended with APIs to help with state serialization and offset management, but it still presents a programming burden on the user to cor- rectly identify the sensitive internal state.（对于reducer需要过去很长时间输入才能够恢复的，那么就需要考虑通过做checkpoint保存状态来回滚）
@@ -588,8 +588,8 @@ We show that online aggregation has a minimal impact on job completion times, an
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:23:15 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:40:05 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

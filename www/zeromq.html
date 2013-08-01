@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head><meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
 <title>zeromq</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="zeromq"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-18 15:22:45 CST"/>
+<meta name="generated" content="2013-08-02 00:39:39 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
-<!--/*--><![CDATA[/*><!--*/
-html { font-family: Times, serif; font-size: 12pt; }
-.title  { text-align: center; }
-.todo   { color: red; }
-.done   { color: green; }
-.tag    { background-color: #add8e6; font-weight:normal }
-.target { }
-.timestamp { color: #bebebe; }
-.timestamp-kwd { color: #5f9ea0; }
-.right  {margin-left:auto; margin-right:0px;  text-align:right;}
-.left   {margin-left:0px;  margin-right:auto; text-align:left;}
-.center {margin-left:auto; margin-right:auto; text-align:center;}
-p.verse { margin-left: 3% }
-pre {
-border: 1pt solid #AEBDCC;
-background-color: #F3F5F7;
-padding: 5pt;
-font-family: courier, monospace;
-font-size: 90%;
-overflow:auto;
-}
-table { border-collapse: collapse; }
-td, th { vertical-align: top;  }
-th.right  { text-align:center;  }
-th.left   { text-align:center;   }
-th.center { text-align:center; }
-td.right  { text-align:right;  }
-td.left   { text-align:left;   }
-td.center { text-align:center; }
-dt { font-weight: bold; }
-div.figure { padding: 0.5em; }
-div.figure p { text-align: center; }
-div.inlinetask {
-padding:10px;
-border:2px solid gray;
-margin:10px;
-background: #ffffcc;
-}
-textarea { overflow-x: auto; }
-.linenr { font-size:smaller }
-.code-highlighted {background-color:#ffff00;}
-.org-info-js_info-navigation { border-style:none; }
-#org-info-js_console-label { font-size:10px; font-weight:bold;
-white-space:nowrap; }
-.org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-font-weight:bold; }
-/*]]>*/-->
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
 </style><link rel="stylesheet" type="text/css" href="./site.css" />
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
-function CodeHighlightOn(elem, id)
-{
-var target = document.getElementById(id);
-if(null != target) {
-elem.cacheClassElem = elem.className;
-elem.cacheClassTarget = target.className;
-target.className = "code-highlighted";
-elem.className   = "code-highlighted";
-}
-}
-function CodeHighlightOff(elem, id)
-{
-var target = document.getElementById(id);
-if(elem.cacheClassElem)
-elem.className = elem.cacheClassElem;
-if(elem.cacheClassTarget)
-target.className = elem.cacheClassTarget;
-}
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
 /*]]>*///-->
 </script>
 
@@ -422,29 +422,29 @@ What this means is that you should always think in terms of "servers" as stable 
 #include &lt;unistd.h&gt;
 
 int main() {
-void* ctx=zmq_init(1);
-printf(<span style="color: #ffff00;">"connect to server 'localhost:19870'\n"</span>);
-void* req=zmq_socket(ctx,ZMQ_REQ);
-zmq_connect(req,<span style="color: #ffff00;">"tcp://localhost:19870"</span>);
-for(int i=0; i&lt;10; i++) {
-zmq_msg_t request;
-zmq_msg_init_size(&amp;request,6);
-//including trailing '\0'.
-memcpy(zmq_msg_data(&amp;request),<span style="color: #ffff00;">"hello"</span>,6);
-printf(<span style="color: #ffff00;">"[C]send 'hello'\n"</span>);
-// 0 means in block way.
-zmq_send(req,&amp;request,0);
-zmq_msg_close(&amp;request);
-zmq_msg_t reply;
-zmq_msg_init(&amp;reply);
-// 0 means in block way.
-zmq_recv(req,&amp;reply,0);
-printf(<span style="color: #ffff00;">"[C]recv '%s'\n"</span>,zmq_msg_data(&amp;reply));
-zmq_msg_close(&amp;reply);
-}
-zmq_close(req);
-zmq_term(ctx);
-return 0;
+    void* ctx=zmq_init(1);
+    printf(<span style="color: #ffff00;">"connect to server 'localhost:19870'\n"</span>);
+    void* req=zmq_socket(ctx,ZMQ_REQ);
+    zmq_connect(req,<span style="color: #ffff00;">"tcp://localhost:19870"</span>);
+    for(int i=0; i&lt;10; i++) {
+        zmq_msg_t request;
+        zmq_msg_init_size(&amp;request,6);
+        //including trailing '\0'.
+        memcpy(zmq_msg_data(&amp;request),<span style="color: #ffff00;">"hello"</span>,6);
+        printf(<span style="color: #ffff00;">"[C]send 'hello'\n"</span>);
+        // 0 means in block way.
+        zmq_send(req,&amp;request,0);
+        zmq_msg_close(&amp;request);
+        zmq_msg_t reply;
+        zmq_msg_init(&amp;reply);
+        // 0 means in block way.
+        zmq_recv(req,&amp;reply,0);
+        printf(<span style="color: #ffff00;">"[C]recv '%s'\n"</span>,zmq_msg_data(&amp;reply));
+        zmq_msg_close(&amp;reply);
+    }
+    zmq_close(req);
+    zmq_term(ctx);
+    return 0;
 }
 
 //============================================================
@@ -457,30 +457,30 @@ return 0;
 #include &lt;unistd.h&gt;
 
 int main() {
-void* ctx=zmq_init(1);
-printf(<span style="color: #ffff00;">"bind to '*:19870'\n"</span>);
-void* rep=zmq_socket(ctx,ZMQ_REP);
-zmq_bind(rep,<span style="color: #ffff00;">"tcp://*:19870"</span>);
-while(1){
-zmq_msg_t request;
-zmq_msg_init(&amp;request);
-// 0 means in block way
-zmq_recv(rep,&amp;request,0);
-const char* s=(const char*)zmq_msg_data(&amp;request);
-printf(<span style="color: #ffff00;">"[S]recv '%s'\n"</span>,s);
-zmq_msg_t reply;
-// include trailing '\0'.
-zmq_msg_init_size(&amp;reply,strlen(s)+1);
-memcpy(zmq_msg_data(&amp;reply),s,strlen(s)+1);
-zmq_msg_close(&amp;request);
-// 0 means in block way.
-printf(<span style="color: #ffff00;">"[S]send '%s'\n"</span>,s);
-zmq_send(rep,&amp;reply,0);
-zmq_msg_close(&amp;reply);
-}
-zmq_close(rep);
-zmq_term(ctx);
-return 0;
+    void* ctx=zmq_init(1);
+    printf(<span style="color: #ffff00;">"bind to '*:19870'\n"</span>);
+    void* rep=zmq_socket(ctx,ZMQ_REP);
+    zmq_bind(rep,<span style="color: #ffff00;">"tcp://*:19870"</span>);
+    while(1){
+        zmq_msg_t request;
+        zmq_msg_init(&amp;request);
+        // 0 means in block way
+        zmq_recv(rep,&amp;request,0);
+        const char* s=(const char*)zmq_msg_data(&amp;request);
+        printf(<span style="color: #ffff00;">"[S]recv '%s'\n"</span>,s);
+        zmq_msg_t reply;
+        // include trailing '\0'.
+        zmq_msg_init_size(&amp;reply,strlen(s)+1);
+        memcpy(zmq_msg_data(&amp;reply),s,strlen(s)+1);
+        zmq_msg_close(&amp;request);
+        // 0 means in block way.
+        printf(<span style="color: #ffff00;">"[S]send '%s'\n"</span>,s);
+        zmq_send(rep,&amp;reply,0);
+        zmq_msg_close(&amp;reply);
+    }
+    zmq_close(rep);
+    zmq_term(ctx);
+    return 0;
 }
 </pre>
 
@@ -541,8 +541,8 @@ zmq_bind(req,<span style="color: #ffff00;">"ipc://fuck"</span>); // server.cc
 
 
 <pre class="example">[zhangyan@tc-cm-et18.tc.baidu.com]$ stat fuck
-File: `fuck'
-Size: 0               Blocks: 0          IO Block: 4096   socket
+  File: `fuck'
+  Size: 0               Blocks: 0          IO Block: 4096   socket
 Device: 803h/2051d      Inode: 133580916   Links: 1
 Access: (0755/srwxr-xr-x)  Uid: (  521/zhangyan)   Gid: (  524/zhangyan)
 Access: 2011-09-26 14:02:44.000000000 +0800
@@ -573,8 +573,8 @@ ZMQ的消息格式是这样的
 
 
 <pre class="src src-C++">struct msg{
-msg_size_t size; // &#20294;&#26159;&#20026;&#20102;&#25928;&#29575;&#30340;&#35805;&#20250;&#20351;&#29992;&#29305;&#27530;&#30340;&#26041;&#27861;&#36827;&#34892;&#21387;&#32553;
-msg_data_t data[0];
+    msg_size_t size; // &#20294;&#26159;&#20026;&#20102;&#25928;&#29575;&#30340;&#35805;&#20250;&#20351;&#29992;&#29305;&#27530;&#30340;&#26041;&#27861;&#36827;&#34892;&#21387;&#32553;
+    msg_data_t data[0];
 };
 </pre>
 
@@ -596,25 +596,25 @@ ZMQ允许一条message按照多个部分进行发送(multipart message),为了�
 <pre class="src src-C++">//  Convert C string to ZMQ string and send to socket
 static int
 s_send (void *socket, char *string) {
-int rc;
-zmq_msg_t message;
-zmq_msg_init_size (&amp;message, strlen (string));
-memcpy (zmq_msg_data (&amp;message), string, strlen (string));
-rc = zmq_send (socket, &amp;message, 0);
-zmq_msg_close (&amp;message);
-return (rc);
+    int rc;
+    zmq_msg_t message;
+    zmq_msg_init_size (&amp;message, strlen (string));
+    memcpy (zmq_msg_data (&amp;message), string, strlen (string));
+    rc = zmq_send (socket, &amp;message, 0);
+    zmq_msg_close (&amp;message);
+    return (rc);
 }
 
 //  Sends string as ZMQ string, as multipart non-terminal
 static int
 s_sendmore (void *socket, char *string) {
-int rc;
-zmq_msg_t message;
-zmq_msg_init_size (&amp;message, strlen (string));
-memcpy (zmq_msg_data (&amp;message), string, strlen (string));
-rc = zmq_send (socket, &amp;message, ZMQ_SNDMORE);
-zmq_msg_close (&amp;message);
-return (rc);
+    int rc;
+    zmq_msg_t message;
+    zmq_msg_init_size (&amp;message, strlen (string));
+    memcpy (zmq_msg_data (&amp;message), string, strlen (string));
+    rc = zmq_send (socket, &amp;message, ZMQ_SNDMORE);
+    zmq_msg_close (&amp;message);
+    return (rc);
 }
 
 //  Receives all message parts from socket, prints neatly
@@ -622,39 +622,39 @@ return (rc);
 static void
 s_dump (void *socket)
 {
-puts (<span style="color: #ffff00;">"----------------------------------------"</span>);
-while (1) {
-//  Process all parts of the message
-zmq_msg_t message;
-zmq_msg_init (&amp;message);
-zmq_recv (socket, &amp;message, 0);
+    puts (<span style="color: #ffff00;">"----------------------------------------"</span>);
+    while (1) {
+        //  Process all parts of the message
+        zmq_msg_t message;
+        zmq_msg_init (&amp;message);
+        zmq_recv (socket, &amp;message, 0);
 
-//  Dump the message as text or binary
-char *data = (char*) zmq_msg_data (&amp;message);
-int size = zmq_msg_size (&amp;message);
-int is_text = 1;
-int char_nbr;
-for (char_nbr = 0; char_nbr &lt; size; char_nbr++)
-if ((unsigned char) data [char_nbr] &lt; 32
-||  (unsigned char) data [char_nbr] &gt; 127)
-is_text = 0;
+        //  Dump the message as text or binary
+        char *data = (char*) zmq_msg_data (&amp;message);
+        int size = zmq_msg_size (&amp;message);
+        int is_text = 1;
+        int char_nbr;
+        for (char_nbr = 0; char_nbr &lt; size; char_nbr++)
+            if ((unsigned char) data [char_nbr] &lt; 32
+            ||  (unsigned char) data [char_nbr] &gt; 127)
+                is_text = 0;
 
-printf (<span style="color: #ffff00;">"[%03d] "</span>, size);
-for (char_nbr = 0; char_nbr &lt; size; char_nbr++) {
-if (is_text)
-printf (<span style="color: #ffff00;">"%c"</span>, data [char_nbr]);
-else
-printf (<span style="color: #ffff00;">"%02X"</span>, (unsigned char) data [char_nbr]);
-}
-printf (<span style="color: #ffff00;">"\n"</span>);
+        printf (<span style="color: #ffff00;">"[%03d] "</span>, size);
+        for (char_nbr = 0; char_nbr &lt; size; char_nbr++) {
+            if (is_text)
+                printf (<span style="color: #ffff00;">"%c"</span>, data [char_nbr]);
+            else
+                printf (<span style="color: #ffff00;">"%02X"</span>, (unsigned char) data [char_nbr]);
+        }
+        printf (<span style="color: #ffff00;">"\n"</span>);
 
-int64_t more;           //  Multipart detection
-size_t more_size = sizeof (more);
-zmq_getsockopt (socket, ZMQ_RCVMORE, &amp;more, &amp;more_size);
-zmq_msg_close (&amp;message);
-if (!more)
-break;      //  Last message part
-}
+        int64_t more;           //  Multipart detection
+        size_t more_size = sizeof (more);
+        zmq_getsockopt (socket, ZMQ_RCVMORE, &amp;more, &amp;more_size);
+        zmq_msg_close (&amp;message);
+        if (!more)
+            break;      //  Last message part
+    }
 }
 </pre>
 
@@ -716,24 +716,24 @@ ZMQ里面内置的Device有下面三种：
 <pre class="src src-C++">#include <span style="color: #ffff00;">"zhelpers.h"</span>
 int main (void)
 {
-void *context = zmq_init (1);
+    void *context = zmq_init (1);
 
-// Socket facing clients
-void *frontend = zmq_socket (context, ZMQ_ROUTER);
-zmq_bind (frontend, <span style="color: #ffff00;">"tcp://*:5559"</span>);
+    // Socket facing clients
+    void *frontend = zmq_socket (context, ZMQ_ROUTER);
+    zmq_bind (frontend, <span style="color: #ffff00;">"tcp://*:5559"</span>);
 
-// Socket facing services
-void *backend = zmq_socket (context, ZMQ_DEALER);
-zmq_bind (backend, <span style="color: #ffff00;">"tcp://*:5560"</span>);
+    // Socket facing services
+    void *backend = zmq_socket (context, ZMQ_DEALER);
+    zmq_bind (backend, <span style="color: #ffff00;">"tcp://*:5560"</span>);
 
-// Start built-in device
-zmq_device (ZMQ_QUEUE, frontend, backend);
+    // Start built-in device
+    zmq_device (ZMQ_QUEUE, frontend, backend);
 
-// We never get here&#8230;
-zmq_close (frontend);
-zmq_close (backend);
-zmq_term (context);
-return 0;
+    // We never get here&#8230;
+    zmq_close (frontend);
+    zmq_close (backend);
+    zmq_term (context);
+    return 0;
 }
 </pre>
 
@@ -745,19 +745,19 @@ ZMQ Guide里面提到了不要将不同Device和socket进行混用. If you're li
 
 <pre class="src src-C++">int zmq_device (int device_, void *insocket_, void *outsocket_)
 {
-if (!insocket_ || !outsocket_) {
-errno = EFAULT;
-return -1;
-}
+    if (!insocket_ || !outsocket_) {
+        errno = EFAULT;
+        return -1;
+    }
 
-if (device_ != ZMQ_FORWARDER &amp;&amp; device_ != ZMQ_QUEUE &amp;&amp;
-device_ != ZMQ_STREAMER) {
-errno = EINVAL;
-return -1;
-}
+    if (device_ != ZMQ_FORWARDER &amp;&amp; device_ != ZMQ_QUEUE &amp;&amp;
+          device_ != ZMQ_STREAMER) {
+       errno = EINVAL;
+       return -1;
+    }
 
-return zmq::device ((zmq::socket_base_t*) insocket_,
-(zmq::socket_base_t*) outsocket_);
+    return zmq::device ((zmq::socket_base_t*) insocket_,
+        (zmq::socket_base_t*) outsocket_);
 }
 </pre>
 
@@ -767,94 +767,94 @@ return zmq::device ((zmq::socket_base_t*) insocket_,
 
 
 <pre class="src src-C++">int zmq::device (class socket_base_t *insocket_,
-class socket_base_t *outsocket_)
+        class socket_base_t *outsocket_)
 {
-zmq_msg_t msg;
-int rc = zmq_msg_init (&amp;msg);
+    zmq_msg_t msg;
+    int rc = zmq_msg_init (&amp;msg);
 
-if (rc != 0) {
-return -1;
-}
+    if (rc != 0) {
+        return -1;
+    }
 
-int64_t more;
-size_t moresz;
+    int64_t more;
+    size_t moresz;
 
-zmq_pollitem_t items [2];
-items [0].socket = insocket_;
-items [0].fd = 0;
-items [0].events = ZMQ_POLLIN;
-items [0].revents = 0;
-items [1].socket = outsocket_;
-items [1].fd = 0;
-items [1].events = ZMQ_POLLIN;
-items [1].revents = 0;
+    zmq_pollitem_t items [2];
+    items [0].socket = insocket_;
+    items [0].fd = 0;
+    items [0].events = ZMQ_POLLIN;
+    items [0].revents = 0;
+    items [1].socket = outsocket_;
+    items [1].fd = 0;
+    items [1].events = ZMQ_POLLIN;
+    items [1].revents = 0;
 
-while (true) {
+    while (true) {
 
-//  Wait while there are either requests or replies to process.
-rc = zmq_poll (&amp;items [0], 2, -1);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+        //  Wait while there are either requests or replies to process.
+        rc = zmq_poll (&amp;items [0], 2, -1);
+        if (unlikely (rc &lt; 0)) {
+            return -1;
+        }
 
-//  The algorithm below asumes ratio of request and replies processed
-//  under full load to be 1:1. Although processing requests replies
-//  first is tempting it is suspectible to DoS attacks (overloading
-//  the system with unsolicited replies).
+        //  The algorithm below asumes ratio of request and replies processed
+        //  under full load to be 1:1. Although processing requests replies
+        //  first is tempting it is suspectible to DoS attacks (overloading
+        //  the system with unsolicited replies).
 
-//  Process a request.
-if (items [0].revents &amp; ZMQ_POLLIN) {
-while (true) {
+        //  Process a request.
+        if (items [0].revents &amp; ZMQ_POLLIN) {
+            while (true) {
 
-rc = insocket_-&gt;recv (&amp;msg, 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = insocket_-&gt;recv (&amp;msg, 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-moresz = sizeof (more);
-rc = insocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                moresz = sizeof (more);
+                rc = insocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-rc = outsocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = outsocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-if (!more)
-break;
-}
-}
+                if (!more)
+                    break;
+            }
+        }
 
-//  Process a reply.
-if (items [1].revents &amp; ZMQ_POLLIN) {
-while (true) {
+        //  Process a reply.
+        if (items [1].revents &amp; ZMQ_POLLIN) {
+            while (true) {
 
-rc = outsocket_-&gt;recv (&amp;msg, 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = outsocket_-&gt;recv (&amp;msg, 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-moresz = sizeof (more);
-rc = outsocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                moresz = sizeof (more);
+                rc = outsocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-rc = insocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = insocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-if (!more)
-break;
-}
-}
+                if (!more)
+                    break;
+            }
+        }
 
-}
+    }
 
-return 0;
+    return 0;
 }
 </pre>
 
@@ -918,51 +918,51 @@ Some notes on using the HWM option:
 #include &lt;pthread.h&gt;
 
 void* second(void* arg){
-void* ctx=arg;
-void* pair=zmq_socket(ctx,ZMQ_PAIR);
-zmq_connect(pair,<span style="color: #ffff00;">"inproc://channel"</span>);
-for(int i=0;i&lt;2;i++){
-zmq_msg_t msg;
-zmq_msg_init(&amp;msg);
-zmq_recv(pair,&amp;msg,0);
-printf(<span style="color: #ffff00;">"[S]recv '%s'\n"</span>,zmq_msg_data(&amp;msg));
-zmq_msg_close(&amp;msg);
-}
-for(int i=0;i&lt;2;i++){
-zmq_msg_t msg;
-zmq_msg_init_size(&amp;msg,6);
-memcpy(zmq_msg_data(&amp;msg),<span style="color: #ffff00;">"world"</span>,6);
-printf(<span style="color: #ffff00;">"[S]send '%s'\n"</span>,zmq_msg_data(&amp;msg));
-zmq_send(pair,&amp;msg,0);
-zmq_msg_close(&amp;msg);
-}
-zmq_close(pair);
+    void* ctx=arg;
+    void* pair=zmq_socket(ctx,ZMQ_PAIR);
+    zmq_connect(pair,<span style="color: #ffff00;">"inproc://channel"</span>);
+    for(int i=0;i&lt;2;i++){
+        zmq_msg_t msg;
+        zmq_msg_init(&amp;msg);
+        zmq_recv(pair,&amp;msg,0);
+        printf(<span style="color: #ffff00;">"[S]recv '%s'\n"</span>,zmq_msg_data(&amp;msg));
+        zmq_msg_close(&amp;msg);
+    }
+    for(int i=0;i&lt;2;i++){
+        zmq_msg_t msg;
+        zmq_msg_init_size(&amp;msg,6);
+        memcpy(zmq_msg_data(&amp;msg),<span style="color: #ffff00;">"world"</span>,6);
+        printf(<span style="color: #ffff00;">"[S]send '%s'\n"</span>,zmq_msg_data(&amp;msg));
+        zmq_send(pair,&amp;msg,0);
+        zmq_msg_close(&amp;msg);
+    }
+    zmq_close(pair);
 }
 int main(){
-void* ctx=zmq_init(2);
-void* pair=zmq_socket(ctx,ZMQ_PAIR);
-zmq_bind(pair,<span style="color: #ffff00;">"inproc://channel"</span>);
-pthread_t id;
-pthread_create(&amp;id,NULL,&amp;second,ctx);
-for(int i=0;i&lt;2;i++){
-zmq_msg_t msg;
-zmq_msg_init_size(&amp;msg,6);
-memcpy(zmq_msg_data(&amp;msg),<span style="color: #ffff00;">"world"</span>,6);
-printf(<span style="color: #ffff00;">"[M]send '%s'\n"</span>,zmq_msg_data(&amp;msg));
-zmq_send(pair,&amp;msg,0);
-zmq_msg_close(&amp;msg);
-}
-for(int i=0;i&lt;2;i++){
-zmq_msg_t msg;
-zmq_msg_init(&amp;msg);
-zmq_recv(pair,&amp;msg,0);
-printf(<span style="color: #ffff00;">"[M]recv '%s'\n"</span>,zmq_msg_data(&amp;msg));
-zmq_msg_close(&amp;msg);
-}
-pthread_join(id,NULL);
-zmq_close(pair);
-zmq_term(ctx);
-return 0;
+    void* ctx=zmq_init(2);
+    void* pair=zmq_socket(ctx,ZMQ_PAIR);
+    zmq_bind(pair,<span style="color: #ffff00;">"inproc://channel"</span>);
+    pthread_t id;
+    pthread_create(&amp;id,NULL,&amp;second,ctx);
+    for(int i=0;i&lt;2;i++){
+        zmq_msg_t msg;
+        zmq_msg_init_size(&amp;msg,6);
+        memcpy(zmq_msg_data(&amp;msg),<span style="color: #ffff00;">"world"</span>,6);
+        printf(<span style="color: #ffff00;">"[M]send '%s'\n"</span>,zmq_msg_data(&amp;msg));
+        zmq_send(pair,&amp;msg,0);
+        zmq_msg_close(&amp;msg);
+    }
+    for(int i=0;i&lt;2;i++){
+        zmq_msg_t msg;
+        zmq_msg_init(&amp;msg);
+        zmq_recv(pair,&amp;msg,0);
+        printf(<span style="color: #ffff00;">"[M]recv '%s'\n"</span>,zmq_msg_data(&amp;msg));
+        zmq_msg_close(&amp;msg);
+    }
+    pthread_join(id,NULL);
+    zmq_close(pair);
+    zmq_term(ctx);
+    return 0;
 }
 </pre>
 
@@ -1011,26 +1011,26 @@ In the current versions of ZMQ, filtering happens at the subscriber side, not th
 #include <span style="color: #ffff00;">"zhelpers.h"</span>
 
 int main(){
-void* ctx=zmq_init(1);
-void* pub=zmq_socket(ctx,ZMQ_PUB);
-zmq_bind(pub,<span style="color: #ffff00;">"tcp://*:19870"</span>);
-const int header=10001;
-for(int i=0;i&lt;10;i++){
-char message[20];
-snprintf(message,sizeof(message),<span style="color: #ffff00;">"%d %d"</span>,header,i);
-printf(<span style="color: #ffff00;">"send '%s'\n"</span>,message);
-{
-zmq_msg_t msg;
-zmq_msg_init_size(&amp;msg,strlen(message)+1);
-memcpy(zmq_msg_data(&amp;msg),message,strlen(message)+1);
-zmq_send(pub,&amp;msg,0);
-zmq_msg_close(&amp;msg);
-sleep(1);
-}
-}
-zmq_close(pub);
-zmq_term(ctx);
-return 0;
+    void* ctx=zmq_init(1);
+    void* pub=zmq_socket(ctx,ZMQ_PUB);
+    zmq_bind(pub,<span style="color: #ffff00;">"tcp://*:19870"</span>);
+    const int header=10001;
+    for(int i=0;i&lt;10;i++){
+        char message[20];
+        snprintf(message,sizeof(message),<span style="color: #ffff00;">"%d %d"</span>,header,i);
+        printf(<span style="color: #ffff00;">"send '%s'\n"</span>,message);
+        {
+            zmq_msg_t msg;
+            zmq_msg_init_size(&amp;msg,strlen(message)+1);
+            memcpy(zmq_msg_data(&amp;msg),message,strlen(message)+1);
+            zmq_send(pub,&amp;msg,0);
+            zmq_msg_close(&amp;msg);
+            sleep(1);
+        }
+    }
+    zmq_close(pub);
+    zmq_term(ctx);
+    return 0;
 }
 
 //============================================================
@@ -1039,21 +1039,21 @@ return 0;
 #include <span style="color: #ffff00;">"zhelpers.h"</span>
 
 int main(){
-void* ctx=zmq_init(1);
-void* sub=zmq_socket(ctx,ZMQ_SUB);
-zmq_setsockopt(sub,ZMQ_SUBSCRIBE,<span style="color: #ffff00;">"10001"</span>,5);
-zmq_connect(sub,<span style="color: #ffff00;">"tcp://localhost:19870"</span>);
-for(int i=0;i&lt;10;i++){
-zmq_msg_t msg;
-zmq_msg_init(&amp;msg);
-zmq_recv(sub,&amp;msg,0);
-printf(<span style="color: #ffff00;">"recv '%s'\n"</span>,zmq_msg_data(&amp;msg));
-zmq_msg_close(&amp;msg);
-sleep(1);
-}
-zmq_close(sub);
-zmq_term(ctx);
-return 0;
+    void* ctx=zmq_init(1);
+    void* sub=zmq_socket(ctx,ZMQ_SUB);
+    zmq_setsockopt(sub,ZMQ_SUBSCRIBE,<span style="color: #ffff00;">"10001"</span>,5);
+    zmq_connect(sub,<span style="color: #ffff00;">"tcp://localhost:19870"</span>);
+    for(int i=0;i&lt;10;i++){
+        zmq_msg_t msg;
+        zmq_msg_init(&amp;msg);
+        zmq_recv(sub,&amp;msg,0);
+        printf(<span style="color: #ffff00;">"recv '%s'\n"</span>,zmq_msg_data(&amp;msg));
+        zmq_msg_close(&amp;msg);
+        sleep(1);
+    }
+    zmq_close(sub);
+    zmq_term(ctx);
+    return 0;
 }
 </pre>
 
@@ -1121,27 +1121,27 @@ A more robust model could be:
 #include <span style="color: #ffff00;">"zhelpers.h"</span>
 
 int main(){
-void* ctx=zmq_init(1);
-void* pub=zmq_socket(ctx,ZMQ_PUB);
-zmq_bind(pub,<span style="color: #ffff00;">"tcp://*:19870"</span>);
-const int header=10001;
-int i=0;
-while(1){
-i++;
-char message[20];
-snprintf(message,sizeof(message),<span style="color: #ffff00;">"%d %d"</span>,header,i);
-printf(<span style="color: #ffff00;">"send '%s'\n"</span>,message);
-{
-zmq_msg_t msg;
-zmq_msg_init_size(&amp;msg,strlen(message)+1);
-memcpy(zmq_msg_data(&amp;msg),message,strlen(message)+1);
-zmq_send(pub,&amp;msg,0);
-zmq_msg_close(&amp;msg);
-}
-}
-zmq_close(pub);
-zmq_term(ctx);
-return 0;
+    void* ctx=zmq_init(1);
+    void* pub=zmq_socket(ctx,ZMQ_PUB);
+    zmq_bind(pub,<span style="color: #ffff00;">"tcp://*:19870"</span>);
+    const int header=10001;
+    int i=0;
+    while(1){
+        i++;
+        char message[20];
+        snprintf(message,sizeof(message),<span style="color: #ffff00;">"%d %d"</span>,header,i);
+        printf(<span style="color: #ffff00;">"send '%s'\n"</span>,message);
+        {
+            zmq_msg_t msg;
+            zmq_msg_init_size(&amp;msg,strlen(message)+1);
+            memcpy(zmq_msg_data(&amp;msg),message,strlen(message)+1);
+            zmq_send(pub,&amp;msg,0);
+            zmq_msg_close(&amp;msg);
+        }
+    }
+    zmq_close(pub);
+    zmq_term(ctx);
+    return 0;
 }
 
 //============================================================
@@ -1150,14 +1150,14 @@ return 0;
 #include <span style="color: #ffff00;">"zhelpers.h"</span>
 
 int main(){
-void* ctx=zmq_init(1);
-void* sub=zmq_socket(ctx,ZMQ_SUB);
-zmq_setsockopt(sub,ZMQ_SUBSCRIBE,<span style="color: #ffff00;">"10001"</span>,5);
-zmq_connect(sub,<span style="color: #ffff00;">"tcp://localhost:19870"</span>);
-sleep(100000);
-zmq_close(sub);
-zmq_term(ctx);
-return 0;
+    void* ctx=zmq_init(1);
+    void* sub=zmq_socket(ctx,ZMQ_SUB);
+    zmq_setsockopt(sub,ZMQ_SUBSCRIBE,<span style="color: #ffff00;">"10001"</span>,5);
+    zmq_connect(sub,<span style="color: #ffff00;">"tcp://localhost:19870"</span>);
+    sleep(100000);
+    zmq_close(sub);
+    zmq_term(ctx);
+    return 0;
 }
 
 </pre>
@@ -1261,23 +1261,23 @@ Here now is a more detailed explanation of the four socket types we use for requ
 <pre class="src src-C++">#include <span style="color: #ffff00;">"zhelpers.h"</span>
 
 int main (void) {
-void *context = zmq_init (1);
+    void *context = zmq_init (1);
 
-void *sink = zmq_socket (context, ZMQ_ROUTER);
-zmq_bind (sink, <span style="color: #ffff00;">"inproc://example"</span>);
+    void *sink = zmq_socket (context, ZMQ_ROUTER);
+    zmq_bind (sink, <span style="color: #ffff00;">"inproc://example"</span>);
 
-// First allow 0MQ to set the identity
-void *anonymous = zmq_socket (context, ZMQ_DEALER);
-zmq_connect (anonymous, <span style="color: #ffff00;">"inproc://example"</span>);
-s_send (anonymous, <span style="color: #ffff00;">"ROUTER uses a generated UUID"</span>);
-s_dump (sink);
-s_send (anonymous, <span style="color: #ffff00;">"ROUTER uses a generated UUID"</span>);
-s_dump (sink);
+    // First allow 0MQ to set the identity
+    void *anonymous = zmq_socket (context, ZMQ_DEALER);
+    zmq_connect (anonymous, <span style="color: #ffff00;">"inproc://example"</span>);
+    s_send (anonymous, <span style="color: #ffff00;">"ROUTER uses a generated UUID"</span>);
+    s_dump (sink);
+    s_send (anonymous, <span style="color: #ffff00;">"ROUTER uses a generated UUID"</span>);
+    s_dump (sink);
 
-zmq_close (sink);
-zmq_close (anonymous);
-zmq_term (context);
-return 0;
+    zmq_close (sink);
+    zmq_close (anonymous);
+    zmq_term (context);
+    return 0;
 }
 </pre>
 
@@ -1451,43 +1451,43 @@ Context termination is performed in the following steps:
 
 <pre class="src src-C++">int zmq_msg_init_size (zmq_msg_t *msg_, size_t size_)
 {
-if (size_ &lt;= ZMQ_MAX_VSM_SIZE) {
-msg_-&gt;content = (zmq::msg_content_t*) ZMQ_VSM;
-msg_-&gt;flags = (unsigned char) ~ZMQ_MSG_MASK;
-msg_-&gt;vsm_size = (uint8_t) size_;
-}
-else {
-msg_-&gt;content =
-(zmq::msg_content_t*) malloc (sizeof (zmq::msg_content_t) + size_);
-if (!msg_-&gt;content) {
-errno = ENOMEM;
-return -1;
-}
-msg_-&gt;flags = (unsigned char) ~ZMQ_MSG_MASK;
+    if (size_ &lt;= ZMQ_MAX_VSM_SIZE) {
+        msg_-&gt;content = (zmq::msg_content_t*) ZMQ_VSM;
+        msg_-&gt;flags = (unsigned char) ~ZMQ_MSG_MASK;
+        msg_-&gt;vsm_size = (uint8_t) size_;
+    }
+    else {
+        msg_-&gt;content =
+            (zmq::msg_content_t*) malloc (sizeof (zmq::msg_content_t) + size_);
+        if (!msg_-&gt;content) {
+            errno = ENOMEM;
+            return -1;
+        }
+        msg_-&gt;flags = (unsigned char) ~ZMQ_MSG_MASK;
 
-zmq::msg_content_t *content = (zmq::msg_content_t*) msg_-&gt;content;
-content-&gt;data = (void*) (content + 1);
-content-&gt;size = size_;
-content-&gt;ffn = NULL;
-content-&gt;hint = NULL;
-new (&amp;content-&gt;refcnt) zmq::atomic_counter_t ();
-}
-return 0;
+        zmq::msg_content_t *content = (zmq::msg_content_t*) msg_-&gt;content;
+        content-&gt;data = (void*) (content + 1);
+        content-&gt;size = size_;
+        content-&gt;ffn = NULL;
+        content-&gt;hint = NULL;
+        new (&amp;content-&gt;refcnt) zmq::atomic_counter_t ();
+    }
+    return 0;
 }
 
 int zmq_msg_init_data (zmq_msg_t *msg_, void *data_, size_t size_,
-zmq_free_fn *ffn_, void *hint_)
+    zmq_free_fn *ffn_, void *hint_)
 {
-msg_-&gt;content = (zmq::msg_content_t*) malloc (sizeof (zmq::msg_content_t));
-alloc_assert (msg_-&gt;content);
-msg_-&gt;flags = (unsigned char) ~ZMQ_MSG_MASK;
-zmq::msg_content_t *content = (zmq::msg_content_t*) msg_-&gt;content;
-content-&gt;data = data_;
-content-&gt;size = size_;
-content-&gt;ffn = ffn_;
-content-&gt;hint = hint_;
-new (&amp;content-&gt;refcnt) zmq::atomic_counter_t ();
-return 0;
+    msg_-&gt;content = (zmq::msg_content_t*) malloc (sizeof (zmq::msg_content_t));
+    alloc_assert (msg_-&gt;content);
+    msg_-&gt;flags = (unsigned char) ~ZMQ_MSG_MASK;
+    zmq::msg_content_t *content = (zmq::msg_content_t*) msg_-&gt;content;
+    content-&gt;data = data_;
+    content-&gt;size = size_;
+    content-&gt;ffn = ffn_;
+    content-&gt;hint = hint_;
+    new (&amp;content-&gt;refcnt) zmq::atomic_counter_t ();
+    return 0;
 }
 </pre>
 
@@ -1499,37 +1499,37 @@ return 0;
 
 <pre class="src src-C++">int zmq_msg_close (zmq_msg_t *msg_)
 {
-// &#36825;&#20010;&#22320;&#26041;&#26159;&#20250;&#26816;&#26597;&#26631;&#24535;&#30340;&#65292;&#36825;&#26679;&#21487;&#20197;&#25918;&#32622;&#22810;&#27425;&#37322;&#25918;&#36896;&#25104;&#38169;&#35823;&#30340;&#32467;&#26524;
-//  Check the validity tag.
-if (unlikely (msg_-&gt;flags | ZMQ_MSG_MASK) != 0xff) {
-errno = EFAULT;
-return -1;
-}
-// &#22914;&#26524;&#37324;&#38754;&#38656;&#35201;&#36827;&#34892;&#37322;&#25918;&#30340;&#35805;
-//  For VSMs and delimiters there are no resources to free.
-if (msg_-&gt;content != (zmq::msg_content_t*) ZMQ_DELIMITER &amp;&amp;
-msg_-&gt;content != (zmq::msg_content_t*) ZMQ_VSM) {
+    // &#36825;&#20010;&#22320;&#26041;&#26159;&#20250;&#26816;&#26597;&#26631;&#24535;&#30340;&#65292;&#36825;&#26679;&#21487;&#20197;&#25918;&#32622;&#22810;&#27425;&#37322;&#25918;&#36896;&#25104;&#38169;&#35823;&#30340;&#32467;&#26524;
+    //  Check the validity tag.
+    if (unlikely (msg_-&gt;flags | ZMQ_MSG_MASK) != 0xff) {
+        errno = EFAULT;
+        return -1;
+    }
+    // &#22914;&#26524;&#37324;&#38754;&#38656;&#35201;&#36827;&#34892;&#37322;&#25918;&#30340;&#35805;
+    //  For VSMs and delimiters there are no resources to free.
+    if (msg_-&gt;content != (zmq::msg_content_t*) ZMQ_DELIMITER &amp;&amp;
+          msg_-&gt;content != (zmq::msg_content_t*) ZMQ_VSM) {
 
-//  If the content is not shared, or if it is shared and the reference.
-//  count has dropped to zero, deallocate it.
-zmq::msg_content_t *content = (zmq::msg_content_t*) msg_-&gt;content;
-// &#37027;&#20040;&#20250;&#20351;&#29992;&#24341;&#29992;&#35745;&#25968;&#36827;&#34892;&#35745;&#31639;.
-if (!(msg_-&gt;flags &amp; ZMQ_MSG_SHARED) || !content-&gt;refcnt.sub (1)) {
+        //  If the content is not shared, or if it is shared and the reference.
+        //  count has dropped to zero, deallocate it.
+        zmq::msg_content_t *content = (zmq::msg_content_t*) msg_-&gt;content;
+                // &#37027;&#20040;&#20250;&#20351;&#29992;&#24341;&#29992;&#35745;&#25968;&#36827;&#34892;&#35745;&#31639;.
+        if (!(msg_-&gt;flags &amp; ZMQ_MSG_SHARED) || !content-&gt;refcnt.sub (1)) {
 
-//  We used <span style="color: #ffff00;">"placement new"</span> operator to initialize the reference.
-//  counter so we call its destructor now.
-content-&gt;refcnt.~atomic_counter_t ();
-// &#37322;&#25918;&#33258;&#24049;&#20869;&#37096;&#30340;&#20869;&#23384;.
-if (content-&gt;ffn)
-content-&gt;ffn (content-&gt;data, content-&gt;hint);
-free (content);
-}
-}
-// &#28982;&#21518;&#24213;&#23618;&#20250;&#23558;&#36825;&#20010;flags&#28165;&#31354;.&#20197;&#38450;&#22810;&#27425;&#37322;&#25918;.
-//  Remove the validity tag from the message.
-msg_-&gt;flags = 0;
+            //  We used <span style="color: #ffff00;">"placement new"</span> operator to initialize the reference.
+            //  counter so we call its destructor now.
+            content-&gt;refcnt.~atomic_counter_t ();
+                        // &#37322;&#25918;&#33258;&#24049;&#20869;&#37096;&#30340;&#20869;&#23384;.
+            if (content-&gt;ffn)
+                content-&gt;ffn (content-&gt;data, content-&gt;hint);
+            free (content);
+        }
+    }
+        // &#28982;&#21518;&#24213;&#23618;&#20250;&#23558;&#36825;&#20010;flags&#28165;&#31354;.&#20197;&#38450;&#22810;&#27425;&#37322;&#25918;.
+    //  Remove the validity tag from the message.
+    msg_-&gt;flags = 0;
 
-return 0;
+    return 0;
 }
 </pre>
 
@@ -1644,10 +1644,10 @@ socket还允许使用poll来观察socket是否可读可写.zmq_poll提供的接�
 
 <pre class="src src-C++">typedef struct
 {
-void *socket; // &#21487;&#20197;&#20351;&#29992;zmq_socket
-int fd; // &#20063;&#21487;&#20197;&#20351;&#29992;fd
-short events;
-short revents;
+    void *socket; // &#21487;&#20197;&#20351;&#29992;zmq_socket
+    int fd; // &#20063;&#21487;&#20197;&#20351;&#29992;fd
+    short events;
+    short revents;
 } zmq_pollitem_t;
 int zmq_poll (zmq_pollitem_t *items, int nitems, long timeout); // -1&#34920;&#31034;&#27809;&#26377;&#36229;&#26102;
 </pre>
@@ -1846,96 +1846,96 @@ int zmq_device (int device, const void *frontend, const void *backend);
 
 
 <pre class="src src-C++">int zmq::device (class socket_base_t *insocket_,
-class socket_base_t *outsocket_)
+        class socket_base_t *outsocket_)
 {
-zmq_msg_t msg;
-int rc = zmq_msg_init (&amp;msg); // &#20165;&#20165;&#21021;&#22987;&#21270;&#19968;&#27425;&#23601;&#21487;&#20197;&#65292;&#22240;&#20026;zmq_recv&#20250;&#33258;&#21160;&#24110;&#25105;&#20204;close:).
+    zmq_msg_t msg;
+    int rc = zmq_msg_init (&amp;msg); // &#20165;&#20165;&#21021;&#22987;&#21270;&#19968;&#27425;&#23601;&#21487;&#20197;&#65292;&#22240;&#20026;zmq_recv&#20250;&#33258;&#21160;&#24110;&#25105;&#20204;close:).
 
-if (rc != 0) {
-return -1;
-}
+    if (rc != 0) {
+        return -1;
+    }
 
-int64_t more;
-size_t moresz;
+    int64_t more;
+    size_t moresz;
 
-zmq_pollitem_t items [2];
-items [0].socket = insocket_;
-items [0].fd = 0;
-items [0].events = ZMQ_POLLIN;
-items [0].revents = 0;
-items [1].socket = outsocket_;
-items [1].fd = 0;
-items [1].events = ZMQ_POLLIN;
-items [1].revents = 0;
+    zmq_pollitem_t items [2];
+    items [0].socket = insocket_;
+    items [0].fd = 0;
+    items [0].events = ZMQ_POLLIN;
+    items [0].revents = 0;
+    items [1].socket = outsocket_;
+    items [1].fd = 0;
+    items [1].events = ZMQ_POLLIN;
+    items [1].revents = 0;
 
-while (true) {
+    while (true) {
 
-//  Wait while there are either requests or replies to process.
-rc = zmq_poll (&amp;items [0], 2, -1); // &#36825;&#20010;&#22320;&#26041;&#25105;&#20204;&#21487;&#20197;&#35774;&#32622;&#19968;&#19979;poll&#30340;&#36229;&#26102;&#26102;&#38388;
-// &#22914;&#26524;&#27809;&#26377;&#20219;&#20309;&#20869;&#23481;&#30340;&#35805;&#65292;&#25105;&#20204;&#21487;&#20197;&#27599;&#38548;&#19968;&#27573;&#26102;&#38388;&#21028;&#26029;&#19968;&#19979;&#22806;&#37096;&#26631;&#35760;
-// &#27604;&#22914;&#36825;&#37324;&#25105;&#20204;&#21487;&#20197;&#26816;&#27979;&#19968;&#19979;&#22806;&#37096;&#26159;&#21542;&#35774;&#32622;&#20102;exit&#30340;&#26631;&#35760;&#31561;&#12290;
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+        //  Wait while there are either requests or replies to process.
+        rc = zmq_poll (&amp;items [0], 2, -1); // &#36825;&#20010;&#22320;&#26041;&#25105;&#20204;&#21487;&#20197;&#35774;&#32622;&#19968;&#19979;poll&#30340;&#36229;&#26102;&#26102;&#38388;
+                // &#22914;&#26524;&#27809;&#26377;&#20219;&#20309;&#20869;&#23481;&#30340;&#35805;&#65292;&#25105;&#20204;&#21487;&#20197;&#27599;&#38548;&#19968;&#27573;&#26102;&#38388;&#21028;&#26029;&#19968;&#19979;&#22806;&#37096;&#26631;&#35760;
+                // &#27604;&#22914;&#36825;&#37324;&#25105;&#20204;&#21487;&#20197;&#26816;&#27979;&#19968;&#19979;&#22806;&#37096;&#26159;&#21542;&#35774;&#32622;&#20102;exit&#30340;&#26631;&#35760;&#31561;&#12290;
+        if (unlikely (rc &lt; 0)) {
+            return -1;
+        }
 
-//  The algorithm below asumes ratio of request and replies processed
-//  under full load to be 1:1. Although processing requests replies
-//  first is tempting it is suspectible to DoS attacks (overloading
-//  the system with unsolicited replies).
+        //  The algorithm below asumes ratio of request and replies processed
+        //  under full load to be 1:1. Although processing requests replies
+        //  first is tempting it is suspectible to DoS attacks (overloading
+        //  the system with unsolicited replies).
 
-//  Process a request.
-if (items [0].revents &amp; ZMQ_POLLIN) {
-while (true) {
+        //  Process a request.
+        if (items [0].revents &amp; ZMQ_POLLIN) {
+            while (true) {
 
-rc = insocket_-&gt;recv (&amp;msg, 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = insocket_-&gt;recv (&amp;msg, 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-moresz = sizeof (more);
-rc = insocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                moresz = sizeof (more);
+                rc = insocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-rc = outsocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = outsocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-if (!more)
-break;
-}
-}
+                if (!more)
+                    break;
+            }
+        }
 
-//  Process a reply.
-if (items [1].revents &amp; ZMQ_POLLIN) {
-while (true) {
+        //  Process a reply.
+        if (items [1].revents &amp; ZMQ_POLLIN) {
+            while (true) {
 
-rc = outsocket_-&gt;recv (&amp;msg, 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = outsocket_-&gt;recv (&amp;msg, 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-moresz = sizeof (more);
-rc = outsocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                moresz = sizeof (more);
+                rc = outsocket_-&gt;getsockopt (ZMQ_RCVMORE, &amp;more, &amp;moresz);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-rc = insocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
-if (unlikely (rc &lt; 0)) {
-return -1;
-}
+                rc = insocket_-&gt;send (&amp;msg, more ? ZMQ_SNDMORE : 0);
+                if (unlikely (rc &lt; 0)) {
+                    return -1;
+                }
 
-if (!more)
-break;
-}
-}
+                if (!more)
+                    break;
+            }
+        }
 
-}
+    }
 
-return 0;
+    return 0;
 }
 </pre>
 
@@ -1947,8 +1947,8 @@ return 0;
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-18 15:22:45 CST</p>
-<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<p class="date">Date: 2013-08-02 00:39:39 CST</p>
+<p class="creator">Org version 7.8.02 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
 </div>

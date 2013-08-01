@@ -79,9 +79,8 @@ Maven 2 仓库存储 Maven 在一个项目的依赖项解析中使用过的工�
 </dependencies>
 #+END_SRC
 另外两个并不常用的坐标指标是：
-   - packaging. jar, pom etc.
-   - classifier. javadoc, jdk15 etc.
-*NOTE(dirlt):至今这两个坐标还没有搞清楚是什么意思！！！*
+   - packaging. jar, pom etc. *NOTE(dirlt):下载对象类型*
+   - classifier. javadoc, jdk15 etc. *NOTE（dirlt）：下载对象后缀名，比如如果jdk15的话，那么下载对象就是junit-jdk15.jar.这个可以用来区分环境*
 
 另外dependency还有scope字段，这个字段主要用来解释如何使用这个模块的：
    - compile. 缺省，适用于所有阶段，会随着项目一起发布。比如log4j.
