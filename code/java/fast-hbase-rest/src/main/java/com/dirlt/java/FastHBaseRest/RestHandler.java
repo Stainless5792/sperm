@@ -98,7 +98,7 @@ public class RestHandler extends SimpleChannelHandler {
         client.channel = channel;
         client.path = path;
         client.buffer = request.getContent();
-        client.error = false;
+        client.requestTimestamp = System.currentTimeMillis();
         client.run();
     }
 

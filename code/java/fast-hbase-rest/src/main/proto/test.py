@@ -41,6 +41,7 @@ def queryColumn():
     request.column_family='cf'
     request.qualifiers.append('c2')
     request.qualifiers.append('c1')
+    request.timeout = 2
 
     data = request.SerializeToString()
     data2 = raiseHTTPRequest('http://localhost:8000/read',data,timeout=20)
@@ -111,6 +112,8 @@ def multiQuery():
     request.row_key='r1'
     request.column_family='cf'
     mRequest.requests.extend([request])
+
+    mRequest.timeout = 1
 
     data = mRequest.SerializeToString()
     data2 = raiseHTTPRequest('http://localhost:8000/multi-read',data,timeout=20)

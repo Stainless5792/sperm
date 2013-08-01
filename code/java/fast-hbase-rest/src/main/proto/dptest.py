@@ -126,9 +126,9 @@ def queryModels():
     request = message_pb2.ReadRequest()
 
     request.table_name = 'appuserstat'
-    request.row_key = '2013-07-02_4d707f5e112cf75410007470'
+    request.row_key = '2013-03-21_4d707f5e112cf75410007470'
     request.column_family = 'stat'
-    request.qualifiers.append('models_1_installCnt')
+    request.qualifiers.append('models_1_day_installCnt_values')
 
     data = request.SerializeToString()
     data2 = raiseHTTPRequest('http://dp0:12345/read',data,timeout=20)
