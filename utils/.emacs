@@ -374,10 +374,11 @@
 ;; #<<anchor>>
 ;; #+STYLE: <link rel="stylesheet" type="text/css" href="./site.css" />
 
-;; (setq load-path (cons "~/.emacs.d/org-7.9.2/" load-path))
-(setq load-path (cons "~/.emacs.d/org-8.0.6/" load-path))
+(setq load-path (cons "~/.emacs.d/org-7.9.2/" load-path))
+;; (setq load-path (cons "~/.emacs.d/org-8.0.6/" load-path))
 (require 'org-install)
 (require 'org-publish)
+
 ;; (define-key global-map "\C-ca" 'org-agenda)
 ;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
