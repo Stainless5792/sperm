@@ -28,6 +28,7 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
 ** Computer System
    - [[file:./computer-system-reading.org][computer-system-reading]] 关于单机系统方面的一些文章以及阅读心得。
      - [[file:./the-secret-to-10-million-concurrent-connections.org][The Secret To 10 Million Concurrent Connections -The Kernel Is The Problem, Not The Solution]] 
+     - [[file:./a-tour-inside-cloudflare-latest-generation-servers.org][A Tour Inside CloudFlare's Latest Generation Servers]]
    - [[file:apue.org][apue]] Unix环境高级编程(Advanced Programming Unix Environment),W. Richard Stevens的神作。笔记里面没有包含书最后的几个部分，比如终端，打印机等，因为我觉得可能大家都不太需要这个东西了。我还尝试将一些跨章节的概念整合到一起，这样比较容易从总体把握Unix编程环境。
    - [[file:simd.org][simd]] SIMD(Single Instruction Muitple Data)单指令多数据。这个笔记其实是Intel Reference Manual中关于SIMD指令的总结。里面包含了一些理解SIMD指令需要的知识，以及对SIMD指令进行了分类。遗憾的是里面没有什么过多的例子，毕竟这个是结合场景来使用的。
    - [[file:pic-code.org][pic-code]] 分析了一下PIC位置无关代码内部的原理以及和动态库之间的关系。通过阅读<深入理解计算机系统>并且结合实际的例子总结出来的。
@@ -90,6 +91,7 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
    - [[file:redis.org][redis]] 内存存储系统，支持丰富的数据类型以及相应的计算(支持持久化)。外围包装网络访问接口(并且提供了丰富的客户端),可以比较方便地在分布式系统内或者是环境下面使用.
    - [[file:./mysql.org][mysql]] 开源关系型数据库。The world's most popular open source database.
    - [[file:./ssd.org][ssd]] solid state disk.固态硬盘。
+     - [[file:./ssd-and-distributed-data-systems.org][SSDs and Distributed Data Systems]] ssd对于设计分布式数据系统的影响
    - [[file:raid.org][raid]] Redundant Array of Inexpensive Disk. 廉价磁盘冗余阵列。
    - [[file:riak.org][riak]] a NoSQL database implementing the principles from Amazon's Dynamo paper in Erlang/C/C++/Javascript.
    - [[file:memcached.org][memcached]]  an in-memory key-value store for small chunks of arbitrary data (strings, objects) 可以用来搭建分布式缓存服务
