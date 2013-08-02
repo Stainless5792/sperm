@@ -2,6 +2,8 @@
 http://www.mysql.com/
 
 ** 基本命令
+*NOTE(dirlt):utils/mysqldb可以用来简单配置和批量操作mysql单机多个实例的脚本*
+
    - mysql_install_db --usrer=mysql --datadir=/var/lib/mysql/ # 创建MySQL基本表
    - source <FILE> # 导入SQL文件
 
