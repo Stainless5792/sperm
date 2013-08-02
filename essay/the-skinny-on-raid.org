@@ -1,8 +1,6 @@
 * the-skinny-on-raid
 #+TITLE: The skinny on RAID 
 
-http://arstechnica.com/features/2000/05/raid/
-
 ** RAID0
 http://arstechnica.com/features/2000/05/raid/
 
