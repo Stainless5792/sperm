@@ -29,6 +29,22 @@ document.write(unescape("%%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%
 </script>
 <!-- Baidu Analytics END -->
 
+<!-- Google Analytics BEGIN -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31377772-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Google Analytics END -->
+
 <!-- Baidu Button BEGIN -->
 <!-- 
 <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script>
