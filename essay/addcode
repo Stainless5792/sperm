@@ -3,31 +3,50 @@
 #Copyright (C) dirlt
 
 HEAD = """
-<meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/>
+<!-- <meta name="baidu-site-verification" content="707024a76f8f40b549f07f478abab237"/> -->
 """.replace('\n','')
 
 HEAD_END = """
 """.replace('\n','')
 
 BODY = """
+<!-- 
 <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
 <a class="bds_tsina"></a>
 <span class="bds_more"></span>
 <a class="shareCount"></a>
 </div>
+ -->
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone annotation="inline"></g:plusone>
 """.replace('\n','')
 
 BODY_END = """
+<!-- Baidu Analytics BEGIN -->
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%%3F54a700ad7035f6e485eaf2300641e7e9' type='text/javascript'%%3E%%3C/script%%3E"));
 </script>
+<!-- Baidu Analytics END -->
 
 <!-- Baidu Button BEGIN -->
+<!-- 
 <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762177" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript"> document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)</script>
+ -->
 <!-- Baidu Button END -->
+
+<!-- G+ BEGIN -->
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- G+ END -->
 
 <!-- DISQUS BEGIN -->
 <div id="disqus_thread"></div>
