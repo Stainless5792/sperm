@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="computational-advertising"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-02 23:27:58 CST"/>
+<meta name="generated" content="2013-08-03 00:53:29 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -102,8 +102,30 @@
 <li><a href="#sec-1-1-1">1.1.1 广告的定义与目的</a></li>
 <li><a href="#sec-1-1-2">1.1.2 在线广告类型</a></li>
 <li><a href="#sec-1-1-3">1.1.3 在线广告简史</a></li>
+<li><a href="#sec-1-1-4">1.1.4 广告有效性原理</a></li>
+<li><a href="#sec-1-1-5">1.1.5 在线广告相关行业协会</a></li>
 </ul>
 </li>
+<li><a href="#sec-1-2">1.2 计算广告基础</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 在线广告的技术特点</a></li>
+<li><a href="#sec-1-2-2">1.2.2 计算广告核心问题</a>
+<ul>
+<li><a href="#sec-1-2-2-1">1.2.2.1 在线广告技术课题</a></li>
+<li><a href="#sec-1-2-2-2">1.2.2.2 在线广告计费模式</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2-3">1.2.3 计算广告系统架构</a></li>
+<li><a href="#sec-1-2-4">1.2.4 基础知识准备</a>
+<ul>
+<li><a href="#sec-1-2-4-1">1.2.4.1 信息检索</a></li>
+<li><a href="#sec-1-2-4-2">1.2.4.2 向量空间模型</a></li>
+<li><a href="#sec-1-2-4-3">1.2.4.3 最优化方法</a></li>
+<li><a href="#sec-1-2-4-4">1.2.4.4 统计机器学习</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 合约广告</a></li>
 </ul>
 </li>
 </ul>
@@ -272,6 +294,8 @@
 </ul>
 
 </li>
+<li>这种面向多个广告网络或媒体按人群一站式采买广告，并优化投入产出比的需求方产品，我们称为自动交易终端(Automatic Trading Desk, ATD)。只能在广告网络定义好的定向标签组合上预先指定出价，而不能控制每一次展示的出价，因此，市场看起来象一个黑盒子，需求方只能靠选择合适的标签组合，以及阶段性调整出价来间接控制效果。
+</li>
 <li>在广告网络中,核心的竞价逻辑是封闭的。这种封闭的竞价机制,仍然不能完全满足需求方越来越明确的利益要求。这样的目标催生了实时竞价(Real Time Bidding)技术。
 <ul>
 <li>试想下面的两个例子:一、某电子商务网站需要通过一次广告投放来向它的忠实用户推广某产品;二、某银行希望通过自己的信用卡用户在网络上找到类似 的潜在用户群,并通过广告争取这批潜在用户。 <b>NOTE（dirlt）：主要是这个受众定向太具体了，广告网络不可能计算出来什么是所谓的忠实用户因为和电商网站的访问数据过于相关</b>
@@ -280,15 +304,403 @@
 </li>
 <li>所谓实时竞价,就是把拍卖的过程由广告主预先出价,变成每次展示时实时出价。只要把广告展示的上下文页面url,以及访客的cookie等信息传给需求方,它就有充分的信息来完成定制化的人群选择和出价。
 </li>
+</ul>
+
+</li>
 <li>需要注意的是,越是定制化的人群选择,往往就越精细,也就意味着单一媒体能达到的reach会相当有限。于是,市场上产生了大量聚合各媒体的剩余流量,采用实时竞价方式为他们变现的产品形态：广告交易平台(Ad Exchange)。 <b>NOTE（dirlt）：将各式各样的媒体信息聚合起来使用</b>
+</li>
+<li>通过实时竞价的方式，按照定制化的人群标签购买广告，这样与广告交易平台接口的产品，我们称为需求方平台(Demand Side Platform, DSP)。因为充分的环境信息使得深入的计算和估计成为可能。基于DSP的广告采买，非常类似于股票市场上的程序交易，我们把这样的广告采买方式也叫做程序购买(Programmatic Buy)。
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> 广告有效性原理</h4>
+<div class="outline-text-4" id="text-1-1-4">
+
+<p>广告效果生成过程
+</p>
+<p>
+<img src="./images/ad-effect-procedure.png"  alt="./images/ad-effect-procedure.png" />
+</p>
+<p>
+根据上图,这以有效性模型把广告活动的整个信息接收过程分为三个大阶段:选择(Selection)、解释(Interpretation)与态度(Attitude);或者进一步分解为六个小阶段:曝光、关注、理解、接受、保持与决策,其中每两个小阶段对应一个大阶段。
+</p>
+<p>
+定性地说,越靠前的阶段,其效果的改善对点击率的贡献越大;而越靠后的阶段,其效果的改善对转化率的贡献越大。
+</p>
+<ul>
+<li>曝光(Exposure)阶段: 这一阶段指的是广告物理上展现出来的过程。此阶段的有效性往往与广告位的物理属性有关,并没有太多可以通过技术优化的空间。实际的广告实践中,曝光的有效性对最终结果的影响往往远远高于其他技术性因素。
+</li>
+<li>关注(Attention)阶段:这一阶段指的是受众从物理上接触到广告到意识上注意到它的过程。那么如何使得关注阶段的效率提高呢?我们介绍几个重要的原则:
+<ol>
+<li>尽量不要打断用户的任务。
+</li>
+<li>明确传达向用户推送此广告的原因,这一点是受众定向广告创意优化的重要方向。
+</li>
+<li>内容符合用户的兴趣或需求,这是受众定向的原理基础。
+</li>
+</ol>
+
+</li>
+<li>理解(Comprehension)阶段:受众意识到了广告的存在,并不意味着他一定能够理解广告传达的信息。理解阶段有哪些原则呢?
+<ol>
+<li>广告内容要在用户能理解的具体兴趣范围内,这就说明了真正精准的受众定向有多么必要。
+</li>
+<li>要注意设定与关注程度相匹配的理解门槛。
+<ul>
+<li>电视广告中,可以用有一定情节的短故事来宣传品牌;
+</li>
+<li>在路牌广告中,创意制作原则是将若干主要市场诉求都表达出来;
+</li>
+<li>而对于互联网广告,由于用户的关注程度非常低,我们应该集中强调一个主要诉求以吸引用户的注意力。
 </li>
 </ul>
 
 </li>
 </ol>
 
+</li>
+<li>接受(Acceptance)阶段:受众理解了广告传达的信息,并不一定表示他认可这些信息。
+<ul>
+<li>广告的上下文环境对于广告的接受程度也有着很大的影响, 同一个品牌广告出现在某游戏社区上和门户网站首页上,用户会倾向于认为后者更具说服力,这也就是优质媒体的品牌价值。
+</li>
+<li>在定向广告越来越普遍的今天,如何让合适的广告出现在合适的媒体上,即广告安全(Ad Safety)的问题,正在引起大家越来越多的关注。
+</li>
+</ul>
+
+</li>
+<li>保持(Retention)阶段:对于不仅仅追求短期转化的广告商,当然希望广告传达的信息给用户留下长久的记忆,以影响他长时间的选择。
+</li>
+<li>决策(Decision)阶段:成功广告的最终作用是带来用户的转化行为,虽然这一阶段已经离开了广告的业务范围,但好的广告还是能够为转化率的提高做好铺垫。
+</li>
+</ul>
+
 
 </div>
+
+</div>
+
+<div id="outline-container-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> 在线广告相关行业协会</h4>
+<div class="outline-text-4" id="text-1-1-5">
+
+<ul>
+<li>交互广告局(Interactive Advertising Bureau, IAB)。
+<ul>
+<li>IAB主要是站在供给方的长远利益上来研究和影响市场。换句话说,IAB主要关注的是在线广告供给方的利益。
+</li>
+<li>因此,IAB的典型会员是Google, Facebook, Yahoo!, Microsoft这样的广告供给方,以及和AudienceScience, MediaMath这样的广告技术公司。
+</li>
+<li>从具体工作上看,IAB与互联网大量媒体和广告平台合作,制定了一系列意义重大的标准和规范,这些都极大地促进了在线广告行业的健康发展。其中几个重要的规范有:
+<ol>
+<li>条幅广告创意尺寸标准。
+</li>
+<li>视频广告标准VAST(Digital Video Ad Serving Template)。
+</li>
+<li>通用实时竞价接口标准OpenRTB。
+</li>
+</ol>
+
+</li>
+</ul>
+
+</li>
+<li>美国广告代理协会(American Association of Advertising Agencies, 4A)。
+<ul>
+<li>4A并不是一个专门从事互联网广告的组织,而是线上线下各种广告,特别是品牌广告的代理商在美国的行业协会。
+</li>
+<li>4A公司向其会员代理公司约定,至少要向广告主收取17.65%的服务费用,这一方面是为了避免行业内的恶性竞争,另一方面也是确保广告代理公司能够站在广告主的利益角度考虑问题,而后一点对于市场的长期健康发展是有很大帮助的。
+</li>
+<li>4A公司的典型代表有奥美(Ogilvy &amp; Mather)、智威汤逊(JWT)、麦肯(McCann) 等。
+</li>
+</ul>
+
+</li>
+<li>美国国家广告商协会(Association of National Advertisers, ANA)。
+<ul>
+<li>ANA是一个广告主的协会,也是最彻底地代表需求方利益的组织。其会员多是AT&amp;T, 宝洁(P&amp;G), NBA这些拥有大量广告预算的广告主。
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 计算广告基础</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> 在线广告的技术特点</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<ul>
+<li>技术和计算导向。数字媒体的特点使在线广告可以进行精细的受众定向,技术又使得广告决策和交易朝着计算驱动的方向发展。除了受众定向,由于在线广告中独特拍卖性质的市场的存在,对于广告效果精确的预估和优化能力也是非常重要的。可以说,从来没有任何传统广告形式象在线广告那样,需要大规模地收集并利用数据,而这正是在线广告最吸引人之处。
+</li>
+<li>效果的可衡量性。在线广告刚刚产生的时候,大家对这种广告最多的称道之处,是它可以以展示和点击日志的形式直接记录广告效果。当然,我们也可以利用这些日志优化广告效果, 这同样是计算广告非常重要的方法论。
+</li>
+<li>创意和投放方式的标准化。标准化的驱动力来自于受众定向与程序购买。既然需求方关心的是人群而非广告位,创意尺寸的统一化与一些关键接口的标准化非常关键。
+</li>
+<li>媒体概念的多样化。随着Web 2.0的普及,赋予了更多交互功能的互联网媒体与线下媒体 有大有不同。随着交互功能的不同,这些媒体与转化行为的距离也就不同。
+<ul>
+<li>举个例子,对在线购 物行业而言,门户网站、垂直网站、搜索引擎、电商网站、返利网,在转化链条上一个比一个更靠近购买行为。
+</li>
+<li>我们从直观就可以知道,越接近需求方的媒体上的广告,其带来的流量一定可以达到越高的ROI,不过离“引导潜在用户”这样的广告目的也就越远。
+</li>
+<li>因此我们在从需求方看在线广告时,应该注重各种性质媒体的配合关系,并从整合营销的角度去审视和优化整体的效果。
+</li>
+</ul>
+
+</li>
+<li>数据驱动的投放决策。与工业革命时期机器化的根本驱动力电力相类比,互联网化的根本驱动力可以认为是数据的深入加工和利用。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> 计算广告核心问题</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<ul>
+<li>计算广告的核心问题,是为一系列用户与环境的组合,找到最合适的广告投放策略以优化整体的投入产出比(ROI)。
+</li>
+<li>对一个广告市场中具体的产品形态而言,我们往往能够主动优化的是产出(return)而非投入(investment)的部分,因此,我们主要关注回报的部分。定量地表示了某次或若干次展示的期望CPM值,我们称之为expected CPM(eCPM)。
+</li>
+<li>eCPM 它是计算广告中最常被提及,也最有代表性的定量评估收益的指标,本书中有大量的计算问题都是围绕它展开的。
+</li>
+</ul>
+
+
+
+</div>
+
+<div id="outline-container-1-2-2-1" class="outline-5">
+<h5 id="sec-1-2-2-1"><span class="section-number-5">1.2.2.1</span> 在线广告技术课题</h5>
+<div class="outline-text-5" id="text-1-2-2-1">
+
+<p>算法优化：
+</p><ul>
+<li>即对a(ad), u(user), c(context) 打标签以方便挖掘的技术,对应产生了受众定向问题
+</li>
+<li>如果不考虑全局最优,则主要依靠eCPM估计,特别是CTR预测来完成每一次展示时的局部优化
+</li>
+<li>如果考虑到量的限制和投放时即时决策的要求,就产生了在线分配的问题
+</li>
+<li>为了在多方博弈的市场中达到动态平衡时的收益最大化,则需要对定价策略做深入研究
+</li>
+<li>为了更全面地采样整个(a, u, c) 的空间以便更准确地估计点击率,需要用到强化学习(Reinforcement Learning)中的探索与利用(Explore and Exploit, E&amp;E)算法
+</li>
+<li>而在DSP快速发展的今天,推荐算法也被广泛使用在个性化重定向当中。
+</li>
+</ul>
+
+
+<p>
+系统架构：
+</p><ul>
+<li>我们需要用到实时索引技术服务于广告候选的检索
+</li>
+<li>用到No-SQL的在线存储技术为投放时提供用户、上下文标签和其他特征
+</li>
+<li>大量使用Hadoop这样的分布式计算平台进行大规模数据挖掘
+</li>
+<li>用到最新的流计算平台实现短时用户行为反馈
+</li>
+<li>以及在广告交易环境下实现高并发、快速响应的的实时竞价接口
+</li>
+<li>还需要许多有关HTML协议和前端展示的技术来完成广告的具体投放
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2-2" class="outline-5">
+<h5 id="sec-1-2-2-2"><span class="section-number-5">1.2.2.2</span> 在线广告计费模式</h5>
+<div class="outline-text-5" id="text-1-2-2-2">
+
+<ul>
+<li>CPM(Cost per Mille)计费,即按照千次展示计费,这里的“mille”是拉丁文“千次”的意思。
+<ul>
+<li><b>而对于品牌广告,由于效果和目的有时不便于直接衡量,可以考虑按照CPM的方式计费。</b>
+</li>
+<li>这种方式,是供给方与需求方约定好千次展示的计费标准,至于这些展示是否能够带来相应的收益,由需求方来估计和控制其中的风险。
+</li>
+<li>对于品牌广告,由于目标是较长时期内的利益,很难通过对短期数据进行分析的方式直接计算点击价值,而点击率也因为对于用户接触的核心要求变得不是唯一重要的因素。（偏向品牌广告）
+</li>
+<li>在这种情况下,由需求方自行根据其市场策略与预算控制单位流量的价格并按CPM方式计费,是比较合理的交易模式。
+</li>
+</ul>
+
+</li>
+<li>CPC(Cost per Click)计费,即按点击计费。这种方式最早产生于搜索广告,并很多为大多数效果广告网络所普遍采用。（偏向效果广告） 
+<ul>
+<li><b>CPC计费方式最有利于发挥供给方和需求方的长处，因而在市场上被广泛接受。</b>
+</li>
+<li>这种方式是把点击率的估计交给供给方(或者中间市场),而把点击价值的估计交给需求方,而需求方通过出价的方式向市场通知自己的估价。
+</li>
+<li>供给方的通过其收集的大量用户数据,可以根准确地估计点击率;而转化效果 是广告商站内的行为,当然他们自己的数据分析体系更能够准确地对其作出评估。
+</li>
+</ul>
+
+</li>
+<li>CPS(Cost per Sale)/CPA(Cost per Action)/ROI计费,即按照销售订单数、转化行为数或投入产出比来计费,而这些都是按照转化付费的一些变种。（偏向效果广告） 
+<ul>
+<li>这是一种极端的情况,即需求方只按照最后的转化收益来结算,从而极大程度上规避了风险。
+</li>
+<li>在这种计费方式下,供给方或中间市场除了估计点击率,还要对点击价值作出估计,才能合理地决定流量分配。
+</li>
+<li>这一方式存在两个很明显的问题:
+<ul>
+<li>一是转化行为并非供给方能够控制,因此也无法进行准确的估计和优化。只有那些转化流程和用户体验相似的广告商组成的广告网络,按转化付费才比较合理,典型的例子比如淘宝直通车;
+</li>
+<li>二是存在广告主故意降低转化率,以低成本赚取大量品牌曝光的可能。
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>CPT(Cost per Time)计费,这是针对大品牌广告主特定的广告活动,将某个广告位以独占式方式交给某广告主,并按独占的时间段收取费用的方式。
+<ul>
+<li>CPT还有一种变形,即轮播式CPT,它是将某一广告位的流量按照某一cookie接触到的次数划分成多轮,在其中的若干轮独占式售卖给某广告主,这同样是中国市场很常见的一种售卖方式。
+</li>
+<li>CPT这样独占式的售卖虽然有一些额外的品牌效果和橱窗效应产生,但是非常不利于受众定向和程序交易的发展,因而长期看来比例会有下降的趋势。
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> 计算广告系统架构</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+<p><img src="./images/ad-arch.png"  alt="./images/ad-arch.png" />
+</p>
+<p>
+广告系统由三个主体部分构成:一个是在线的高并发投放引擎(Ad server),一个是离线的分布式数据处理平台(Grid),另一个是用于在线实时反馈的流式处理平台(Stream computing)。
+</p><ul>
+<li>广告投放机.
+</li>
+<li>广告检索,包括图中的Ad index和Ad retrieval两部分。
+</li>
+<li>广告排序,包括图中的Ad ranking和Click modeling两部分。
+</li>
+<li>数据高速公路,即图中的Data highway。这部分完成的功能,是将在线投放的数据准实时传输到离线分布式计算平台与流式计算平台上,供后续处理和建模使用.
+</li>
+<li>用户日志生成,即图中的Session log generation。从各个渠道收集来日志,需要先整理成以用户ID为key的统一存储格式,我们把这样的日志称为用户日志(Session log)。
+</li>
+<li>商业智能(Business Intelligence,BI)系统,包括ETL(Extract-Transform-Load)过程, Dash- board和Cube。由于实际的广告运营不可能完全通过机器的决策来进行,其间必然需要有经验的操作者根据数据反馈对一些系统设置做及时调整。因此,实现一个功能强大,交互便利的BI系统是非常重要的。
+</li>
+<li>行为定向,包括结构化标签库(Structural label base), Audience targeting, 以及User attributes的cache.这部分完成的是挖掘用户日志,根据日志中的行为给用户打上结构化标签库中某些标签的过程。
+</li>
+<li>上下文定向,包括半在线页面抓取(Near-line page fetcher)和Page attributes的cache.这部分与行为定向互相配合,负责给上下文页面打上标签,用于在线的广告投放中。
+</li>
+<li>定制化用户划分,即图中的Customized audience segmentation:由于广告是媒体替广告主完成用户接触, <b>那么有时需要根据广告主的逻辑来划分用户群</b> ,这部分也是具有鲜明广告特色的模块。这个部分指的是从广告主处收集用户信息的产品接口,而收集到的数据如果需要较复杂的加工,也将经过数据高速公路导入受众定向模块来完成。这这是广告独特的功能模块,推荐系统和搜索系统是不需要这一功能的。
+</li>
+<li>在线行为反馈:这部分指的是一些需要准实时完成的一些任务,包括短时的用户行为标签和短时用户点击反馈等。当然,在利用日志完成这些逻辑之前,必须要进行的步骤是反作弊(Anti-spam)与计价(Billing)。需要特别指出,这一部分对于在线广告系统的效果提升意义重大: 在很多情形下,把系统信息反馈调整做得更快,比把模型预测做得更准确效果更加显著。
+</li>
+<li>广告管理系统:这部分是广告操作者,即客户执行(Account execute, AE)与广告系统的接口,AE通过广告管理系统定制和调整广告投放,并且与数据仓库交互,获得投放统计数据以支持决策。
+</li>
+<li>实时竞价接口:这是广告交易市场实时向DSP发起广告询价请求,并根据竞价结果胜出DSP的程序交易接口。它包括作为需求方时使用的RTBS(RTB for Supply),以及作为供给方时使用的RTBD(RTB for Demand)。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> 基础知识准备</h4>
+<div class="outline-text-4" id="text-1-2-4">
+
+
+</div>
+
+<div id="outline-container-1-2-4-1" class="outline-5">
+<h5 id="sec-1-2-4-1"><span class="section-number-5">1.2.4.1</span> 信息检索</h5>
+<div class="outline-text-5" id="text-1-2-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-2" class="outline-5">
+<h5 id="sec-1-2-4-2"><span class="section-number-5">1.2.4.2</span> 向量空间模型</h5>
+<div class="outline-text-5" id="text-1-2-4-2">
+
+<p><b>NOTE（dirlt）：相似度问题</b> 
+</p>
+<p>
+TFIDF(Term frequency - Inverse Document Frequen- cy)值,这是一种信息检索中最常见的词强度度量,它可以分解为两个量的乘积:
+</p><ul>
+<li>词频(Term Frerquency, TF),即某文档中该词出现的次数;
+</li>
+<li>和倒数文档频率(Inverse Document Frequency, IDF),即该词在所有文档中出现的频繁程度的倒数。
+</li>
+<li>IDF的引入,是考虑对那些广泛出现在各个文档中的常用词对主题的鉴别力并不强,因而需要降低其权重。
+</li>
+</ul>
+
+
+<p>
+在计算两个文档的相似度时,我们一般是用其对应矢量的余弦距离
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-3" class="outline-5">
+<h5 id="sec-1-2-4-3"><span class="section-number-5">1.2.4.3</span> 最优化方法</h5>
+<div class="outline-text-5" id="text-1-2-4-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4-4" class="outline-5">
+<h5 id="sec-1-2-4-4"><span class="section-number-5">1.2.4.4</span> 统计机器学习</h5>
+<div class="outline-text-5" id="text-1-2-4-4">
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 合约广告</h3>
+<div class="outline-text-3" id="text-1-3">
+
 </div>
 </div>
 </div>
