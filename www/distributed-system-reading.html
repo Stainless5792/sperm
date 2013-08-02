@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="distributed-system-reading"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-02 01:04:04 CST"/>
+<meta name="generated" content="2013-08-02 20:19:32 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -98,21 +98,20 @@
 <li><a href="#sec-1">1 distributed-system-reading</a>
 <ul>
 <li><a href="#sec-1-1">1.1 Availability vs. Durability</a></li>
-<li><a href="#sec-1-2">1.2 You Can’t Sacrifice Partition Tolerance | codahale.com</a></li>
-<li><a href="#sec-1-3">1.3 Cloudera blog</a>
+<li><a href="#sec-1-2">1.2 Cloudera blog</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1 Application</a></li>
-<li><a href="#sec-1-3-2">1.3.2 Hadoop</a></li>
-<li><a href="#sec-1-3-3">1.3.3 HDFS</a></li>
-<li><a href="#sec-1-3-4">1.3.4 MapReduce</a></li>
-<li><a href="#sec-1-3-5">1.3.5 HBase</a></li>
-<li><a href="#sec-1-3-6">1.3.6 Pig</a></li>
-<li><a href="#sec-1-3-7">1.3.7 Scribe</a></li>
-<li><a href="#sec-1-3-8">1.3.8 ZooKeeper</a></li>
-<li><a href="#sec-1-3-9">1.3.9 Sqoop</a></li>
-<li><a href="#sec-1-3-10">1.3.10 Avro</a></li>
-<li><a href="#sec-1-3-11">1.3.11 Hive</a></li>
-<li><a href="#sec-1-3-12">1.3.12 Misc</a></li>
+<li><a href="#sec-1-2-1">1.2.1 Application</a></li>
+<li><a href="#sec-1-2-2">1.2.2 Hadoop</a></li>
+<li><a href="#sec-1-2-3">1.2.3 HDFS</a></li>
+<li><a href="#sec-1-2-4">1.2.4 MapReduce</a></li>
+<li><a href="#sec-1-2-5">1.2.5 HBase</a></li>
+<li><a href="#sec-1-2-6">1.2.6 Pig</a></li>
+<li><a href="#sec-1-2-7">1.2.7 Scribe</a></li>
+<li><a href="#sec-1-2-8">1.2.8 ZooKeeper</a></li>
+<li><a href="#sec-1-2-9">1.2.9 Sqoop</a></li>
+<li><a href="#sec-1-2-10">1.2.10 Avro</a></li>
+<li><a href="#sec-1-2-11">1.2.11 Hive</a></li>
+<li><a href="#sec-1-2-12">1.2.12 Misc</a></li>
 </ul>
 </li>
 </ul>
@@ -153,59 +152,15 @@
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> You Can’t Sacrifice Partition Tolerance | codahale.com</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Cloudera blog</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p><a href="http://codahale.com/you-cant-sacrifice-partition-tolerance/">http://codahale.com/you-cant-sacrifice-partition-tolerance/</a>
-</p>
-<ul>
-<li>On Partition Tolerance
-<ul>
-<li>In order to model partition tolerance, the network will be allowed to lose arbitrarily many messages sent from one node to another. When a network is partitioned, all messages sent from nodes in one component of the partition to nodes in another component are lost. (And any pattern of message loss can be modeled as a temporary partition separating the communicating nodes at the exact instant the message is lost.) 
-</li>
-<li>For a distributed (i.e., multi-node) system to not require partition-tolerance it would have to run on a network which is guaranteed to never drop messages (or even deliver them late) and whose nodes are guaranteed to never die. You and I do not work with these types of systems because they don’t exist.
-
-</li>
-</ul>
-
-</li>
-<li>But Never Both
-<ul>
-<li>You cannot, however, choose both consistency and availability in a distributed system.
-</li>
-<li>As a thought experiment, imagine a distributed system which keeps track of a single piece of data using three nodes—A, B, and C—and which claims to be both consistent and available in the face of network partitions. Misfortune strikes, and that system is partitioned into two components: {A,B} and {C}. In this state, a write request arrives at node C to update the single piece of data. That node only has two options:
-<ul>
-<li>Accept the write, knowing that neither A nor B will know about this new data until the partition heals.
-</li>
-<li>Refuse the write, knowing that the client might not be able to contact A or B until the partition heals.
-</li>
-</ul>
-
-</li>
-<li>You either choose availability (Door #1) or you choose consistency (Door #2). You cannot choose both.
-</li>
-<li>To claim to do so is claiming either that the system operates on a single node (and is therefore not distributed) or that an update applied to a node in one component of a network partition will also be applied to another node in a different partition component magically. 如果同时满足CA的话，就意味着需要牺牲P（或者是在网络断开的情况下面能够magically达成一致，当然这是不可能的）。而不允许parition tolerance的话似乎只有单机系统而非分布式系统。
-</li>
-</ul>
-
-</li>
-</ul>
-
 
 </div>
 
-</div>
-
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Cloudera blog</h3>
-<div class="outline-text-3" id="text-1-3">
-
-
-</div>
-
-<div id="outline-container-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Application</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Application</h4>
+<div class="outline-text-4" id="text-1-2-1">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2009/04/22/using-hadoop-to-annotate-=billions-of-web-documents-with-semantics/">Using Hadoop to Annotate Billions of Web Documents with Semantics</a>
@@ -287,9 +242,9 @@
 
 </div>
 
-<div id="outline-container-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Hadoop</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Hadoop</h4>
+<div class="outline-text-4" id="text-1-2-2">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2008/12/03/securing-a-hadoop-cluster-t=hrough-a-gateway/">Securing a Hadoop Cluster Through a Gateway</a>
@@ -355,9 +310,9 @@
 
 </div>
 
-<div id="outline-container-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> HDFS</h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> HDFS</h4>
+<div class="outline-text-4" id="text-1-2-3">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2009/01/14/hdfs-reliabi= lity/">HDFS Reliability</a>
@@ -381,9 +336,9 @@
 
 </div>
 
-<div id="outline-container-1-3-4" class="outline-4">
-<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> MapReduce</h4>
-<div class="outline-text-4" id="text-1-3-4">
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> MapReduce</h4>
+<div class="outline-text-4" id="text-1-2-4">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2008/11/14/sending-files-to-remote-t=ask-nodes-with-hadoop-mapreduce/">Sending Files to Remote Task Nodes with Hadoop MapReduce</a>
@@ -429,9 +384,9 @@
 
 </div>
 
-<div id="outline-container-1-3-5" class="outline-4">
-<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> HBase</h4>
-<div class="outline-text-4" id="text-1-3-5">
+<div id="outline-container-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> HBase</h4>
+<div class="outline-text-4" id="text-1-2-5">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2010/03/hbase-user-group-9-hbase-and-hdfs=/">HBase User Group #9: HBase and HDFS</a>
@@ -465,9 +420,9 @@
 
 </div>
 
-<div id="outline-container-1-3-6" class="outline-4">
-<h4 id="sec-1-3-6"><span class="section-number-4">1.3.6</span> Pig</h4>
-<div class="outline-text-4" id="text-1-3-6">
+<div id="outline-container-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> Pig</h4>
+<div class="outline-text-4" id="text-1-2-6">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2009/06/17/analyzing-apache-logs-with-pig/=">Analyzing Apache logs with Pig</a>
@@ -479,9 +434,9 @@
 
 </div>
 
-<div id="outline-container-1-3-7" class="outline-4">
-<h4 id="sec-1-3-7"><span class="section-number-4">1.3.7</span> Scribe</h4>
-<div class="outline-text-4" id="text-1-3-7">
+<div id="outline-container-1-2-7" class="outline-4">
+<h4 id="sec-1-2-7"><span class="section-number-4">1.2.7</span> Scribe</h4>
+<div class="outline-text-4" id="text-1-2-7">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2008/10/28/installing-scribe-for-lo=g-collection/">Installing Scribe For Log Collection</a>
@@ -495,9 +450,9 @@
 
 </div>
 
-<div id="outline-container-1-3-8" class="outline-4">
-<h4 id="sec-1-3-8"><span class="section-number-4">1.3.8</span> ZooKeeper</h4>
-<div class="outline-text-4" id="text-1-3-8">
+<div id="outline-container-1-2-8" class="outline-4">
+<h4 id="sec-1-2-8"><span class="section-number-4">1.2.8</span> ZooKeeper</h4>
+<div class="outline-text-4" id="text-1-2-8">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2009/05/28/building-a-distributed-co=ncurrent-queue-with-apache-zookeeper/">Building a distributed concurrent queue with Apache ZooKeeper</a>
@@ -509,9 +464,9 @@
 
 </div>
 
-<div id="outline-container-1-3-9" class="outline-4">
-<h4 id="sec-1-3-9"><span class="section-number-4">1.3.9</span> Sqoop</h4>
-<div class="outline-text-4" id="text-1-3-9">
+<div id="outline-container-1-2-9" class="outline-4">
+<h4 id="sec-1-2-9"><span class="section-number-4">1.2.9</span> Sqoop</h4>
+<div class="outline-text-4" id="text-1-2-9">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2009/06/01/introducing-sqoop/">Introducing Sqoop</a>
@@ -527,9 +482,9 @@
 
 </div>
 
-<div id="outline-container-1-3-10" class="outline-4">
-<h4 id="sec-1-3-10"><span class="section-number-4">1.3.10</span> Avro</h4>
-<div class="outline-text-4" id="text-1-3-10">
+<div id="outline-container-1-2-10" class="outline-4">
+<h4 id="sec-1-2-10"><span class="section-number-4">1.2.10</span> Avro</h4>
+<div class="outline-text-4" id="text-1-2-10">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2009/11/02/avro-a-format-for-big-data/">Avro: a Format for Big Data</a>
@@ -551,9 +506,9 @@
 
 </div>
 
-<div id="outline-container-1-3-11" class="outline-4">
-<h4 id="sec-1-3-11"><span class="section-number-4">1.3.11</span> Hive</h4>
-<div class="outline-text-4" id="text-1-3-11">
+<div id="outline-container-1-2-11" class="outline-4">
+<h4 id="sec-1-2-11"><span class="section-number-4">1.2.11</span> Hive</h4>
+<div class="outline-text-4" id="text-1-2-11">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2009/11/11/hadoop-world-rethi=nking-the-data-warehouse-with-hadoop-and-hive-from-ashish-thusoo/">Hadoop World: Rethinking the Data Warehouse with Hadoop and Hive from    Ashish Thusoo</a>
@@ -565,9 +520,9 @@
 
 </div>
 
-<div id="outline-container-1-3-12" class="outline-4">
-<h4 id="sec-1-3-12"><span class="section-number-4">1.3.12</span> Misc</h4>
-<div class="outline-text-4" id="text-1-3-12">
+<div id="outline-container-1-2-12" class="outline-4">
+<h4 id="sec-1-2-12"><span class="section-number-4">1.2.12</span> Misc</h4>
+<div class="outline-text-4" id="text-1-2-12">
 
 <ol>
 <li><a href="http://www.cloudera.com/blog/2010/04/cap-confusion-problems=-with-partition-tolerance/">CAP Confusion: Problems with 'partition tolerance'</a>

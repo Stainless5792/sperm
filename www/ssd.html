@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="ssd"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-02 10:45:27 CST"/>
+<meta name="generated" content="2013-08-02 20:19:28 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -97,9 +97,7 @@
 <ul>
 <li><a href="#sec-1">1 ssd</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Solid-state revolution: in-depth on how SSDs really work</a></li>
-<li><a href="#sec-1-2">1.2 固态硬盘技术解析之垃圾回收和TRIM指令</a></li>
-<li><a href="#sec-1-3">1.3 SSD固态硬盘寿命问题</a></li>
+<li><a href="#sec-1-1">1.1 SSD固态硬盘寿命问题</a></li>
 </ul>
 </li>
 </ul>
@@ -114,176 +112,8 @@
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Solid-state revolution: in-depth on how SSDs really work</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> SSD固态硬盘寿命问题</h3>
 <div class="outline-text-3" id="text-1-1">
-
-
-<hr/>
-<p>
-<a href="http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/">http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/</a> 
-</p><ul>
-<li>存储层次.
-</li>
-<li>为什么SSD能够带来更好的体验.
-</li>
-</ul>
-
-
-
-<hr/>
-<p>
-<a href="http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/">http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/2/</a>
-</p><ul>
-<li>NAND/NOR Flash Memory原理.
-</li>
-<li>给定存储容量NAND比NOR少用60%的空间.
-</li>
-<li>大部分还是使用NAND Flash Memory.
-</li>
-<li>row cells成为page.这个是读写的最小单元.
-</li>
-</ul>
-
-
-
-<hr/>
-<p>
-<a href="http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/3/">http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/3/</a>
-</p><ul>
-<li>典型PageSize为4KB,8KB(comform to OS).典型Block通常有256 Pages.(这里我理解一个block就是一个flash memory)
-</li>
-<li>read单元是page.write单元也是page.但是flash memory物理限制造成不允许擦除一个page而只能够擦除一个block(完全擦除).另外write不允许in-place update只能够写到新的page.如果整个block的page都被占满的话，那么选取出哪些page不需要使用。读取到内存里面来重新rearrange做compaction.将block erase掉，然后将内存内容重新写入block.
-</li>
-<li>随着时间增长SSD写速度会越来越慢.
-</li>
-<li>flash memory来说有两种电压逻辑表示.SLC(single-level cell,单个cell来说只有两种电压表示,可靠性高但是比较昂贵,通常需要配外昂贵的fibre channel或者是SAS bus connector)和MLC(multi-level cell,单个cell有多种电压表示存储信息多,可靠性稍差但是比较便宜).
-</li>
-</ul>
-
-
-<p>
-<img src="./images/ssd-whole-block-erase.png"  alt="./images/ssd-whole-block-erase.png" />
-</p>
-
-<hr/>
-<p>
-<a href="http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/4/">http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/4/</a>
-</p><ul>
-<li>ssd为什么只允许有限次数的写操作.
-</li>
-<li>ssd需要单独的controller来连接PC.controller完成的事情非常多，包括可以类似于RAID方式读写多个flash memory来提高读写速度。另外通常还在controller添加RAM来用作write buffer cache通常在(128-512M)左右。但是这样也会引入问题就是power outage情况，所以一些厂商还在controller内部增加了内置电源等。
-</li>
-<li>另外controller还有两个方面来改进ssd速度。一方面是通过over-provisioning方式就是类似多提供部分flash memory来提高速度，比如购买100GB ssd但是内置extra 20GB.有多余的block可以让write效果更好。另外一个就是内置garbage collection(GC).但是这个需要OS配合。通过一种TRIM技术，OS在删除文件时候可以告诉controller哪些page是stale的，这样controller底层就可以自动GC.但是GC也是在write performance和lifetime span之间的折衷。
-</li>
-</ul>
-
-
-
-<hr/>
-<p>
-<a href="http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/5/">http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/5/</a>
-</p><ul>
-<li>所谓的write amplification就是如果我要写128KB的数据的话，实际上SSD可能需要写更多的数据包括腾出空间以及写整page.更多的write amplification意味着越差的寿命.另外write amp包括GC以及wearing-level.所谓wearing-level是要讲各个page/block写次数平均，防止某个page/block写的次数相对于其他的高很多。
-</li>
-<li>SandForce SSD controller对于这个问题稍微解决的比较好，主要从data compression以及data deduplicatgion方面着手。
-</li>
-<li>对于SSD controller这块的话确实有很多算法和策略值得研究。
-</li>
-</ul>
-
-
-
-<hr/>
-<p>
-<a href="http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/6/">http://arstechnica.com/information-technology/2012/06/inside-the-ssd-revolution-how-solid-state-disks-really-work/6/</a>
-</p><ul>
-<li>no other upgrade will provide the same level of subjective improvement as moving from a magnetic disk to an SSD.
-</li>
-<li>对于SSD来说就是一个miniature computer.
-</li>
-<li>SSD使用情况.对于storage array spinning disk相对于ssd需要考虑更多的问题.TODO(dirlt):ssd就不需要考虑吗?
-</li>
-</ul>
-
-
-<p class="verse">
-For an array full of spinning disks, keeping information flowing quickly usually means paying at least nominal attention to how the disks themselves are organized. What capacity disks do you need to use? Do you need large disks to add capacity, or do you need smaller disks because you need the performance boost from having lots of disks share in the workload? What rotational speed should the disks have? What RAID level do you use, both for performance and for redundancy? How many RAID groups do you bind up together into a volume that you can present out to hosts? Do you stripe data across multiple volumes to increase performance? If so, how many? <br/>
-</p>
-
-
-<p>
-另外就ssd的性价比来说的话也比spinning disk好很多.另外就是通常storage array来说的话maintenance代价比较高，而对于ssd的话相对来说较低.另外对于desktop这样的使用的话，我们没有使用storage array,那么ssd能带来非常大的性能提升。最后ssd使用方式也可以不用看起来像disk,虽然可以封装成为disk操作方式，但是文中也提到了fusion-io是怎么使用ssd的。但是依然有一些方面ssd是代替不了的，比如一些基于内存的解决方案(通常是zero-latency application)
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 固态硬盘技术解析之垃圾回收和TRIM指令</h3>
-<div class="outline-text-3" id="text-1-2">
-
-<p><a href="http://www.beareyes.com.cn/2/lib/201207/06/20120706203_0.htm">http://www.beareyes.com.cn/2/lib/201207/06/20120706203_0.htm</a>
-</p>
-<p>
-这篇文章主要是解释了一下TRIM指令是为什么引入的，解决了什么问题。
-</p>
-<p>
-首先SSD是按照block写入的，如果需要删除内容的话必须将整个page全部clear掉。
-</p>
-<p>
-<img src="./images/ssd-gc.jpg"  alt="./images/ssd-gc.jpg" />
-</p>
-<p>
-如果OS需要删除文件的话，spin disk只需要标记，然后下次在这个位置直接in-place update即可，而SSD不行。如果SSD不支持TRIM指令的话，那么只有当下次OS做in-place update时候，SSD才知道某些block是被删除的，而TRIM指令可以显示地做到这点。
-</p>
-
-
-
-<pre class="example">在机械硬盘系统中，系统可以直接请求新数据写入到旧数据存储的位置。机械硬盘可以直接覆盖旧数据。在固态硬盘中，境况有所不同。如果想让存储无用数据的块写入新数据，就需要先把整个块删除，才可以写入新的数据。固态硬盘并不具备直接覆盖旧数据的能力。
-
-操作系统可以理解数据、结构以及数据存储的逻辑位置，但是却不能够理解存储设备的物理结构。任何一个存储系统，硬盘并不明文件的结构。硬盘只简单的知道在某一特定的扇区内写有多少字节的数据。机械硬盘和固态硬盘一样，当操作系统请求相应的逻辑地址的数据时，它们会把物理地址中的数据发送给系统。
-
-当系统删除某个文件时候，它只是简单的在逻辑数据表内把存储要删除的数据的位置标记为可用而已。使用机械硬盘的系统根本就不需要向存储设备发送任何有关文件删除的消息，因为在将来，系统可以随时把新数据直接覆盖到无用的数据上。固态硬盘的情况就不同，当系统准备把新数据要写入那个位置的时候，固态硬盘才意识到原来这写数据已经被删除了！（无用数据。）当然，固态硬盘也可能再相同的时间内实施了垃圾回收操作，但是受到固态硬盘的结构以及其他条件的影响。
-
-在新一代操作系统中，例如Windows 7/Windows Server 2008 R2/Linux 2.6.33/FreeBSD 8.2/Open Solaris/Mac OS X Lion，它们都加入对Trim指令的支持。这可以让操作系统在删除逻辑表中删除逻辑扇区地址的同时通知固态硬盘某些数据已经无用了。TRIM的先进性在于它可以让固态硬盘在进行垃圾回收的时候跳过移动无用数据的过程，从而不再用重新写入这些无用的数据，达到节省时间的目的。这也会减少闪存删除数据的次数，从而在写入过程中实现高性能。固态硬盘也不需要立即删除或者“垃圾回收”这些TRIM指令告知的位置了，它只是先标记这些位置的数据为“无用”即可。
-
-支持TRIM的系统，在用户写入数据时并没有不同。但是当用户删除文件C的时候，因为系统支持了TRIM指令，固态硬盘立刻就把数据标记为“无用”，从而为接下来的垃圾回收做准备。原来存放文件C的空间，固态硬盘把其看做是可用空间。“动态预留空间”意味着固态硬盘在执行垃圾回收的过程中拥有更多的可用空间，从而整体提高性能。
-
-在第三列中，用户写入新的文件E。尽管现在固态硬盘与不支持TRIM的硬盘闲置空间相同。区别就在于：TRIM支持的固态硬盘知道哪些数据是无用的，在垃圾回收的时候，这些无用数据可以被看成是空闲空间，从而避免把无用数据移动到其他块中。 
-</pre>
-
-
-<p>
-下面是不支持TRIM指令SSD的工作过程
-</p>
-<p>
-<img src="./images/ssd-without-trim.jpg"  alt="./images/ssd-without-trim.jpg" />
-</p>
-<p>
-可以看到当向上面复写E的时候，SSD才会知道C需要删除。而在这个期间内，如果发生GC的话，C还是需要被移动的。而如果支持TRIM指令的话，就可以标记C删除，这样GC就可以减少移动大小了。
-</p>
-<p>
-<img src="./images/ssd-with-trim.jpg"  alt="./images/ssd-with-trim.jpg" />
-</p>
-<p>
-这将会产生三大优点：
-</p><ol>
-<li>降低写入放大。更少的数据被重写，更多的空闲空间为垃圾回收所利用。更多的空间可用也意味着不需要重新写入更多的数据。
-</li>
-<li>更高的吞吐量。支持了TRIM指令，就意味着在垃圾回收阶段需要移动的数据表少，固态硬盘性能就会提升。固态硬盘吞吐量的瓶颈在于闪存。固态硬盘的最快写入速度就是闪存所能支持的最快写入速度。在执行垃圾回收过程中，由于涉及到数据的移动和写入，固态硬盘不得不要停止一些主控的数据传输。这也是为什么固态硬盘知道无用数据的优点所在，至少在垃圾回收阶段，它这些数据不在需要移动，从而节省带宽。
-</li>
-</ol>
-
-<p>   3．改善耐用性。由于不在需要重新写入无用数据，这样可以减少固态硬盘的实际写入次数。
-注意：目前TRIM并不能正常工作在RAID环境中。这是因为目前RAID驱动一般都不支持TRIM。当更多的RAID厂商开始支持RAID TRIM，我们期待TRIM无乱在RAID还是正常环境下都能够为用户带来益处。
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> SSD固态硬盘寿命问题</h3>
-<div class="outline-text-3" id="text-1-3">
 
 <p><a href="http://zhidao.baidu.com/question/220559125.html">http://zhidao.baidu.com/question/220559125.html</a>
 </p>

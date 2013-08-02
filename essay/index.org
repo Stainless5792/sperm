@@ -64,7 +64,9 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
    - [[file:web-misc.org][web-misc]] web开发遇到的一些问题。因为自己对于web开发不太了解，所以内容上的话可能显得有点弱智。
    - [[file:folly.org][folly]] Folly is an open-source C++ library developed and used at Facebook.
    - [[file:flex-bison.org][flex-bison]] 可以用来书写词法和语法分析器，bison支持的语法是LALR（1）。
-   - [[file:recommender-system.org][recommender-system]] 一些关于推荐系统东西，里面大部分都是介绍性质的文章。
+   - [[file:recommender-system.org][recommender-system]] 推荐系统
+     - [[file:./deconstructing-recommender-systems.org][Deconstructing Recommender Systems]]
+   - [[file:./computational-advertising.org][computational-advertising]] 计算广告学
    - [[file:systemtap.org][systemtap]] 通过将观察语句编译成为内核驱动，和linux内核提供的接口匹配，来深度地观察linux操作系统。
    - [[file:gperftools.org][gperftools]] google的性能分析工具，[[file:tcmalloc.org][tcmalloc]] 实现也在里面。用来观察应用程序似乎是个不错的选择。
    - [[file:perf.org][perf]] linux系统自带的性能分析工具，支持硬件以及软件事件计数器，支持profile kernel以及user code.
@@ -90,15 +92,19 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
    - [[file:mongodb.org][mongodb]] 面向文档的分布式存储系统，但是却可以针对文档字段索引来加快查询。功能上比通常我们认为的NoSQL强但是弱于RDBMS.
    - [[file:redis.org][redis]] 内存存储系统，支持丰富的数据类型以及相应的计算(支持持久化)。外围包装网络访问接口(并且提供了丰富的客户端),可以比较方便地在分布式系统内或者是环境下面使用.
    - [[file:./mysql.org][mysql]] 开源关系型数据库。The world's most popular open source database.
-   - [[file:./ssd.org][ssd]] solid state disk.固态硬盘。
+   - [[file:./ssd.org][ssd]] solid state disk.固态硬盘
+     - [[file:./solid-state-revolution-in-depth-on-how-ssd-really-work.org][Solid-state revolution: in-depth on how SSDs really work]] ssd发展演变，内部构造和工作方式
+     - [[file:./ssd-gc-and-trim.org][固态硬盘技术解析之垃圾回收和TRIM指令]]
      - [[file:./ssd-and-distributed-data-systems.org][SSDs and Distributed Data Systems]] ssd对于设计分布式数据系统的影响
-   - [[file:raid.org][raid]] Redundant Array of Inexpensive Disk. 廉价磁盘冗余阵列。
+   - [[file:raid.org][raid]] Redundant Array of Inexpensive Disk. 廉价磁盘冗余阵列
+     - [[file:./the-skinny-on-raid.org][The skinny on RAID]]
    - [[file:riak.org][riak]] a NoSQL database implementing the principles from Amazon's Dynamo paper in Erlang/C/C++/Javascript.
    - [[file:memcached.org][memcached]]  an in-memory key-value store for small chunks of arbitrary data (strings, objects) 可以用来搭建分布式缓存服务
    - [[file:gizzard.org][gizzard]] a library for creating distributed datastores 可以认为是数据库中间层，完成partition/replication，也做fault-tolerant migration.
 
 ** Distributed System
    - [[file:distributed-system-reading.org][distributed-system-reading]] 关于分布式系统方面的一些文章以及阅读心得。
+     - [[file:./you-can-not-sacrifice-partition-tolerance.org][You Can’t Sacrifice Partition Tolerance]]
      - [[file:the-anatomy-of-the-google-architecture.org][The Anatomy Of The Google Architecture]] @2009 google架构的深入解析，属于非官方文档，是一个非google人收集各种资料汇集起来的
      - [[file:./building-scalable-highly-concurrent-and-fault-tolerant-systems.org][Building Scalable, Highly Concurrent & Fault-Tolerant Systems: Lessons Learned]]
      - [[file:./data-structures-and-algorithms-for-big-databases.org][Data Structures and Algorithms for Big Databases]] 
