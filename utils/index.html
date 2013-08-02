@@ -1,20 +1,9 @@
 <html>
   <head><title>dirtysalt index</title></head>
   <body>
-    <h1>document index</h1><hr/>
     <ul>
-      <li>umeng dashboard</li>
-      <input type="txt" id="app_key"/>
-      <input type="submit" value="go" onclick="redirect()"/>
-      <script>
-	function redirect() {
-	var app_id = document.getElementById("app_key").value.split('').reverse().join('');
-	var app_url = 'http://www.umeng.com/apps/' + app_id + '/reports';
-	window.open(app_url);
-	}
-      </script>      
-      
-      <li><a href="github/umeng/umeng.html">internal doc</a>
+      <li><a href="github/sperm/www/index.html">dirlt.com</a> <a href="http://www.dirlt.com">@aws</a></li>
+      <li><a href="github/umeng/umeng.html">internal doc</a>      
       <li><a href="utils/Python-2.7.3/Doc/build/html/index.html">Python</a></li>
       <li><a href="doc/openjdk-6-jre-headless/api/index.html">Java6 API</a></li>
       <li><a href="http://localhost:6060">Go</a></li>
@@ -45,12 +34,20 @@
       <li><a href="http://api.mongodb.org/java/current/">Java Mongo</a></li>
       <li>Netty3.5.10 <a href="utils/netty-3.5.10.Final/doc/api">API</a> <a href="utils/netty-3.5.10.Final/doc/xref">Code</a></li>
       <li>Netty3.6.2 <a href="utils/netty-3.6.2.Final/doc/api">API</a> <a href="utils/netty-3.6.2.Final/doc/api">Code</a></li>      
-    </ul>
-    <h1>site index</h1><hr/>
-    <ul>
-      <li><a href="github/sperm/www/index.html">dirlt.com</a> <a href="http://www.dirlt.com">@aws</a></li>
+
       <li><a href="https://lwn.net/">lwn.net</a></li>
       <li><a href="http://nexus:8088/nexus/">Nexus</a></li>
+
+      <li>go to umeng dashboard</li>
+      <input type="txt" id="app_key"/>
+      <input type="submit" value="go" onclick="redirect()"/>
+      <script>
+	function redirect() {
+	var app_id = document.getElementById("app_key").value.split('').reverse().join('');
+	var app_url = 'http://www.umeng.com/apps/' + app_id + '/reports';
+	window.open(app_url);
+	}
+      </script>
     </ul>
   </body>
 </html>
