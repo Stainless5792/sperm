@@ -157,7 +157,7 @@ file:./images/ad-effect-procedure.png
 file:./images/ad-arch.png
 
 广告系统由三个主体部分构成:一个是在线的高并发投放引擎(Ad server),一个是离线的分布式数据处理平台(Grid),另一个是用于在线实时反馈的流式处理平台(Stream computing)。
-   - 广告投放机.
+   - 广告投放,机即图中的Ad server。这是接受广告前端Web server发来的请求,完成广告投 放决策并返回最后页面片段的主逻辑。
    - 广告检索,包括图中的Ad index和Ad retrieval两部分。
    - 广告排序,包括图中的Ad ranking和Click modeling两部分。
    - 数据高速公路,即图中的Data highway。这部分完成的功能,是将在线投放的数据准实时传输到离线分布式计算平台与流式计算平台上,供后续处理和建模使用.
