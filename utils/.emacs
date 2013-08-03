@@ -373,7 +373,9 @@
 ;; +text+ delete mode.
 ;; #<<anchor>>
 ;; #+STYLE: <link rel="stylesheet" type="text/css" href="./site.css" />
-
+;; file:projects.org::some words # text search in Org file1
+;; file:projects.org::*task title # heading search in Org file
+;; mailto:adent@galaxy.net Mail link
 (setq load-path (cons "~/.emacs.d/org-7.9.2/" load-path))
 ;; (setq load-path (cons "~/.emacs.d/org-8.0.6/" load-path))
 (require 'org-install)

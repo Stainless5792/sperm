@@ -40,7 +40,7 @@ The following table contains key formulas that allow one to estimate cardinality
 file:./images/linear-counting-analysis.png
 
 ** Cardinality Estimation: Loglog Counting
-这个算法 [[file:algorithm.org][之前]]（HyperLoglog这节） 分析过
+这个算法 [[file:algorithm.org::*HyperLogLog][之前]] 分析过
 
 The following table provides the estimation formula and equations that can be used to determine numerical parameters of the Loglog Counter:
 
