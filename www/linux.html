@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="linux"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-02 01:03:29 CST"/>
+<meta name="generated" content="2013-08-05 13:41:48 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -4662,6 +4662,28 @@ May  2 18:24:21 umeng-ubuntu-pc kernel: [ 1188.717622] CPU3: Package temperature
 <p>
 TODO(dirlt): what is the correct way to do it(change glibc)
 </p>
+
+<hr/>
+<p>
+@2013-08-03 
+</p>
+<p>
+A copy of the C library was found in an unexpected directory | Blog : <a href="http://blog.i-al.net/2013/03/a-copy-of-the-c-library-was-found-in-an-unexpected-directory/">http://blog.i-al.net/2013/03/a-copy-of-the-c-library-was-found-in-an-unexpected-directory/</a>
+</p>
+<p>
+上面的链接给出了升级glibc的方法
+</p><ul>
+<li>sudo su - root # 首先切换到root账号下面
+</li>
+<li>mv libc.so librt.so  /root # 将glibc等相关的so移动到root账号下面，主要不要移动软连接文件。
+</li>
+<li>LD_PRELOAD=/root/libc.so:/root/librt.so bash # 这个时候如果执行bash是找不到glibc等so了，所以需要使用LD_PRELOAD来预先加载
+</li>
+<li>apt-get install # 在这个bash下面使用apt-get来安装和升级glibc.
+</li>
+</ul>
+
+
 </div>
 
 </div>
@@ -4676,6 +4698,7 @@ TODO(dirlt): what is the correct way to do it(change glibc)
 
 <pre class="example">Defaults requiretty
 </pre>
+
 
 
 
