@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="kylin"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-02 01:03:51 CST"/>
+<meta name="generated" content="2013-08-05 14:13:21 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -236,6 +236,23 @@
 <div class="outline-text-2" id="text-1">
 
 
+<p>
+kylin是baidu in-house的异步编程框架，提供CPU，Network以及Disk异步操作接口，并且内置许多常用编程组件包括定时器和内存池等。
+</p>
+<p>
+相关材料
+</p><ul>
+<li>异步编程_百度文库 : <a href="http://wenku.baidu.com/view/6fa262f67c1cfad6195fa74e.html">http://wenku.baidu.com/view/6fa262f67c1cfad6195fa74e.html</a>
+</li>
+<li>三谈火车票系统_新浪轻博客 : <a href="http://qing.blog.sina.com.cn/tj/85c4105033000ab2.html">http://qing.blog.sina.com.cn/tj/85c4105033000ab2.html</a>
+</li>
+<li>SEDA: An Architecture for Well-Conditioned, Scalable Internet Services <a href="http://www.eecs.harvard.edu/~mdw/papers/seda-sosp01.pdf">http://www.eecs.harvard.edu/~mdw/papers/seda-sosp01.pdf</a>
+</li>
+<li>Why Threads Are a Bad Idea <a href="http://www.stanford.edu/class/cs240/readings/threads-bad-usenix96.pdf">http://www.stanford.edu/class/cs240/readings/threads-bad-usenix96.pdf</a>
+</li>
+</ul>
+
+
 
 </div>
 
@@ -243,6 +260,8 @@
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> share</h3>
 <div class="outline-text-3" id="text-1-1">
 
+<p>公共组件代码
+</p>
 
 </div>
 
@@ -698,7 +717,7 @@ static inline void futex_event_reset(struct futex* pf) {
 <h3 id="sec-1-2"><span class="section-number-3">1.2</span> kylin</h3>
 <div class="outline-text-3" id="text-1-2">
 
-<p>对于kylin觉得从用户角度然后深入分析可能会更好。
+<p>异步框架代码
 </p>
 
 </div>
@@ -1028,12 +1047,15 @@ bool CThreadPool::CancelJob(Job* pJob, int nWhich)
 <div class="outline-text-4" id="text-1-2-3">
 
 <p>TranBuf.h CTranBufPool是一个内存分配器。对于很多系统来说，合理地使用资源是非常必要的。
+</p>
+<p>
 这里引用linsd的原话是这样的TODO(dirlt):
 </p>
 
 
 <pre class="example">要得到稳定的高吞吐，对内存的合理使用是必要条件。是否用Ring Buffer倒不一定，简单的buffer pool效果也差不多。另外，为了应付极限情况，还需要为buffer请求分级，当资源不足时优先给紧急请求。也可设定高低几条watermark，让各种复杂条件下的资源使用变得平顺。
 </pre>
+
 
 <p>
 了解一下真实系统里面定制话的内存分配器是非常有帮助的(相对来说 <a href="./TCMalloc.html">TCMalloc</a> 是通用系统).

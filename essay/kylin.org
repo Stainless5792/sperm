@@ -1,7 +1,17 @@
 * kylin
 #+OPTIONS: H:5
 
+kylin是baidu in-house的异步编程框架，提供CPU，Network以及Disk异步操作接口，并且内置许多常用编程组件包括定时器和内存池等。
+
+相关材料
+   - 异步编程_百度文库 : http://wenku.baidu.com/view/6fa262f67c1cfad6195fa74e.html
+   - 三谈火车票系统_新浪轻博客 : http://qing.blog.sina.com.cn/tj/85c4105033000ab2.html
+   - SEDA: An Architecture for Well-Conditioned, Scalable Internet Services http://www.eecs.harvard.edu/~mdw/papers/seda-sosp01.pdf
+   - Why Threads Are a Bad Idea http://www.stanford.edu/class/cs240/readings/threads-bad-usenix96.pdf
+
 ** share
+公共组件代码
+
 *** atomic
 最主要实现了atomic add/swap/cas三个操作。
 #+BEGIN_SRC C++
@@ -348,7 +358,7 @@ static inline void futex_event_reset(struct futex* pf) {
 #+END_SRC
 
 ** kylin
-对于kylin觉得从用户角度然后深入分析可能会更好。
+异步框架代码
 
 *** Async
 kylin对于用户来说首先需要了解的概念就在Async.h文件里面，主要是下面两个类
@@ -580,10 +590,12 @@ bool CThreadPool::CancelJob(Job* pJob, int nWhich)
 
 *** TranBuf
 TranBuf.h CTranBufPool是一个内存分配器。对于很多系统来说，合理地使用资源是非常必要的。
+
 这里引用linsd的原话是这样的TODO(dirlt):
 #+BEGIN_EXAMPLE
 要得到稳定的高吞吐，对内存的合理使用是必要条件。是否用Ring Buffer倒不一定，简单的buffer pool效果也差不多。另外，为了应付极限情况，还需要为buffer请求分级，当资源不足时优先给紧急请求。也可设定高低几条watermark，让各种复杂条件下的资源使用变得平顺。
 #+END_EXAMPLE
+
 了解一下真实系统里面定制话的内存分配器是非常有帮助的(相对来说 [[file:./TCMalloc.org][TCMalloc]] 是通用系统).
 
 **** Overview
