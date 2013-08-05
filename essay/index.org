@@ -79,8 +79,6 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
    - [[file:./nmstl.org][nmstl]] 开源的网络编程框架。一个很早期的作品，代码十分简洁。主要是内部实现了SEDA的思想。这个是我第二个阅读的网络编程框架(2nd).
    - [[file:muduo.org][muduo]] 开源的网络编程框架。作者理想中的网络编程框架实现，里面有很多mina/netty的影子。这个是我三个阅读的网络编程框架(3rd).
    - [[file:kylin.org][kylin]] baidu in-house的异步编程框架，是[[http://weibo.com/linshiding][linsd(百度首席架构师林仕鼎)]]的神作，通过阅读这个框架的代码让我理解了异步编程模型。这个是我第四个阅读的网络编程框架(4th). 
-     - *NOTE(dirlt@2013-07-28):因为没有得到作者和所在公司的许可所以撤下了*
-     - *NOTE(dirlt@2013-08-05):在作者一些建议下重新放上来了，多谢linsd老大支持=D*
    - [[file:zeromq.org][zeromq]] 开源的消息传输系统。颠覆我们思考和编写网络通信程序的方式。TODO(dirlt):只是阅读了文档和API，可以考虑阅读一下代码.
    - [[file:ace.org][ace]] 开源的网络编程框架。非常重量级，也被人诟病为学术产物而不是适合生产实践。TODO(dirlt):只是有大概的了解，有待更深入的研究.
    - [[file:./apache.org][apache]] 历史悠久的开源HTTP服务器。 an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT
