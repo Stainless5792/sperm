@@ -68,6 +68,13 @@ public final class MessageProtos1 {
       return qualifiers_.get(index);
     }
     
+    // optional int32 timeout = 5;
+    public static final int TIMEOUT_FIELD_NUMBER = 5;
+    private boolean hasTimeout;
+    private int timeout_ = 0;
+    public boolean hasTimeout() { return hasTimeout; }
+    public int getTimeout() { return timeout_; }
+    
     private void initFields() {
     }
     public final boolean isInitialized() {
@@ -91,6 +98,9 @@ public final class MessageProtos1 {
       }
       for (java.lang.String element : getQualifiersList()) {
         output.writeString(4, element);
+      }
+      if (hasTimeout()) {
+        output.writeInt32(5, getTimeout());
       }
       getUnknownFields().writeTo(output);
     }
@@ -121,6 +131,10 @@ public final class MessageProtos1 {
         }
         size += dataSize;
         size += 1 * getQualifiersList().size();
+      }
+      if (hasTimeout()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, getTimeout());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -299,6 +313,9 @@ public final class MessageProtos1 {
           }
           result.qualifiers_.addAll(other.qualifiers_);
         }
+        if (other.hasTimeout()) {
+          setTimeout(other.getTimeout());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -338,6 +355,10 @@ public final class MessageProtos1 {
             }
             case 34: {
               addQualifiers(input.readString());
+              break;
+            }
+            case 40: {
+              setTimeout(input.readInt32());
               break;
             }
           }
@@ -445,6 +466,24 @@ public final class MessageProtos1 {
       }
       public Builder clearQualifiers() {
         result.qualifiers_ = java.util.Collections.emptyList();
+        return this;
+      }
+      
+      // optional int32 timeout = 5;
+      public boolean hasTimeout() {
+        return result.hasTimeout();
+      }
+      public int getTimeout() {
+        return result.getTimeout();
+      }
+      public Builder setTimeout(int value) {
+        result.hasTimeout = true;
+        result.timeout_ = value;
+        return this;
+      }
+      public Builder clearTimeout() {
+        result.hasTimeout = false;
+        result.timeout_ = 0;
         return this;
       }
       
@@ -1164,6 +1203,13 @@ public final class MessageProtos1 {
       return requests_.get(index);
     }
     
+    // optional int32 timeout = 2;
+    public static final int TIMEOUT_FIELD_NUMBER = 2;
+    private boolean hasTimeout;
+    private int timeout_ = 0;
+    public boolean hasTimeout() { return hasTimeout; }
+    public int getTimeout() { return timeout_; }
+    
     private void initFields() {
     }
     public final boolean isInitialized() {
@@ -1179,6 +1225,9 @@ public final class MessageProtos1 {
       for (com.dirlt.java.FastHbaseRest.MessageProtos1.ReadRequest element : getRequestsList()) {
         output.writeMessage(1, element);
       }
+      if (hasTimeout()) {
+        output.writeInt32(2, getTimeout());
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -1191,6 +1240,10 @@ public final class MessageProtos1 {
       for (com.dirlt.java.FastHbaseRest.MessageProtos1.ReadRequest element : getRequestsList()) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, element);
+      }
+      if (hasTimeout()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, getTimeout());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1360,6 +1413,9 @@ public final class MessageProtos1 {
           }
           result.requests_.addAll(other.requests_);
         }
+        if (other.hasTimeout()) {
+          setTimeout(other.getTimeout());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1389,6 +1445,10 @@ public final class MessageProtos1 {
               com.dirlt.java.FastHbaseRest.MessageProtos1.ReadRequest.Builder subBuilder = com.dirlt.java.FastHbaseRest.MessageProtos1.ReadRequest.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
               addRequests(subBuilder.buildPartial());
+              break;
+            }
+            case 16: {
+              setTimeout(input.readInt32());
               break;
             }
           }
@@ -1444,6 +1504,24 @@ public final class MessageProtos1 {
       }
       public Builder clearRequests() {
         result.requests_ = java.util.Collections.emptyList();
+        return this;
+      }
+      
+      // optional int32 timeout = 2;
+      public boolean hasTimeout() {
+        return result.hasTimeout();
+      }
+      public int getTimeout() {
+        return result.getTimeout();
+      }
+      public Builder setTimeout(int value) {
+        result.hasTimeout = true;
+        result.timeout_ = value;
+        return this;
+      }
+      public Builder clearTimeout() {
+        result.hasTimeout = false;
+        result.timeout_ = 0;
         return this;
       }
       
@@ -2184,6 +2262,13 @@ public final class MessageProtos1 {
       return kvs_.get(index);
     }
     
+    // optional int32 timeout = 5;
+    public static final int TIMEOUT_FIELD_NUMBER = 5;
+    private boolean hasTimeout;
+    private int timeout_ = 0;
+    public boolean hasTimeout() { return hasTimeout; }
+    public int getTimeout() { return timeout_; }
+    
     private void initFields() {
     }
     public final boolean isInitialized() {
@@ -2211,6 +2296,9 @@ public final class MessageProtos1 {
       for (com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.KeyValue element : getKvsList()) {
         output.writeMessage(4, element);
       }
+      if (hasTimeout()) {
+        output.writeInt32(5, getTimeout());
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -2235,6 +2323,10 @@ public final class MessageProtos1 {
       for (com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.KeyValue element : getKvsList()) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, element);
+      }
+      if (hasTimeout()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, getTimeout());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2413,6 +2505,9 @@ public final class MessageProtos1 {
           }
           result.kvs_.addAll(other.kvs_);
         }
+        if (other.hasTimeout()) {
+          setTimeout(other.getTimeout());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -2454,6 +2549,10 @@ public final class MessageProtos1 {
               com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.KeyValue.Builder subBuilder = com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.KeyValue.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
               addKvs(subBuilder.buildPartial());
+              break;
+            }
+            case 40: {
+              setTimeout(input.readInt32());
               break;
             }
           }
@@ -2572,6 +2671,24 @@ public final class MessageProtos1 {
       }
       public Builder clearKvs() {
         result.kvs_ = java.util.Collections.emptyList();
+        return this;
+      }
+      
+      // optional int32 timeout = 5;
+      public boolean hasTimeout() {
+        return result.hasTimeout();
+      }
+      public int getTimeout() {
+        return result.getTimeout();
+      }
+      public Builder setTimeout(int value) {
+        result.hasTimeout = true;
+        result.timeout_ = value;
+        return this;
+      }
+      public Builder clearTimeout() {
+        result.hasTimeout = false;
+        result.timeout_ = 0;
         return this;
       }
       
@@ -2871,6 +2988,13 @@ public final class MessageProtos1 {
       return requests_.get(index);
     }
     
+    // optional int32 timeout = 2;
+    public static final int TIMEOUT_FIELD_NUMBER = 2;
+    private boolean hasTimeout;
+    private int timeout_ = 0;
+    public boolean hasTimeout() { return hasTimeout; }
+    public int getTimeout() { return timeout_; }
+    
     private void initFields() {
     }
     public final boolean isInitialized() {
@@ -2886,6 +3010,9 @@ public final class MessageProtos1 {
       for (com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest element : getRequestsList()) {
         output.writeMessage(1, element);
       }
+      if (hasTimeout()) {
+        output.writeInt32(2, getTimeout());
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -2898,6 +3025,10 @@ public final class MessageProtos1 {
       for (com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest element : getRequestsList()) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, element);
+      }
+      if (hasTimeout()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, getTimeout());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3067,6 +3198,9 @@ public final class MessageProtos1 {
           }
           result.requests_.addAll(other.requests_);
         }
+        if (other.hasTimeout()) {
+          setTimeout(other.getTimeout());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -3096,6 +3230,10 @@ public final class MessageProtos1 {
               com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.Builder subBuilder = com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
               addRequests(subBuilder.buildPartial());
+              break;
+            }
+            case 16: {
+              setTimeout(input.readInt32());
               break;
             }
           }
@@ -3151,6 +3289,24 @@ public final class MessageProtos1 {
       }
       public Builder clearRequests() {
         result.requests_ = java.util.Collections.emptyList();
+        return this;
+      }
+      
+      // optional int32 timeout = 2;
+      public boolean hasTimeout() {
+        return result.hasTimeout();
+      }
+      public int getTimeout() {
+        return result.getTimeout();
+      }
+      public Builder setTimeout(int value) {
+        result.hasTimeout = true;
+        result.timeout_ = value;
+        return this;
+      }
+      public Builder clearTimeout() {
+        result.hasTimeout = false;
+        result.timeout_ = 0;
         return this;
       }
       
@@ -3557,27 +3713,28 @@ public final class MessageProtos1 {
   static {
     java.lang.String[] descriptorData = {
       "\n\034src/main/proto/message.proto\022\034com.dirl" +
-      "t.java.FastHbaseRest\"]\n\013ReadRequest\022\022\n\nt" +
+      "t.java.FastHbaseRest\"n\n\013ReadRequest\022\022\n\nt" +
       "able_name\030\001 \002(\t\022\017\n\007row_key\030\002 \002(\t\022\025\n\rcolu" +
-      "mn_family\030\003 \002(\t\022\022\n\nqualifiers\030\004 \003(\t\"\200\001\n\014" +
-      "ReadResponse\022@\n\003kvs\030\004 \003(\01323.com.dirlt.ja" +
-      "va.FastHbaseRest.ReadResponse.KeyValue\032." +
-      "\n\010KeyValue\022\021\n\tqualifier\030\001 \002(\t\022\017\n\007content" +
-      "\030\002 \002(\014\"O\n\020MultiReadRequest\022;\n\010requests\030\001" +
-      " \003(\0132).com.dirlt.java.FastHbaseRest.Read" +
-      "Request\"R\n\021MultiReadResponse\022=\n\tresponse",
-      "s\030\001 \003(\0132*.com.dirlt.java.FastHbaseRest.R" +
-      "eadResponse\"\274\001\n\014WriteRequest\022\022\n\ntable_na" +
-      "me\030\001 \002(\t\022\017\n\007row_key\030\002 \002(\t\022\025\n\rcolumn_fami" +
-      "ly\030\003 \002(\t\022@\n\003kvs\030\004 \003(\01323.com.dirlt.java.F" +
-      "astHbaseRest.WriteRequest.KeyValue\032.\n\010Ke" +
-      "yValue\022\021\n\tqualifier\030\001 \002(\t\022\017\n\007content\030\002 \002" +
-      "(\014\"\017\n\rWriteResponse\"Q\n\021MultiWriteRequest" +
-      "\022<\n\010requests\030\001 \003(\0132*.com.dirlt.java.Fast" +
-      "HbaseRest.WriteRequest\"T\n\022MultiWriteResp" +
-      "onse\022>\n\tresponses\030\001 \003(\0132+.com.dirlt.java",
-      ".FastHbaseRest.WriteResponseB\020B\016MessageP" +
-      "rotos1"
+      "mn_family\030\003 \002(\t\022\022\n\nqualifiers\030\004 \003(\t\022\017\n\007t" +
+      "imeout\030\005 \001(\005\"\200\001\n\014ReadResponse\022@\n\003kvs\030\004 \003" +
+      "(\01323.com.dirlt.java.FastHbaseRest.ReadRe" +
+      "sponse.KeyValue\032.\n\010KeyValue\022\021\n\tqualifier" +
+      "\030\001 \002(\t\022\017\n\007content\030\002 \002(\014\"`\n\020MultiReadRequ" +
+      "est\022;\n\010requests\030\001 \003(\0132).com.dirlt.java.F" +
+      "astHbaseRest.ReadRequest\022\017\n\007timeout\030\002 \001(",
+      "\005\"R\n\021MultiReadResponse\022=\n\tresponses\030\001 \003(" +
+      "\0132*.com.dirlt.java.FastHbaseRest.ReadRes" +
+      "ponse\"\315\001\n\014WriteRequest\022\022\n\ntable_name\030\001 \002" +
+      "(\t\022\017\n\007row_key\030\002 \002(\t\022\025\n\rcolumn_family\030\003 \002" +
+      "(\t\022@\n\003kvs\030\004 \003(\01323.com.dirlt.java.FastHba" +
+      "seRest.WriteRequest.KeyValue\022\017\n\007timeout\030" +
+      "\005 \001(\005\032.\n\010KeyValue\022\021\n\tqualifier\030\001 \002(\t\022\017\n\007" +
+      "content\030\002 \002(\014\"\017\n\rWriteResponse\"b\n\021MultiW" +
+      "riteRequest\022<\n\010requests\030\001 \003(\0132*.com.dirl" +
+      "t.java.FastHbaseRest.WriteRequest\022\017\n\007tim",
+      "eout\030\002 \001(\005\"T\n\022MultiWriteResponse\022>\n\tresp" +
+      "onses\030\001 \003(\0132+.com.dirlt.java.FastHbaseRe" +
+      "st.WriteResponseB\020B\016MessageProtos1"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3589,7 +3746,7 @@ public final class MessageProtos1 {
           internal_static_com_dirlt_java_FastHbaseRest_ReadRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_dirlt_java_FastHbaseRest_ReadRequest_descriptor,
-              new java.lang.String[] { "TableName", "RowKey", "ColumnFamily", "Qualifiers", },
+              new java.lang.String[] { "TableName", "RowKey", "ColumnFamily", "Qualifiers", "Timeout", },
               com.dirlt.java.FastHbaseRest.MessageProtos1.ReadRequest.class,
               com.dirlt.java.FastHbaseRest.MessageProtos1.ReadRequest.Builder.class);
           internal_static_com_dirlt_java_FastHbaseRest_ReadResponse_descriptor =
@@ -3613,7 +3770,7 @@ public final class MessageProtos1 {
           internal_static_com_dirlt_java_FastHbaseRest_MultiReadRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_dirlt_java_FastHbaseRest_MultiReadRequest_descriptor,
-              new java.lang.String[] { "Requests", },
+              new java.lang.String[] { "Requests", "Timeout", },
               com.dirlt.java.FastHbaseRest.MessageProtos1.MultiReadRequest.class,
               com.dirlt.java.FastHbaseRest.MessageProtos1.MultiReadRequest.Builder.class);
           internal_static_com_dirlt_java_FastHbaseRest_MultiReadResponse_descriptor =
@@ -3629,7 +3786,7 @@ public final class MessageProtos1 {
           internal_static_com_dirlt_java_FastHbaseRest_WriteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_dirlt_java_FastHbaseRest_WriteRequest_descriptor,
-              new java.lang.String[] { "TableName", "RowKey", "ColumnFamily", "Kvs", },
+              new java.lang.String[] { "TableName", "RowKey", "ColumnFamily", "Kvs", "Timeout", },
               com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.class,
               com.dirlt.java.FastHbaseRest.MessageProtos1.WriteRequest.Builder.class);
           internal_static_com_dirlt_java_FastHbaseRest_WriteRequest_KeyValue_descriptor =
@@ -3653,7 +3810,7 @@ public final class MessageProtos1 {
           internal_static_com_dirlt_java_FastHbaseRest_MultiWriteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_dirlt_java_FastHbaseRest_MultiWriteRequest_descriptor,
-              new java.lang.String[] { "Requests", },
+              new java.lang.String[] { "Requests", "Timeout", },
               com.dirlt.java.FastHbaseRest.MessageProtos1.MultiWriteRequest.class,
               com.dirlt.java.FastHbaseRest.MessageProtos1.MultiWriteRequest.Builder.class);
           internal_static_com_dirlt_java_FastHbaseRest_MultiWriteResponse_descriptor =

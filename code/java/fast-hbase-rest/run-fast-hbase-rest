@@ -14,4 +14,5 @@ java -cp FastHBaseRest.jar \
     --cpu-queue-size=4096 \
     --io-thread-number=32 \
     --io-queue-size=4096 \
-    --no-debug
+    --no-debug \
+    --kv=appuserstat.date.addHashCodeAsRowKeyPrefix:2013-07-02

@@ -2,6 +2,7 @@
 #Copyright (C) dirlt
 
 echo "patching fast-hbase-rest ..."
-rsync -avrz $HOME/github/fast-hbase-rest/src/main/java/ $HOME/github/sperm/code/java/fast-hbase-rest/src/main/java/
-rsync -avrz $HOME/github/fast-hbase-rest/src/main/proto/ $HOME/github/sperm/code/java/fast-hbase-rest/src/main/proto/
+rsync -avrz $HOME/github/fast-hbase-rest/src/main/ $HOME/github/sperm/code/java/fast-hbase-rest/src/main/
+rsync -vz $HOME/github/fast-hbase-rest/ $HOME/github/sperm/code/java/fast-hbase-rest/
+
 
