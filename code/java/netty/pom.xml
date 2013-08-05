@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <name>netty</name>
-  <url>http://dirlt.comg</url>
+  <url>http://dirlt.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

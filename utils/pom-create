@@ -12,7 +12,7 @@ POM_TEMPLATE="""<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="ht
   <packaging>jar</packaging>
 
   <name>%(project)s</name>
-  <url>http://dirlt.comg</url>
+  <url>http://dirlt.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

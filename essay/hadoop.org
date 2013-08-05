@@ -51,6 +51,8 @@ TODO(dirlt):translate it!!!
 *** CDH产品组件构成
 http://www.cloudera.com/content/cloudera/en/products/cdh.html
 
+从这里可以下载CDH4组件 http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDHTarballs/3.25.2013/CDH4-Downloadable-Tarballs/CDH4-Downloadable-Tarballs.html
+
 file:./images/cloudera-enterprise-diagram.png
 
 *** CDH产品组件端口分布和配置
