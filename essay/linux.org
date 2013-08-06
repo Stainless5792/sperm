@@ -2534,11 +2534,23 @@ May  2 18:24:21 umeng-ubuntu-pc kernel: [ 1188.717622] CPU3: Package temperature
 #+END_EXAMPLE
 
 TODO(dirlt): what is the correct way to do it(change glibc)
+
+--------------------
+@2013-08-03 
+
+A copy of the C library was found in an unexpected directory | Blog : http://blog.i-al.net/2013/03/a-copy-of-the-c-library-was-found-in-an-unexpected-directory/
+
+上面的链接给出了升级glibc的方法
+   - sudo su - root # 首先切换到root账号下面
+   - mv libc.so librt.so  /root # 将glibc等相关的so移动到root账号下面，主要不要移动软连接文件。
+   - LD_PRELOAD=/root/libc.so:/root/librt.so bash # 这个时候如果执行bash是找不到glibc等so了，所以需要使用LD_PRELOAD来预先加载
+   - apt-get install # 在这个bash下面使用apt-get来安装和升级glibc.
  
 *** 允许不从tty执行sudo
 修改/etc/sudoers文件，注释掉
 #+BEGIN_EXAMPLE
 Defaults requiretty
 #+END_EXAMPLE
+
 
 
