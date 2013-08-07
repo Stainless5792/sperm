@@ -4,6 +4,7 @@
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
 ##
+0.0.0.0 localhost
 127.0.0.1 localhost
 127.0.0.1 umeng-ubuntu-pc
 127.0.0.1 compaq-pc

@@ -38,6 +38,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-echo "source ~/.shrc"
+# echo "source ~/.shrc"
 source ~/.shrc
 

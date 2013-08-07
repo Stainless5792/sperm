@@ -12,8 +12,9 @@ fi
 # basic paths.
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:$PATH
 
-CDH3=1
-CDH4=0
+CDH3=0
+CDH4_2_0=0
+CDH4_3_0=1
 
 if [ $MAC = 1 ]
 then
@@ -35,13 +36,21 @@ else
 	export HIVE_HOME=$HOME/utils/hive-0.7.1-cdh3u3/
     fi
 
-    if [ $CDH4 = 1 ]
+    if [ $CDH4_2_0 = 1 ]
     then	
 	export HADOOP_HOME=$HOME/utils/hadoop-2.0.0-cdh4.2.0
 	export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop/
 	export HBASE_HOME=$HOME/utils/hbase-0.94.2-cdh4.2.0/
 	export HBASE_CONF_DIR=$HBASE_HOME/conf	
 	export HIVE_HOME=$HOME/utils/hive-0.10.0-cdh4.2.0/	
+    fi
+
+    if [ $CDH4_3_0 = 1 ]
+    then
+	export HADOOP_HOME=$HOME/utils/hadoop-2.0.0-cdh4.3.0
+	export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop/
+	export HBASE_HOME=$HOME/utils/hbase-0.94.2-cdh4.3.0/
+	export HBASE_CONF_DIR=$HBASE_HOME/conf
     fi
 
     # java native library.    
@@ -167,7 +176,7 @@ alias nexus="ssh -p 16021 -l yunbg nexus" # authorized.
 alias hudson="ssh -l ceshi hudson" # authorized.
 
 # private key.
-ssh-add ~/.ssh/id_rsa
-ssh-add ~/.ssh/github
+ssh-add ~/.ssh/id_rsa 2>/dev/null 
+ssh-add ~/.ssh/github 2>/dev/null
 
 
