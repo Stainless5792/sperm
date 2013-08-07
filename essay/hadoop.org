@@ -261,6 +261,7 @@ Making Hadoop easy to deploy, use, and operate should be the #1 priority for the
    - 在libexec/hadoop-config.sh添加source ~/.shrc 来强制设置环境变量。
    - mr1和mr2分开存放主要有
      - bin目录。如果需要使用mr1的话，那么将mv bin bin-mapreduce2 && mv bin-mapreduce1 bin
+       - 另外还可能需要cp bin-mapreduce2/hdfs bin
      - lib目录。如果需要使用mr1的话，那么将cp -r share/hadoop/mapreduce1/ .
 
 ** Hadoop权威指南
