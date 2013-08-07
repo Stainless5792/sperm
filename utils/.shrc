@@ -53,16 +53,15 @@ else
 	export HBASE_CONF_DIR=$HBASE_HOME/conf
     fi
 
-    # java native library.    
     export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native/Linux-amd64-64:$HADOOP_HOME/lib/native
-    # hadoop classpath.
     export HADOOP_CLASSPATH=.:$HADOOP_HOME/lib/hadoop-lzo-0.4.15.jar
-
+    
     PATH=$HADOOP_HOME/bin:$PATH
     PATH=$HADOOP_HOME/sbin:$PATH
     PATH=$HBASE_HOME/bin:$PATH
     PATH=$OOZIE_HOME/bin:$PATH
     PATH=$HIVE_HOME/bin:$PATH 
+
 fi
 
 # add to system.
