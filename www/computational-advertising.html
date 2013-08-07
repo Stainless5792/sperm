@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="computational-advertising"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-07 09:49:34 CST"/>
+<meta name="generated" content="2013-08-07 10:11:34 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -154,7 +154,15 @@
 <li><a href="#sec-1-5-5">1.5.5 媒体采买平台</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-6">1.6 eCPM估计</a></li>
+<li><a href="#sec-1-6">1.6 eCPM估计</a>
+<ul>
+<li><a href="#sec-1-6-1">1.6.1 eCPM的分解与估计问题</a></li>
+<li><a href="#sec-1-6-2">1.6.2 点击率预测</a></li>
+<li><a href="#sec-1-6-3">1.6.3 探索与利用</a></li>
+<li><a href="#sec-1-6-4">1.6.4 点击价值估计</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">1.7 搜索广告</a></li>
 </ul>
 </li>
 </ul>
@@ -1180,7 +1188,7 @@ CPT售卖还有一种变形的形式,即按照轮播售卖。
 <h4 id="sec-1-5-4"><span class="section-number-4">1.5.4</span> 智能频次控制</h4>
 <div class="outline-text-4" id="text-1-5-4">
 
-<p>在品牌广告中,可以通过EC计数上的直接控制来达到一定用户接触程度的目的,由广告主来直接设定;在效果广告中,则可以将EC的计数,或者频次的计数,作为点击率预测模型的特征直接加入训练,靠点击率模型的作用降低出现频次过高的创意的竞争力。
+<p>在品牌广告中,可以通过EC(expected click)计数上的直接控制来达到一定用户接触程度的目的,由广告主来直接设定;在效果广告中,则可以将EC的计数,或者频次的计数,作为点击率预测模型的特征直接加入训练,靠点击率模型的作用降低出现频次过高的创意的竞争力。
 </p>
 <p>
 <b>换句话说,在精细的效果要求下,我们实际上更加认清了频次的本质:它与其他影响点击率的特征是平等的,并且应该放在统一的、数据驱动的计算框架下加以利用。而究竟对某个创意应该将频次控制在几,也不应该是根据经验设定,而是应该放在竞价的环境中自行决定。</b>
@@ -1202,6 +1210,66 @@ CPT售卖还有一种变形的形式,即按照轮播售卖。
 <div id="outline-container-1-6" class="outline-3">
 <h3 id="sec-1-6"><span class="section-number-3">1.6</span> eCPM估计</h3>
 <div class="outline-text-3" id="text-1-6">
+
+<p>按照转化过程的自然划分,eCPM可以分解成点击率和点击价值的乘积。一般来说,相对于点击价值的预测,点击率的预测由于训练数据充分一些,而且主要描述的是媒体上发生的行为,其建模的难度要小一些。点击价值的估计虽然要困难得多,在很多广告产品中却是不可缺少的,比如按照CPS结算的广告网络,或者后面介绍参与实时竞价的DSP。对这个问题,由于行业的区别和数据完整性的不同,并不存在象点击率预测那样相对成熟的一致方法。
+</p>
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> eCPM的分解与估计问题</h4>
+<div class="outline-text-4" id="text-1-6-1">
+
+<p>按照点击和转化两个发生在不同阶段的行为,eCPM可以分解 成点击率和点击价值的乘积: (a,u,c) = μ(a,u,c)·ν(a,u). 我们认为点击率μ是广告三个行为主体的函数,而点击价值则是用户u和广告商a的函数。 <b>后一点的假设有近似之处,因为实际上媒体的来源会影响用户对广告信息的信任程度,但我们为了概念清楚起见忽略这一影响。</b>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-6-2" class="outline-4">
+<h4 id="sec-1-6-2"><span class="section-number-4">1.6.2</span> 点击率预测</h4>
+<div class="outline-text-4" id="text-1-6-2">
+
+<p>对于一些常用且重要的的偏差特征,我们简单地介绍如下:
+</p><ul>
+<li>广告位位置。位置的影响在搜索广告和显示广告环境下有一定的区别。对于搜索而言, 页面布局简单,位置相对稳定,相应地统计也比较充分,因此可以将位置视为离散的变量,分别计算各个位置的EC。而对于显示广告,特别是在广告网络环境下的显示广告而言,位置的可能性非常多,因此不可能对每种不同的位置都作为独立的变量来考虑。比较合理的方法,是找出其重要影响因素,比如广告位中心相对于页面左上角的坐标,用这样的连续变量作为特征来训练偏差模型。
+</li>
+<li>广告位尺寸。尺寸的情形与上面说的位置因素很类似:在创意尺寸选择比较少的情况下,可以作为离散变量来处理;而在尺寸选择很多的情况下,也可以用长宽等连续变量来代替。对于搜索广告,由于各创意尺寸一致,这一因素的影响不存在。
+</li>
+<li>广告投放延迟。广告完成决策逻辑,并将最终结果返回给用户的整体时间长短,对点击率有着非常大的影响。如果在前端将广告请求发生的时间和最终展示时间都记录下来,可以为点击率预测模型提供一个重要的偏差特征。
+</li>
+<li>日期和时间。实际的观测表明,工作日还是周末,对不同类型的广告点击率有着明确的影响,这主要是由于在不同时间用户任务的集中程度不同,对广告的关注也有所区别。时间的因素,即是工作时间还是休闲时间,也有着类似的特性。因此,日期和时间一般来说也是必须要考虑的偏差特征。除了在模型中显式利用,我们往往还要求所有的训练过程都覆盖7天的整数倍的数据,其目的也是为了避免日期带来的偏差。
+</li>
+<li>浏览器。浏览器本身并不对广告效果有明确的影响,不过由于各个浏览器上Ad blocker的覆盖程度有较大区别,因此在实际建模中其影响也相当大。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-6-3" class="outline-4">
+<h4 id="sec-1-6-3"><span class="section-number-4">1.6.3</span> 探索与利用</h4>
+<div class="outline-text-4" id="text-1-6-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-6-4" class="outline-4">
+<h4 id="sec-1-6-4"><span class="section-number-4">1.6.4</span> 点击价值估计</h4>
+<div class="outline-text-4" id="text-1-6-4">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> 搜索广告</h3>
+<div class="outline-text-3" id="text-1-7">
 
 </div>
 </div>
