@@ -820,5 +820,5 @@ complete -o default -F _meta_comp command type which man nice time
 # sh-shell:bash
 # End:
 
-echo "source ~/.shrc"
+# echo "source ~/.shrc"
 source ~/.shrc
