@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="hadoop"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-07 21:07:59 CST"/>
+<meta name="generated" content="2013-08-08 14:03:52 CST"/>
 <meta name="author" content="dirtysalt"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -1981,6 +1981,8 @@ public abstract class RecordReader&lt;KEYIN, VALUEIN&gt; implements Closeable {
 <li>MultipleOutputs
 <ul>
 <li>如果不像生成那写part-r-00000这些空文件的话，那么可以将OutputFormat设置成为NullOutputFormat
+</li>
+<li>但是使用NullOutputFormat的话会没有输出目录，如果想保留目录的话那么可以使用LazyOutputFormat
 </li>
 </ul>
 

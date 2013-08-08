@@ -700,6 +700,7 @@ public abstract class RecordReader<KEYIN, VALUEIN> implements Closeable {
    - MultipleOutputFormat 
    - MultipleOutputs
      - 如果不像生成那写part-r-00000这些空文件的话，那么可以将OutputFormat设置成为NullOutputFormat
+     - 但是使用NullOutputFormat的话会没有输出目录，如果想保留目录的话那么可以使用LazyOutputFormat
 
 *** MapReduce的特性
    - 计数器
