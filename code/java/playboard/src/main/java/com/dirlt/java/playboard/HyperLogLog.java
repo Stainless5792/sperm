@@ -121,6 +121,11 @@ public class HyperLogLog {
             }
             hyperLogLog.sinkId(s);
         }
+        int[] vector = getVector();
+        for(int v:vector) {
+            System.out.print(v + " ");
+        }
+        System.out.println("");
         System.out.println(hyperLogLog.getCardinality());
     }
 }
