@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
  * To change this template use File | Settings | File Templates.
  */
 public class HashAlgorithm {
-    public static int hash(String umid) {
+    public static long hash(String umid) {
         byte[] values = umid.toLowerCase().getBytes();
         int code = 0;
         for (byte b : values) {
@@ -19,14 +19,12 @@ public class HashAlgorithm {
             if (v >= (int) '0' && v <= (int) '9') {
                 v -= (int) '0';
             } else if (v >= (int) 'a' && v <= (int) 'f') {
-                v -= (int) 'a' + 10;
+                v -= (int) 'a';
+                v += 10;
             }
-            code = (code << 4) + v;
+            code = (code * 5) + v;
         }
-        if (code < 0) {
-            code = -code;
-        }
-        return code;
+        return (code & 0x0ffffffffL);
     }
 
     public static int trailing_zero_count(int value) {
@@ -41,16 +39,16 @@ public class HashAlgorithm {
     }
 
     public static void main(String[] args) throws Exception {
-        int max_zeros[] = new int[1 << 10];
+        int max_zeros[] = new int[1 << 8];
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
             String umid = reader.readLine();
             if (umid == null) {
                 break;
             }
-            int h = hash(umid);
-            int bucket = h % max_zeros.length;
-            int bucket_hash = h / max_zeros.length;
+            long h = hash(umid);
+            int bucket = (int) (h % max_zeros.length);
+            int bucket_hash = (int) (h / max_zeros.length);
             max_zeros[bucket] = Math.max(max_zeros[bucket], trailing_zero_count(bucket_hash));
         }
         for (int i = 0; i < max_zeros.length; i++) {
