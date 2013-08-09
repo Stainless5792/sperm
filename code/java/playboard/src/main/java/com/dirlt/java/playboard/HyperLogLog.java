@@ -14,7 +14,7 @@ public class HyperLogLog {
     private int[] max_zeroes;
 
     public HyperLogLog(int bucket) {
-        max_zeroes = new int[bucket];
+        max_zeroes = new int[1 << bucket];
     }
 
     public HyperLogLog() {
@@ -110,7 +110,7 @@ public class HyperLogLog {
         return Math.pow(2.0,exp) * max_zeroes.length * 0.79402;
     }
 
-    public void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         // read lines from stdin.
         HyperLogLog hyperLogLog = new HyperLogLog();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -121,11 +121,11 @@ public class HyperLogLog {
             }
             hyperLogLog.sinkId(s);
         }
-        int[] vector = getVector();
+        int[] vector = hyperLogLog.getVector();
         for(int v:vector) {
             System.out.print(v + " ");
         }
         System.out.println("");
-        System.out.println(hyperLogLog.getCardinality());
+        System.out.printf("%.3f\n",hyperLogLog.getCardinality());
     }
 }
