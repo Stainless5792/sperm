@@ -240,6 +240,7 @@ file:./images/valve-logo.jpg 放眼未来，自由想象(Open your mind, Open yo
        - [[file:./note/amusing-ourselves-to-death.org][娱乐至死(Amusing Ourselves to Death)]]
        - [[file:./note/true-believer.org][狂热分子(True Believer)]]
        - [[file:./note/people-all-know.org][全世界人民都知道]]
+       - [[file:./note/big-data.org][大数据时代(生活、工作与思维的大变革)(Big Data:A Revolution That Will Transform How We Live, Work, and Think)]]
      - [[file:note/recipe.org][菜谱]] 是谁说的，活着就是为了更好的吃：）
      - [[file:note/house.org][住房]] 在天朝这是一个大问题。
      - [[file:note/photo.org][摄影]] 单反穷三代，摄影毁一生
