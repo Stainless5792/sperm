@@ -1,5 +1,5 @@
 * big-data
-#+TITLE: 大数据时代(生活、工作与思维的大变革)(Big Data:A Revolution That Will Transform How We Live, Work, and Think)
+#+TITLE: 大数据时代：生活、工作与思维的大变革(Big Data:A Revolution That Will Transform How We Live, Work, and Think)
 
 ** TOC
    - 一场生活，工作与思维的大变革
