@@ -9,6 +9,10 @@ import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.handler.codec.http.HttpChunkAggregator;
 import org.jboss.netty.handler.codec.http.HttpRequestDecoder;
 import org.jboss.netty.handler.codec.http.HttpResponseEncoder;
+import org.jboss.netty.handler.timeout.ReadTimeoutHandler;
+import org.jboss.netty.handler.timeout.WriteTimeoutHandler;
+import org.jboss.netty.util.HashedWheelTimer;
+import org.jboss.netty.util.Timer;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
@@ -54,12 +58,15 @@ public class PeepServer {
                 Executors.newCachedThreadPool(),
                 configuration.getIoThreadNumber());
         ServerBootstrap bootstrap = new ServerBootstrap(factory);
+        final Timer timer = new HashedWheelTimer(); // use default configuration.
         bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
             public ChannelPipeline getPipeline() throws Exception {
                 ChannelPipeline pipeline = Channels.pipeline();
                 pipeline.addLast("decoder", new HttpRequestDecoder());
                 pipeline.addLast("aggregator", new HttpChunkAggregator(1024 * 1024 * 8));
                 pipeline.addLast("encoder", new HttpResponseEncoder());
+                pipeline.addLast("rto_handler", new ReadTimeoutHandler(timer, configuration.getReadTimeout()));
+                pipeline.addLast("wto_handler", new WriteTimeoutHandler(timer, configuration.getWriteTimeout()));
                 pipeline.addLast("handler", new PeepHandler(configuration));
                 return pipeline;
             }
@@ -86,6 +93,7 @@ public class PeepServer {
         }
         System.out.print(configuration);
         StatStore.init(configuration);
+        Connector.init(configuration);
         runHttpServer(configuration);
     }
 }

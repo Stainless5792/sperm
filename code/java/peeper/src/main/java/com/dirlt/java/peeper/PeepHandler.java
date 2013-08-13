@@ -35,6 +35,7 @@ public class PeepHandler extends SimpleChannelHandler {
     }
 
     private void writeContent(Channel channel, String content) {
+        // so simple.
         HttpResponse response = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
         response.setHeader("Content-Length", content.length());
         ChannelBuffer buffer = ChannelBuffers.buffer(content.length());
@@ -44,8 +45,8 @@ public class PeepHandler extends SimpleChannelHandler {
     }
 
     @Override
-    public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) {
-        PeepServer.logger.debug("message received");
+    public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
+        PeepServer.logger.debug("peeper message received");
         HttpRequest request = (HttpRequest) e.getMessage();
         Channel channel = e.getChannel();
         StatStore stat = StatStore.getInstance();
@@ -60,26 +61,27 @@ public class PeepHandler extends SimpleChannelHandler {
             }
         } catch (URISyntaxException ex) {
             // ignore.
-            stat.addCounter("uri.invalid.count", 1);
+            stat.addCounter("peeper.uri.invalid.count", 1);
             channel.close();
             return;
         }
 
         // invalid path.
         if (!allowedPath.contains(path)) {
-            stat.addCounter("uri.unknown.count", 1);
+            stat.addCounter("peeper.uri.unknown.count", 1);
             channel.close(); // just close the connection.
             return;
         }
 
         // as stat, we can easily handle it.
         if (path.equals("/stat")) {
+            // TODO(dirlt):add more info.
             String content = StatStore.getStat();
             writeContent(channel, content);
             return;
         }
 
-        stat.addCounter("rpc.in.count", 1);
+        stat.addCounter("peeper.rpc.in.count", 1);
         client.externalChannel = channel;
         client.path = path;
         client.buffer = request.getContent();
@@ -88,42 +90,38 @@ public class PeepHandler extends SimpleChannelHandler {
     }
 
     @Override
-    public void writeComplete(ChannelHandlerContext ctx,
-                              WriteCompletionEvent e) {
-        PeepServer.logger.debug("write completed");
+    public void writeComplete(ChannelHandlerContext ctx, WriteCompletionEvent e) throws Exception {
+        PeepServer.logger.debug("peeper write completed");
 
         if (client.code != AsyncClient.Status.kStat) {
-            StatStore.getInstance().addCounter("rpc.out.count", 1);
+            StatStore.getInstance().addCounter("peeper.rpc.out.count", 1);
         }
     }
 
     @Override
-    public void channelOpen(ChannelHandlerContext ctx, ChannelStateEvent e) {
-        PeepServer.logger.debug("connection open");
-
-        StatStore.getInstance().addCounter("session.in.count", 1);
+    public void channelOpen(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
+        PeepServer.logger.debug("peeper.connection open");
+        StatStore.getInstance().addCounter("peeper.session.in.count", 1);
         client.sessionStartTimestamp = System.currentTimeMillis();
-
     }
 
     @Override
-    public void channelClosed(ChannelHandlerContext ctx, ChannelStateEvent e) {
-        PeepServer.logger.debug("connection closed");
+    public void channelClosed(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
+        PeepServer.logger.debug("peeper connection closed");
 
-        StatStore.getInstance().addCounter("session.out.count", 1);
+        StatStore.getInstance().addCounter("peeper.session.out.count", 1);
         client.sessionEndTimestamp = System.currentTimeMillis();
-        StatStore.getInstance().addCounter("session.duration",
-                client.sessionEndTimestamp - client.sessionStartTimestamp);
+        StatStore.getInstance().addCounter("peeper.session.duration", client.sessionEndTimestamp - client.sessionStartTimestamp);
         e.getChannel().close();
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) {
-        PeepServer.logger.debug("exception caught");
+    public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {
+        // e.getCause() instanceof ReadTimeoutException
+        // e.getCause() instanceof WriteTimeoutException
 
-        StatStore.getInstance().addCounter("exception.count", 1);
-        // seems there is no particular request takes a lot time.
-//        e.getCause().printStackTrace();
+        PeepServer.logger.debug("peeper exception caught");
+        StatStore.getInstance().addCounter("peeper.exception.count", 1);
         e.getChannel().close();
     }
 }

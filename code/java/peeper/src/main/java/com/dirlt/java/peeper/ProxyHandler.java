@@ -1,6 +1,6 @@
 package com.dirlt.java.peeper;
 
-import org.jboss.netty.channel.SimpleChannelHandler;
+import org.jboss.netty.channel.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,8 +11,33 @@ import org.jboss.netty.channel.SimpleChannelHandler;
  */
 public class ProxyHandler extends SimpleChannelHandler {
     private Configuration configuration;
+    private Connector connector;
 
-    public ProxyHandler(Configuration configuration) {
+    public ProxyHandler(Configuration configuration, Connector connector) {
         this.configuration = configuration;
+        this.connector = connector;
+    }
+
+    @Override
+    public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
+        // TODO(dirlt):
+    }
+
+    @Override
+    public void messageReceived(ChannelHandlerContext ctx, final MessageEvent e) throws Exception {
+        // TODO(dirlt):
+    }
+
+    @Override
+    public void writeComplete(ChannelHandlerContext ctx, WriteCompletionEvent e) throws Exception {
+        // TODO(dirlt):
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) {
+        // e.getCause() instanceof ReadTimeoutException
+        // e.getCause() instanceof WriteTimeoutException
+        connector.onChannelClosed(e.getChannel());
+        e.getChannel().close();
     }
 }
