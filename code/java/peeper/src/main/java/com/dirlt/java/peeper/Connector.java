@@ -43,8 +43,10 @@ public class Connector {
         public float staticWeight;
         // more fields.
         public static final int kMaxFailureCount = 10;
-        public static final int kRecoveryTickNumber = 10; // 10s.
-        int failureCount = 0;
+        public static final int kConnectRecoveryTickNumber = 10; // 10s.
+        public static final int kReadWriteRecoveryTickNumber = 2; // 2s.
+        int connectFailureCount = 0;
+        int readWriteFailureCount = 0;
     }
 
     private Map<String, Node> nodes = null;
@@ -62,21 +64,29 @@ public class Connector {
     }
 
     public void onChannelClosed(Channel channel, boolean connected) {
+        // have not been already connected.
+        Node node = nodes.get(channel.getRemoteAddress().toString());
+        if (node == null) {
+            PeepServer.logger.warn("unknown remote address " + channel.getRemoteAddress().toString());
+        }
         if (!connected) {
-            // have not been already connected.
-            Node node = nodes.get(channel.getRemoteAddress().toString());
-            if (node == null) {
-                PeepServer.logger.warn("unknown remote address " + channel.getRemoteAddress().toString());
-                return;
-            }
-            // so here we add one failure.
-            synchronized (node) {
-                if (node.failureCount < Node.kMaxFailureCount) {
-                    node.failureCount += 1;
+            if (node != null) {
+                // so here we add one failure.
+                synchronized (node) {
+                    if (node.connectFailureCount < Node.kMaxFailureCount) {
+                        node.connectFailureCount += 1;
+                    }
                 }
             }
             connectionNumber.decrementAndGet();
         } else {
+            if (node != null) {
+                synchronized (node) {
+                    if (node.readWriteFailureCount < Node.kMaxFailureCount) {
+                        node.readWriteFailureCount += 1;
+                    }
+                }
+            }
             // just do reconnect.
             bootstrap.connect(channel.getRemoteAddress());
         }
@@ -126,22 +136,40 @@ public class Connector {
         // timer to decrease failure count.
         java.util.Timer tickTimer = new java.util.Timer(true);
         tickTimer.scheduleAtFixedRate(new TimerTask() {
-            private int recoveryTickCount = Node.kRecoveryTickNumber;
+            private int connectRecoveryTickCount = Node.kConnectRecoveryTickNumber;
+            private int readWriteRecoveryTickCount = Node.kReadWriteRecoveryTickNumber;
 
             @Override
             public void run() {
-                recoveryTickCount -= 1;
-                if (recoveryTickCount == 0) {
+                // connect.
+                connectRecoveryTickCount -= 1;
+                if (connectRecoveryTickCount == 0) {
                     for (Map.Entry<String, Node> entry : nodes.entrySet()) {
                         Node node = entry.getValue();
                         synchronized (node) {
-                            if (node.failureCount > 0) {
-                                node.failureCount -= 1;
+                            if (node.connectFailureCount > 0) {
+                                node.connectFailureCount -= 1;
                             }
                         }
                     }
-                    recoveryTickCount = Node.kRecoveryTickNumber;
+                    connectRecoveryTickCount = Node.kConnectRecoveryTickNumber;
                 }
+
+                // read & write
+                readWriteRecoveryTickCount -= 1;
+                if (readWriteRecoveryTickCount == 0) {
+                    for (Map.Entry<String, Node> entry : nodes.entrySet()) {
+                        Node node = entry.getValue();
+                        synchronized (node) {
+                            if (node.readWriteFailureCount > 0) {
+                                node.readWriteFailureCount -= 1;
+                            }
+                        }
+                    }
+                    readWriteRecoveryTickCount = Node.kReadWriteRecoveryTickNumber;
+                }
+
+                // connection.
                 addConnection();
             }
         }, 0, kTickInterval);
