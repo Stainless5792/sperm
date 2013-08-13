@@ -1,10 +1,8 @@
 package com.dirlt.java.FastHBaseRest;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
-import org.jboss.netty.channel.ChannelFactory;
-import org.jboss.netty.channel.ChannelPipeline;
-import org.jboss.netty.channel.ChannelPipelineFactory;
-import org.jboss.netty.channel.Channels;
+import org.jboss.netty.channel.*;
+import org.jboss.netty.channel.socket.ServerSocketChannelConfig;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.handler.codec.http.HttpChunkAggregator;
 import org.jboss.netty.handler.codec.http.HttpRequestDecoder;
@@ -68,7 +66,15 @@ public class RestServer {
                 return pipeline;
             }
         });
-        bootstrap.bind(new InetSocketAddress(configuration.getIp(), configuration.getPort()));
+        bootstrap.setOption("backlog", configuration.getBacklog());
+        bootstrap.setOption("reuseAddress", true);
+        // another option receiveBufferSize
+        // see also ServerSocketChannelConfig in netty api doc.
+        // or can specify SocketChannelConfig by add prefix "child."
+        // like "child.tcpNoDelay", or you can specify in the event of channel open.
+        Channel channel = bootstrap.bind(new InetSocketAddress(configuration.getIp(), configuration.getPort()));
+        ServerSocketChannelConfig config = (ServerSocketChannelConfig) channel.getConfig();
+        assert (config.getBacklog() == config.getBacklog());
     }
 
     public static void main(String[] args) {

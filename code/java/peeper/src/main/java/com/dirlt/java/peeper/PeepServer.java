@@ -12,9 +12,6 @@ import org.jboss.netty.handler.codec.http.HttpResponseEncoder;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -52,9 +49,9 @@ public class PeepServer {
 
     public static void runHttpServer(final Configuration configuration) {
         ChannelFactory factory = new NioServerSocketChannelFactory(
-                Executors.newSingleThreadExecutor(),
-                new ThreadPoolExecutor(configuration.getIoThreadNumber(), configuration.getIoThreadNumber(),
-                        0, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(configuration.getIoQueueSize())),
+                Executors.newCachedThreadPool(),
+                configuration.getAcceptIOThreadNumber(),
+                Executors.newCachedThreadPool(),
                 configuration.getIoThreadNumber());
         ServerBootstrap bootstrap = new ServerBootstrap(factory);
         bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
@@ -67,6 +64,13 @@ public class PeepServer {
                 return pipeline;
             }
         });
+        // TODO(dirlt): add more options.
+        bootstrap.setOption("backlog", configuration.getBacklog());
+        bootstrap.setOption("reuseAddress", true);
+        bootstrap.setOption("child.keepAlive", true);
+        bootstrap.setOption("child.tcpNoDelay", true);
+//        bootstrap.setOption("child.receiveBufferSize",16 * 1024);
+//        bootstrap.setOption("child.sendBufferSize",16 * 1024);
         bootstrap.bind(new InetSocketAddress(configuration.getIp(), configuration.getPort()));
     }
 

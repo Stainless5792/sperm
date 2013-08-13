@@ -3,6 +3,7 @@ package com.dirlt.java.FastHBaseRest;
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.*;
+import org.jboss.netty.channel.socket.SocketChannelConfig;
 import org.jboss.netty.handler.codec.http.*;
 
 import java.net.URI;
@@ -119,6 +120,10 @@ public class RestHandler extends SimpleChannelHandler {
         StatStore.getInstance().addCounter("session.in.count", 1);
         client.sessionStartTimestamp = System.currentTimeMillis();
 
+        Channel channel = ctx.getChannel();
+        SocketChannelConfig config = (SocketChannelConfig) channel.getConfig();
+        config.setKeepAlive(true);
+        config.setTcpNoDelay(true);
     }
 
     @Override
@@ -139,7 +144,6 @@ public class RestHandler extends SimpleChannelHandler {
         StatStore.getInstance().addCounter("exception.count", 1);
         // seems there is no particular request takes a lot time.
 //        e.getCause().printStackTrace();
-//        client.printRequest();
         e.getChannel().close();
     }
 }

@@ -14,6 +14,7 @@ public class Configuration {
     private String ip = "0.0.0.0";
     private int port = 8000;
     private String quorumSpec = "localhost:2181";
+    private int backlog = 128;
     private int cpuThreadNumber = 16;
     private int cpuQueueSize = 4096;
     private int cacheExpireTime = 3600;
@@ -35,6 +36,8 @@ public class Configuration {
                 ip = arg.substring("--ip=".length());
             } else if (arg.startsWith("--port=")) {
                 port = Integer.valueOf(arg.substring("--port=".length())).intValue();
+            } else if (arg.startsWith("--backlog=")) {
+                backlog = Integer.valueOf(arg.substring("--backlog=".length())).intValue();
             } else if (arg.startsWith("--hbase-quorum-spec=")) {
                 quorumSpec = arg.substring("--hbase-quorum-spec=".length());
             } else if (arg.startsWith("--cpu-thread-number=")) {
@@ -78,7 +81,7 @@ public class Configuration {
         System.out.println("Fast HBase Rest");
         System.out.println("\t--ip # default 0.0.0.0");
         System.out.println("\t--port # default 8000");
-        System.out.println("\t--debug # debug mode");
+        System.out.println("\t--backlog # default 128");
         System.out.println("\t--hbase-quorum-spec # zookeeper address list. eg. \"host1,host2,host3\". default \"localhost\"");
         System.out.println("\t--cpu-thread-number # default 16");
         System.out.println("\t--cpu-queue-size # default 4096");
@@ -100,7 +103,7 @@ public class Configuration {
     public String toString() {
         StringBuffer sb = new StringBuffer();
         sb.append(String.format("async=%s, stat=%s, cache=%s\n", isAsync(), isStat(), isCache()));
-        sb.append(String.format("ip=%s, port=%d\n", getIp(), getPort()));
+        sb.append(String.format("ip=%s, port=%d, backlog=%d\n", getIp(), getPort(), getBacklog()));
         sb.append(String.format("accept-io-thread-number=%d, accept-io-queue-size=%d\n", getAcceptIOThreadNumber(), getAcceptIOQueueSize()));
         sb.append(String.format("io-thread-number=%d, io-queue-size=%d\n", getIOThreadNumber(), getIOQueueSize()));
         sb.append(String.format("cpu-thread-number=%d, cpu-queue-size=%d\n", getCpuThreadNumber(), getCpuQueueSize()));
@@ -118,6 +121,10 @@ public class Configuration {
 
     public int getPort() {
         return port;
+    }
+
+    public int getBacklog() {
+        return backlog;
     }
 
     public String getQuorumSpec() {

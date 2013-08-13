@@ -13,7 +13,12 @@ import java.util.Map;
 public class Configuration {
     private String ip = "0.0.0.0";
     private int port = 8001;
+    private int backlog = 128;
+    private int acceptIOThreadNumber = 4;
+    private int ioThreadNumber = 16;
     private int proxyQueueSize = 4096;
+    private int proxyAcceptIOThreadNumber = 4;
+    private int proxyIOThreadNumber = 16;
     private String serviceName = "peeper";
     private boolean debug = true;
     private boolean stat = true;
@@ -25,8 +30,18 @@ public class Configuration {
                 ip = arg.substring("--ip=".length());
             } else if (arg.startsWith("--port=")) {
                 port = Integer.valueOf(arg.substring("--port=".length())).intValue();
+            } else if (arg.startsWith("--backlog=")) {
+                backlog = Integer.valueOf(arg.substring("--backlog=".length())).intValue();
+            } else if (arg.startsWith("--accept-io-thread-number=")) {
+                acceptIOThreadNumber = Integer.valueOf(arg.substring("--accept-io-thread-number=".length()));
+            } else if (arg.startsWith("--io-thread-number=")) {
+                ioThreadNumber = Integer.valueOf(arg.substring("--io-thread-number=".length())).intValue();
             } else if (arg.startsWith("--proxy-queue-size=")) {
-                proxyQueueSize = Integer.valueOf(arg.substring("--proxy-queue-size=".length()));
+                proxyQueueSize = Integer.valueOf(arg.substring("--proxy-queue-size=".length())).intValue();
+            } else if (arg.startsWith("--proxy-accept-io-thread-number=")) {
+                proxyAcceptIOThreadNumber = Integer.valueOf(arg.substring("--proxy-accept-io-thread-number=".length())).intValue();
+            } else if (arg.startsWith("--proxy-io-thread-number=")) {
+                proxyIOThreadNumber = Integer.valueOf(arg.substring("--proxy-io-thread-number=".length())).intValue();
             } else if (arg.startsWith("--service-name=")) {
                 serviceName = arg.substring("--service-name=".length());
             } else if (arg.startsWith("--no-debug")) {
@@ -48,7 +63,12 @@ public class Configuration {
         System.out.println("peeper");
         System.out.println("\t--ip # default 0.0.0.0");
         System.out.println("\t--port # default 8001");
+        System.out.println("\t--backlog # default 128");
+        System.out.println("\t--accept-io-thread-number # default 4");
+        System.out.println("\t--io-thread-number # default 16");
         System.out.println("\t--proxy-queue-size # default 4096");
+        System.out.println("\t--proxy-accept-io-thread-number # default 4");
+        System.out.println("\t--proxy-io-thread-number # default 16");
         System.out.println("\t--service-name # set service name");
         System.out.println("\t--no-debug # turn off debug mode");
         System.out.println("\t--no-stat # turn off statistics");
@@ -59,9 +79,12 @@ public class Configuration {
     public String toString() {
         StringBuffer sb = new StringBuffer();
         sb.append(String.format("stat=%s, debug=%s\n", isStat(), isDebug()));
-        sb.append(String.format("ip=%s, port=%d\n", getIp(), getPort()));
+        sb.append(String.format("ip=%s, port=%d, backlog=%d\n", getIp(), getPort(), getBacklog()));
         sb.append(String.format("service-name=%s\n", getServiceName()));
+        sb.append(String.format("accept-io-thread-number=%d, io-thread-number=%d\n", getAcceptIOThreadNumber(), getIoThreadNumber()));
         sb.append(String.format("proxy-queue-size=%d\n", getProxyQueueSize()));
+        sb.append(String.format("proxy-accept-io-thread-number=%d, proxy-io-thread-number=%d\n",
+                getProxyAcceptIOThreadNumber(), getProxyIOThreadNumber()));
         for (String key : kv.keySet()) {
             sb.append(String.format("kv = %s:%s\n", key, kv.get(key)));
         }
@@ -76,8 +99,28 @@ public class Configuration {
         return port;
     }
 
+    public int getBacklog() {
+        return backlog;
+    }
+
+    public int getAcceptIOThreadNumber() {
+        return acceptIOThreadNumber;
+    }
+
+    public int getIoThreadNumber() {
+        return ioThreadNumber;
+    }
+
     public int getProxyQueueSize() {
         return proxyQueueSize;
+    }
+
+    public int getProxyAcceptIOThreadNumber() {
+        return proxyAcceptIOThreadNumber;
+    }
+
+    public int getProxyIOThreadNumber() {
+        return proxyIOThreadNumber;
     }
 
     public String getServiceName() {

@@ -66,7 +66,6 @@ public class AsyncClient implements Runnable {
 
     public boolean subRequest = false; // whether is sub request.
     public Status code = Status.kStat; // default value.
-    public Status requestType = Status.kReadRequest; // for debug usage.
     public SubRequestStatus subRequestStatus = SubRequestStatus.kOK;
     public Channel channel;
 
@@ -130,28 +129,6 @@ public class AsyncClient implements Runnable {
         requestTimeout = kDefaultTimeout;
     }
 
-    // for debug internal.
-    public void printRequest() {
-        Message message = null;
-        switch (requestType) {
-            case kReadRequest:
-                message = rdReq;
-                break;
-            case kWriteRequest:
-                message = wrReq;
-                break;
-            case kMultiRead:
-                message = multiReadRequest;
-                break;
-            case kMultiWrite:
-                message = multiWriteRequest;
-                break;
-        }
-        if (message != null) {
-            System.err.println("==========>request<==========");
-            System.err.println(message.toString());
-        }
-    }
 
     @Override
     public void run() {
@@ -203,16 +180,12 @@ public class AsyncClient implements Runnable {
 
         if (path.equals("/read")) {
             code = Status.kReadRequest;
-            requestType = Status.kReadRequest;
         } else if (path.equals("/multi-read")) {
             code = Status.kMultiRead;
-            requestType = Status.kMultiRead;
         } else if (path.equals("/write")) {
             code = Status.kWriteRequest;
-            requestType = Status.kWriteRequest;
         } else if (path.equals("/multi-write")) {
             code = Status.kMultiWrite;
-            requestType = Status.kMultiWrite;
         } else {
             // impossible.
         }

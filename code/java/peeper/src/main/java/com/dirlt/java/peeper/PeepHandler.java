@@ -5,7 +5,6 @@ import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.handler.codec.http.*;
 
-import javax.security.auth.login.Configuration;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Set;
@@ -25,10 +24,6 @@ public class PeepHandler extends SimpleChannelHandler {
     static {
         allowedPath.add("/stat");
         allowedPath.add("/read");
-        allowedPath.add("/multi-read");
-        allowedPath.add("/write");
-        allowedPath.add("/multi-write");
-        allowedPath.add("/clear-cache");
     }
 
     private Configuration configuration;
@@ -50,7 +45,7 @@ public class PeepHandler extends SimpleChannelHandler {
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) {
-        RestServer.logger.debug("message received");
+        PeepServer.logger.debug("message received");
         HttpRequest request = (HttpRequest) e.getMessage();
         Channel channel = e.getChannel();
         StatStore stat = StatStore.getInstance();
@@ -84,18 +79,8 @@ public class PeepHandler extends SimpleChannelHandler {
             return;
         }
 
-        if (path.equals("/clear-cache")) {
-            String content = "OK";
-            LocalCache.getInstance().clear();
-            writeContent(channel, content);
-            return;
-        }
-
         stat.addCounter("rpc.in.count", 1);
-        client.init();
-        client.code = AsyncClient.Status.kHttpRequest;
-        client.subRequest = false;
-        client.channel = channel;
+        client.externalChannel = channel;
         client.path = path;
         client.buffer = request.getContent();
         client.requestTimestamp = System.currentTimeMillis();
@@ -105,7 +90,7 @@ public class PeepHandler extends SimpleChannelHandler {
     @Override
     public void writeComplete(ChannelHandlerContext ctx,
                               WriteCompletionEvent e) {
-        RestServer.logger.debug("write completed");
+        PeepServer.logger.debug("write completed");
 
         if (client.code != AsyncClient.Status.kStat) {
             StatStore.getInstance().addCounter("rpc.out.count", 1);
@@ -114,7 +99,7 @@ public class PeepHandler extends SimpleChannelHandler {
 
     @Override
     public void channelOpen(ChannelHandlerContext ctx, ChannelStateEvent e) {
-        RestServer.logger.debug("connection open");
+        PeepServer.logger.debug("connection open");
 
         StatStore.getInstance().addCounter("session.in.count", 1);
         client.sessionStartTimestamp = System.currentTimeMillis();
@@ -123,7 +108,7 @@ public class PeepHandler extends SimpleChannelHandler {
 
     @Override
     public void channelClosed(ChannelHandlerContext ctx, ChannelStateEvent e) {
-        RestServer.logger.debug("connection closed");
+        PeepServer.logger.debug("connection closed");
 
         StatStore.getInstance().addCounter("session.out.count", 1);
         client.sessionEndTimestamp = System.currentTimeMillis();
@@ -134,12 +119,11 @@ public class PeepHandler extends SimpleChannelHandler {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) {
-        RestServer.logger.debug("exception caught");
+        PeepServer.logger.debug("exception caught");
 
         StatStore.getInstance().addCounter("exception.count", 1);
         // seems there is no particular request takes a lot time.
 //        e.getCause().printStackTrace();
-//        client.printRequest();
         e.getChannel().close();
     }
 }
