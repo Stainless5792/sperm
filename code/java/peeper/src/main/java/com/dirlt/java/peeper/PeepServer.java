@@ -10,7 +10,6 @@ import org.jboss.netty.handler.codec.http.HttpChunkAggregator;
 import org.jboss.netty.handler.codec.http.HttpRequestDecoder;
 import org.jboss.netty.handler.codec.http.HttpResponseEncoder;
 
-import javax.security.auth.login.Configuration;
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -82,10 +81,7 @@ public class PeepServer {
             logger.xdebug = false;
         }
         System.out.print(configuration);
-        LocalCache.init(configuration);
-        CpuWorkerPool.init(configuration);
-        HBaseService.init(configuration);
         StatStore.init(configuration);
-        RequestProxy.init(configuration);
         runHttpServer(configuration);
+    }
 }

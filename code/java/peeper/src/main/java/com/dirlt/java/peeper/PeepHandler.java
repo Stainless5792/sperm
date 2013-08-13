@@ -40,8 +40,7 @@ public class PeepHandler extends SimpleChannelHandler {
     }
 
     private void writeContent(Channel channel, String content) {
-        HttpResponse response = new DefaultHttpResponse(
-                HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
+        HttpResponse response = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
         response.setHeader("Content-Length", content.length());
         ChannelBuffer buffer = ChannelBuffers.buffer(content.length());
         buffer.writeBytes(content.getBytes());
