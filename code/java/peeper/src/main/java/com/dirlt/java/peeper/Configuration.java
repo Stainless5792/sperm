@@ -24,6 +24,7 @@ public class Configuration {
     private int proxyIOThreadNumber = 16;
     private int proxyReadTimeout = 10;
     private int proxyWriteTimeout = 10;
+    private int proxyConnectionNumber = 32;
     private String serviceName = "peeper";
     private boolean debug = true;
     private boolean stat = true;
@@ -57,6 +58,8 @@ public class Configuration {
                 proxyReadTimeout = Integer.valueOf(arg.substring("--proxy-read-timeout=".length())).intValue();
             } else if (arg.startsWith("--proxy-write-timeout=")) {
                 proxyWriteTimeout = Integer.valueOf(arg.substring("--proxy-write-timeout=".length())).intValue();
+            } else if (arg.startsWith("--proxy-connection-number=")) {
+                proxyConnectionNumber = Integer.valueOf(arg.substring("--proxy-connection-number=".length())).intValue();
             } else if (arg.startsWith("--service-name=")) {
                 serviceName = arg.substring("--service-name=".length());
             } else if (arg.startsWith("--no-debug")) {
@@ -85,6 +88,7 @@ public class Configuration {
         System.out.println("\t--read-timeout # default 10(s)");
         System.out.println("\t--write-timeout # default 10(s)");
         System.out.println("\t--proxy-queue-size # default 4096");
+        System.out.println("\t--proxy-connection-number # default 32");
         System.out.println("\t--proxy-accept-io-thread-number # default 4");
         System.out.println("\t--proxy-io-thread-number # default 16");
         System.out.println("\t--proxy-read-timeout # default 10(s)");
@@ -103,11 +107,11 @@ public class Configuration {
         sb.append(String.format("backend-nodes=%s\n", getBackendNodes()));
         sb.append(String.format("service-name=%s\n", getServiceName()));
         sb.append(String.format("accept-io-thread-number=%d, io-thread-number=%d\n", getAcceptIOThreadNumber(), getIoThreadNumber()));
-        sb.append(String.format("read-timeout=%d(s), write-timeout=%d(s)", getReadTimeout(), getWriteTimeout()));
-        sb.append(String.format("proxy-queue-size=%d\n", getProxyQueueSize()));
+        sb.append(String.format("read-timeout=%d(s), write-timeout=%d(s)\n", getReadTimeout(), getWriteTimeout()));
+        sb.append(String.format("proxy-queue-size=%d proxy-connection-number=%d\n", getProxyQueueSize(), getProxyConnectionNumber()));
         sb.append(String.format("proxy-accept-io-thread-number=%d, proxy-io-thread-number=%d\n",
                 getProxyAcceptIOThreadNumber(), getProxyIOThreadNumber()));
-        sb.append(String.format("proxy-read-timeout=%d(s), proxy-write-timeout=%d(s)", getProxyReadTimeout(), getProxyWriteTimeout()));
+        sb.append(String.format("proxy-read-timeout=%d(s), proxy-write-timeout=%d(s)\n", getProxyReadTimeout(), getProxyWriteTimeout()));
         for (String key : kv.keySet()) {
             sb.append(String.format("kv = %s:%s\n", key, kv.get(key)));
         }
@@ -164,6 +168,10 @@ public class Configuration {
 
     public int getProxyWriteTimeout() {
         return proxyWriteTimeout;
+    }
+
+    public int getProxyConnectionNumber() {
+        return proxyConnectionNumber;
     }
 
     public String getServiceName() {

@@ -12,6 +12,7 @@ import org.jboss.netty.channel.*;
 public class ProxyHandler extends SimpleChannelHandler {
     private Configuration configuration;
     private Connector connector;
+    private boolean connected = false;
 
     public ProxyHandler(Configuration configuration, Connector connector) {
         this.configuration = configuration;
@@ -20,6 +21,7 @@ public class ProxyHandler extends SimpleChannelHandler {
 
     @Override
     public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
+        connected = true;
         // TODO(dirlt):
     }
 
@@ -37,7 +39,7 @@ public class ProxyHandler extends SimpleChannelHandler {
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) {
         // e.getCause() instanceof ReadTimeoutException
         // e.getCause() instanceof WriteTimeoutException
-        connector.onChannelClosed(e.getChannel());
+        connector.onChannelClosed(e.getChannel(),connected);
         e.getChannel().close();
     }
 }

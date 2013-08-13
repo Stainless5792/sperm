@@ -1,6 +1,5 @@
 package com.dirlt.java.peeper;
 
-import org.jboss.netty.bootstrap.Bootstrap;
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
@@ -15,9 +14,11 @@ import org.jboss.netty.util.Timer;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimerTask;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,13 +31,20 @@ public class Connector {
     private static Connector instance = null;
 
     private Configuration configuration;
+    private AtomicInteger connectionNumber = new AtomicInteger(0);
     private BlockingQueue<AsyncClient> requestQueue = null;
-    private Bootstrap bootstrap = null;
+    private ClientBootstrap bootstrap = null;
+    public static final int kTickInterval = 1 * 1000; // 1s;
+    // each time addConnection will create at least following number connections.
+    public static final int kAddConnectionStep = 4;
 
     class Node {
         public InetSocketAddress socketAddress;
-        public float weight;
+        public float staticWeight;
         // more fields.
+        public static final int kMaxFailureCount = 10;
+        public static final int kRecoveryTickNumber = 10; // 10s.
+        int failureCount = 0;
     }
 
     private Map<String, Node> nodes = null;
@@ -51,14 +59,32 @@ public class Connector {
 
     public void request(AsyncClient client) {
         requestQueue.add(client);
-        // TODO(dirlt): maybe add more connection.
     }
 
-    public void onChannelClosed(Channel channel) {
-        // channel will be closed.
-        // TODO(dirlt): maybe add more connection.
+    public void onChannelClosed(Channel channel, boolean connected) {
+        if (!connected) {
+            // have not been already connected.
+            Node node = nodes.get(channel.getRemoteAddress().toString());
+            if (node == null) {
+                PeepServer.logger.warn("unknown remote address " + channel.getRemoteAddress().toString());
+                return;
+            }
+            // so here we add one failure.
+            synchronized (node) {
+                if (node.failureCount < Node.kMaxFailureCount) {
+                    node.failureCount += 1;
+                }
+            }
+            connectionNumber.decrementAndGet();
+        } else {
+            // just do reconnect.
+            bootstrap.connect(channel.getRemoteAddress());
+        }
     }
 
+    public void addConnection() {
+        // TODO(dirlt):
+    }
 
     public Connector(final Configuration configuration) {
         this.configuration = configuration;
@@ -83,10 +109,7 @@ public class Connector {
                 return pipeline;
             }
         });
-        parseNodes();
-    }
-
-    public void parseNodes() {
+        // parse nodes.
         nodes = new HashMap<String, Node>();
         String backendNodes = configuration.getBackendNodes();
         for (String s : backendNodes.split(",")) {
@@ -95,9 +118,32 @@ public class Connector {
             int port = Integer.valueOf(ss[1]).intValue();
             Node node = new Node();
             node.socketAddress = new InetSocketAddress(host, port);
-            // TODO(dirlt): more adaptive.
-            node.weight = 1.0f;
+            node.staticWeight = 1.0f; // TODO(dirlt): some preference?
             nodes.put(node.socketAddress.toString(), node);
         }
+        // make min connection.
+        addConnection();
+        // timer to decrease failure count.
+        java.util.Timer tickTimer = new java.util.Timer(true);
+        tickTimer.scheduleAtFixedRate(new TimerTask() {
+            private int recoveryTickCount = Node.kRecoveryTickNumber;
+
+            @Override
+            public void run() {
+                recoveryTickCount -= 1;
+                if (recoveryTickCount == 0) {
+                    for (Map.Entry<String, Node> entry : nodes.entrySet()) {
+                        Node node = entry.getValue();
+                        synchronized (node) {
+                            if (node.failureCount > 0) {
+                                node.failureCount -= 1;
+                            }
+                        }
+                    }
+                    recoveryTickCount = Node.kRecoveryTickNumber;
+                }
+                addConnection();
+            }
+        }, 0, kTickInterval);
     }
 }
