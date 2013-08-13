@@ -1,4 +1,4 @@
-package com.dirlt.java.FastHBaseRest;
+package com.dirlt.java.peeper;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelFactory;
@@ -10,7 +10,9 @@ import org.jboss.netty.handler.codec.http.HttpChunkAggregator;
 import org.jboss.netty.handler.codec.http.HttpRequestDecoder;
 import org.jboss.netty.handler.codec.http.HttpResponseEncoder;
 
+import javax.security.auth.login.Configuration;
 import java.net.InetSocketAddress;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -18,11 +20,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created with IntelliJ IDEA.
  * User: dirlt
- * Date: 12/8/12
- * Time: 1:32 AM
+ * Date: 8/13/13
+ * Time: 11:14 AM
  * To change this template use File | Settings | File Templates.
  */
-public class RestServer {
+public class PeepServer {
     public static class Logger {
         public boolean xdebug = true;
         public boolean xinfo = true;
@@ -51,12 +53,10 @@ public class RestServer {
 
     public static void runHttpServer(final Configuration configuration) {
         ChannelFactory factory = new NioServerSocketChannelFactory(
-                new ThreadPoolExecutor(configuration.getAcceptIOThreadNumber(), configuration.getAcceptIOThreadNumber(),
-                        0, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(configuration.getAcceptIOQueueSize())),
-                configuration.getAcceptIOQueueSize(),
-                new ThreadPoolExecutor(configuration.getIOThreadNumber(), configuration.getIOThreadNumber(),
-                        0, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(configuration.getIOQueueSize())),
-                configuration.getIOThreadNumber());
+                Executors.newSingleThreadExecutor(),
+                new ThreadPoolExecutor(configuration.getIoThreadNumber(), configuration.getIoThreadNumber(),
+                        0, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(configuration.getIoQueueSize())),
+                configuration.getIoThreadNumber());
         ServerBootstrap bootstrap = new ServerBootstrap(factory);
         bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
             public ChannelPipeline getPipeline() throws Exception {
@@ -64,7 +64,7 @@ public class RestServer {
                 pipeline.addLast("decoder", new HttpRequestDecoder());
                 pipeline.addLast("aggregator", new HttpChunkAggregator(1024 * 1024 * 8));
                 pipeline.addLast("encoder", new HttpResponseEncoder());
-                pipeline.addLast("handler", new RestHandler(configuration));
+                pipeline.addLast("handler", new PeepHandler(configuration));
                 return pipeline;
             }
         });
@@ -88,5 +88,4 @@ public class RestServer {
         StatStore.init(configuration);
         RequestProxy.init(configuration);
         runHttpServer(configuration);
-    }
 }

@@ -4,6 +4,7 @@
 
 import message_pb2
 import time
+import math
 
 import urllib2
 def raiseHTTPRequest(url,data=None,timeout=3):
@@ -142,11 +143,55 @@ def queryModels():
         print ss
     #print response
 
+def doUVEstimator():
+    mRequest = message_pb2.MultiReadRequest()
+
+    dates = [
+        '20130701',
+        # '20130702',
+        # '20130703',
+        # '20130704',
+        # '20130705',
+        # '20130706',
+        # '20130707'
+        ]
+    # appkey = '51a577cc56240b76d8006bef'
+    appkey = '4d707f5e112cf75410007470'
+
+    for date in dates:
+        rowkey = date + '_' + appkey
+        print rowkey
+        request = message_pb2.ReadRequest()
+        request.table_name='test_uvestimator'
+        request.row_key=rowkey
+        request.column_family='stat'
+        request.qualifiers.append('uv_estimate')
+        mRequest.requests.extend([request])
+
+    data = mRequest.SerializeToString()
+    data2 = raiseHTTPRequest('http://dp0:12345/multi-read',data,timeout=20)
+    
+    mResponse = message_pb2.MultiReadResponse()
+    mResponse.ParseFromString(data2)
+
+    bucket = [0] * (1 << 8)
+    for response in mResponse.responses:
+        vs  = response.kvs[0].content.split(',')
+        for i in range(0,len(vs)):
+            v = int(vs[i])            
+            bucket[i] = max(bucket[i],v)
+
+    print bucket
+            
+    print 2 ** (float(sum(bucket)) / len(bucket)) * len(bucket) * 0.79402
+    
 if __name__=='__main__':
     # queryColumn()
     # queryColumnFamily()
     # multiQuery()
     # queryColumnNone()
     # queryColumnLarge()
-    queryModels()
+    # queryModels()
+    doUVEstimator()
+    
     

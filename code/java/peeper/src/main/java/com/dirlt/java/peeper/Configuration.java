@@ -1,4 +1,4 @@
-package com.dirlt.java.FastHBaseRest;
+package com.dirlt.java.peeper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,21 +12,13 @@ import java.util.Map;
  */
 public class Configuration {
     private String ip = "0.0.0.0";
-    private int port = 8000;
-    private String quorumSpec = "localhost:2181";
-    private int cpuThreadNumber = 16;
-    private int cpuQueueSize = 4096;
-    private int cacheExpireTime = 3600;
-    private int cacheMaxCapacity = 2 * 1024 * 1024; // 2M
-    private int acceptIOThreadNumber = 4;
-    private int acceptIOQueueSize = 16;
+    private int port = 8001;
     private int ioThreadNumber = 16;
     private int ioQueueSize = 4096;
-    private String serviceName = "FastHBaseRest";
+    private int proxyQueueSize = 4096;
+
+    private String serviceName = "peeper";
     private boolean stat = true;
-    private boolean cache = true;
-    private boolean debug = true;
-    private boolean async = true;
     private Map<String, String> kv = new HashMap<String, String>();
 
     public boolean parse(String[] args) {
@@ -45,10 +37,6 @@ public class Configuration {
                 cacheExpireTime = Integer.valueOf(arg.substring("--cache-expire-time=".length()));
             } else if (arg.startsWith("--cache-max-capacity=")) {
                 cacheMaxCapacity = Integer.valueOf(arg.substring("--cache-max-capacity=".length()));
-            } else if (arg.startsWith("--accept-io-thread-number=")) {
-                acceptIOThreadNumber = Integer.valueOf(arg.substring("--accept-io-thread-number=".length()));
-            } else if (arg.startsWith("--accept-io-queue-size=")) {
-                acceptIOQueueSize = Integer.valueOf(arg.substring("--accept-io-queue-size=".length()));
             } else if (arg.startsWith("--io-thread-number=")) {
                 ioThreadNumber = Integer.valueOf(arg.substring("--io-thread-number=".length()));
             } else if (arg.startsWith("--io-queue-size=")) {
@@ -84,8 +72,6 @@ public class Configuration {
         System.out.println("\t--cpu-queue-size # default 4096");
         System.out.println("\t--cache-expire-time # default 3600 in seconds");
         System.out.println("\t--cache-max-capacity # default 2 * 1024 * 1024");
-        System.out.println("\t--accept-io-thread-number # default 4");
-        System.out.println("\t--accept-io-queue-size # default 16");
         System.out.println("\t--io-thread-number # default 16");
         System.out.println("\t--io-queue-size # default 4096");
         System.out.println("\t--service-name # set service name");
@@ -101,8 +87,7 @@ public class Configuration {
         StringBuffer sb = new StringBuffer();
         sb.append(String.format("async=%s, stat=%s, cache=%s\n", isAsync(), isStat(), isCache()));
         sb.append(String.format("ip=%s, port=%d\n", getIp(), getPort()));
-        sb.append(String.format("accept-io-thread-number=%d, accept-io-queue-size=%d\n", getAcceptIOThreadNumber(), getAcceptIOQueueSize()));
-        sb.append(String.format("io-thread-number=%d, io-queue-size=%d\n", getIOThreadNumber(), getIOQueueSize()));
+        sb.append(String.format("io-thread-number=%d, io-queue-size=%d\n", getIoThreadNumber(), getIoQueueSize()));
         sb.append(String.format("cpu-thread-number=%d, cpu-queue-size=%d\n", getCpuThreadNumber(), getCpuQueueSize()));
         sb.append(String.format("hbase-quorum-spec=%s\n", getQuorumSpec()));
         sb.append(String.format("cache-expire-time=%d(s), cache-max-capacity=%d\n", getCacheExpireTime(), getCacheMaxCapacity()));
@@ -140,20 +125,11 @@ public class Configuration {
         return cacheMaxCapacity;
     }
 
-
-    public int getAcceptIOThreadNumber() {
-        return acceptIOThreadNumber;
-    }
-
-    public int getAcceptIOQueueSize() {
-        return acceptIOQueueSize;
-    }
-
-    public int getIOThreadNumber() {
+    public int getIoThreadNumber() {
         return ioThreadNumber;
     }
 
-    public int getIOQueueSize() {
+    public int getIoQueueSize() {
         return ioQueueSize;
     }
 

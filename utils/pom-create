@@ -51,6 +51,7 @@ POM_TEMPLATE="""<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="ht
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.5.1</version>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
@@ -79,6 +80,7 @@ POM_TEMPLATE="""<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="ht
       <!-- <plugin> -->
       <!--   <groupId>org.codehaus.mojo</groupId> -->
       <!--   <artifactId>build-helper-maven-plugin</artifactId> -->
+      <!--   <version>1.8</version> -->
       <!--   <executions> -->
       <!--     <execution> -->
       <!--       <phase>generate-sources</phase> -->

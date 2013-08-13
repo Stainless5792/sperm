@@ -3,6 +3,6 @@
 
 echo "patching fast-hbase-rest ..."
 rsync -avrz $HOME/github/fast-hbase-rest/src/main/ $HOME/github/sperm/code/java/fast-hbase-rest/src/main/
-rsync -vz $HOME/github/fast-hbase-rest/ $HOME/github/sperm/code/java/fast-hbase-rest/
+rsync -vz $HOME/github/fast-hbase-rest/pom.xml $HOME/github/sperm/code/java/fast-hbase-rest/pom.xml
 
 
