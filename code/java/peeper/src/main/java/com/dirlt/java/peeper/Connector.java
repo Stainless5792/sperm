@@ -43,10 +43,16 @@ public class Connector {
         public float staticWeight;
         // more fields.
         public static final int kMaxFailureCount = 10;
-        public static final int kConnectRecoveryTickNumber = 10; // 10s.
-        public static final int kReadWriteRecoveryTickNumber = 2; // 2s.
+        public static final int kRecoveryTickCount = 10; // 10s.
         int connectFailureCount = 0;
         int readWriteFailureCount = 0;
+        int connectionNumber = 0;
+
+        public float getWeight() {
+            // less weight, more prefer.
+            float dynWeight = connectFailureCount * 0.6f + readWriteFailureCount * 0.3f + connectionNumber * 0.1f;
+            return dynWeight * 1.0f / staticWeight;
+        }
     }
 
     private Map<String, Node> nodes = null;
@@ -64,27 +70,21 @@ public class Connector {
     }
 
     public void onChannelClosed(Channel channel, boolean connected) {
-        // have not been already connected.
         Node node = nodes.get(channel.getRemoteAddress().toString());
-        if (node == null) {
-            PeepServer.logger.warn("unknown remote address " + channel.getRemoteAddress().toString());
-        }
         if (!connected) {
-            if (node != null) {
-                // so here we add one failure.
-                synchronized (node) {
-                    if (node.connectFailureCount < Node.kMaxFailureCount) {
-                        node.connectFailureCount += 1;
-                    }
+            // have not been already connected.
+            // so here we add one failure.
+            synchronized (node) {
+                if (node.connectFailureCount < Node.kMaxFailureCount) {
+                    node.connectFailureCount += 1;
                 }
+                node.connectionNumber -= 1;
             }
             connectionNumber.decrementAndGet();
         } else {
-            if (node != null) {
-                synchronized (node) {
-                    if (node.readWriteFailureCount < Node.kMaxFailureCount) {
-                        node.readWriteFailureCount += 1;
-                    }
+            synchronized (node) {
+                if (node.readWriteFailureCount < Node.kMaxFailureCount) {
+                    node.readWriteFailureCount += 1;
                 }
             }
             // just do reconnect.
@@ -131,44 +131,28 @@ public class Connector {
             node.staticWeight = 1.0f; // TODO(dirlt): some preference?
             nodes.put(node.socketAddress.toString(), node);
         }
-        // make min connection.
-        addConnection();
         // timer to decrease failure count.
         java.util.Timer tickTimer = new java.util.Timer(true);
         tickTimer.scheduleAtFixedRate(new TimerTask() {
-            private int connectRecoveryTickCount = Node.kConnectRecoveryTickNumber;
-            private int readWriteRecoveryTickCount = Node.kReadWriteRecoveryTickNumber;
+            private int recoveryTickCount = Node.kRecoveryTickCount;
 
             @Override
             public void run() {
-                // connect.
-                connectRecoveryTickCount -= 1;
-                if (connectRecoveryTickCount == 0) {
+                recoveryTickCount -= 1;
+                if (recoveryTickCount == 0) {
                     for (Map.Entry<String, Node> entry : nodes.entrySet()) {
                         Node node = entry.getValue();
                         synchronized (node) {
                             if (node.connectFailureCount > 0) {
                                 node.connectFailureCount -= 1;
                             }
-                        }
-                    }
-                    connectRecoveryTickCount = Node.kConnectRecoveryTickNumber;
-                }
-
-                // read & write
-                readWriteRecoveryTickCount -= 1;
-                if (readWriteRecoveryTickCount == 0) {
-                    for (Map.Entry<String, Node> entry : nodes.entrySet()) {
-                        Node node = entry.getValue();
-                        synchronized (node) {
                             if (node.readWriteFailureCount > 0) {
                                 node.readWriteFailureCount -= 1;
                             }
                         }
                     }
-                    readWriteRecoveryTickCount = Node.kReadWriteRecoveryTickNumber;
+                    recoveryTickCount = Node.kRecoveryTickCount;
                 }
-
                 // connection.
                 addConnection();
             }
